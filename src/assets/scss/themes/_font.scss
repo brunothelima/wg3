@@ -1,0 +1,17 @@
+@mixin font {
+  --font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  --icons-family: "Widgricon";
+  --font-size: 14px;
+  // Headings font sizes
+  --font-size-h1: 4.571em;
+  --font-size-h2: 4em;
+  --font-size-h3: 3.429em;
+  --font-size-h4: 2.857em;
+  --font-size-h5: 2.286em;
+  --font-size-h6: 1.714em;
+  // Body font sizes
+  --font-size-xxl: calc(var(--font-size) + 4px);
+  --font-size-xl: calc(var(--font-size) + 2px);
+  --font-size-xs: calc(var(--font-size) - 2px);
+  --font-size-xxs: calc(var(--font-size) - 4px);
+}

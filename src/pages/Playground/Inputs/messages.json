@@ -1,0 +1,40 @@
+{
+  "en": {
+    "text": {
+      "label": "Input text",
+      "placeholder": "Type here"
+    },
+    "password": {
+      "label": "Input passowrd",
+      "placeholder": "Type your password here"
+    },
+    "select": {
+      "label": "Input select",
+      "placeholder": "Select an option",
+      "options": {
+        "first": "First option",
+        "second": "Second option",
+        "third": "Third option"
+      }
+    }
+  },
+  "pt": {
+    "text": {
+      "label": "Campo de texto",
+      "placeholder": "Digite aqui"
+    },
+    "password": {
+      "label": "Campo de senha",
+      "placeholder": "Digite sua senha aqui"
+    },
+    "select": {
+      "label": "Campo de seleção",
+      "placeholder": "Selecione uma das opções",
+      "options": {
+        "first": "Primeira opção",
+        "second": "Segunda opção",
+        "third": "Terceira opção"
+      }
+    }
+  }
+}

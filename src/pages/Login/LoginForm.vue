@@ -1,0 +1,88 @@
+<i18n>
+{
+  "en": {
+    "intro": "You must be logged in to continue",
+    "password-loss": "Forgot my password",
+    "submit": "Submit"
+  },
+  "pt": {
+    "intro": "Você precisa estar logado para continuar",
+    "password-loss": "Esqueci minha senha",
+    "submit": "Enviar"
+  }
+}
+</i18n>
+
+<template>
+  <div class="login-form">
+    <img src="../../assets/img/logo-vtc.svg" alt="Widgrid" />
+    <p>{{ t("intro") }}</p>
+    <Form
+      :schema="schema"
+      :locale="messages"
+      @success="({ data }) => login(data)"
+    >
+      <footer>
+        <a href>{{ t("password-loss") }}</a>
+        <Button :reverse="true" icon="arrow-right" model="glassy">
+          {{ t("submit") }}
+        </Button>
+      </footer>
+    </Form>
+  </div>
+</template>
+
+<script lang="ts">
+import { useI18n } from "../../composables/useI18n";
+import { useAuth } from "../../composables/useAuth";
+
+import Form from "../../components/Form/index.vue";
+import Button from "../../components/Button/index.vue";
+
+import schema from "./schema";
+import messages from "./messages.json";
+
+export default {
+  components: {
+    Form,
+    Button,
+  },
+  setup() {
+    const { login } = useAuth();
+    const { t } = useI18n();
+
+    return {
+      t,
+      login,
+      messages,
+      schema,
+    };
+  },
+};
+</script>
+
+<style scoped>
+.login-form {
+  width: 300px;
+  padding: 2em;
+  border: var(--card-border-width) var(--card-border-style) var(--color-x-8);
+  border-radius: var(--card-border-radius);
+}
+img {
+  display: block;
+  margin: 0 auto 2em;
+}
+p {
+  margin-bottom: 3em;
+  font-size: var(--font-size-xl);
+  text-align: center;
+}
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer a {
+  font-size: var(--font-size-xs);
+}
+</style>

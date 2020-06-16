@@ -1,0 +1,67 @@
+@mixin color {
+  /* System color props */
+  --color-info: #3b9dea;
+  --color-error: #fa4646;
+  --color-warning: #dbc53d;
+  --color-success: #46cd72;
+
+  /* Primary color props */
+  --color-a-1: #6d5aed;
+  --color-a-2: #7a66ff;
+  --color-a-3: #8875ff;
+  --color-a-4: rgba(109, 90, 237, 0.41);
+  --color-a-5: rgba(109, 90, 237, 0.28);
+  --color-a-6: rgba(109, 90, 237, 0.12);
+  --color-a-7: rgba(109, 90, 237, 0.06);
+  /* Secondary color props */
+  --color-b-1: #0bd57e;
+  --color-b-2: #10ea8b;
+  --color-b-3: #0dfd95;
+  --color-b-4: rgba(11, 213, 126, 0.41);
+  --color-b-5: rgba(11, 213, 126, 0.28);
+  --color-b-6: rgba(11, 213, 126, 0.12);
+  --color-b-7: rgba(11, 213, 126, 0.06);
+  /* Monochromatic color props */
+  --color-x-1: #171a1e;
+  --color-x-2: #22272c;
+  --color-x-3: #373e45;
+  --color-x-4: #5c636f;
+  --color-x-5: #768091;
+  --color-x-6: #8c95a3;
+  --color-x-7: #babfc8;
+  --color-x-8: #e5e7eb;
+  --color-x-9: #f2f3f5;
+  --color-x-10: #f7f8f9;
+  --color-x-11: #ffffff;
+}
+
+@mixin color-dark {
+  /* Primary dark color props */
+  --color-a-1: #0bd57d;
+  --color-a-2: #0cef8c;
+  --color-a-3: #0dfc93;
+  --color-a-4: rgba(11, 213, 125, 0.41);
+  --color-a-5: rgba(11, 213, 125, 0.28);
+  --color-a-6: rgba(11, 213, 125, 0.12);
+  --color-a-7: rgba(11, 213, 125, 0.06);
+  /* Secondary dark color props */
+  --color-b-1: #6f5bed;
+  --color-b-2: #7b66ff;
+  --color-b-3: #8a77ff;
+  --color-b-4: rgba(111, 91, 237, 0.41);
+  --color-b-5: rgba(111, 91, 237, 0.28);
+  --color-b-6: rgba(111, 91, 237, 0.12);
+  --color-b-7: rgba(111, 91, 237, 0.06);
+  /* Monochromatic dark color props */
+  --color-x-1: #ffffff;
+  --color-x-2: #f7f8f9;
+  --color-x-3: #f2f3f5;
+  --color-x-4: #e5e7eb;
+  --color-x-5: #babfc8;
+  --color-x-6: #8c95a3;
+  --color-x-7: #768091;
+  --color-x-8: #5c636f;
+  --color-x-9: #373e45;
+  --color-x-10: #22272c;
+  --color-x-11: #171a1e;
+}

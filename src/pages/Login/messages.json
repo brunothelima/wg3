@@ -1,0 +1,26 @@
+{
+  "en": {
+    "email": {
+      "placeholder": "Type your e-mail here",
+      "required": "This input is required",
+      "isEmail": "Invalid e-mail format"
+    },
+    "password": {
+      "label": "Password",
+      "placeholder": "Type your password here",
+      "required": "This input is required"
+    }
+  },
+  "pt": {
+    "email": {
+      "placeholder": "Digite seu e-mail aqui",
+      "required": "Este input é obrigatório",
+      "isEmail": "Formato de e-mail inválido"
+    },
+    "password": {
+      "label": "Senha",
+      "placeholder": "Digite sua senha aqui",
+      "required": "Este input é obrigatório"
+    }
+  }
+}
