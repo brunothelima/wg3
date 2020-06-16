@@ -16,16 +16,6 @@ describe("Button.spec.ts", () => {
     expect(button.classes()).toContain("button--medium");
   });
 
-  test("Renders a button with a given icon class", () => {
-    const wrapper = mount(Component, {
-      props: { icon: "icon-*" },
-    });
-
-    const icon = wrapper.find('[data-test="icon"]');
-    expect(icon.exists()).toBe(true);
-    expect(icon.classes()).toContain("icon-*");
-  });
-
   test("Renders a flex reversed button content", () => {
     const wrapper = mount(Component, {
       props: { reverse: true },
@@ -42,5 +32,33 @@ describe("Button.spec.ts", () => {
 
     const slot = wrapper.find('[data-test="slot"]');
     expect(slot.text()).toBe("Click Here");
+  });
+
+  test("Renders a button with a given icon", () => {
+    const wrapper = mount(Component, {
+      props: { icon: "icon-*" },
+    });
+
+    const icon = wrapper.find('[data-test="icon"]');
+    expect(icon.exists()).toBe(true);
+    expect(icon.classes()).toContain("icon-*");
+  });
+
+  test("Renders a button with a given skin", () => {
+    const wrapper = mount(Component, {
+      props: { skin: "clean" },
+    });
+
+    const button = wrapper.find('[data-test="button"]');
+    expect(button.classes()).toContain("button:clean");
+  });
+
+  test("Renders a button with a given size", () => {
+    const wrapper = mount(Component, {
+      props: { size: "big" },
+    });
+
+    const button = wrapper.find('[data-test="button"]');
+    expect(button.classes()).toContain("button--big");
   });
 });

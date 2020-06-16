@@ -1,12 +1,18 @@
 <template>
   <section class="tests">
     <h1>WG3 TESTS</h1>
-    <div v-for="(test, aIndex) of tests.testResults" :key="`test_${aIndex}`" class="test">
+    <div
+      v-for="(test, aIndex) of tests.testResults"
+      :key="`test_${aIndex}`"
+      class="test"
+    >
       <header>
-        <p><b>Test: {{test.name.split('/').pop()}}</b></p>
-        <span :class="test.status">Status: {{test.status}}</span>
+        <p>
+          <b>Test: {{ test.name.split("/").pop() }}</b>
+        </p>
+        <span :class="test.status">Status: {{ test.status }}</span>
       </header>
-        <hr>
+      <hr />
 
       <div class="assertions">
         <span><b>Assertions:</b></span>
@@ -18,11 +24,14 @@
           <span>
             <i class="icon-thick-2px" v-if="assertion.status === 'passed'"></i>
             <i class="icon-close" v-else></i>
-            Test: {{assertion.title}}
+            Test: {{ assertion.title }}
           </span>
           <div class="errors" v-if="assertion.failureMessages.length">
-            <div v-for="(error, cIndex) of assertion.failureMessages" :key="`asertion_${cIndex}`">
-              <pre>{{error}}</pre>
+            <div
+              v-for="(error, cIndex) of assertion.failureMessages"
+              :key="`asertion_${cIndex}`"
+            >
+              <pre>{{ error }}</pre>
             </div>
           </div>
         </div>
@@ -37,9 +46,9 @@ import tests from "../../__tests__/results.json";
 export default {
   setup() {
     return {
-      tests
+      tests,
     };
-  }
+  },
 };
 </script>
 

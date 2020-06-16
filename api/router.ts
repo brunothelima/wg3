@@ -1,7 +1,7 @@
-import { Router } from 'https://deno.land/x/oak/mod.ts'
-import { login } from './auth.ts'
+import { Router } from "https://deno.land/x/oak/mod.ts";
+import { login } from "./auth.ts";
 
-const router = new Router()
-router.post('/login', login)
+const router = new Router();
+router.post("/login", login);
 
-export default router
+export default router;

@@ -6,7 +6,7 @@ const mock: User = {
   id: 0,
   email: "email@test.com",
   name: "John Doe",
-  jwt: 'JWTMOCK'
+  jwt: "JWTMOCK",
 };
 
 describe("useUser", () => {
@@ -20,9 +20,7 @@ describe("useUser", () => {
     user.value = mock;
     await nextTick();
 
-    const cache = JSON.parse(
-      localStorage.getItem("wg3.user")
-    )
+    const cache = JSON.parse(localStorage.getItem("wg3.user"));
 
     expect(cache).toStrictEqual(user.value);
   });
