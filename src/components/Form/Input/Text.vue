@@ -18,16 +18,8 @@
 
 <script lang="ts">
 export default {
-  props: [
-    "name",
-    "value",
-    "placeholder",
-    "disabled",
-    "readonly",
-    "errors",
-    "t",
-  ],
-};
+  props: ['name', 'value', 'placeholder', 'disabled', 'readonly', 'errors', 't']
+}
 </script>
 
 <style scoped>

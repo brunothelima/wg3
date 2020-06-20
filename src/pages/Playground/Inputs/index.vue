@@ -11,36 +11,37 @@
 
 <template>
   <section class="inputs">
-    <h1>{{ t("title") }}</h1>
+    <h1>{{ t('title') }}</h1>
     <hr />
     <Form :schema="schema" :locale="messages" />
   </section>
 </template>
 
 <script lang="ts">
-import { useI18n } from "../../../composables/useI18n";
-import Form from "../../../components/Form/index.vue";
-import schema from "./schema";
-import messages from "./messages.json";
+import { defineComponent } from 'vue'
+import { useI18n } from '../../../composables/useI18n'
+import Form from '../../../components/Form/index.vue'
+import schema from './schema'
+import messages from './messages.json'
 
-export default {
+export default defineComponent({
   components: {
-    Form,
+    Form
   },
   setup() {
-    const { t } = useI18n();
+    const { t } = useI18n()
 
     return {
       t,
       schema,
-      messages,
-    };
-  },
-};
+      messages
+    }
+  }
+})
 </script>
 
 <style lang="scss" scoped>
-@import "../../../assets/scss/vars";
+@import '../../../assets/scss/vars';
 
 h1 {
   color: var(--color-a-1);

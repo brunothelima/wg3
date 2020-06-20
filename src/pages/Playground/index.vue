@@ -11,15 +11,16 @@
 </template>
 
 <script lang="ts">
-import Settings from "../../components/Settings.vue";
-import Buttons from "./Buttons/index.vue";
-import Icons from "./Icons.vue";
-import Colors from "./Colors/index.vue";
-import Text from "./Text/index.vue";
-import Modals from "./Modals/index.vue";
-import Inputs from "./Inputs/index.vue";
+import { defineComponent } from 'vue'
+import Settings from '../../components/Settings.vue'
+import Buttons from './Buttons/index.vue'
+import Icons from './Icons.vue'
+import Colors from './Colors/index.vue'
+import Text from './Text/index.vue'
+import Modals from './Modals/index.vue'
+import Inputs from './Inputs/index.vue'
 
-export default {
+export default defineComponent({
   components: {
     Text,
     Icons,
@@ -27,9 +28,9 @@ export default {
     Buttons,
     Settings,
     Modals,
-    Inputs,
-  },
-};
+    Inputs
+  }
+})
 </script>
 
 <style scoped>

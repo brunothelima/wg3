@@ -10,18 +10,18 @@
 </template>
 
 <script lang="ts">
-import { onMounted, onUnmounted } from "vue";
+import { onMounted, onUnmounted } from 'vue'
 
 export default {
   setup() {
     onMounted(() => {
-      document.body.classList.add("scroll-lock");
-    });
+      document.body.classList.add('scroll-lock')
+    })
     onUnmounted(() => {
-      document.body.classList.remove("scroll-lock");
-    });
-  },
-};
+      document.body.classList.remove('scroll-lock')
+    })
+  }
+}
 </script>
 
 <style scoped>
@@ -50,7 +50,7 @@ export default {
   z-index: 2;
   margin: 2em auto;
 }
-.modal__content > [class*="modal:"] {
+.modal__content > [class*='modal:'] {
   opacity: 0;
   animation-name: fade-in;
   animation-duration: var(--transition-duration);

@@ -21,42 +21,43 @@
 
 <template>
   <div :class="`${size}-buttons-list`">
-    <Button :size="size" :skin="skin">{{ t("button") }}</Button>
+    <Button :size="size" :skin="skin">{{ t('button') }}</Button>
     <Button :size="size" :skin="skin" icon="icon-form">
-      {{ t("icon-left") }}
+      {{ t('icon-left') }}
     </Button>
     <Button :size="size" :skin="skin" :reverse="true" icon="icon-form">
-      {{ t("icon-right") }}
+      {{ t('icon-right') }}
     </Button>
     <Button :size="size" :skin="skin" class="button--hover">
-      {{ t("hover") }}
+      {{ t('hover') }}
     </Button>
     <Button :size="size" :skin="skin" class="button--active">
-      {{ t("active") }}
+      {{ t('active') }}
     </Button>
     <Button :size="size" :skin="skin" :disabled="true">
-      {{ t("disabled") }}
+      {{ t('disabled') }}
     </Button>
   </div>
 </template>
 
 <script lang="ts">
-import { useI18n } from "../../../composables/useI18n";
-import Button from "../../../components/Button/index.vue";
+import { useI18n } from '../../../composables/useI18n'
+import Button from '../../../components/Button/index.vue'
+import { defineComponent } from 'vue'
 
-export default {
+export default defineComponent({
   components: {
-    Button,
+    Button
   },
-  props: ["size", "title", "skin"],
+  props: ['size', 'title', 'skin'],
   setup() {
-    return useI18n();
-  },
-};
+    return useI18n()
+  }
+})
 </script>
 
 <style lang="scss" scoped>
-[class*="-buttons-list"] {
+[class*='-buttons-list'] {
   display: flex;
   align-items: flex-end;
   flex-wrap: wrap;

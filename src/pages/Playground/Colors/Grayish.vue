@@ -11,23 +11,24 @@
 
 <template>
   <div class="grayish-colors">
-    <h6>{{ t("title") }}</h6>
+    <h6>{{ t('title') }}</h6>
     <Palette class="grayish" :range="11" cssVar="--color-x" />
   </div>
 </template>
 
 <script lang="ts">
-import { useI18n } from "../../../composables/useI18n";
-import Palette from "./Palette.vue";
+import { defineComponent } from 'vue'
+import { useI18n } from '../../../composables/useI18n'
+import Palette from './Palette.vue'
 
-export default {
+export default defineComponent({
   components: {
-    Palette,
+    Palette
   },
   setup() {
-    return useI18n();
-  },
-};
+    return useI18n()
+  }
+})
 </script>
 
 <style scoped>

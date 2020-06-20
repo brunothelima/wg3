@@ -19,56 +19,53 @@
 
 <template>
   <div class="notification-demo">
-    <Button
-      model="glassy"
-      icon="icon-info"
-      :reverse="true"
-      @click="notify({ message: t('message') })"
-      >{{ t("infoButton") }}</Button
-    >
+    <Button model="glassy" icon="icon-info" :reverse="true" @click="notify({ message: t('message') })">{{
+      t('infoButton')
+    }}</Button>
     <Button
       model="glassy"
       icon="icon-exclamation-mark"
       :reverse="true"
       @click="notify({ message: t('message'), status: 'warning' })"
-      >{{ t("warningButton") }}</Button
+      >{{ t('warningButton') }}</Button
     >
     <Button
       model="glassy"
       icon="icon-close"
       :reverse="true"
       @click="notify({ message: t('message'), status: 'error' })"
-      >{{ t("errorButton") }}</Button
+      >{{ t('errorButton') }}</Button
     >
     <Button
       model="glassy"
       icon="icon-thick-2px"
       :reverse="true"
       @click="notify({ message: t('message'), status: 'success' })"
-      >{{ t("successButton") }}</Button
+      >{{ t('successButton') }}</Button
     >
   </div>
 </template>
 
 <script lang="ts">
-import { useI18n } from "../../../composables/useI18n";
-import Button from "../../../components/Button/index.vue";
-import { useNotifications } from "../../../composables/useNotifications";
+import { defineComponent } from 'vue'
+import { useI18n } from '../../../composables/useI18n'
+import { useNotifications } from '../../../composables/useNotifications'
+import Button from '../../../components/Button/index.vue'
 
-export default {
+export default defineComponent({
   components: {
-    Button,
+    Button
   },
   setup() {
-    const { t } = useI18n();
-    const { notify } = useNotifications();
+    const { t } = useI18n()
+    const { notify } = useNotifications()
 
     return {
       t,
-      notify,
-    };
-  },
-};
+      notify
+    }
+  }
+})
 </script>
 
 <style scoped>

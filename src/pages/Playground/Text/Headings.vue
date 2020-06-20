@@ -23,39 +23,39 @@
   <div class="headings">
     <h1>
       <code>$font-size-h1</code>
-      {{ t("h1") }}
+      {{ t('h1') }}
     </h1>
     <h2>
       <code>$font-size-h2</code>
-      {{ t("h2") }}
+      {{ t('h2') }}
     </h2>
     <h3>
       <code>$font-size-h3</code>
-      {{ t("h3") }}
+      {{ t('h3') }}
     </h3>
     <h4>
       <code>$font-size-h4</code>
-      {{ t("h4") }}
+      {{ t('h4') }}
     </h4>
     <h5>
       <code>$font-size-h5</code>
-      {{ t("h5") }}
+      {{ t('h5') }}
     </h5>
     <h6>
       <code>$font-size-h6</code>
-      {{ t("h6") }}
+      {{ t('h6') }}
     </h6>
   </div>
 </template>
 
 <script lang="ts">
-import { useI18n } from "../../../composables/useI18n";
+import { useI18n } from '../../../composables/useI18n'
 
 export default {
   setup() {
-    return useI18n();
-  },
-};
+    return useI18n()
+  }
+}
 </script>
 
 <style lang="scss" scoped>

@@ -1,7 +1,7 @@
 <i18n>
 {
   "en": {
-    "heading": "Modals and notificações",
+    "heading": "Modals and notifications",
     "notificationButton": "Notefy me!",
     "notificationMessage": "Notification message"
   },
@@ -15,7 +15,7 @@
 
 <template>
   <section class="modals">
-    <h1>{{ t("heading") }}</h1>
+    <h1>{{ t('heading') }}</h1>
     <hr />
     <NotificationsDemo />
     <ConfirmationDemo />
@@ -23,23 +23,20 @@
 </template>
 
 <script lang="ts">
-import { useI18n } from "../../../composables/useI18n";
-import ConfirmationDemo from "./ConfirmationDemo.vue";
-import NotificationsDemo from "./NotificationsDemo.vue";
+import { defineComponent } from 'vue'
+import { useI18n } from '../../../composables/useI18n'
+import ConfirmationDemo from './ConfirmationDemo.vue'
+import NotificationsDemo from './NotificationsDemo.vue'
 
-export default {
+export default defineComponent({
   components: {
     ConfirmationDemo,
-    NotificationsDemo,
+    NotificationsDemo
   },
   setup() {
-    const { t } = useI18n();
-
-    return {
-      t,
-    };
-  },
-};
+    return useI18n()
+  }
+})
 </script>
 
 <style scoped>

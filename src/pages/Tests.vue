@@ -1,14 +1,10 @@
 <template>
   <section class="tests">
     <h1>WG3 TESTS</h1>
-    <div
-      v-for="(test, aIndex) of tests.testResults"
-      :key="`test_${aIndex}`"
-      class="test"
-    >
+    <div v-for="(test, aIndex) of tests.testResults" :key="`test_${aIndex}`" class="test">
       <header>
         <p>
-          <b>Test: {{ test.name.split("/").pop() }}</b>
+          <b>Test: {{ test.name.split('/').pop() }}</b>
         </p>
         <span :class="test.status">Status: {{ test.status }}</span>
       </header>
@@ -16,21 +12,14 @@
 
       <div class="assertions">
         <span><b>Assertions:</b></span>
-        <div
-          v-for="(assertion, bIndex) of test.assertionResults"
-          :key="`asertion_${bIndex}`"
-          class="assertion"
-        >
+        <div v-for="(assertion, bIndex) of test.assertionResults" :key="`asertion_${bIndex}`" class="assertion">
           <span>
             <i class="icon-thick-2px" v-if="assertion.status === 'passed'"></i>
             <i class="icon-close" v-else></i>
             Test: {{ assertion.title }}
           </span>
           <div class="errors" v-if="assertion.failureMessages.length">
-            <div
-              v-for="(error, cIndex) of assertion.failureMessages"
-              :key="`asertion_${cIndex}`"
-            >
+            <div v-for="(error, cIndex) of assertion.failureMessages" :key="`asertion_${cIndex}`">
               <pre>{{ error }}</pre>
             </div>
           </div>
@@ -41,15 +30,16 @@
 </template>
 
 <script lang="ts">
-import tests from "../../__tests__/results.json";
+import { defineComponent } from 'vue'
+import tests from '../../__tests__/results.json'
 
-export default {
+export default defineComponent({
   setup() {
     return {
-      tests,
-    };
-  },
-};
+      tests
+    }
+  }
+})
 </script>
 
 <style scoped>

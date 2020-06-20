@@ -1,19 +1,17 @@
 <template>
   <ul class="color-palette">
-    <li
-      v-for="(color, index) in Array(range)"
-      :key="color"
-      :style="`background-color: var(${cssVar}-${index + 1})`"
-    >
+    <li v-for="(color, index) in Array(range)" :key="color" :style="`background-color: var(${cssVar}-${index + 1})`">
       <code>{{ `${cssVar}-${index + 1}` }}</code>
     </li>
   </ul>
 </template>
 
 <script lang="ts">
-export default {
-  props: ["cssVar", "range"],
-};
+import { defineComponent } from 'vue'
+
+export default defineComponent({
+  props: ['cssVar', 'range']
+})
 </script>
 
 <style scoped>

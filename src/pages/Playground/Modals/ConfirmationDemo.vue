@@ -27,14 +27,10 @@
 
 <template>
   <div class="confirmation-demo">
-    <h6>{{ t("heading") }}</h6>
-    <Button
-      model="glassy"
-      icon="icon-thick-2px"
-      :reverse="true"
-      @click="showModal = true"
-      >{{ t("modalButton") }}</Button
-    >
+    <h6>{{ t('heading') }}</h6>
+    <Button model="glassy" icon="icon-thick-2px" :reverse="true" @click="showModal = true">{{
+      t('modalButton')
+    }}</Button>
     <Confirmation
       icon="icon-trash-bin-small"
       :header="t('modal.header')"
@@ -46,40 +42,37 @@
     <Modal v-if="showModal">
       <Confirmation
         @cancel="showModal = false"
-        @buttonLeftClick="showModal = false"
-        @buttonRightClick="showModal = false"
         icon="icon-trash-bin-small"
         :header="t('modal.header')"
         :title="t('modal.title')"
         :text="t('modal.text')"
         :buttonLeft="t('modal.buttonLeft')"
+        @leftButtonClick="showModal = false"
         :buttonRight="t('modal.buttonRight')"
+        @rightButtonClick="showModal = false"
       />
     </Modal>
   </div>
 </template>
 
 <script lang="ts">
-import { useI18n } from "../../../composables/useI18n";
-import Modal from "../../../components/Modal/index.vue";
-import Button from "../../../components/Button/index.vue";
-import Confirmation from "../../../components/Modal/Confirmation.vue";
+import { defineComponent } from 'vue'
+import { useI18n } from '../../../composables/useI18n'
+import Modal from '../../../components/Modal/index.vue'
+import Button from '../../../components/Button/index.vue'
+import Confirmation from '../../../components/Modal/Confirmation.vue'
 
-export default {
+export default defineComponent({
   data: () => ({ showModal: false }),
   components: {
     Modal,
     Button,
-    Confirmation,
+    Confirmation
   },
   setup() {
-    const { t } = useI18n();
-
-    return {
-      t,
-    };
-  },
-};
+    return useI18n()
+  }
+})
 </script>
 
 <style scoped>

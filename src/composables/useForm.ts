@@ -1,25 +1,25 @@
-import { reactive, computed } from "vue";
-import { FormSchema, FormInput } from "../types/form";
+import { reactive, computed } from 'vue'
+import { FormSchema, FormInput } from '../types/form'
 
 /**
  * Clones the given schema and insures it has the correct structure
  */
 export const createForm = (source: FormSchema) => {
   for (let input of Object.values(source)) {
-    if (!("value" in input)) {
-      input.value = "";
+    if (!('value' in input)) {
+      input.value = ''
     }
 
-    if (!("errors" in input)) {
-      input.errors = [];
+    if (!('errors' in input)) {
+      input.errors = []
     }
   }
-  return source;
-};
+  return source
+}
 
 export const useForm = (source: FormSchema) => {
   // Reactive schema from the given schema
-  const schema = reactive(source);
+  const schema = reactive(source)
 
   /**
    * Computed variable, containing a reduced object
@@ -36,9 +36,9 @@ export const useForm = (source: FormSchema) => {
    */
   const data = computed(() => {
     return Object.keys(schema)
-      .map((name) => ({ [name]: schema[name].value || "" }))
-      .reduce((prev, next) => ({ ...prev, ...next }));
-  });
+      .map((name) => ({ [name]: schema[name].value || '' }))
+      .reduce((prev, next) => ({ ...prev, ...next }))
+  })
 
   /**
    * Computed variable, containing a reduced object
@@ -56,8 +56,8 @@ export const useForm = (source: FormSchema) => {
   const errors = computed(() => {
     return Object.keys(schema)
       .map((name) => ({ [name]: schema[name].errors || [] }))
-      .reduce((prev, next) => ({ ...prev, ...next }));
-  });
+      .reduce((prev, next) => ({ ...prev, ...next }))
+  })
 
   /**
    * This function iterates over each schema input,
@@ -74,32 +74,32 @@ export const useForm = (source: FormSchema) => {
    */
   const validate = async () => {
     for (let name in schema) {
-      let input = schema[name];
+      let input = schema[name]
 
-      let { value, validations } = input;
+      let { value, validations } = input
 
-      input.errors = []; // Reseting errors array
+      input.errors = [] // Reseting errors array
 
       for (let key in validations) {
-        let { handler, message } = validations[key];
+        let { handler, message } = validations[key]
 
         // Awaits for async validations as well
-        let error = await handler(value);
+        let error = await handler(value)
 
         if (error) {
-          input.errors.push(message);
+          input.errors.push(message)
         }
       }
     }
     // Checks for any input that accused an error
-    const query = ({ errors }: FormInput) => errors?.length;
-    return !Object.values(schema).some(query);
-  };
+    const query = ({ errors }: FormInput) => errors?.length
+    return !Object.values(schema).some(query)
+  }
 
   return {
     data,
     schema,
     errors,
-    validate,
-  };
-};
+    validate
+  }
+}

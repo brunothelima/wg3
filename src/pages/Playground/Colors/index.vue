@@ -11,7 +11,7 @@
 
 <template>
   <section class="colors-demo">
-    <h1>{{ t("title") }}</h1>
+    <h1>{{ t('title') }}</h1>
     <hr />
     <div class="css-vars">
       <Primary />
@@ -24,29 +24,30 @@
 </template>
 
 <script lang="ts">
-import { useI18n } from "../../../composables/useI18n";
-import Primary from "./Primary.vue";
-import Secondary from "./Secondary.vue";
-import Grayish from "./Grayish.vue";
-import System from "./System.vue";
-import Gradient from "./Gradient.vue";
+import { defineComponent } from 'vue'
+import { useI18n } from '../../../composables/useI18n'
+import Primary from './Primary.vue'
+import Secondary from './Secondary.vue'
+import Grayish from './Grayish.vue'
+import System from './System.vue'
+import Gradient from './Gradient.vue'
 
-export default {
+export default defineComponent({
   components: {
     Primary,
     Secondary,
     Grayish,
     System,
-    Gradient,
+    Gradient
   },
   setup() {
-    return useI18n();
-  },
-};
+    return useI18n()
+  }
+})
 </script>
 
 <style lang="scss" scoped>
-@import "../../../assets/scss/vars";
+@import '../../../assets/scss/vars';
 
 .colors-demo > h1 {
   color: var(--color-a-1);

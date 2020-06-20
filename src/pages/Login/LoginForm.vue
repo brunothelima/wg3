@@ -16,16 +16,12 @@
 <template>
   <div class="login-form">
     <img src="../../assets/img/logo-vtc.svg" alt="Widgrid" />
-    <p>{{ t("intro") }}</p>
-    <Form
-      :schema="schema"
-      :locale="messages"
-      @success="({ data }) => login(data)"
-    >
+    <p>{{ t('intro') }}</p>
+    <Form :schema="schema" :locale="messages" @success="({ data }) => login(data)">
       <footer>
-        <a href>{{ t("password-loss") }}</a>
+        <a href>{{ t('password-loss') }}</a>
         <Button :reverse="true" icon="arrow-right" model="glassy">
-          {{ t("submit") }}
+          {{ t('submit') }}
         </Button>
       </footer>
     </Form>
@@ -33,32 +29,33 @@
 </template>
 
 <script lang="ts">
-import { useI18n } from "../../composables/useI18n";
-import { useAuth } from "../../composables/useAuth";
+import { defineComponent } from 'vue'
+import { useI18n } from '../../composables/useI18n'
+import { useAuth } from '../../composables/useAuth'
 
-import Form from "../../components/Form/index.vue";
-import Button from "../../components/Button/index.vue";
+import Form from '../../components/Form/index.vue'
+import Button from '../../components/Button/index.vue'
 
-import schema from "./schema";
-import messages from "./messages.json";
+import schema from './schema'
+import messages from './messages.json'
 
-export default {
+export default defineComponent({
   components: {
     Form,
-    Button,
+    Button
   },
   setup() {
-    const { login } = useAuth();
-    const { t } = useI18n();
+    const { login } = useAuth()
+    const { t } = useI18n()
 
     return {
       t,
       login,
       messages,
-      schema,
-    };
-  },
-};
+      schema
+    }
+  }
+})
 </script>
 
 <style scoped>

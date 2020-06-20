@@ -11,7 +11,7 @@
 
 <template>
   <div class="labels">
-    <h6>{{ t("title") }}</h6>
+    <h6>{{ t('title') }}</h6>
     <ul>
       <li class="xxl"><code>--font-size-xxl</code>Larger font size</li>
       <li class="xl"><code>--font-size-xl</code>Slightly large text size</li>
@@ -23,13 +23,13 @@
 </template>
 
 <script lang="ts">
-import { useI18n } from "../../../composables/useI18n";
+import { useI18n } from '../../../composables/useI18n'
 
 export default {
   setup() {
-    return useI18n();
-  },
-};
+    return useI18n()
+  }
+}
 </script>
 <style scoped>
 ul {

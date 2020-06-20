@@ -12,10 +12,10 @@
       <span v-if="text">{{ text }}</span>
     </main>
     <footer>
-      <button v-if="buttonLeft" @click="$emit('buttonLeftClick')">
+      <button v-if="buttonLeft" @click="$emit('leftButtonClick')">
         {{ buttonLeft }}
       </button>
-      <button v-if="buttonRight" @click="$emit('buttonRightClick')">
+      <button v-if="buttonRight" @click="$emit('rightButtonClick')">
         {{ buttonRight }}
       </button>
     </footer>
@@ -23,38 +23,30 @@
 </template>
 
 <script lang="ts">
-import { onMounted, onUnmounted } from "vue";
+import { onMounted, onUnmounted } from 'vue'
 
 export default {
-  props: [
-    "status",
-    "header",
-    "icon",
-    "title",
-    "text",
-    "buttonLeft",
-    "buttonRight",
-  ],
+  props: ['status', 'header', 'icon', 'title', 'text', 'buttonLeft', 'buttonRight'],
   setup(props, context) {
     const onEsc = (event: KeyboardEvent) => {
-      if (event.key === "Escape") context.emit("cancel", event);
-    };
+      if (event.key === 'Escape') context.emit('cancel', event)
+    }
 
     onMounted(() => {
-      window.addEventListener("keyup", onEsc);
-    });
+      window.addEventListener('keyup', onEsc)
+    })
 
     onUnmounted(() => {
-      window.removeEventListener("keyup", onEsc);
-    });
+      window.removeEventListener('keyup', onEsc)
+    })
 
-    return {};
-  },
-};
+    return {}
+  }
+}
 </script>
 
 <style lang="scss" scoped>
-@import "../../assets/scss/vars";
+@import '../../assets/scss/vars';
 
 .modal\:confirmation {
   display: flex;
@@ -132,10 +124,9 @@ footer button:hover {
 }
 footer button + button {
   color: var(--color-error);
-  border-left: var(--card-border-width) var(--card-border-style)
-    var(--color-x-8);
+  border-left: var(--card-border-width) var(--card-border-style) var(--color-x-8);
 }
-footer button[style*="color:"] {
+footer button[style*='color:'] {
   font-weight: 700;
 }
 </style>

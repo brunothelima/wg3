@@ -6,16 +6,17 @@
 </template>
 
 <script lang="ts">
-import LoginForm from "./LoginForm.vue";
-import Settings from "../../components/Settings.vue";
+import LoginForm from './LoginForm.vue'
+import Settings from '../../components/Settings.vue'
+import { defineComponent } from 'vue'
 
-export default {
-  name: "Login",
+export default defineComponent({
+  name: 'Login',
   components: {
     LoginForm,
-    Settings,
-  },
-};
+    Settings
+  }
+})
 </script>
 
 <style scoped>

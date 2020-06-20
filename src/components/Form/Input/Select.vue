@@ -2,27 +2,17 @@
   <div :class="['input:select', { 'input:select--invalid': errors }]">
     <slot name="before" />
     <div class="input:select__wrapper">
-      <select
-        :id="`${name}Id`"
-        :name="name"
-        :value="value"
-        :disabled="disabled"
-        :readonly="readonly"
-      >
-        <option
-          v-for="option in options"
-          :key="option"
-          :value="option.value"
-          :selected="option.value === value"
-          >{{ (t && t(option.label)) || option.label }}</option
-        >
+      <select :id="`${name}Id`" :name="name" :value="value" :disabled="disabled" :readonly="readonly">
+        <option v-for="option in options" :key="option" :value="option.value" :selected="option.value === value">{{
+          (t && t(option.label)) || option.label
+        }}</option>
         <slot />
       </select>
       <div class="input:select__selected" v-if="selected">
         {{ (t && t(selected)) || selected }}
       </div>
       <div class="input:select__placeholder" v-else>
-        {{ (t && t(placeholder)) || "Select an option" }}
+        {{ (t && t(placeholder)) || 'Select an option' }}
       </div>
       <i class="icon-caret-down" color="a" />
     </div>
@@ -31,36 +21,27 @@
 </template>
 
 <script lang="ts">
-import { FormInputOption } from "../../../types/form";
-import { computed } from "vue";
+import { computed, defineComponent } from 'vue'
+import { FormInputOption, FormInputSelect } from '../../../types/form'
 
-export default {
-  props: [
-    "name",
-    "value",
-    "options",
-    "placeholder",
-    "disabled",
-    "readonly",
-    "errors",
-    "t",
-  ],
-  setup(props) {
+export default defineComponent({
+  props: ['name', 'value', 'options', 'placeholder', 'disabled', 'readonly', 'errors', 't'],
+  setup(props: FormInputSelect) {
     // Computes the current select option title for display
     const selected = computed(() => {
-      if (!props.value) return null;
+      if (!props.value) return null
       // Query for the selected option title
       let query = (option: FormInputOption) => {
-        return String(option.value) === props.value;
-      };
-      return props.options.find(query).label;
-    });
+        return String(option.value) === props.value
+      }
+      return props.options.find(query).label
+    })
 
     return {
-      selected,
-    };
-  },
-};
+      selected
+    }
+  }
+})
 </script>
 
 <style scoped>
@@ -110,7 +91,7 @@ i {
 .input\:select--error .input-select__wrapper {
   border-color: var(--color-error);
 }
-.input\:select--error [class*="icon-"] {
+.input\:select--error [class*='icon-'] {
   color: var(--color-error);
 }
 </style>

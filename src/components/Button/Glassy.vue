@@ -5,7 +5,9 @@
 </template>
 
 <script lang="ts">
-export default {};
+import { defineComponent } from 'vue'
+
+export default defineComponent({})
 </script>
 
 <style scoped>
@@ -17,7 +19,7 @@ export default {};
   font-weight: 600;
 }
 .button\:glassy:before {
-  content: "";
+  content: '';
   display: block;
   position: absolute;
   z-index: 0;

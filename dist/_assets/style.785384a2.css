@@ -1,10 +1,5 @@
 @charset "UTF-8";
-@import url(
-  https://fonts.googleapis.com/css?family=Montserrat:400,
-  400i,
-  600,
-  600i
-);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400, 400i, 600, 600i);
 :root {
   --button-padding: 1em;
   --button-border-radius: 0.5em;
@@ -40,8 +35,8 @@
   --color-x-9: #f2f3f5;
   --color-x-10: #f7f8f9;
   --color-x-11: #ffffff;
-  --font-family: "Montserrat", Arial, Helvetica, sans-serif;
-  --icons-family: "Widgricon";
+  --font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  --icons-family: 'Widgricon';
   --font-size: 14px;
   --font-size-h1: 4.571em;
   --font-size-h2: 4em;
@@ -148,22 +143,22 @@ button,
 select {
   text-transform: none;
 }
-[type="button"],
-[type="reset"],
-[type="submit"],
+[type='button'],
+[type='reset'],
+[type='submit'],
 button {
   -webkit-appearance: button;
 }
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner,
+[type='button']::-moz-focus-inner,
+[type='reset']::-moz-focus-inner,
+[type='submit']::-moz-focus-inner,
 button::-moz-focus-inner {
   border-style: none;
   padding: 0;
 }
-[type="button"]:-moz-focusring,
-[type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring,
+[type='button']:-moz-focusring,
+[type='reset']:-moz-focusring,
+[type='submit']:-moz-focusring,
 button:-moz-focusring {
   outline: ButtonText dotted 1px;
 }
@@ -180,20 +175,20 @@ progress {
 textarea {
   overflow: auto;
 }
-[type="checkbox"],
-[type="radio"] {
+[type='checkbox'],
+[type='radio'] {
   box-sizing: border-box;
   padding: 0;
 }
-[type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button {
+[type='number']::-webkit-inner-spin-button,
+[type='number']::-webkit-outer-spin-button {
   height: auto;
 }
-[type="search"] {
+[type='search'] {
   -webkit-appearance: textfield;
   outline-offset: -2px;
 }
-[type="search"]::-webkit-search-decoration {
+[type='search']::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 ::-webkit-file-upload-button {
@@ -295,7 +290,7 @@ blockquote:after,
 blockquote:before,
 q:after,
 q:before {
-  content: "";
+  content: '';
   content: none;
 }
 a {
@@ -346,15 +341,14 @@ select {
 @font-face {
   font-family: Widgricon;
   src: url(/_assets/Widgricon.76942452.eot);
-  src: url(/_assets/Widgricon.76942452.eot) format("embedded-opentype"),
-    url(/_assets/Widgricon.7693b29a.ttf) format("truetype"),
-    url(/_assets/Widgricon.5be00b2a.woff) format("woff"),
-    url(/_assets/Widgricon.7693b99e.svg) format("svg");
+  src: url(/_assets/Widgricon.76942452.eot) format('embedded-opentype'),
+    url(/_assets/Widgricon.7693b29a.ttf) format('truetype'), url(/_assets/Widgricon.5be00b2a.woff) format('woff'),
+    url(/_assets/Widgricon.7693b99e.svg) format('svg');
   font-weight: 400;
   font-style: normal;
 }
-[class*=" icon-"],
-[class^="icon-"] {
+[class*=' icon-'],
+[class^='icon-'] {
   font-family: var(--icons-family);
   font-style: normal;
   font-weight: 400;
@@ -366,202 +360,202 @@ select {
   -moz-osx-font-smoothing: grayscale;
 }
 .icon-accordion:before {
-  content: "";
+  content: '';
 }
 .icon-anchor:before {
-  content: "";
+  content: '';
 }
 .icon-asterisk:before {
-  content: "";
+  content: '';
 }
 .icon-custom-form:before {
-  content: "";
+  content: '';
 }
 .icon-template:before {
-  content: "";
+  content: '';
 }
 .icon-earth-solid:before {
-  content: "";
+  content: '';
 }
 .icon-earth:before {
-  content: "";
+  content: '';
 }
 .icon-filter:before {
-  content: "";
+  content: '';
 }
 .icon-grid-view-small:before {
-  content: "";
+  content: '';
 }
 .icon-grid-view:before {
-  content: "";
+  content: '';
 }
 .icon-grid-view-solid:before {
-  content: "";
+  content: '';
 }
 .icon-icon:before {
-  content: "";
+  content: '';
 }
 .icon-layout:before {
-  content: "";
+  content: '';
 }
 .icon-small-list:before {
-  content: "";
+  content: '';
 }
 .icon-trash-bin-small:before {
-  content: "";
+  content: '';
 }
 .icon-thick-2px:before {
-  content: "";
+  content: '';
 }
 .icon-avatar:before {
-  content: "";
+  content: '';
 }
 .icon-button:before {
-  content: "";
+  content: '';
 }
 .icon-calendar:before {
-  content: "";
+  content: '';
 }
 .icon-caret-down:before {
-  content: "";
+  content: '';
 }
 .icon-caret-left:before {
-  content: "";
+  content: '';
 }
 .icon-caret-right:before {
-  content: "";
+  content: '';
 }
 .icon-caret-up:before {
-  content: "";
+  content: '';
 }
 .icon-arrow-down:before {
-  content: "";
+  content: '';
 }
 .icon-arrow-left:before {
-  content: "󩀒";
+  content: '󩀒';
 }
 .icon-arrow-right:before {
-  content: "";
+  content: '';
 }
 .icon-arrow-up:before {
-  content: "";
+  content: '';
 }
 .icon-checkmark:before {
-  content: "";
+  content: '';
 }
 .icon-close-small:before {
-  content: "";
+  content: '';
 }
 .icon-close:before {
-  content: "";
+  content: '';
 }
 .icon-form:before {
-  content: "";
+  content: '';
 }
 .icon-draggable-1:before {
-  content: "";
+  content: '';
 }
 .icon-draggable-2:before {
-  content: "";
+  content: '';
 }
 .icon-engine:before {
-  content: "";
+  content: '';
 }
 .icon-exclamation-mark:before {
-  content: "";
+  content: '';
 }
 .icon-eye-closed:before {
-  content: "";
+  content: '';
 }
 .icon-eye:before {
-  content: "";
+  content: '';
 }
 .icon-floppy-disk:before {
-  content: "";
+  content: '';
 }
 .icon-focal-point:before {
-  content: "";
+  content: '';
 }
 .icon-folder:before {
-  content: "";
+  content: '';
 }
 .icon-folder-solid:before {
-  content: "";
+  content: '';
 }
 .icon-form2:before {
-  content: "";
+  content: '';
 }
 .icon-hamburger:before {
-  content: "";
+  content: '';
 }
 .icon-heading:before {
-  content: "";
+  content: '';
 }
 .icon-horizontal-dots:before {
-  content: "";
+  content: '';
 }
 .icon-iframe:before {
-  content: "";
+  content: '';
 }
 .icon-image:before {
-  content: "";
+  content: '';
 }
 .icon-info:before {
-  content: "";
+  content: '';
 }
 .icon-list-view-solid:before {
-  content: "";
+  content: '';
 }
 .icon-list-view:before {
-  content: "";
+  content: '';
 }
 .icon-magnifying-glass:before {
-  content: "";
+  content: '';
 }
 .icon-moon:before {
-  content: "";
+  content: '';
 }
 .icon-pencil:before {
-  content: "";
+  content: '';
 }
 .icon-plus:before {
-  content: "";
+  content: '';
 }
 .icon-plus-small:before {
-  content: "";
+  content: '';
 }
 .icon-question-mark:before {
-  content: "";
+  content: '';
 }
 .icon-quote:before {
-  content: "";
+  content: '';
 }
 .icon-sign-out:before {
-  content: "";
+  content: '';
 }
 .icon-sun:before {
-  content: "";
+  content: '';
 }
 .icon-text:before {
-  content: "";
+  content: '';
 }
 .icon-trash-bin:before {
-  content: "";
+  content: '';
 }
 .icon-upload:before {
-  content: "";
+  content: '';
 }
 .icon-vertical-dots:before {
-  content: "";
+  content: '';
 }
 .icon-video:before {
-  content: "";
+  content: '';
 }
 .icon-big-list:before {
-  content: "";
+  content: '';
 }
 .icon-big-list-solid:before {
-  content: "";
+  content: '';
 }
 body,
 html {
@@ -630,12 +624,12 @@ code {
   font-size: var(--font-size);
   font-weight: 400;
 }
-[class*=" icon-"][color="a"],
-[class^="icon-"][color="a"] {
+[class*=' icon-'][color='a'],
+[class^='icon-'][color='a'] {
   color: var(--color-a-1);
 }
-[class*=" icon-"][color="b"],
-[class^="icon-"][color="b"] {
+[class*=' icon-'][color='b'],
+[class^='icon-'][color='b'] {
   color: var(--color-b-1);
 }
 .wg3 {
@@ -801,7 +795,7 @@ i[data-v-b7096ca6] {
 .input\:select--error .input-select__wrapper[data-v-b7096ca6] {
   border-color: var(--color-error);
 }
-.input\:select--error [class*="icon-"][data-v-b7096ca6] {
+.input\:select--error [class*='icon-'][data-v-b7096ca6] {
   color: var(--color-error);
 }
 .field[data-v-397f229e] {
@@ -823,10 +817,8 @@ i[data-v-b7096ca6] {
   align-items: flex-start;
   padding: 1em 2em;
   margin: 0.5em 0 0.5em 1em;
-  border-bottom: var(--input-border-width) var(--input-border-style)
-    var(--color-error);
-  border-left: var(--input-border-width) var(--input-border-style)
-    var(--color-error);
+  border-bottom: var(--input-border-width) var(--input-border-style) var(--color-error);
+  border-left: var(--input-border-width) var(--input-border-style) var(--color-error);
   border-bottom-left-radius: var(--input-border-radius);
 }
 .field__errors li[data-v-397f229e] {
@@ -860,7 +852,7 @@ i[data-v-b7096ca6] {
   font-weight: 600;
 }
 .button\:glassy[data-v-c63b43ae]:before {
-  content: "";
+  content: '';
   display: block;
   position: absolute;
   z-index: 0;

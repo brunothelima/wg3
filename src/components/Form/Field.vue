@@ -1,8 +1,6 @@
 <template>
   <div :class="['field', { 'field--disabled': input.disabled }]">
-    <label class="field__label" :for="id" v-if="input.label">{{
-      t(input.label)
-    }}</label>
+    <label class="field__label" :for="id" v-if="input.label">{{ t(input.label) }}</label>
     <slot />
     <div class="field__detail" v-if="input.detail">{{ input.detail }}</div>
     <ul class="field__errors" v-if="input.errors.length">
@@ -12,9 +10,11 @@
 </template>
 
 <script lang="ts">
-export default {
-  props: ["id", "input", "t"],
-};
+import { defineComponent } from 'vue'
+
+export default defineComponent({
+  props: ['id', 'input', 't']
+})
 </script>
 
 <style scoped>
@@ -37,10 +37,8 @@ export default {
   align-items: flex-start;
   padding: 1em 0 0 1em;
   margin: 0.5em 0 0.5em 1em;
-  border-bottom: var(--input-border-width) var(--input-border-style)
-    var(--color-error);
-  border-left: var(--input-border-width) var(--input-border-style)
-    var(--color-error);
+  border-bottom: var(--input-border-width) var(--input-border-style) var(--color-error);
+  border-left: var(--input-border-width) var(--input-border-style) var(--color-error);
   border-bottom-left-radius: var(--input-border-radius);
   padding: 1em 2em;
 }

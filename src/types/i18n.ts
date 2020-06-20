@@ -1,3 +1,3 @@
 export interface Resources {
-  [key: string]: string | Resources;
+  [key: string]: string | Resources
 }

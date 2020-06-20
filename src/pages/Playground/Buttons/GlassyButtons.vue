@@ -8,11 +8,12 @@
 </template>
 
 <script lang="ts">
-import ButtonsList from "./ButtonsList.vue";
+import { defineComponent } from 'vue'
+import ButtonsList from './ButtonsList.vue'
 
-export default {
+export default defineComponent({
   components: {
-    ButtonsList,
-  },
-};
+    ButtonsList
+  }
+})
 </script>

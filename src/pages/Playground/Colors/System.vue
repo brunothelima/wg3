@@ -11,13 +11,9 @@
 
 <template>
   <div class="system-colors">
-    <h6>{{ t("title") }}</h6>
+    <h6>{{ t('title') }}</h6>
     <ul>
-      <li
-        v-for="color in ['info', 'success', 'warning', 'error']"
-        :key="`color-${color}`"
-        :class="`color-${color}`"
-      >
+      <li v-for="color in ['info', 'success', 'warning', 'error']" :key="`color-${color}`" :class="`color-${color}`">
         <code>{{ `--color-${color}` }}</code>
       </li>
     </ul>
@@ -25,16 +21,17 @@
 </template>
 
 <script lang="ts">
-import { useI18n } from "../../../composables/useI18n";
+import { defineComponent } from 'vue'
+import { useI18n } from '../../../composables/useI18n'
 
-export default {
+export default defineComponent({
   setup() {
-    return useI18n();
-  },
-};
+    return useI18n()
+  }
+})
 </script>
 <style lang="scss" scoped>
-@import "../../../assets/scss/vars";
+@import '../../../assets/scss/vars';
 
 .system-colors ul {
   display: flex;

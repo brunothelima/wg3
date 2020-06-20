@@ -1,10 +1,6 @@
 <template>
   <ul class="notifications">
-    <li
-      v-for="(notification, index) in notifications"
-      :key="notification"
-      :class="notification.status"
-    >
+    <li v-for="(notification, index) in notifications" :key="notification" :class="notification.status">
       <i class="icon-close-small" @click="dismiss(index)" />
       <span>{{ notification.message }}</span>
     </li>
@@ -12,18 +8,19 @@
 </template>
 
 <script lang="ts">
-import { useNotifications } from "../composables/useNotifications";
+import { useNotifications } from '../composables/useNotifications'
+import { defineComponent } from 'vue'
 
-export default {
+export default defineComponent({
   setup() {
-    const { notifications, dismiss } = useNotifications();
+    const { notifications, dismiss } = useNotifications()
 
     return {
       notifications,
-      dismiss,
-    };
-  },
-};
+      dismiss
+    }
+  }
+})
 </script>
 
 <style scoped>

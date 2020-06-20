@@ -7,23 +7,23 @@
 </template>
 
 <script lang="ts">
-import { useTheme } from "./composables/useTheme";
-import Notifications from "./components/Notifications.vue";
+import { useTheme } from './composables/useTheme'
+import Notifications from './components/Notifications.vue'
 
 export default {
   components: {
-    Notifications,
+    Notifications
   },
   setup() {
-    const { theme } = useTheme();
+    const { theme } = useTheme()
 
     return {
-      theme,
-    };
-  },
-};
+      theme
+    }
+  }
+}
 </script>
 
 <style lang="scss">
-@import "./assets/scss/wg3";
+@import './assets/scss/wg3';
 </style>

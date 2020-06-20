@@ -1,9 +1,9 @@
 <template>
   <component
     data-test="button"
-    :is="`${skin}`"
+    :is="skin || 'glassy'"
     :disabled="disabled"
-    :class="['button', `button--${size}`, { 'button--reverse': reverse }]"
+    :class="['button', `button--${size || 'medium'}`, { 'button--reverse': reverse }]"
   >
     <i data-test="icon" :class="icon" v-if="icon" />
     <span data-test="slot">
@@ -13,22 +13,17 @@
 </template>
 
 <script lang="ts">
-import Ghosty from "./Ghosty.vue";
-import Glassy from "./Glassy.vue";
+import { defineComponent } from 'vue'
+import Ghosty from './Ghosty.vue'
+import Glassy from './Glassy.vue'
 
-export default {
-  props: {
-    icon: { type: String },
-    size: { type: String, default: "medium" },
-    skin: { type: String, default: "glassy" },
-    reverse: { type: Boolean },
-    disabled: { type: Boolean },
-  },
+export default defineComponent({
+  props: ['icon', 'size', 'skin', 'reverse', 'disabled'],
   components: {
     Ghosty,
-    Glassy,
-  },
-};
+    Glassy
+  }
+})
 </script>
 
 <style scoped>

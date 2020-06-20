@@ -6,7 +6,7 @@
       @input="theme = $event.target.value"
       :options="[
         { value: 'light', label: 'Light' },
-        { value: 'dark', label: 'Dark' },
+        { value: 'dark', label: 'Dark' }
       ]"
     />
     <InputSelect
@@ -14,7 +14,7 @@
       :value="locale"
       :options="[
         { value: 'en', label: 'EN' },
-        { value: 'pt', label: 'PT' },
+        { value: 'pt', label: 'PT' }
       ]"
       @input="locale = $event.target.value"
     />
@@ -22,24 +22,25 @@
 </template>
 
 <script lang="ts">
-import { useI18n } from "../composables/useI18n";
-import { useTheme } from "../composables/useTheme";
-import InputSelect from "./Form/Input/Select.vue";
+import { useI18n } from '../composables/useI18n'
+import { useTheme } from '../composables/useTheme'
+import InputSelect from './Form/Input/Select.vue'
+import { defineComponent } from 'vue'
 
-export default {
+export default defineComponent({
   components: {
-    InputSelect,
+    InputSelect
   },
   setup() {
-    const { locale } = useI18n();
-    const { theme } = useTheme();
+    const { locale } = useI18n()
+    const { theme } = useTheme()
 
     return {
       locale,
-      theme,
-    };
-  },
-};
+      theme
+    }
+  }
+})
 </script>
 
 <style scoped>

@@ -1,8 +1,8 @@
-@import "./vars";
-@import "./themes/seafoam";
-@import "./resets/normalize";
-@import "./resets/reset";
-@import "../icons/widgricon/style";
+@import './vars';
+@import './themes/seafoam';
+@import './resets/normalize';
+@import './resets/reset';
+@import '../icons/widgricon/style';
 
 html,
 body {
@@ -84,12 +84,12 @@ hr {
   border-color: var(--color-x-8);
 }
 
-[class^="icon-"][color="a"],
-[class*=" icon-"][color="a"] {
+[class^='icon-'][color='a'],
+[class*=' icon-'][color='a'] {
   color: var(--color-a-1);
 }
-[class^="icon-"][color="b"],
-[class*=" icon-"][color="b"] {
+[class^='icon-'][color='b'],
+[class*=' icon-'][color='b'] {
   color: var(--color-b-1);
 }
 

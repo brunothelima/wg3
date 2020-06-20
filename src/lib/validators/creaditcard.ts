@@ -1,9 +1,9 @@
-import { FormValidator } from "../../types";
-import v from "validator";
+import { FormValidator } from '../../types'
+import v from 'validator'
 
 const validator: FormValidator = {
-  message: "Invalid credit card number",
-  handler: (value: string) => v.isCreditCard(value),
-};
+  message: 'Invalid credit card number',
+  handler: (value: string) => v.isCreditCard(value)
+}
 
-export default validator;
+export default validator

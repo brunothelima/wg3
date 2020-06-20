@@ -23,17 +23,9 @@
 
 <script lang="ts">
 export default {
-  props: [
-    "name",
-    "value",
-    "placeholder",
-    "disabled",
-    "readonly",
-    "errors",
-    "t",
-  ],
-  data: () => ({ type: "password" }),
-};
+  props: ['name', 'value', 'placeholder', 'disabled', 'readonly', 'errors', 't'],
+  data: () => ({ type: 'password' })
+}
 </script>
 
 <style scoped>

@@ -2,15 +2,15 @@
   <div class="gradient">
     <h6>Gradient</h6>
     <div>
-      <code
-        >linear-gradient(to right, var(--color-a-3), var(--color-b-3));</code
-      >
+      <code>linear-gradient(to right, var(--color-a-3), var(--color-b-3));</code>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-export default {};
+import { defineComponent } from 'vue'
+
+export default defineComponent({})
 </script>
 
 <style scoped>
@@ -20,11 +20,7 @@ export default {};
   justify-content: center;
   height: 40px;
   padding: 0.25em 1em;
-  background-image: linear-gradient(
-    to right,
-    var(--color-a-3),
-    var(--color-b-3)
-  );
+  background-image: linear-gradient(to right, var(--color-a-3), var(--color-b-3));
   color: var(--color-x-11);
 }
 </style>

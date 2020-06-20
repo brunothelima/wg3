@@ -19,7 +19,7 @@
 
 <template>
   <section class="buttons-demo">
-    <h1>{{ t("title") }}</h1>
+    <h1>{{ t('title') }}</h1>
     <hr />
     <div class="text"></div>
     <GlassyButtons />
@@ -28,19 +28,20 @@
 </template>
 
 <script lang="ts">
-import { useI18n } from "../../../composables/useI18n";
-import GhostyButtons from "./GhostyButtons.vue";
-import GlassyButtons from "./GlassyButtons.vue";
+import { useI18n } from '../../../composables/useI18n'
+import GhostyButtons from './GhostyButtons.vue'
+import GlassyButtons from './GlassyButtons.vue'
+import { defineComponent } from 'vue'
 
-export default {
+export default defineComponent({
   components: {
     GlassyButtons,
-    GhostyButtons,
+    GhostyButtons
   },
   setup() {
-    return useI18n();
-  },
-};
+    return useI18n()
+  }
+})
 </script>
 
 <style scoped>
@@ -51,7 +52,7 @@ h1 {
   margin-bottom: 4em;
 }
 
-.buttons-demo::v-deep([class*="-buttons-list"]) {
+.buttons-demo::v-deep([class*='-buttons-list']) {
   margin-bottom: 2em;
 }
 .buttons-demo::v-deep(pre) {
