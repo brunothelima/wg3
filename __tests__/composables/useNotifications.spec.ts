@@ -17,8 +17,6 @@ describe("useTheme", () => {
 
   test("Adds a notification by funcion notify()", async () => {
     notify(mock);
-
-    await nextTick();
     expect(notifications.value.length).toBe(1);
 
     jest.runOnlyPendingTimers();
@@ -26,8 +24,6 @@ describe("useTheme", () => {
 
   test("Dismisses a message by funcion dismiss()", async () => {
     notify(mock);
-
-    await nextTick();
     expect(notifications.value.length).toBe(1);
 
     dismiss(notifications.value.indexOf(mock));
@@ -36,12 +32,9 @@ describe("useTheme", () => {
 
   test("Dismisses a message after 6 seconds", async () => {
     notify(mock);
-
-    await nextTick();
     expect(notifications.value.length).toBe(1);
 
     jest.advanceTimersByTime(6000);
-
     expect(notifications.value.length).toBe(0);
   });
 });

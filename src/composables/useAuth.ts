@@ -1,6 +1,6 @@
+import router from "../router";
 import { User, LoginData } from "../types";
 import { useUser } from "./useUser";
-import router from "../router";
 import { useNotifications } from "./useNotifications";
 import { useI18n } from "./useI18n";
 
@@ -51,7 +51,7 @@ export const useAuth = () => {
         pt: { message: "Email ou senha invalidos" },
       });
 
-      // Notifying user not found
+      // Notifying "user not found" message
       notify({ message: t("message"), status: "error" });
 
       // Resets user store

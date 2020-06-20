@@ -1,5 +1,5 @@
 <template>
-  <button class="button:clean">
+  <button class="button:ghosty">
     <slot />
   </button>
 </template>
@@ -9,7 +9,7 @@ export default {};
 </script>
 
 <style scoped>
-.button\:clean {
+.button\:ghosty {
   position: relative;
   padding: 0.8em 0.25em;
   background-color: transparent;
@@ -17,16 +17,16 @@ export default {};
   color: var(--color-x-1);
   font-weight: 400;
 }
-.button\:clean::v-deep(i),
-.button\:clean::v-deep(span) {
+.button\:ghosty::v-deep(i),
+.button\:ghosty::v-deep(span) {
   color: inherit;
 }
-.button\:clean:not([disabled]):hover,
-.button\:clean:not([disabled]).button--hover {
+.button\:ghosty:not([disabled]):hover,
+.button\:ghosty:not([disabled]).button--hover {
   color: var(--color-a-3);
 }
-.button\:clean:not([disabled]):active,
-.button\:clean:not([disabled]).button--active {
+.button\:ghosty:not([disabled]):active,
+.button\:ghosty:not([disabled]).button--active {
   color: var(--color-x-6);
 }
 </style>

@@ -12,27 +12,11 @@
       <span v-if="text">{{ text }}</span>
     </main>
     <footer>
-      <button
-        v-if="buttonLeft"
-        class="left"
-        @click="onButtonLeftClick($event)"
-        :style="`
-            color: var(--color-${buttonLeft.color || 'x-6'});
-            flex: ${buttonLeft.flex || 1};}
-        `"
-      >
-        {{ buttonLeft.label || buttonLeft }}
+      <button v-if="buttonLeft" @click="$emit('buttonLeftClick')">
+        {{ buttonLeft }}
       </button>
-      <button
-        v-if="buttonRight"
-        class="right"
-        @click="onButtonRightClick($event)"
-        :style="`
-          color: var(--color-${buttonRight.color || 'x-6'});
-          flex: ${buttonRight.flex || 1};}
-        `"
-      >
-        {{ buttonRight.label || buttonRight }}
+      <button v-if="buttonRight" @click="$emit('buttonRightClick')">
+        {{ buttonRight }}
       </button>
     </footer>
   </div>
@@ -55,12 +39,6 @@ export default {
     const onEsc = (event: KeyboardEvent) => {
       if (event.key === "Escape") context.emit("cancel", event);
     };
-    const onButtonLeftClick = (event: Event) => {
-      context.emit("buttonLeftClick", event);
-    };
-    const onButtonRightClick = (event: Event) => {
-      context.emit("buttonRightClick", event);
-    };
 
     onMounted(() => {
       window.addEventListener("keyup", onEsc);
@@ -70,10 +48,7 @@ export default {
       window.removeEventListener("keyup", onEsc);
     });
 
-    return {
-      onButtonLeftClick,
-      onButtonRightClick,
-    };
+    return {};
   },
 };
 </script>
@@ -142,8 +117,8 @@ footer {
   display: flex;
   border-top: var(--card-border-width) var(--card-border-style) var(--color-x-8);
 }
-
 footer button {
+  flex: 1;
   padding: 1.313em;
   background-color: transparent;
   border: none;
@@ -155,8 +130,9 @@ footer button {
 footer button:hover {
   background-color: var(--color-x-10);
 }
-footer button.left {
-  border-right: var(--card-border-width) var(--card-border-style)
+footer button + button {
+  color: var(--color-error);
+  border-left: var(--card-border-width) var(--card-border-style)
     var(--color-x-8);
 }
 footer button[style*="color:"] {

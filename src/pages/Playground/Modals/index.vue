@@ -17,7 +17,7 @@
   <section class="modals">
     <h1>{{ t("heading") }}</h1>
     <hr />
-    <NotificationDemo />
+    <NotificationsDemo />
     <ConfirmationDemo />
   </section>
 </template>
@@ -25,12 +25,12 @@
 <script lang="ts">
 import { useI18n } from "../../../composables/useI18n";
 import ConfirmationDemo from "./ConfirmationDemo.vue";
-import NotificationDemo from "./NotificationDemo.vue";
+import NotificationsDemo from "./NotificationsDemo.vue";
 
 export default {
   components: {
     ConfirmationDemo,
-    NotificationDemo,
+    NotificationsDemo,
   },
   setup() {
     const { t } = useI18n();

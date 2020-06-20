@@ -13,7 +13,7 @@
 </template>
 
 <script lang="ts">
-import Clean from "./Clean.vue";
+import Ghosty from "./Ghosty.vue";
 import Glassy from "./Glassy.vue";
 
 export default {
@@ -25,7 +25,7 @@ export default {
     disabled: { type: Boolean },
   },
   components: {
-    Clean,
+    Ghosty,
     Glassy,
   },
 };

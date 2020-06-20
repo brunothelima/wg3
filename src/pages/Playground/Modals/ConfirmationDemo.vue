@@ -40,8 +40,8 @@
       :header="t('modal.header')"
       :title="t('modal.title')"
       :text="t('modal.text')"
-      :buttonLeft="{ label: t('modal.buttonLeft') }"
-      :buttonRight="{ label: t('modal.buttonRight') }"
+      :buttonLeft="t('modal.buttonLeft')"
+      :buttonRight="t('modal.buttonRight')"
     />
     <Modal v-if="showModal">
       <Confirmation
@@ -52,8 +52,8 @@
         :header="t('modal.header')"
         :title="t('modal.title')"
         :text="t('modal.text')"
-        :buttonLeft="{ label: t('modal.buttonLeft') }"
-        :buttonRight="{ label: t('modal.buttonRight') }"
+        :buttonLeft="t('modal.buttonLeft')"
+        :buttonRight="t('modal.buttonRight')"
       />
     </Modal>
   </div>

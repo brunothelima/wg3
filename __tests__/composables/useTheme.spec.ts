@@ -10,7 +10,6 @@ describe("useTheme", () => {
 
   test("Stores theme on localStorage", async () => {
     theme.value = "dark";
-
     await nextTick();
 
     const cache = localStorage.getItem("wg3.theme");

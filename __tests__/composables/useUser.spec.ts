@@ -21,7 +21,6 @@ describe("useUser", () => {
     await nextTick();
 
     const cache = JSON.parse(localStorage.getItem("wg3.user"));
-
     expect(cache).toStrictEqual(user.value);
   });
 });

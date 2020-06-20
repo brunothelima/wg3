@@ -23,19 +23,19 @@
     <hr />
     <div class="text"></div>
     <GlassyButtons />
-    <CleanButtons />
+    <GhostyButtons />
   </section>
 </template>
 
 <script lang="ts">
 import { useI18n } from "../../../composables/useI18n";
+import GhostyButtons from "./GhostyButtons.vue";
 import GlassyButtons from "./GlassyButtons.vue";
-import CleanButtons from "./CleanButtons.vue";
 
 export default {
   components: {
     GlassyButtons,
-    CleanButtons,
+    GhostyButtons,
   },
   setup() {
     return useI18n();

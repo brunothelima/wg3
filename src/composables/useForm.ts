@@ -83,6 +83,7 @@ export const useForm = (source: FormSchema) => {
       for (let key in validations) {
         let { handler, message } = validations[key];
 
+        // Awaits for async validations as well
         let error = await handler(value);
 
         if (error) {
