@@ -43,9 +43,7 @@ function i(e) {
 }
 const c = (e, t) =>
     t instanceof Map
-      ? {
-          [`Map(${t.size})`]: [...t.entries()].reduce((e, [t, n]) => ((e[t + ' =>'] = n), e), {})
-        }
+      ? { [`Map(${t.size})`]: [...t.entries()].reduce((e, [t, n]) => ((e[t + ' =>'] = n), e), {}) }
       : t instanceof Set
       ? { [`Set(${t.size})`]: [...t.values()] }
       : !C(t) || b(t) || A(t)
@@ -228,13 +226,7 @@ const ae = {
     has: ie,
     ownKeys: ce
   },
-  ue = {
-    get: ne,
-    has: ie,
-    ownKeys: ce,
-    set: (e, t) => !0,
-    deleteProperty: (e, t) => !0
-  },
+  ue = { get: ne, has: ie, ownKeys: ce, set: (e, t) => !0, deleteProperty: (e, t) => !0 },
   fe = m({}, ae, { get: te, set: le(!0) }),
   pe = (m({}, ue, { get: oe }), (e) => (C(e) ? je(e) : e)),
   de = (e) => (C(e) ? Ne(e) : e),
@@ -1271,11 +1263,7 @@ function mn(e) {
                     const n = (e.setupContext =
                       o.length > 1
                         ? (function (e) {
-                            return {
-                              attrs: e.attrs,
-                              slots: e.slots,
-                              emit: e.emit
-                            }
+                            return { attrs: e.attrs, slots: e.slots, emit: e.emit }
                           })(e)
                         : null)
                     ;(no = e), J()
@@ -1623,18 +1611,7 @@ function mn(e) {
       oe = (e, t) => {
         null == e ? t._vnode && G(t._vnode, null, null, !0) : _(t._vnode || null, e, t), st(), (t._vnode = e)
       },
-      re = {
-        p: _,
-        um: G,
-        m: K,
-        r: Z,
-        mt: U,
-        mc: A,
-        pc: D,
-        pbc: F,
-        n: ne,
-        o: e
-      }
+      re = { p: _, um: G, m: K, r: Z, mt: U, mc: A, pc: D, pbc: F, n: ne, o: e }
     let se, le
     t && ([se, le] = t(re))
     return { render: oe, hydrate: se, createApp: fn(oe, se) }
@@ -1644,12 +1621,7 @@ function vn(e, t, n, o = null) {
   Je(e, t, 7, [n, o])
 }
 function gn() {
-  const e = {
-    isMounted: !1,
-    isLeaving: !1,
-    isUnmounting: !1,
-    leavingVNodes: new Map()
-  }
+  const e = { isMounted: !1, isLeaving: !1, isUnmounting: !1, leavingVNodes: new Map() }
   return (
     Fn(() => {
       e.isMounted = !0
@@ -1872,13 +1844,7 @@ function In(e, t, n) {
             !i || i.isMounted ? ot(e) : e()
           }
         : (e) => dn(e, i && i.suspense)
-    const g = q(c, {
-      lazy: !0,
-      computed: !0,
-      onTrack: s,
-      onTrigger: l,
-      scheduler: h ? () => m(h) : m
-    })
+    const g = q(c, { lazy: !0, computed: !0, onTrack: s, onTrigger: l, scheduler: h ? () => m(h) : m })
     co(g), h ? (n ? h() : (d = g())) : g()
     return () => {
       z(g), i && v(i.effects, g)
@@ -1969,12 +1935,7 @@ function zn(e, t, n = [], o = [], r = !1) {
           get: _(t) ? t.bind(P, P) : _(t.get) ? t.get.bind(P, P) : f,
           set: !_(t) && _(t.set) ? t.set.bind(P) : f
         })
-      Object.defineProperty(T, e, {
-        enumerable: !0,
-        configurable: !0,
-        get: () => n.value,
-        set: (e) => (n.value = e)
-      })
+      Object.defineProperty(T, e, { enumerable: !0, configurable: !0, get: () => n.value, set: (e) => (n.value = e) })
     }
   if (
     (u && o.push(u),
@@ -2746,14 +2707,7 @@ function kr(e, t) {
   return yr(fr(n, e) + o + r)
 }
 function Ar(e, t, n, o = !1, r = !1) {
-  return {
-    back: e,
-    current: t,
-    forward: n,
-    replaced: o,
-    position: window.history.length,
-    scroll: r ? wr() : null
-  }
+  return { back: e, current: t, forward: n, replaced: o, position: window.history.length, scroll: r ? wr() : null }
 }
 function Rr(e) {
   const { history: t } = window
@@ -2774,14 +2728,7 @@ function Rr(e) {
     o.value ||
       r(
         n.value,
-        {
-          back: null,
-          current: n.value,
-          forward: null,
-          position: t.length - 1,
-          replaced: !0,
-          scroll: null
-        },
+        { back: null, current: n.value, forward: null, position: t.length - 1, replaced: !0, scroll: null },
         !0
       ),
     {
@@ -2794,16 +2741,7 @@ function Rr(e) {
       },
       replace: function (e, s) {
         const l = yr(e)
-        r(
-          l,
-          {
-            ...t.state,
-            ...Ar(o.value.back, l, o.value.forward, !0),
-            ...s,
-            position: o.value.position
-          },
-          !0
-        ),
+        r(l, { ...t.state, ...Ar(o.value.back, l, o.value.forward, !0), ...s, position: o.value.position }, !0),
           (n.value = l)
       }
     }
@@ -3104,13 +3042,7 @@ function ls(e, t) {
     o = new Map()
   function r(e, n, o) {
     let i = (function (e) {
-      const t = {
-        path: e.path,
-        name: e.name,
-        meta: e.meta || {},
-        aliasOf: void 0,
-        components: {}
-      }
+      const t = { path: e.path, name: e.name, meta: e.meta || {}, aliasOf: void 0, components: {} }
       return 'redirect' in e
         ? { ...t, redirect: e.redirect }
         : {
@@ -3130,12 +3062,7 @@ function ls(e, t) {
     if ('alias' in e) {
       const t = 'string' == typeof e.alias ? [e.alias] : e.alias
       for (const e of t)
-        a.push({
-          ...i,
-          components: o ? o.record.components : i.components,
-          path: e,
-          aliasOf: o ? o.record : i
-        })
+        a.push({ ...i, components: o ? o.record.components : i.components, path: e, aliasOf: o ? o.record : i })
     }
     let u, f
     for (const e of a) {
@@ -3463,13 +3390,7 @@ const xs = () => ({ user: ws }),
       if (((r = r || a.value), 'string' == typeof e)) {
         let o = ur(n, e, r.path),
           l = t.resolve({ path: o.path }, r)
-        return {
-          ...o,
-          ...l,
-          params: d(l.params),
-          redirectedFrom: void 0,
-          href: s.base + o.fullPath
-        }
+        return { ...o, ...l, params: d(l.params), redirectedFrom: void 0, href: s.base + o.fullPath }
       }
       let l
       l = 'path' in e ? { ...e, path: ur(n, e.path, r.path).path } : { ...e, params: p(e.params) }
@@ -3483,14 +3404,7 @@ const xs = () => ({ user: ws }),
         let n = t.query ? e(t.query) : ''
         return t.path + (n && '?') + n + (t.hash || '')
       })(o, { ...e, hash: c, path: i.path })
-      return {
-        fullPath: u,
-        hash: c,
-        query: Kr(e.query),
-        ...i,
-        redirectedFrom: void 0,
-        href: s.base + u
-      }
+      return { fullPath: u, hash: c, query: Kr(e.query), ...i, redirectedFrom: void 0, href: s.base + u }
     }
     function m(e) {
       return 'string' == typeof e ? { path: e } : e
@@ -3691,9 +3605,7 @@ const xs = () => ({ user: ws }),
           e.component('RouterLink', hs),
             e.component('RouterView', gs),
             (e.config.globalProperties.$router = t),
-            Object.defineProperty(e.config.globalProperties, '$route', {
-              get: () => t.currentRoute.value
-            }),
+            Object.defineProperty(e.config.globalProperties, '$route', { get: () => t.currentRoute.value }),
             ir &&
               !t._started &&
               t.currentRoute.value === Jr &&
@@ -3719,11 +3631,7 @@ const xs = () => ({ user: ws }),
             if (((n.value = i), (t.value = s), l && l.fullPath === c.fullPath)) return void (l = null)
             const u = a ? s.position - a.position : 0
             r.forEach((e) => {
-              e(n.value, c, {
-                delta: u,
-                type: vr.pop,
-                direction: u ? (u > 0 ? gr.forward : gr.back) : gr.unknown
-              })
+              e(n.value, c, { delta: u, type: vr.pop, direction: u ? (u > 0 ? gr.forward : gr.back) : gr.unknown })
             })
           }
           function c() {
@@ -3768,8 +3676,9 @@ const xs = () => ({ user: ws }),
       )
     })(),
     routes: [
-      { path: '/', component: () => import('./index.65615bd9.js') },
-      { path: '/login', component: () => import('./index.4d36e915.js') }
+      { path: '/', component: () => import('./index.c510e7bd.js') },
+      { path: '/login', component: () => import('./index.cb1003c6.js') },
+      { path: '/tests', component: () => import('./Tests.c5e8e3de.js') }
     ]
   })
 Ss.beforeEach((e, t, n) => {
@@ -3795,14 +3704,14 @@ const ks = () => ({ theme: Es }),
     },
     notifications: As
   })
-var Os = {
+var Os = uo({
   setup() {
     const { notifications: e, dismiss: t } = Rs()
     return { notifications: e, dismiss: t }
   }
-}
-const Fs = yt('data-v-b860c85a')
-vt('data-v-b860c85a')
+})
+const Fs = yt('data-v-1fa44954')
+vt('data-v-1fa44954')
 const Ps = { class: 'notifications' }
 gt()
 const Ts = Fs(function (e, t) {
@@ -3833,7 +3742,7 @@ const Ts = Fs(function (e, t) {
     ])
   )
 })
-;(Os.render = Ts), (Os.__scopeId = 'data-v-b860c85a')
+;(Os.render = Ts), (Os.__scopeId = 'data-v-1fa44954')
 var Ls = {
   components: { Notifications: Os },
   setup() {
@@ -3875,26 +3784,27 @@ export {
   It as a,
   Vt as b,
   Mt as c,
-  gt as d,
-  po as e,
-  Fn as f,
-  Mn as g,
-  ho as h,
-  Dt as i,
-  We as j,
-  In as k,
-  oo as l,
-  ao as m,
-  ks as n,
+  uo as d,
+  gt as e,
+  po as f,
+  Fn as g,
+  Mn as h,
+  ho as i,
+  Dt as j,
+  We as k,
+  In as l,
+  oo as m,
+  ao as n,
   Lt as o,
   vt as p,
-  Et as q,
+  ks as q,
   Ct as r,
-  je as s,
-  dt as t,
+  Et as s,
+  je as t,
   Rs as u,
-  Ht as v,
+  dt as v,
   yt as w,
-  Ss as x,
-  xs as y
+  Ht as x,
+  Ss as y,
+  xs as z
 }

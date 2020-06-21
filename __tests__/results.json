@@ -1,14 +1,14 @@
 {
   "numFailedTestSuites": 0,
   "numFailedTests": 0,
-  "numPassedTestSuites": 6,
-  "numPassedTests": 22,
+  "numPassedTestSuites": 9,
+  "numPassedTests": 26,
   "numPendingTestSuites": 0,
   "numPendingTests": 0,
   "numRuntimeErrorTestSuites": 0,
   "numTodoTests": 0,
-  "numTotalTestSuites": 6,
-  "numTotalTests": 22,
+  "numTotalTestSuites": 9,
+  "numTotalTests": 26,
   "openHandles": [],
   "snapshot": {
     "added": 0,
@@ -26,48 +26,42 @@
     "unmatched": 0,
     "updated": 0
   },
-  "startTime": 1592675754086,
+  "startTime": 1592689204503,
   "success": true,
   "testResults": [
     {
       "assertionResults": [
         {
-          "ancestorTitles": ["useI18n"],
+          "ancestorTitles": ["Glassy.spec.ts"],
           "failureMessages": [],
-          "fullName": "useI18n Initializes the locale ref",
+          "fullName": "Glassy.spec.ts Rendering a button with default settings",
           "location": null,
           "status": "passed",
-          "title": "Initializes the locale ref"
-        },
-        {
-          "ancestorTitles": ["useI18n"],
-          "failureMessages": [],
-          "fullName": "useI18n Stores theme on localStorage",
-          "location": null,
-          "status": "passed",
-          "title": "Stores theme on localStorage"
-        },
-        {
-          "ancestorTitles": ["useI18n"],
-          "failureMessages": [],
-          "fullName": "useI18n Successfully translates a given key string using t(key)",
-          "location": null,
-          "status": "passed",
-          "title": "Successfully translates a given key string using t(key)"
-        },
-        {
-          "ancestorTitles": ["useI18n"],
-          "failureMessages": [],
-          "fullName": "useI18n Returns the given key if no match is found ",
-          "location": null,
-          "status": "passed",
-          "title": "Returns the given key if no match is found "
+          "title": "Rendering a button with default settings"
         }
       ],
-      "endTime": 1592675756458,
+      "endTime": 1592689208076,
       "message": "",
-      "name": "/Applications/Ampps/www/wg3/__tests__/composables/useI18n.spec.ts",
-      "startTime": 1592675755386,
+      "name": "/Applications/Ampps/www/wg3/__tests__/components/Button/Glassy.spec.ts",
+      "startTime": 1592689206311,
+      "status": "passed",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": ["Glassy.spec.ts"],
+          "failureMessages": [],
+          "fullName": "Glassy.spec.ts Rendering a button with default settings",
+          "location": null,
+          "status": "passed",
+          "title": "Rendering a button with default settings"
+        }
+      ],
+      "endTime": 1592689208359,
+      "message": "",
+      "name": "/Applications/Ampps/www/wg3/__tests__/components/Button/Ghosty.spec.ts",
+      "startTime": 1592689206336,
       "status": "passed",
       "summary": ""
     },
@@ -106,104 +100,10 @@
           "title": "Computed \"errors\" reacts to the validate() function call"
         }
       ],
-      "endTime": 1592675756559,
+      "endTime": 1592689208365,
       "message": "",
       "name": "/Applications/Ampps/www/wg3/__tests__/composables/useForm.spec.ts",
-      "startTime": 1592675755356,
-      "status": "passed",
-      "summary": ""
-    },
-    {
-      "assertionResults": [
-        {
-          "ancestorTitles": ["useTheme"],
-          "failureMessages": [],
-          "fullName": "useTheme Initializes the nofications ref store",
-          "location": null,
-          "status": "passed",
-          "title": "Initializes the nofications ref store"
-        },
-        {
-          "ancestorTitles": ["useTheme"],
-          "failureMessages": [],
-          "fullName": "useTheme Adds a notification by funcion notify()",
-          "location": null,
-          "status": "passed",
-          "title": "Adds a notification by funcion notify()"
-        },
-        {
-          "ancestorTitles": ["useTheme"],
-          "failureMessages": [],
-          "fullName": "useTheme Dismisses a message by funcion dismiss()",
-          "location": null,
-          "status": "passed",
-          "title": "Dismisses a message by funcion dismiss()"
-        },
-        {
-          "ancestorTitles": ["useTheme"],
-          "failureMessages": [],
-          "fullName": "useTheme Dismisses a message after 6 seconds",
-          "location": null,
-          "status": "passed",
-          "title": "Dismisses a message after 6 seconds"
-        }
-      ],
-      "endTime": 1592675756680,
-      "message": "",
-      "name": "/Applications/Ampps/www/wg3/__tests__/composables/useNotifications.spec.ts",
-      "startTime": 1592675756484,
-      "status": "passed",
-      "summary": ""
-    },
-    {
-      "assertionResults": [
-        {
-          "ancestorTitles": ["useTheme"],
-          "failureMessages": [],
-          "fullName": "useTheme Initializes the theme ref",
-          "location": null,
-          "status": "passed",
-          "title": "Initializes the theme ref"
-        },
-        {
-          "ancestorTitles": ["useTheme"],
-          "failureMessages": [],
-          "fullName": "useTheme Stores theme on localStorage",
-          "location": null,
-          "status": "passed",
-          "title": "Stores theme on localStorage"
-        }
-      ],
-      "endTime": 1592675756808,
-      "message": "",
-      "name": "/Applications/Ampps/www/wg3/__tests__/composables/useTheme.spec.ts",
-      "startTime": 1592675756594,
-      "status": "passed",
-      "summary": ""
-    },
-    {
-      "assertionResults": [
-        {
-          "ancestorTitles": ["useUser"],
-          "failureMessages": [],
-          "fullName": "useUser Initializes the user ref store",
-          "location": null,
-          "status": "passed",
-          "title": "Initializes the user ref store"
-        },
-        {
-          "ancestorTitles": ["useUser"],
-          "failureMessages": [],
-          "fullName": "useUser Stores user data on localStorage",
-          "location": null,
-          "status": "passed",
-          "title": "Stores user data on localStorage"
-        }
-      ],
-      "endTime": 1592675756876,
-      "message": "",
-      "name": "/Applications/Ampps/www/wg3/__tests__/composables/useUser.spec.ts",
-      "startTime": 1592675756690,
+      "startTime": 1592689208104,
       "status": "passed",
       "summary": ""
     },
@@ -258,10 +158,172 @@
           "title": "Renders a button with a given size"
         }
       ],
-      "endTime": 1592675760383,
+      "endTime": 1592689208484,
       "message": "",
-      "name": "/Applications/Ampps/www/wg3/__tests__/components/Button.spec.ts",
-      "startTime": 1592675755356,
+      "name": "/Applications/Ampps/www/wg3/__tests__/components/Button/index.spec.ts",
+      "startTime": 1592689206323,
+      "status": "passed",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": ["useI18n"],
+          "failureMessages": [],
+          "fullName": "useI18n Initializes the locale ref",
+          "location": null,
+          "status": "passed",
+          "title": "Initializes the locale ref"
+        },
+        {
+          "ancestorTitles": ["useI18n"],
+          "failureMessages": [],
+          "fullName": "useI18n Stores theme on localStorage",
+          "location": null,
+          "status": "passed",
+          "title": "Stores theme on localStorage"
+        },
+        {
+          "ancestorTitles": ["useI18n"],
+          "failureMessages": [],
+          "fullName": "useI18n Successfully translates a given key string using t(key)",
+          "location": null,
+          "status": "passed",
+          "title": "Successfully translates a given key string using t(key)"
+        },
+        {
+          "ancestorTitles": ["useI18n"],
+          "failureMessages": [],
+          "fullName": "useI18n Returns the given key if no match is found ",
+          "location": null,
+          "status": "passed",
+          "title": "Returns the given key if no match is found "
+        }
+      ],
+      "endTime": 1592689208545,
+      "message": "",
+      "name": "/Applications/Ampps/www/wg3/__tests__/composables/useI18n.spec.ts",
+      "startTime": 1592689208380,
+      "status": "passed",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": ["Notifications.spec.ts"],
+          "failureMessages": [],
+          "fullName": "Notifications.spec.ts Renders a message correctly after notify() is called",
+          "location": null,
+          "status": "passed",
+          "title": "Renders a message correctly after notify() is called"
+        },
+        {
+          "ancestorTitles": ["Notifications.spec.ts"],
+          "failureMessages": [],
+          "fullName": "Notifications.spec.ts Dismisses the message after click on close icon",
+          "location": null,
+          "status": "passed",
+          "title": "Dismisses the message after click on close icon"
+        }
+      ],
+      "endTime": 1592689208587,
+      "message": "",
+      "name": "/Applications/Ampps/www/wg3/__tests__/components/Notifications.spec.ts",
+      "startTime": 1592689208378,
+      "status": "passed",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": ["useTheme"],
+          "failureMessages": [],
+          "fullName": "useTheme Initializes the nofications ref store",
+          "location": null,
+          "status": "passed",
+          "title": "Initializes the nofications ref store"
+        },
+        {
+          "ancestorTitles": ["useTheme"],
+          "failureMessages": [],
+          "fullName": "useTheme Adds a notification by funcion notify()",
+          "location": null,
+          "status": "passed",
+          "title": "Adds a notification by funcion notify()"
+        },
+        {
+          "ancestorTitles": ["useTheme"],
+          "failureMessages": [],
+          "fullName": "useTheme Dismisses a message by funcion dismiss()",
+          "location": null,
+          "status": "passed",
+          "title": "Dismisses a message by funcion dismiss()"
+        },
+        {
+          "ancestorTitles": ["useTheme"],
+          "failureMessages": [],
+          "fullName": "useTheme Dismisses a message after 6 seconds",
+          "location": null,
+          "status": "passed",
+          "title": "Dismisses a message after 6 seconds"
+        }
+      ],
+      "endTime": 1592689208689,
+      "message": "",
+      "name": "/Applications/Ampps/www/wg3/__tests__/composables/useNotifications.spec.ts",
+      "startTime": 1592689208499,
+      "status": "passed",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": ["useUser"],
+          "failureMessages": [],
+          "fullName": "useUser Initializes the user ref store",
+          "location": null,
+          "status": "passed",
+          "title": "Initializes the user ref store"
+        },
+        {
+          "ancestorTitles": ["useUser"],
+          "failureMessages": [],
+          "fullName": "useUser Stores user data on localStorage",
+          "location": null,
+          "status": "passed",
+          "title": "Stores user data on localStorage"
+        }
+      ],
+      "endTime": 1592689208728,
+      "message": "",
+      "name": "/Applications/Ampps/www/wg3/__tests__/composables/useUser.spec.ts",
+      "startTime": 1592689208564,
+      "status": "passed",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": ["useTheme"],
+          "failureMessages": [],
+          "fullName": "useTheme Initializes the theme ref",
+          "location": null,
+          "status": "passed",
+          "title": "Initializes the theme ref"
+        },
+        {
+          "ancestorTitles": ["useTheme"],
+          "failureMessages": [],
+          "fullName": "useTheme Stores theme on localStorage",
+          "location": null,
+          "status": "passed",
+          "title": "Stores theme on localStorage"
+        }
+      ],
+      "endTime": 1592689208758,
+      "message": "",
+      "name": "/Applications/Ampps/www/wg3/__tests__/composables/useTheme.spec.ts",
+      "startTime": 1592689208614,
       "status": "passed",
       "summary": ""
     }

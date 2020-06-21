@@ -19,8 +19,8 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { useI18n } from '../../../composables/useI18n'
-import Form from '../../../components/Form/index.vue'
+import { useI18n } from '/@composables/useI18n'
+import Form from '/@components/Form/index.vue'
 import schema from './schema'
 import messages from './messages.json'
 

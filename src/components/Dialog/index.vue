@@ -1,8 +1,8 @@
 <template>
-  <Teleport to="#portal\:modal">
-    <div class="modal">
-      <div class="modal__mask"></div>
-      <div class="modal__content">
+  <Teleport to="#portal\:dialog">
+    <div class="dialog">
+      <div class="dialog__mask"></div>
+      <div class="dialog__content">
         <slot />
       </div>
     </div>
@@ -25,7 +25,7 @@ export default {
 </script>
 
 <style scoped>
-.modal {
+.dialog {
   display: grid;
   overflow: auto;
   position: fixed;
@@ -35,14 +35,14 @@ export default {
   padding: 0 2em;
   box-sizing: border-box;
 }
-.modal__mask {
+.dialog__mask {
   z-index: 1;
   grid-row: 1 / 2;
   grid-column: 1 / 2;
   background: var(--color-x-11);
   opacity: 0.6;
 }
-.modal__content {
+.dialog__content {
   position: relative;
   grid-row: 1 / 2;
   grid-column: 1 / 2;
@@ -50,7 +50,7 @@ export default {
   z-index: 2;
   margin: 2em auto;
 }
-.modal__content > [class*='modal:'] {
+.dialog__content > [class*='dialog:'] {
   opacity: 0;
   animation-name: fade-in;
   animation-duration: var(--transition-duration);

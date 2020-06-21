@@ -1,14 +1,19 @@
 <template>
-  <ul class="notifications">
-    <li v-for="(notification, index) in notifications" :key="notification" :class="notification.status">
-      <i class="icon-close-small" @click="dismiss(index)" />
-      <span>{{ notification.message }}</span>
+  <ul data-test="notifications" class="notifications">
+    <li
+      data-test="message"
+      v-for="(notification, index) in notifications"
+      :key="notification"
+      :class="notification.status"
+    >
+      <i data-test="icon" class="icon-close-small" @click="dismiss(index)" />
+      <span data-test="text">{{ notification.message }}</span>
     </li>
   </ul>
 </template>
 
 <script lang="ts">
-import { useNotifications } from '../composables/useNotifications'
+import { useNotifications } from '/@composables/useNotifications'
 import { defineComponent } from 'vue'
 
 export default defineComponent({

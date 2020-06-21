@@ -1,5 +1,5 @@
 <template>
-  <button class="button:ghosty">
+  <button data-test="ghosty" class="button:ghosty">
     <slot />
   </button>
 </template>

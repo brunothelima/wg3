@@ -1,6 +1,6 @@
-import { useForm, createForm } from '../../src/composables/useForm'
-import { required, email } from '../../src/lib/validators'
-import { FormSchema } from '../../src/types'
+import { useForm, createForm } from '/@composables/useForm'
+import { required, email } from '/@lib/validators'
+import { FormSchema } from '/@types/form'
 
 const mock: FormSchema = {
   inputName: {
@@ -39,6 +39,8 @@ describe('useForm', () => {
 
     expect(schema.inputName.errors.length).toBe(0)
 
+    schema.inputName.value = ''
+
     await validate()
 
     expect(schema.inputName.errors.length).toBe(1)
@@ -46,7 +48,9 @@ describe('useForm', () => {
 
   test('Computed "errors" reacts to the validate() function call', async () => {
     const source = createForm(mock)
-    const { validate, errors } = useForm(source)
+    const { schema, validate, errors } = useForm(source)
+
+    schema.inputName.value = ''
 
     expect(errors.value).toMatchObject({})
 

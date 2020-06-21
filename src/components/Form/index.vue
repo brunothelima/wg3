@@ -11,9 +11,9 @@
 
 <script lang="ts">
 import { computed, defineComponent } from 'vue'
-import { useForm } from '../../composables/useForm'
-import { useI18n } from '../../composables/useI18n'
-import { FormProps } from '../../types'
+import { useForm } from '/@composables/useForm'
+import { useI18n } from '/@composables/useI18n'
+import { FormProps } from '/@types/form'
 
 import Field from './Field.vue'
 import InputText from './Input/Text.vue'
@@ -21,10 +21,7 @@ import InputSelect from './Input/Select.vue'
 import InputPassword from './Input/Password.vue'
 
 export default defineComponent({
-  props: {
-    locale: Object,
-    schema: Object
-  },
+  props: ['schema', 'locale'],
   components: {
     Field,
     InputText,
@@ -42,7 +39,7 @@ export default defineComponent({
      * This function updates the schema with the new input value
      * and calls onInput callback if one is given in the schema
      */
-    const onInputHandler = (ev: Event) => {
+    const onInputHandler = (ev: InputEvent) => {
       const { name, value } = ev.target as HTMLInputElement
       const input = schema[name]
 
@@ -56,7 +53,7 @@ export default defineComponent({
       }
     }
 
-    const onSubmitHandler = async (ev: Event) => {
+    const onSubmitHandler = async (ev: InputEvent) => {
       ev.preventDefault()
 
       context.emit('submit', { ev, data: data.value })

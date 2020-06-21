@@ -1,23 +1,24 @@
 import {
-  x as e,
-  y as t,
+  y as e,
+  z as t,
   u as r,
-  p as a,
-  d as u,
-  r as o,
-  o as l,
-  c as n,
-  a as d,
-  _ as f,
-  b as i,
-  w as s
-} from './index.bc897349.js'
-import { u as c, c as p, a as _, s as v, b as m } from './index.c7ca7f7a.js'
-const A = {}.VUE_APP_API_URL
-function $(e) {
+  d as a,
+  p as u,
+  e as o,
+  r as l,
+  o as n,
+  c as d,
+  a as f,
+  _ as i,
+  b as s,
+  w as c
+} from './index.7ac1f0e9.js'
+import { u as p, c as _, a as v, s as m, b as A } from './index.3730c2b4.js'
+const $ = {}.VUE_APP_API_URL
+function y(e) {
   return e && e.__esModule && Object.prototype.hasOwnProperty.call(e, 'default') ? e.default : e
 }
-function y(e, t, r) {
+function h(e, t, r) {
   return (
     e(
       (r = {
@@ -34,7 +35,7 @@ function y(e, t, r) {
     r.exports
   )
 }
-var h = y(function (e, t) {
+var g = h(function (e, t) {
     function r(e) {
       return (r =
         'function' == typeof Symbol && 'symbol' == typeof Symbol.iterator
@@ -65,16 +66,16 @@ var h = y(function (e, t) {
       (e.exports = t.default),
       (e.exports.default = t.default)
   }),
-  g = y(function (e, t) {
+  M = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e) {
         return (0, a.default)(e), (e = Date.parse(e)), isNaN(e) ? null : new Date(e)
       })
     var r,
-      a = (r = h) && r.__esModule ? r : { default: r }
+      a = (r = g) && r.__esModule ? r : { default: r }
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  b = y(function (e, t) {
+  b = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.commaDecimal = t.dotDecimal = t.arabicLocales = t.englishLocales = t.decimal = t.alphanumeric = t.alpha = void 0)
     var r = {
@@ -183,7 +184,7 @@ var h = y(function (e, t) {
       (a['pl-Pl'] = a['pl-PL']),
       (u['pl-Pl'] = u['pl-PL'])
   }),
-  M = y(function (e, t) {
+  x = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e, t) {
         ;(0, a.default)(e), (t = t || {})
@@ -205,48 +206,48 @@ var h = y(function (e, t) {
       }),
       (t.locales = void 0)
     var r,
-      a = (r = h) && r.__esModule ? r : { default: r }
+      a = (r = g) && r.__esModule ? r : { default: r }
     var u = Object.keys(b.decimal)
     t.locales = u
   }),
-  x = y(function (e, t) {
+  S = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e) {
         return (0, a.default)(e) ? parseFloat(e) : NaN
       })
     var r,
-      a = (r = M) && r.__esModule ? r : { default: r }
+      a = (r = x) && r.__esModule ? r : { default: r }
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  S = y(function (e, t) {
+  O = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e, t) {
         return (0, a.default)(e), parseInt(e, t || 10)
       })
     var r,
-      a = (r = h) && r.__esModule ? r : { default: r }
+      a = (r = g) && r.__esModule ? r : { default: r }
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  O = y(function (e, t) {
+  P = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e, t) {
         if (((0, a.default)(e), t)) return '1' === e || /^true$/i.test(e)
         return '0' !== e && !/^false$/i.test(e) && '' !== e
       })
     var r,
-      a = (r = h) && r.__esModule ? r : { default: r }
+      a = (r = g) && r.__esModule ? r : { default: r }
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  P = y(function (e, t) {
+  Z = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e, t) {
         return (0, a.default)(e), e === t
       })
     var r,
-      a = (r = h) && r.__esModule ? r : { default: r }
+      a = (r = g) && r.__esModule ? r : { default: r }
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  Z = y(function (e, t) {
+  F = h(function (e, t) {
     function r(e) {
       return (r =
         'function' == typeof Symbol && 'symbol' == typeof Symbol.iterator
@@ -269,7 +270,7 @@ var h = y(function (e, t) {
       (e.exports = t.default),
       (e.exports.default = t.default)
   }),
-  F = y(function (e, t) {
+  E = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function () {
         var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {},
@@ -280,7 +281,7 @@ var h = y(function (e, t) {
       (e.exports = t.default),
       (e.exports.default = t.default)
   }),
-  E = y(function (e, t) {
+  R = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e, t, o) {
         return (
@@ -290,26 +291,26 @@ var h = y(function (e, t) {
             : e.indexOf((0, a.default)(t)) >= 0
         )
       })
-    var r = o(h),
-      a = o(Z),
-      u = o(F)
+    var r = o(g),
+      a = o(F),
+      u = o(E)
     function o(e) {
       return e && e.__esModule ? e : { default: e }
     }
     var l = { ignoreCase: !1 }
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  R = y(function (e, t) {
+  w = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e, t, r) {
         ;(0, a.default)(e), '[object RegExp]' !== Object.prototype.toString.call(t) && (t = new RegExp(t, r))
         return t.test(e)
       })
     var r,
-      a = (r = h) && r.__esModule ? r : { default: r }
+      a = (r = g) && r.__esModule ? r : { default: r }
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  w = y(function (e, t) {
+  I = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e, t) {
         var r, o
@@ -319,7 +320,7 @@ var h = y(function (e, t) {
         return l >= r && (void 0 === o || l <= o)
       })
     var r,
-      a = (r = h) && r.__esModule ? r : { default: r }
+      a = (r = g) && r.__esModule ? r : { default: r }
     function u(e) {
       return (u =
         'function' == typeof Symbol && 'symbol' == typeof Symbol.iterator
@@ -334,7 +335,7 @@ var h = y(function (e, t) {
     }
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  I = y(function (e, t) {
+  L = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e, t) {
         ;(0, r.default)(e),
@@ -353,15 +354,15 @@ var h = y(function (e, t) {
         }
         return !0
       })
-    var r = u(h),
-      a = u(F)
+    var r = u(g),
+      a = u(E)
     function u(e) {
       return e && e.__esModule ? e : { default: e }
     }
     var o = { require_tld: !0, allow_underscores: !1, allow_trailing_dot: !1 }
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  L = y(function (e, t) {
+  C = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function e(t) {
         var r = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : ''
@@ -400,12 +401,12 @@ var h = y(function (e, t) {
         return !1
       })
     var r,
-      a = (r = h) && r.__esModule ? r : { default: r }
+      a = (r = g) && r.__esModule ? r : { default: r }
     var u = /^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$/,
       o = /^[0-9A-F]{1,4}$/i
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  C = y(function (e, t) {
+  j = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e, t) {
         if (((0, r.default)(e), (t = (0, a.default)(t, f)).require_display_name || t.allow_display_name)) {
@@ -479,9 +480,9 @@ var h = y(function (e, t) {
           h = $.join('@'),
           g = y.toLowerCase()
         if (t.domain_specific_validation && ('gmail.com' === g || 'googlemail.com' === g)) {
-          var b = (h = h.toLowerCase()).split('+')[0]
-          if (!(0, u.default)(b.replace('.', ''), { min: 6, max: 30 })) return !1
-          for (var M = b.split('.'), x = 0; x < M.length; x++) if (!c.test(M[x])) return !1
+          var M = (h = h.toLowerCase()).split('+')[0]
+          if (!(0, u.default)(M.replace('.', ''), { min: 6, max: 30 })) return !1
+          for (var b = M.split('.'), x = 0; x < b.length; x++) if (!c.test(b[x])) return !1
         }
         if (!(0, u.default)(h, { max: 64 }) || !(0, u.default)(y, { max: 254 })) return !1
         if (!(0, o.default)(y, { require_tld: t.require_tld })) {
@@ -497,11 +498,11 @@ var h = y(function (e, t) {
           if (!O.test(P[Z])) return !1
         return !0
       })
-    var r = n(h),
-      a = n(F),
-      u = n(w),
-      o = n(I),
-      l = n(L)
+    var r = n(g),
+      a = n(E),
+      u = n(I),
+      o = n(L),
+      l = n(C)
     function n(e) {
       return e && e.__esModule ? e : { default: e }
     }
@@ -510,12 +511,7 @@ var h = y(function (e, t) {
       for (var r = 0, a = new Array(t); r < t; r++) a[r] = e[r]
       return a
     }
-    var f = {
-        allow_display_name: !1,
-        require_display_name: !1,
-        allow_utf8_local_part: !0,
-        require_tld: !0
-      },
+    var f = { allow_display_name: !1, require_display_name: !1, allow_utf8_local_part: !0, require_tld: !0 },
       i = /^([^\x00-\x1F\x7F-\x9F\cX]+)<(.+)>$/i,
       s = /^[a-z\d!#\$%&'\*\+\-\/=\?\^_`{\|}~]+$/i,
       c = /^[a-z\d]+$/,
@@ -524,7 +520,7 @@ var h = y(function (e, t) {
       v = /^([\s\x01-\x08\x0b\x0c\x0e-\x1f\x7f\x21\x23-\x5b\x5d-\x7e\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|(\\[\x01-\x09\x0b\x0c\x0d-\x7f\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))*$/i
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  j = y(function (e, t) {
+  N = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e, t) {
         if (((0, r.default)(e), !e || e.length >= 2083 || /[\s<>]/.test(e))) return !1
@@ -563,10 +559,10 @@ var h = y(function (e, t) {
         if (t.host_blacklist && f(s, t.host_blacklist)) return !1
         return !0
       })
-    var r = l(h),
-      a = l(I),
-      u = l(L),
-      o = l(F)
+    var r = l(g),
+      a = l(L),
+      u = l(C),
+      o = l(E)
     function l(e) {
       return e && e.__esModule ? e : { default: e }
     }
@@ -591,14 +587,14 @@ var h = y(function (e, t) {
     }
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  N = y(function (e, t) {
+  T = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e, t) {
         if (((0, a.default)(e), t && t.no_colons)) return o.test(e)
         return u.test(e) || l.test(e) || n.test(e) || d.test(e)
       })
     var r,
-      a = (r = h) && r.__esModule ? r : { default: r }
+      a = (r = g) && r.__esModule ? r : { default: r }
     var u = /^([0-9a-fA-F][0-9a-fA-F]:){5}([0-9a-fA-F][0-9a-fA-F])$/,
       o = /^([0-9a-fA-F]){12}$/,
       l = /^([0-9a-fA-F][0-9a-fA-F]-){5}([0-9a-fA-F][0-9a-fA-F])$/,
@@ -606,7 +602,7 @@ var h = y(function (e, t) {
       d = /^([0-9a-fA-F]{4}).([0-9a-fA-F]{4}).([0-9a-fA-F]{4})$/
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  T = y(function (e, t) {
+  D = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e) {
         ;(0, r.default)(e)
@@ -616,15 +612,15 @@ var h = y(function (e, t) {
         if (t[1].length > 1 && t[1].startsWith('0')) return !1
         return (0, a.default)(t[0], 4) && t[1] <= 32 && t[1] >= 0
       })
-    var r = u(h),
-      a = u(L)
+    var r = u(g),
+      a = u(C)
     function u(e) {
       return e && e.__esModule ? e : { default: e }
     }
     var o = /^\d{1,2}$/
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  D = y(function (e, t) {
+  B = h(function (e, t) {
     function r(e, t) {
       return (
         (function (e) {
@@ -763,27 +759,27 @@ var h = y(function (e, t) {
       (e.exports = t.default),
       (e.exports.default = t.default)
   }),
-  B = y(function (e, t) {
+  U = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e) {
         return (0, a.default)(e), ['true', 'false', '1', '0'].indexOf(e) >= 0
       })
     var r,
-      a = (r = h) && r.__esModule ? r : { default: r }
+      a = (r = g) && r.__esModule ? r : { default: r }
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  U = y(function (e, t) {
+  G = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e) {
         if (((0, a.default)(e), 'en_US_POSIX' === e || 'ca_ES_VALENCIA' === e)) return !0
         return u.test(e)
       })
     var r,
-      a = (r = h) && r.__esModule ? r : { default: r }
+      a = (r = g) && r.__esModule ? r : { default: r }
     var u = /^[A-z]{2,4}([_-]([A-z]{4}|[\d]{3}))?([_-]([A-z]{2}|[\d]{3}))?$/
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  G = y(function (e, t) {
+  K = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e) {
         var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : 'en-US'
@@ -792,11 +788,11 @@ var h = y(function (e, t) {
       }),
       (t.locales = void 0)
     var r,
-      a = (r = h) && r.__esModule ? r : { default: r }
+      a = (r = g) && r.__esModule ? r : { default: r }
     var u = Object.keys(b.alpha)
     t.locales = u
   }),
-  K = y(function (e, t) {
+  k = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e) {
         var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : 'en-US'
@@ -805,22 +801,22 @@ var h = y(function (e, t) {
       }),
       (t.locales = void 0)
     var r,
-      a = (r = h) && r.__esModule ? r : { default: r }
+      a = (r = g) && r.__esModule ? r : { default: r }
     var u = Object.keys(b.alphanumeric)
     t.locales = u
   }),
-  k = y(function (e, t) {
+  H = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e, t) {
         if (((0, a.default)(e), t && t.no_symbols)) return u.test(e)
         return new RegExp('^[+-]?([0-9]*['.concat((t || {}).locale ? b.decimal[t.locale] : '.', '])?[0-9]+$')).test(e)
       })
     var r,
-      a = (r = h) && r.__esModule ? r : { default: r }
+      a = (r = g) && r.__esModule ? r : { default: r }
     var u = /^[0-9]+$/
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  H = y(function (e, t) {
+  W = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e, t) {
         ;(0, a.default)(e)
@@ -828,7 +824,7 @@ var h = y(function (e, t) {
         return t.toUpperCase() in u && u[t].test(r)
       })
     var r,
-      a = (r = h) && r.__esModule ? r : { default: r }
+      a = (r = g) && r.__esModule ? r : { default: r }
     var u = {
       AM: /^[A-Z]{2}\d{7}$/,
       AR: /^[A-Z]{3}\d{6}$/,
@@ -875,7 +871,7 @@ var h = y(function (e, t) {
     }
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  W = y(function (e, t) {
+  z = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e, t) {
         ;(0, a.default)(e)
@@ -887,39 +883,39 @@ var h = y(function (e, t) {
         return r.test(e) && l && n && d && f
       })
     var r,
-      a = (r = h) && r.__esModule ? r : { default: r }
+      a = (r = g) && r.__esModule ? r : { default: r }
     var u = /^(?:[-+]?(?:0|[1-9][0-9]*))$/,
       o = /^[-+]?[0-9]+$/
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  z = y(function (e, t) {
+  Y = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e) {
         return (0, a.default)(e, { min: 0, max: 65535 })
       })
     var r,
-      a = (r = W) && r.__esModule ? r : { default: r }
+      a = (r = z) && r.__esModule ? r : { default: r }
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  Y = y(function (e, t) {
+  V = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e) {
         return (0, a.default)(e), e === e.toLowerCase()
       })
     var r,
-      a = (r = h) && r.__esModule ? r : { default: r }
+      a = (r = g) && r.__esModule ? r : { default: r }
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  V = y(function (e, t) {
+  q = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e) {
         return (0, a.default)(e), e === e.toUpperCase()
       })
     var r,
-      a = (r = h) && r.__esModule ? r : { default: r }
+      a = (r = g) && r.__esModule ? r : { default: r }
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  q = y(function (e, t) {
+  J = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e, t) {
         ;(0, a.default)(e)
@@ -936,63 +932,63 @@ var h = y(function (e, t) {
         return !0
       })
     var r,
-      a = (r = h) && r.__esModule ? r : { default: r }
+      a = (r = g) && r.__esModule ? r : { default: r }
     var u = /^[0-9]{15}$/,
       o = /^\d{2}-\d{6}-\d{6}-\d{1}$/
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  J = y(function (e, t) {
+  X = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e) {
         return (0, a.default)(e), u.test(e)
       })
     var r,
-      a = (r = h) && r.__esModule ? r : { default: r }
+      a = (r = g) && r.__esModule ? r : { default: r }
     var u = /^[\x00-\x7F]+$/
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  X = y(function (e, t) {
+  Q = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e) {
         return (0, a.default)(e), u.test(e)
       }),
       (t.fullWidth = void 0)
     var r,
-      a = (r = h) && r.__esModule ? r : { default: r }
+      a = (r = g) && r.__esModule ? r : { default: r }
     var u = /[^\u0020-\u007E\uFF61-\uFF9F\uFFA0-\uFFDC\uFFE8-\uFFEE0-9a-zA-Z]/
     t.fullWidth = u
   }),
-  Q = y(function (e, t) {
+  ee = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e) {
         return (0, a.default)(e), u.test(e)
       }),
       (t.halfWidth = void 0)
     var r,
-      a = (r = h) && r.__esModule ? r : { default: r }
+      a = (r = g) && r.__esModule ? r : { default: r }
     var u = /[\u0020-\u007E\uFF61-\uFF9F\uFFA0-\uFFDC\uFFE8-\uFFEE0-9a-zA-Z]/
     t.halfWidth = u
   }),
-  ee = y(function (e, t) {
+  te = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e) {
-        return (0, a.default)(e), X.fullWidth.test(e) && Q.halfWidth.test(e)
+        return (0, a.default)(e), Q.fullWidth.test(e) && ee.halfWidth.test(e)
       })
     var r,
-      a = (r = h) && r.__esModule ? r : { default: r }
+      a = (r = g) && r.__esModule ? r : { default: r }
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  te = y(function (e, t) {
+  re = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e) {
         return (0, a.default)(e), u.test(e)
       })
     var r,
-      a = (r = h) && r.__esModule ? r : { default: r }
+      a = (r = g) && r.__esModule ? r : { default: r }
     var u = /[^\x00-\x7F]/
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  re = y(function (e, t) {
+  ae = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e) {
         var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : '',
@@ -1002,33 +998,33 @@ var h = y(function (e, t) {
       (e.exports = t.default),
       (e.exports.default = t.default)
   }),
-  ae = y(function (e, t) {
+  ue = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e) {
         return (0, r.default)(e), u.test(e)
       })
-    var r = a(h)
+    var r = a(g)
     function a(e) {
       return e && e.__esModule ? e : { default: e }
     }
-    var u = (0, a(re).default)([
+    var u = (0, a(ae).default)([
       '^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)',
       '(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))',
       '?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$'
     ])
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  ue = y(function (e, t) {
+  oe = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e) {
         return (0, a.default)(e), u.test(e)
       })
     var r,
-      a = (r = h) && r.__esModule ? r : { default: r }
+      a = (r = g) && r.__esModule ? r : { default: r }
     var u = /[\uD800-\uDBFF][\uDC00-\uDFFF]/
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  oe = y(function (e, t) {
+  le = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }), (t.default = void 0)
     var r = function (e, t) {
       return e.some(function (e) {
@@ -1037,7 +1033,7 @@ var h = y(function (e, t) {
     }
     ;(t.default = r), (e.exports = t.default), (e.exports.default = t.default)
   }),
-  le = y(function (e, t) {
+  ne = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e, t) {
         if (((0, a.default)(e), (t = (0, r.default)(t, l)).locale in b.decimal))
@@ -1054,9 +1050,9 @@ var h = y(function (e, t) {
           )
         throw new Error("Invalid locale '".concat(t.locale, "'"))
       })
-    var r = o(F),
-      a = o(h),
-      u = o(oe)
+    var r = o(E),
+      a = o(g),
+      u = o(le)
     function o(e) {
       return e && e.__esModule ? e : { default: e }
     }
@@ -1064,49 +1060,49 @@ var h = y(function (e, t) {
       n = ['', '-', '+']
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  ne = y(function (e, t) {
+  de = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e) {
         return (0, a.default)(e), u.test(e)
       })
     var r,
-      a = (r = h) && r.__esModule ? r : { default: r }
+      a = (r = g) && r.__esModule ? r : { default: r }
     var u = /^(0x|0h)?[0-9A-F]+$/i
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  de = y(function (e, t) {
+  fe = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e) {
         return (0, a.default)(e), u.test(e)
       })
     var r,
-      a = (r = h) && r.__esModule ? r : { default: r }
+      a = (r = g) && r.__esModule ? r : { default: r }
     var u = /^(0o)?[0-7]+$/i
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  fe = y(function (e, t) {
+  ie = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e, t) {
         return (0, r.default)(e), (0, a.default)(e) % parseInt(t, 10) == 0
       })
-    var r = u(h),
-      a = u(x)
+    var r = u(g),
+      a = u(S)
     function u(e) {
       return e && e.__esModule ? e : { default: e }
     }
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  ie = y(function (e, t) {
+  se = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e) {
         return (0, a.default)(e), u.test(e)
       })
     var r,
-      a = (r = h) && r.__esModule ? r : { default: r }
+      a = (r = g) && r.__esModule ? r : { default: r }
     var u = /^#?([0-9A-F]{3}|[0-9A-F]{4}|[0-9A-F]{6}|[0-9A-F]{8})$/i
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  se = y(function (e, t) {
+  ce = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e) {
         var t = !(arguments.length > 1 && void 0 !== arguments[1]) || arguments[1]
@@ -1114,35 +1110,35 @@ var h = y(function (e, t) {
         return u.test(e) || o.test(e) || l.test(e) || n.test(e)
       })
     var r,
-      a = (r = h) && r.__esModule ? r : { default: r }
+      a = (r = g) && r.__esModule ? r : { default: r }
     var u = /^rgb\((([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5]),){2}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\)$/,
       o = /^rgba\((([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5]),){3}(0?\.\d|1(\.0)?|0(\.0)?)\)$/,
       l = /^rgb\((([0-9]%|[1-9][0-9]%|100%),){2}([0-9]%|[1-9][0-9]%|100%)\)/,
       n = /^rgba\((([0-9]%|[1-9][0-9]%|100%),){3}(0?\.\d|1(\.0)?|0(\.0)?)\)/
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  ce = y(function (e, t) {
+  pe = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e) {
         return (0, a.default)(e), u.test(e) || o.test(e)
       })
     var r,
-      a = (r = h) && r.__esModule ? r : { default: r }
+      a = (r = g) && r.__esModule ? r : { default: r }
     var u = /^(hsl)a?\(\s*((\+|\-)?([0-9]+(\.[0-9]+)?(e(\+|\-)?[0-9]+)?|\.[0-9]+(e(\+|\-)?[0-9]+)?))(deg|grad|rad|turn|\s*)(\s*,\s*(\+|\-)?([0-9]+(\.[0-9]+)?(e(\+|\-)?[0-9]+)?|\.[0-9]+(e(\+|\-)?[0-9]+)?)%){2}\s*(,\s*((\+|\-)?([0-9]+(\.[0-9]+)?(e(\+|\-)?[0-9]+)?|\.[0-9]+(e(\+|\-)?[0-9]+)?)%?)\s*)?\)$/i,
       o = /^(hsl)a?\(\s*((\+|\-)?([0-9]+(\.[0-9]+)?(e(\+|\-)?[0-9]+)?|\.[0-9]+(e(\+|\-)?[0-9]+)?))(deg|grad|rad|turn|\s)(\s*(\+|\-)?([0-9]+(\.[0-9]+)?(e(\+|\-)?[0-9]+)?|\.[0-9]+(e(\+|\-)?[0-9]+)?)%){2}\s*(\/\s*((\+|\-)?([0-9]+(\.[0-9]+)?(e(\+|\-)?[0-9]+)?|\.[0-9]+(e(\+|\-)?[0-9]+)?)%?)\s*)?\)$/i
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  pe = y(function (e, t) {
+  _e = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e) {
         return (0, a.default)(e), u.test(e)
       })
     var r,
-      a = (r = h) && r.__esModule ? r : { default: r }
+      a = (r = g) && r.__esModule ? r : { default: r }
     var u = /^[A-Z]{2}[0-9A-Z]{3}\d{2}\d{5}$/
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  _e = y(function (e, t) {
+  ve = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e) {
         return (
@@ -1169,7 +1165,7 @@ var h = y(function (e, t) {
         )
       })
     var r,
-      a = (r = h) && r.__esModule ? r : { default: r }
+      a = (r = g) && r.__esModule ? r : { default: r }
     var u = {
       AD: /^(AD[0-9]{2})\d{8}[A-Z0-9]{12}$/,
       AE: /^(AE[0-9]{2})\d{3}\d{16}$/,
@@ -1249,33 +1245,33 @@ var h = y(function (e, t) {
     }
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  ve = y(function (e, t) {
+  me = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e) {
         return (0, a.default)(e), u.test(e)
       })
     var r,
-      a = (r = h) && r.__esModule ? r : { default: r }
+      a = (r = g) && r.__esModule ? r : { default: r }
     var u = /^[A-z]{4}[A-z]{2}\w{2}(\w{3})?$/
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  me = y(function (e, t) {
+  Ae = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e) {
         return (0, a.default)(e), u.test(e)
       })
     var r,
-      a = (r = h) && r.__esModule ? r : { default: r }
+      a = (r = g) && r.__esModule ? r : { default: r }
     var u = /^[a-f0-9]{32}$/
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  Ae = y(function (e, t) {
+  $e = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e, t) {
         return (0, a.default)(e), new RegExp('^[a-fA-F0-9]{'.concat(u[t], '}$')).test(e)
       })
     var r,
-      a = (r = h) && r.__esModule ? r : { default: r }
+      a = (r = g) && r.__esModule ? r : { default: r }
     var u = {
       md5: 32,
       md4: 32,
@@ -1293,7 +1289,7 @@ var h = y(function (e, t) {
     }
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  $e = y(function (e, t) {
+  ye = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e, t) {
         ;(0, r.default)(e), (t = (0, a.default)(t, n))
@@ -1303,8 +1299,8 @@ var h = y(function (e, t) {
         var d = e.indexOf('=')
         return -1 === d || d === u - 1 || (d === u - 2 && '=' === e[u - 1])
       })
-    var r = u(h),
-      a = u(F)
+    var r = u(g),
+      a = u(E)
     function u(e) {
       return e && e.__esModule ? e : { default: e }
     }
@@ -1313,7 +1309,7 @@ var h = y(function (e, t) {
       n = { urlSafe: !1 }
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  ye = y(function (e, t) {
+  he = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e) {
         ;(0, r.default)(e)
@@ -1324,14 +1320,14 @@ var h = y(function (e, t) {
           return e && (0, a.default)(t, { urlSafe: !0 })
         }, !0)
       })
-    var r = u(h),
-      a = u($e)
+    var r = u(g),
+      a = u(ye)
     function u(e) {
       return e && e.__esModule ? e : { default: e }
     }
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  he = y(function (e, t) {
+  ge = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e, t) {
         ;(0, r.default)(e)
@@ -1344,8 +1340,8 @@ var h = y(function (e, t) {
         } catch (e) {}
         return !1
       })
-    var r = u(h),
-      a = u(F)
+    var r = u(g),
+      a = u(E)
     function u(e) {
       return e && e.__esModule ? e : { default: e }
     }
@@ -1364,20 +1360,20 @@ var h = y(function (e, t) {
     var l = { allow_primitives: !1 }
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  ge = y(function (e, t) {
+  Me = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e, t) {
         return (0, r.default)(e), 0 === ((t = (0, a.default)(t, o)).ignore_whitespace ? e.trim().length : e.length)
       })
-    var r = u(h),
-      a = u(F)
+    var r = u(g),
+      a = u(E)
     function u(e) {
       return e && e.__esModule ? e : { default: e }
     }
     var o = { ignore_whitespace: !1 }
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  be = y(function (e, t) {
+  be = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e, t) {
         var r, o
@@ -1388,7 +1384,7 @@ var h = y(function (e, t) {
         return n >= r && (void 0 === o || n <= o)
       })
     var r,
-      a = (r = h) && r.__esModule ? r : { default: r }
+      a = (r = g) && r.__esModule ? r : { default: r }
     function u(e) {
       return (u =
         'function' == typeof Symbol && 'symbol' == typeof Symbol.iterator
@@ -1403,7 +1399,7 @@ var h = y(function (e, t) {
     }
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  Me = y(function (e, t) {
+  xe = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e) {
         var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : 'all'
@@ -1412,7 +1408,7 @@ var h = y(function (e, t) {
         return r && r.test(e)
       })
     var r,
-      a = (r = h) && r.__esModule ? r : { default: r }
+      a = (r = g) && r.__esModule ? r : { default: r }
     var u = {
       3: /^[0-9A-F]{8}-[0-9A-F]{4}-3[0-9A-F]{3}-[0-9A-F]{4}-[0-9A-F]{12}$/i,
       4: /^[0-9A-F]{8}-[0-9A-F]{4}-4[0-9A-F]{3}-[89AB][0-9A-F]{3}-[0-9A-F]{12}$/i,
@@ -1421,19 +1417,19 @@ var h = y(function (e, t) {
     }
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  xe = y(function (e, t) {
+  Se = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e) {
         return (0, r.default)(e), (0, a.default)(e) && 24 === e.length
       })
-    var r = u(h),
-      a = u(ne)
+    var r = u(g),
+      a = u(de)
     function u(e) {
       return e && e.__esModule ? e : { default: e }
     }
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  Se = y(function (e, t) {
+  Oe = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e) {
         var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : String(new Date())
@@ -1442,14 +1438,14 @@ var h = y(function (e, t) {
           o = (0, a.default)(e)
         return !!(o && u && o > u)
       })
-    var r = u(h),
-      a = u(g)
+    var r = u(g),
+      a = u(M)
     function u(e) {
       return e && e.__esModule ? e : { default: e }
     }
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  Oe = y(function (e, t) {
+  Pe = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e) {
         var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : String(new Date())
@@ -1458,14 +1454,14 @@ var h = y(function (e, t) {
           o = (0, a.default)(e)
         return !!(o && u && o < u)
       })
-    var r = u(h),
-      a = u(g)
+    var r = u(g),
+      a = u(M)
     function u(e) {
       return e && e.__esModule ? e : { default: e }
     }
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  Pe = y(function (e, t) {
+  Ze = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e, t) {
         var u
@@ -1478,8 +1474,8 @@ var h = y(function (e, t) {
         if (t && 'function' == typeof t.indexOf) return t.indexOf(e) >= 0
         return !1
       })
-    var r = u(h),
-      a = u(Z)
+    var r = u(g),
+      a = u(F)
     function u(e) {
       return e && e.__esModule ? e : { default: e }
     }
@@ -1497,7 +1493,7 @@ var h = y(function (e, t) {
     }
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  Ze = y(function (e, t) {
+  Fe = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e) {
         ;(0, a.default)(e)
@@ -1508,11 +1504,11 @@ var h = y(function (e, t) {
         return !(n % 10 != 0 || !t)
       })
     var r,
-      a = (r = h) && r.__esModule ? r : { default: r }
+      a = (r = g) && r.__esModule ? r : { default: r }
     var u = /^(?:4[0-9]{12}(?:[0-9]{3,6})?|5[1-5][0-9]{14}|(222[1-9]|22[3-9][0-9]|2[3-6][0-9]{2}|27[01][0-9]|2720)[0-9]{12}|6(?:011|5[0-9][0-9])[0-9]{12,15}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11}|6[27][0-9]{14})$/
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  Fe = y(function (e, t) {
+  Ee = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e, t) {
         if (((0, a.default)(e), t in u)) return u[t](e)
@@ -1525,7 +1521,7 @@ var h = y(function (e, t) {
         throw new Error("Invalid locale '".concat(t, "'"))
       })
     var r,
-      a = (r = h) && r.__esModule ? r : { default: r }
+      a = (r = g) && r.__esModule ? r : { default: r }
     var u = {
       ES: function (e) {
         ;(0, a.default)(e)
@@ -1765,7 +1761,7 @@ var h = y(function (e, t) {
     }
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  Ee = y(function (e, t) {
+  Re = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e) {
         ;(0, a.default)(e)
@@ -1796,11 +1792,11 @@ var h = y(function (e, t) {
         var r, o
       })
     var r,
-      a = (r = h) && r.__esModule ? r : { default: r }
+      a = (r = g) && r.__esModule ? r : { default: r }
     var u = /^(\d{8}|\d{13})$/
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  Re = y(function (e, t) {
+  we = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e) {
         if (((0, a.default)(e), !u.test(e))) return !1
@@ -1820,11 +1816,11 @@ var h = y(function (e, t) {
         return parseInt(e.substr(e.length - 1), 10) === (1e4 - l) % 10
       })
     var r,
-      a = (r = h) && r.__esModule ? r : { default: r }
+      a = (r = g) && r.__esModule ? r : { default: r }
     var u = /^[A-Z]{2}[0-9A-Z]{9}[0-9]$/
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  we = y(function (e, t) {
+  Ie = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function e(t) {
         var r = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : ''
@@ -1844,13 +1840,13 @@ var h = y(function (e, t) {
         return !1
       })
     var r,
-      a = (r = h) && r.__esModule ? r : { default: r }
+      a = (r = g) && r.__esModule ? r : { default: r }
     var u = /^(?:[0-9]{9}X|[0-9]{10})$/,
       o = /^(?:[0-9]{13})$/,
       l = [1, 3]
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  Ie = y(function (e, t) {
+  Le = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e) {
         var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {}
@@ -1868,11 +1864,11 @@ var h = y(function (e, t) {
         return l % 11 == 0
       })
     var r,
-      a = (r = h) && r.__esModule ? r : { default: r }
+      a = (r = g) && r.__esModule ? r : { default: r }
     var u = '^\\d{4}-?\\d{3}[\\dX]$'
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  Le = y(function (e, t) {
+  Ce = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e) {
         var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : 'en-US'
@@ -1880,7 +1876,7 @@ var h = y(function (e, t) {
         return -1 !== n(t).indexOf(e.substr(0, 2))
       })
     var r,
-      a = (r = h) && r.__esModule ? r : { default: r }
+      a = (r = g) && r.__esModule ? r : { default: r }
     function u(e) {
       return (
         (function (e) {
@@ -1991,7 +1987,7 @@ var h = y(function (e, t) {
     var d = { 'en-US': /^\d{2}[- ]{0,1}\d{7}$/ }
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  Ce = y(function (e, t) {
+  je = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e, t, r) {
         if (((0, a.default)(e), r && r.strictMode && !e.startsWith('+'))) return !1
@@ -2011,7 +2007,7 @@ var h = y(function (e, t) {
       }),
       (t.locales = void 0)
     var r,
-      a = (r = h) && r.__esModule ? r : { default: r }
+      a = (r = g) && r.__esModule ? r : { default: r }
     var u = {
       'am-AM': /^(\+?374|0)((10|[9|7][0-9])\d{6}$|[2-4]\d{7}$)/,
       'ar-AE': /^((\+?971)|0)?5[024568]\d{7}$/,
@@ -2111,17 +2107,17 @@ var h = y(function (e, t) {
     var o = Object.keys(u)
     t.locales = o
   }),
-  je = y(function (e, t) {
+  Ne = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e) {
         return (0, a.default)(e), u.test(e)
       })
     var r,
-      a = (r = h) && r.__esModule ? r : { default: r }
+      a = (r = g) && r.__esModule ? r : { default: r }
     var u = /^(0x)[0-9a-f]{40}$/i
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  Ne = y(function (e, t) {
+  Te = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e, t) {
         return (
@@ -2163,8 +2159,8 @@ var h = y(function (e, t) {
           })((t = (0, r.default)(t, o))).test(e)
         )
       })
-    var r = u(F),
-      a = u(h)
+    var r = u(E),
+      a = u(g)
     function u(e) {
       return e && e.__esModule ? e : { default: e }
     }
@@ -2187,17 +2183,17 @@ var h = y(function (e, t) {
     }
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  Te = y(function (e, t) {
+  De = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e) {
         return (0, a.default)(e), u.test(e)
       })
     var r,
-      a = (r = h) && r.__esModule ? r : { default: r }
+      a = (r = g) && r.__esModule ? r : { default: r }
     var u = /^(bc1|[13])[a-zA-HJ-NP-Z0-9]{25,39}$/
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  De = y(function (e, t) {
+  Be = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e, t) {
         ;(0, a.default)(e)
@@ -2228,17 +2224,17 @@ var h = y(function (e, t) {
           : r
       })
     var r,
-      a = (r = h) && r.__esModule ? r : { default: r }
+      a = (r = g) && r.__esModule ? r : { default: r }
     var u = /^([\+-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-3])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24:?00)([\.,]\d+(?!:))?)?(\17[0-5]\d([\.,]\d+)?)?([zZ]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$/
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  Be = y(function (e, t) {
+  Ue = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e) {
         return (0, a.default)(e), s.test(e)
       })
     var r,
-      a = (r = h) && r.__esModule ? r : { default: r }
+      a = (r = g) && r.__esModule ? r : { default: r }
     var u = /([01][0-9]|2[0-3])/,
       o = /[0-5][0-9]/,
       l = new RegExp('[-+]'.concat(u.source, ':').concat(o.source)),
@@ -2260,13 +2256,13 @@ var h = y(function (e, t) {
       s = new RegExp(''.concat(f.source, '[ tT]').concat(i.source))
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  Ue = y(function (e, t) {
+  Ge = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e) {
         return (0, r.default)(e), (0, a.default)(o, e.toUpperCase())
       })
-    var r = u(h),
-      a = u(oe)
+    var r = u(g),
+      a = u(le)
     function u(e) {
       return e && e.__esModule ? e : { default: e }
     }
@@ -2523,13 +2519,13 @@ var h = y(function (e, t) {
     ]
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  Ge = y(function (e, t) {
+  Ke = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e) {
         return (0, r.default)(e), (0, a.default)(o, e.toUpperCase())
       })
-    var r = u(h),
-      a = u(oe)
+    var r = u(g),
+      a = u(le)
     function u(e) {
       return e && e.__esModule ? e : { default: e }
     }
@@ -2786,7 +2782,7 @@ var h = y(function (e, t) {
     ]
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  Ke = y(function (e, t) {
+  ke = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e) {
         ;(0, a.default)(e)
@@ -2795,11 +2791,11 @@ var h = y(function (e, t) {
         return !1
       })
     var r,
-      a = (r = h) && r.__esModule ? r : { default: r }
+      a = (r = g) && r.__esModule ? r : { default: r }
     var u = /^[A-Z2-7]+=*$/
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  ke = y(function (e, t) {
+  He = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e) {
         ;(0, a.default)(e)
@@ -2817,35 +2813,35 @@ var h = y(function (e, t) {
         return !0
       })
     var r,
-      a = (r = h) && r.__esModule ? r : { default: r }
+      a = (r = g) && r.__esModule ? r : { default: r }
     var u = /^[a-z]+\/[a-z0-9\-\+]+$/i,
       o = /^[a-z\-]+=[a-z0-9\-]+$/i,
       l = /^[a-z0-9!\$&'\(\)\*\+,;=\-\._~:@\/\?%\s]*$/i
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  He = y(function (e, t) {
+  We = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e) {
         return (0, a.default)(e), u.test(e.trim())
       })
     var r,
-      a = (r = h) && r.__esModule ? r : { default: r }
+      a = (r = g) && r.__esModule ? r : { default: r }
     var u = /^magnet:\?xt=urn:[a-z0-9]+:[a-z0-9]{32,40}&dn=.+&tr=.+$/i
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  We = y(function (e, t) {
+  ze = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e) {
         return (0, a.default)(e), u.test(e) || o.test(e) || l.test(e)
       })
     var r,
-      a = (r = h) && r.__esModule ? r : { default: r }
+      a = (r = g) && r.__esModule ? r : { default: r }
     var u = /^(application|audio|font|image|message|model|multipart|text|video)\/[a-zA-Z0-9\.\-\+]{1,100}$/i,
       o = /^text\/[a-zA-Z0-9\.\-\+]{1,100};\s?charset=("[a-zA-Z0-9\.\-\+\s]{0,70}"|[a-zA-Z0-9\.\-\+]{0,70})(\s?\([a-zA-Z0-9\.\-\+\s]{1,20}\))?$/i,
       l = /^multipart\/[a-zA-Z0-9\.\-\+]{1,100}(;\s?(boundary|charset)=("[a-zA-Z0-9\.\-\+\s]{0,70}"|[a-zA-Z0-9\.\-\+]{0,70})(\s?\([a-zA-Z0-9\.\-\+\s]{1,20}\))?){0,2}$/i
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  ze = y(function (e, t) {
+  Ye = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e, t) {
         if (((0, r.default)(e), (t = (0, a.default)(t, f)), !e.includes(','))) return !1
@@ -2854,8 +2850,8 @@ var h = y(function (e, t) {
         if (t.checkDMS) return n.test(u[0]) && d.test(u[1])
         return o.test(u[0]) && l.test(u[1])
       })
-    var r = u(h),
-      a = u(F)
+    var r = u(g),
+      a = u(E)
     function u(e) {
       return e && e.__esModule ? e : { default: e }
     }
@@ -2866,7 +2862,7 @@ var h = y(function (e, t) {
       f = { checkDMS: !1 }
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  Ye = y(function (e, t) {
+  Ve = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e, t) {
         if (((0, a.default)(e), t in n)) return n[t].test(e)
@@ -2880,7 +2876,7 @@ var h = y(function (e, t) {
       }),
       (t.locales = void 0)
     var r,
-      a = (r = h) && r.__esModule ? r : { default: r }
+      a = (r = g) && r.__esModule ? r : { default: r }
     var u = /^\d{4}$/,
       o = /^\d{5}$/,
       l = /^\d{6}$/,
@@ -2942,7 +2938,7 @@ var h = y(function (e, t) {
       d = Object.keys(n)
     t.locales = d
   }),
-  Ve = y(function (e, t) {
+  qe = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e, t) {
         ;(0, a.default)(e)
@@ -2950,10 +2946,10 @@ var h = y(function (e, t) {
         return e.replace(r, '')
       })
     var r,
-      a = (r = h) && r.__esModule ? r : { default: r }
+      a = (r = g) && r.__esModule ? r : { default: r }
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  qe = y(function (e, t) {
+  Je = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e, t) {
         ;(0, a.default)(e)
@@ -2961,22 +2957,22 @@ var h = y(function (e, t) {
         return e.replace(r, '')
       })
     var r,
-      a = (r = h) && r.__esModule ? r : { default: r }
+      a = (r = g) && r.__esModule ? r : { default: r }
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  Je = y(function (e, t) {
+  Xe = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e, t) {
         return (0, r.default)((0, a.default)(e, t), t)
       })
-    var r = u(qe),
-      a = u(Ve)
+    var r = u(Je),
+      a = u(qe)
     function u(e) {
       return e && e.__esModule ? e : { default: e }
     }
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  Xe = y(function (e, t) {
+  Qe = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e) {
         return (
@@ -2993,10 +2989,10 @@ var h = y(function (e, t) {
         )
       })
     var r,
-      a = (r = h) && r.__esModule ? r : { default: r }
+      a = (r = g) && r.__esModule ? r : { default: r }
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  Qe = y(function (e, t) {
+  et = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e) {
         return (
@@ -3013,42 +3009,42 @@ var h = y(function (e, t) {
         )
       })
     var r,
-      a = (r = h) && r.__esModule ? r : { default: r }
+      a = (r = g) && r.__esModule ? r : { default: r }
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  et = y(function (e, t) {
+  tt = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e, t) {
         return (0, a.default)(e), e.replace(new RegExp('['.concat(t, ']+'), 'g'), '')
       })
     var r,
-      a = (r = h) && r.__esModule ? r : { default: r }
+      a = (r = g) && r.__esModule ? r : { default: r }
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  tt = y(function (e, t) {
+  rt = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e, t) {
         ;(0, r.default)(e)
         var u = t ? '\\x00-\\x09\\x0B\\x0C\\x0E-\\x1F\\x7F' : '\\x00-\\x1F\\x7F'
         return (0, a.default)(e, u)
       })
-    var r = u(h),
-      a = u(et)
+    var r = u(g),
+      a = u(tt)
     function u(e) {
       return e && e.__esModule ? e : { default: e }
     }
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  rt = y(function (e, t) {
+  at = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e, t) {
         return (0, a.default)(e), e.replace(new RegExp('[^'.concat(t, ']+'), 'g'), '')
       })
     var r,
-      a = (r = h) && r.__esModule ? r : { default: r }
+      a = (r = g) && r.__esModule ? r : { default: r }
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  at = y(function (e, t) {
+  ut = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e, t) {
         ;(0, a.default)(e)
@@ -3056,10 +3052,10 @@ var h = y(function (e, t) {
         return !0
       })
     var r,
-      a = (r = h) && r.__esModule ? r : { default: r }
+      a = (r = g) && r.__esModule ? r : { default: r }
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  ut = y(function (e, t) {
+  ot = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e, t) {
         t = (0, a.default)(t, u)
@@ -3095,7 +3091,7 @@ var h = y(function (e, t) {
         return s.join('@')
       })
     var r,
-      a = (r = F) && r.__esModule ? r : { default: r }
+      a = (r = E) && r.__esModule ? r : { default: r }
     var u = {
         all_lowercase: !0,
         gmail_lowercase: !0,
@@ -3212,18 +3208,18 @@ var h = y(function (e, t) {
     }
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  ot = y(function (e, t) {
+  lt = h(function (e, t) {
     Object.defineProperty(t, '__esModule', { value: !0 }),
       (t.default = function (e) {
         return (0, a.default)(e), u.test(e)
       })
     var r,
-      a = (r = h) && r.__esModule ? r : { default: r }
+      a = (r = g) && r.__esModule ? r : { default: r }
     var u = /^[^\s-_](?!.*?[-_]{2,})([a-z0-9-\\]{1,})[^\s]*[^-_\s]$/
     ;(e.exports = t.default), (e.exports.default = t.default)
   }),
-  lt = $(
-    y(function (e, t) {
+  nt = y(
+    h(function (e, t) {
       function r(e) {
         return (r =
           'function' == typeof Symbol && 'symbol' == typeof Symbol.iterator
@@ -3237,94 +3233,94 @@ var h = y(function (e, t) {
               })(e)
       }
       Object.defineProperty(t, '__esModule', { value: !0 }), (t.default = void 0)
-      var a = yr(g),
-        u = yr(x),
-        o = yr(S),
-        l = yr(O),
-        n = yr(P),
-        d = yr(E),
-        f = yr(R),
-        i = yr(C),
-        s = yr(j),
-        c = yr(N),
-        p = yr(L),
-        _ = yr(T),
-        v = yr(I),
-        m = yr(D),
-        A = yr(B),
-        $ = yr(U),
-        y = $r(G),
-        h = $r(K),
-        b = yr(k),
-        Z = yr(H),
-        F = yr(z),
-        re = yr(Y),
-        oe = yr(V),
-        lt = yr(q),
-        nt = yr(J),
-        dt = yr(X),
-        ft = yr(Q),
-        it = yr(ee),
-        st = yr(te),
-        ct = yr(ae),
-        pt = yr(ue),
-        _t = yr(W),
-        vt = $r(M),
-        mt = yr(le),
-        At = yr(ne),
-        $t = yr(de),
-        yt = yr(fe),
-        ht = yr(ie),
-        gt = yr(se),
-        bt = yr(ce),
+      var a = yr(M),
+        u = yr(S),
+        o = yr(O),
+        l = yr(P),
+        n = yr(Z),
+        d = yr(R),
+        f = yr(w),
+        i = yr(j),
+        s = yr(N),
+        c = yr(T),
+        p = yr(C),
+        _ = yr(D),
+        v = yr(L),
+        m = yr(B),
+        A = yr(U),
+        $ = yr(G),
+        y = $r(K),
+        h = $r(k),
+        g = yr(H),
+        b = yr(W),
+        F = yr(Y),
+        E = yr(V),
+        ae = yr(q),
+        le = yr(J),
+        nt = yr(X),
+        dt = yr(Q),
+        ft = yr(ee),
+        it = yr(te),
+        st = yr(re),
+        ct = yr(ue),
+        pt = yr(oe),
+        _t = yr(z),
+        vt = $r(x),
+        mt = yr(ne),
+        At = yr(de),
+        $t = yr(fe),
+        yt = yr(ie),
+        ht = yr(se),
+        gt = yr(ce),
         Mt = yr(pe),
-        xt = yr(_e),
-        St = yr(ve),
-        Ot = yr(me),
-        Pt = yr(Ae),
-        Zt = yr(ye),
-        Ft = yr(he),
-        Et = yr(ge),
+        bt = yr(_e),
+        xt = yr(ve),
+        St = yr(me),
+        Ot = yr(Ae),
+        Pt = yr($e),
+        Zt = yr(he),
+        Ft = yr(ge),
+        Et = yr(Me),
         Rt = yr(be),
-        wt = yr(w),
-        It = yr(Me),
-        Lt = yr(xe),
-        Ct = yr(Se),
-        jt = yr(Oe),
-        Nt = yr(Pe),
-        Tt = yr(Ze),
-        Dt = yr(Fe),
-        Bt = yr(Ee),
-        Ut = yr(Re),
-        Gt = yr(we),
-        Kt = yr(Ie),
-        kt = yr(Le),
-        Ht = $r(Ce),
-        Wt = yr(je),
-        zt = yr(Ne),
-        Yt = yr(Te),
-        Vt = yr(De),
-        qt = yr(Be),
-        Jt = yr(Ue),
-        Xt = yr(Ge),
-        Qt = yr(Ke),
-        er = yr($e),
-        tr = yr(ke),
-        rr = yr(He),
-        ar = yr(We),
-        ur = yr(ze),
-        or = $r(Ye),
-        lr = yr(Ve),
-        nr = yr(qe),
-        dr = yr(Je),
-        fr = yr(Xe),
-        ir = yr(Qe),
-        sr = yr(tt),
-        cr = yr(rt),
-        pr = yr(et),
-        _r = yr(at),
-        vr = yr(ut),
-        mr = yr(ot)
+        wt = yr(I),
+        It = yr(xe),
+        Lt = yr(Se),
+        Ct = yr(Oe),
+        jt = yr(Pe),
+        Nt = yr(Ze),
+        Tt = yr(Fe),
+        Dt = yr(Ee),
+        Bt = yr(Re),
+        Ut = yr(we),
+        Gt = yr(Ie),
+        Kt = yr(Le),
+        kt = yr(Ce),
+        Ht = $r(je),
+        Wt = yr(Ne),
+        zt = yr(Te),
+        Yt = yr(De),
+        Vt = yr(Be),
+        qt = yr(Ue),
+        Jt = yr(Ge),
+        Xt = yr(Ke),
+        Qt = yr(ke),
+        er = yr(ye),
+        tr = yr(He),
+        rr = yr(We),
+        ar = yr(ze),
+        ur = yr(Ye),
+        or = $r(Ve),
+        lr = yr(qe),
+        nr = yr(Je),
+        dr = yr(Xe),
+        fr = yr(Qe),
+        ir = yr(et),
+        sr = yr(rt),
+        cr = yr(at),
+        pr = yr(tt),
+        _r = yr(ut),
+        vr = yr(ot),
+        mr = yr(lt)
       function Ar() {
         if ('function' != typeof WeakMap) return null
         var e = new WeakMap()
@@ -3374,11 +3370,11 @@ var h = y(function (e, t) {
         isAlphaLocales: y.locales,
         isAlphanumeric: h.default,
         isAlphanumericLocales: h.locales,
-        isNumeric: b.default,
-        isPassportNumber: Z.default,
+        isNumeric: g.default,
+        isPassportNumber: b.default,
         isPort: F.default,
-        isLowercase: re.default,
-        isUppercase: oe.default,
+        isLowercase: E.default,
+        isUppercase: ae.default,
         isAscii: nt.default,
         isFullWidth: dt.default,
         isHalfWidth: ft.default,
@@ -3387,7 +3383,7 @@ var h = y(function (e, t) {
         isSemVer: ct.default,
         isSurrogatePair: pt.default,
         isInt: _t.default,
-        isIMEI: lt.default,
+        isIMEI: le.default,
         isFloat: vt.default,
         isFloatLocales: vt.locales,
         isDecimal: mt.default,
@@ -3396,8 +3392,8 @@ var h = y(function (e, t) {
         isDivisibleBy: yt.default,
         isHexColor: ht.default,
         isRgbColor: gt.default,
-        isHSL: bt.default,
-        isISRC: Mt.default,
+        isHSL: Mt.default,
+        isISRC: bt.default,
         isMD5: Ot.default,
         isHash: Pt.default,
         isJWT: Zt.default,
@@ -3452,39 +3448,32 @@ var h = y(function (e, t) {
       ;(t.default = hr), (e.exports = t.default), (e.exports.default = t.default)
     })
   )
-const nt = { message: 'This input is required', handler: (e) => lt.isEmpty(e) },
-  dt = p({
+const dt = { message: 'This input is required', handler: (e) => !nt.isEmpty(e) },
+  ft = _({
     email: {
       type: 'text',
       label: 'Email',
       placeholder: 'email.placeholder',
       validations: {
-        email: {
-          ...{ message: 'Invalid email', handler: (e) => !lt.isEmail(e) },
-          message: 'email.isEmail'
-        },
-        required: { ...nt, message: 'email.required' }
+        email: { ...{ message: 'Invalid email', handler: (e) => !nt.isEmail(e) }, message: 'email.isEmail' },
+        required: { ...dt, message: 'email.required' }
       }
     },
     password: {
       type: 'password',
       label: 'password.label',
       placeholder: 'password.placeholder',
-      validations: { required: { ...nt, message: 'password.required' } }
+      validations: { required: { ...dt, message: 'password.required' } }
     }
   })
-var ft = {
+var it = {
     en: {
       email: {
         placeholder: 'Type your e-mail here',
         required: 'This input is required',
         isEmail: 'Invalid e-mail format'
       },
-      password: {
-        label: 'Password',
-        placeholder: 'Type your password here',
-        required: 'This input is required'
-      }
+      password: { label: 'Password', placeholder: 'Type your password here', required: 'This input is required' }
     },
     pt: {
       email: {
@@ -3492,35 +3481,28 @@ var ft = {
         required: 'Este input é obrigatório',
         isEmail: 'Formato de e-mail inválido'
       },
-      password: {
-        label: 'Senha',
-        placeholder: 'Digite sua senha aqui',
-        required: 'Este input é obrigatório'
-      }
+      password: { label: 'Senha', placeholder: 'Digite sua senha aqui', required: 'Este input é obrigatório' }
     }
   },
-  it = {
-    components: { Form: _, Button: v },
+  st = a({
+    components: { Form: v, Button: m },
     setup() {
       const { login: a } = {
           login: async (a) => {
             const { user: u } = t(),
               { notify: o } = r()
             try {
-              const t = await fetch(A + '/login', {
-                  method: 'POST',
-                  body: JSON.stringify(a)
-                }),
+              const t = await fetch($ + '/login', { method: 'POST', body: JSON.stringify(a) }),
                 r = await t.json()
               u.value = r.data
-              const { t: l } = c({
+              const { t: l } = p({
                 en: { message: 'Welcome, ' + u.value.name },
                 pt: { message: 'Seja bem vindo, ' + u.value.name }
               })
               return o({ message: l('message'), status: 'success' }), void e.push('/')
             } catch (e) {
               console.error(e)
-              const { t: t } = c({
+              const { t: t } = p({
                 en: { message: 'Invalid email or password' },
                 pt: { message: 'Email ou senha invalidos' }
               })
@@ -3528,39 +3510,35 @@ var ft = {
             }
           }
         },
-        { t: u } = c()
-      return { t: u, login: a, messages: ft, schema: dt }
+        { t: u } = p()
+      return { t: u, login: a, messages: it, schema: ft }
     }
-  }
-const st = s('data-v-0c89197e')
-a('data-v-0c89197e')
-const ct = { class: 'login-form' },
-  pt = d('img', { src: '/_assets/logo-vtc.38675e72.svg', alt: 'Widgrid' }, null, -1),
-  _t = { href: '' }
-u()
-const vt = st(function (e, t) {
-  const r = o('Button'),
-    a = o('Form')
+  })
+const ct = c('data-v-60c0e590')
+u('data-v-60c0e590')
+const pt = { class: 'login-form' },
+  _t = f('img', { src: '/_assets/logo-vtc.38675e72.svg', alt: 'Widgrid' }, null, -1),
+  vt = { href: '' }
+o()
+const mt = ct(function (e, t) {
+  const r = l('Button'),
+    a = l('Form')
   return (
-    l(),
-    n('div', ct, [
-      pt,
-      d('p', null, f(e.t('intro')), 1),
-      d(
+    n(),
+    d('div', pt, [
+      _t,
+      f('p', null, i(e.t('intro')), 1),
+      f(
         a,
+        { schema: e.schema, locale: e.messages, onSuccess: t[1] || (t[1] = ({ data: t }) => e.login(t)) },
         {
-          schema: e.schema,
-          locale: e.messages,
-          onSuccess: t[1] || (t[1] = ({ data: t }) => e.login(t))
-        },
-        {
-          default: st(() => [
-            d('footer', null, [
-              d('a', _t, f(e.t('password-loss')), 1),
-              d(
+          default: ct(() => [
+            f('footer', null, [
+              f('a', vt, i(e.t('password-loss')), 1),
+              f(
                 r,
                 { reverse: !0, icon: 'arrow-right', model: 'glassy' },
-                { default: st(() => [i(f(e.t('submit')), 1)]), _: 1 }
+                { default: ct(() => [s(i(e.t('submit')), 1)]), _: 1 }
               )
             ])
           ]),
@@ -3572,34 +3550,26 @@ const vt = st(function (e, t) {
     ])
   )
 })
-let mt = document.createElement('style')
-;(mt.innerHTML =
-  '.login-form[data-v-0c89197e]{width:300px;padding:2em;border:var(--card-border-width) var(--card-border-style) var(--color-x-8);border-radius:var(--card-border-radius)}img[data-v-0c89197e]{display:block;margin:0 auto 2em}p[data-v-0c89197e]{margin-bottom:3em;font-size:var(--font-size-xl);text-align:center}footer[data-v-0c89197e]{display:flex;justify-content:space-between;align-items:center}footer a[data-v-0c89197e]{font-size:var(--font-size-xs)}.login[data-v-750007b7]{display:flex;flex-flow:column;align-items:center;justify-content:center;height:100vh}'),
-  document.head.appendChild(mt)
-var At = (e) => {
+let At = document.createElement('style')
+;(At.innerHTML =
+  '.login-form[data-v-60c0e590]{width:300px;padding:2em;border:var(--card-border-width) var(--card-border-style) var(--color-x-8);border-radius:var(--card-border-radius)}img[data-v-60c0e590]{display:block;margin:0 auto 2em}p[data-v-60c0e590]{margin-bottom:3em;font-size:var(--font-size-xl);text-align:center}footer[data-v-60c0e590]{display:flex;justify-content:space-between;align-items:center}footer a[data-v-60c0e590]{font-size:var(--font-size-xs)}.login[data-v-9451e1ec]{display:flex;flex-flow:column;align-items:center;justify-content:center;height:100vh}'),
+  document.head.appendChild(At)
+var $t = (e) => {
   e.i18n = {
-    en: {
-      intro: 'You must be logged in to continue',
-      'password-loss': 'Forgot my password',
-      submit: 'Submit'
-    },
-    pt: {
-      intro: 'Você precisa estar logado para continuar',
-      'password-loss': 'Esqueci minha senha',
-      submit: 'Enviar'
-    }
+    en: { intro: 'You must be logged in to continue', 'password-loss': 'Forgot my password', submit: 'Submit' },
+    pt: { intro: 'Você precisa estar logado para continuar', 'password-loss': 'Esqueci minha senha', submit: 'Enviar' }
   }
 }
-At(it), (it.render = vt), (it.__scopeId = 'data-v-0c89197e')
-var $t = { name: 'Login', components: { LoginForm: it, Settings: m } }
-const yt = s('data-v-750007b7')
-a('data-v-750007b7')
-const ht = { class: 'login' }
-u()
-const gt = yt(function (e, t) {
-  const r = o('Settings'),
-    a = o('LoginForm')
-  return l(), n('div', ht, [d(r), d(a)])
+$t(st), (st.render = mt), (st.__scopeId = 'data-v-60c0e590')
+var yt = a({ name: 'Login', components: { LoginForm: st, Settings: A } })
+const ht = c('data-v-9451e1ec')
+u('data-v-9451e1ec')
+const gt = { class: 'login' }
+o()
+const Mt = ht(function (e, t) {
+  const r = l('Settings'),
+    a = l('LoginForm')
+  return n(), d('section', gt, [f(r), f(a)])
 })
-;($t.render = gt), ($t.__scopeId = 'data-v-750007b7')
-export default $t
+;(yt.render = Mt), (yt.__scopeId = 'data-v-9451e1ec')
+export default yt

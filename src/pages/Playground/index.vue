@@ -5,19 +5,19 @@
     <Text />
     <Icons />
     <Buttons />
-    <Modals />
+    <Dialogs />
     <Inputs />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import Settings from '../../components/Settings.vue'
+import Settings from '/@components/Settings.vue'
 import Buttons from './Buttons/index.vue'
 import Icons from './Icons.vue'
 import Colors from './Colors/index.vue'
 import Text from './Text/index.vue'
-import Modals from './Modals/index.vue'
+import Dialogs from './Dialogs/index.vue'
 import Inputs from './Inputs/index.vue'
 
 export default defineComponent({
@@ -27,7 +27,7 @@ export default defineComponent({
     Colors,
     Buttons,
     Settings,
-    Modals,
+    Dialogs,
     Inputs
   }
 })

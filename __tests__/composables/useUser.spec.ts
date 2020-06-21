@@ -1,6 +1,6 @@
 import { nextTick } from 'vue'
-import { useUser } from '../../src/composables/useUser'
-import { User } from '../../src/types'
+import { useUser } from '/@composables/useUser'
+import { User } from '/@types/user'
 
 const mock: User = {
   id: 0,

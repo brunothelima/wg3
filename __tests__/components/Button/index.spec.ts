@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import Button from '../../src/components/Button/index.vue'
+import Button from '/@components/Button/index.vue'
 
 describe('Button.spec.ts', () => {
   test('Rendering a button with default settings', () => {

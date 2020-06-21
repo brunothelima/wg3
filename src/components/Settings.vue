@@ -22,10 +22,10 @@
 </template>
 
 <script lang="ts">
-import { useI18n } from '../composables/useI18n'
-import { useTheme } from '../composables/useTheme'
-import InputSelect from './Form/Input/Select.vue'
 import { defineComponent } from 'vue'
+import { useI18n } from '/@composables/useI18n'
+import { useTheme } from '/@composables/useTheme'
+import InputSelect from '/@components/Form/Input/Select.vue'
 
 export default defineComponent({
   components: {

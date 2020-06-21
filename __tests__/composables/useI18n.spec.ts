@@ -1,4 +1,4 @@
-import { useI18n } from '../../src/composables/useI18n'
+import { useI18n } from '/@composables/useI18n'
 import { nextTick } from 'vue'
 
 const mock = {

@@ -1,5 +1,5 @@
-import { createForm } from '../../composables/useForm'
-import { required, email } from '../../lib/validators'
+import { createForm } from '/@composables/useForm'
+import { required, email } from '/@lib/validators'
 
 const schema = createForm({
   email: {

@@ -1,14 +1,14 @@
 <template>
   <div :class="['wg3', theme]">
     <Notifications />
-    <div id="portal:modal"></div>
+    <div id="portal:dialog"></div>
     <router-view />
   </div>
 </template>
 
 <script lang="ts">
-import { useTheme } from './composables/useTheme'
-import Notifications from './components/Notifications.vue'
+import { useTheme } from '/@composables/useTheme'
+import Notifications from '/@components/Notifications.vue'
 
 export default {
   components: {

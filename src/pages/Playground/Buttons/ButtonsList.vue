@@ -41,9 +41,9 @@
 </template>
 
 <script lang="ts">
-import { useI18n } from '../../../composables/useI18n'
-import Button from '../../../components/Button/index.vue'
 import { defineComponent } from 'vue'
+import { useI18n } from '/@composables/useI18n'
+import Button from '/@components/Button/index.vue'
 
 export default defineComponent({
   components: {

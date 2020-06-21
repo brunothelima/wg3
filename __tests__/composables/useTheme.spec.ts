@@ -1,4 +1,4 @@
-import { useTheme } from '../../src/composables/useTheme'
+import { useTheme } from '/@composables/useTheme'
 import { nextTick } from 'vue'
 
 describe('useTheme', () => {

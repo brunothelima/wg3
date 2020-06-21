@@ -1,5 +1,5 @@
 <template>
-  <button class="button:glassy">
+  <button data-test="glassy" class="button:glassy">
     <slot />
   </button>
 </template>

@@ -20,7 +20,7 @@
     <Form :schema="schema" :locale="messages" @success="({ data }) => login(data)">
       <footer>
         <a href>{{ t('password-loss') }}</a>
-        <Button :reverse="true" icon="arrow-right" model="glassy">
+        <Button :reverse="true" icon="icon-arrow-right" model="glassy">
           {{ t('submit') }}
         </Button>
       </footer>
@@ -30,11 +30,11 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { useI18n } from '../../composables/useI18n'
-import { useAuth } from '../../composables/useAuth'
+import { useI18n } from '/@composables/useI18n'
+import router from '/@src/router'
 
-import Form from '../../components/Form/index.vue'
-import Button from '../../components/Button/index.vue'
+import Form from '/@components/Form/index.vue'
+import Button from '/@components/Button/index.vue'
 
 import schema from './schema'
 import messages from './messages.json'
@@ -45,8 +45,11 @@ export default defineComponent({
     Button
   },
   setup() {
-    const { login } = useAuth()
     const { t } = useI18n()
+
+    const login = () => {
+      router.push('/')
+    }
 
     return {
       t,

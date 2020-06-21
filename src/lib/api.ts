@@ -1,4 +1,4 @@
-import { useUser } from '../composables/useUser'
+import { useUser } from '/@composables/useUser'
 
 export const get = async ({ path, query }: { path: string; query: any }) => {
   const { user } = useUser()

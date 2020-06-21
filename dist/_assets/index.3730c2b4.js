@@ -1,89 +1,84 @@
 import {
-  j as e,
-  k as t,
-  l as a,
-  m as l,
-  p as s,
-  d as n,
-  o,
-  c as d,
-  h as r,
-  a as c,
-  F as u,
-  e as i,
-  _ as p,
-  w as v,
-  n as b,
+  k as e,
+  l as t,
+  m as a,
+  d as l,
+  n as s,
+  p as n,
+  e as o,
+  o as d,
+  c as r,
+  i as c,
+  a as u,
+  F as i,
+  f as p,
+  _ as v,
+  w as m,
+  q as b,
   r as f,
-  q as m,
-  i as y,
-  s as _,
+  s as y,
+  j as _,
   t as h,
-  v as I
-} from './index.bc897349.js'
-const g = e(localStorage.getItem('wg3.locale') || 'pt')
-t(g, (e) => {
-  localStorage.setItem('wg3.locale', e), (document.documentElement.lang = g.value)
+  v as I,
+  x as g
+} from './index.7ac1f0e9.js'
+const k = e(localStorage.getItem('wg3.locale') || 'en')
+t(k, (e) => {
+  localStorage.setItem('wg3.locale', e), (document.documentElement.lang = k.value)
 }),
-  (document.documentElement.lang = g.value)
-const k = (e = {}) => {
+  (document.documentElement.lang = k.value)
+const x = (e = {}) => {
   const t = a()
   t && 'i18n' in t.type && (e = t.type.i18n)
   return {
-    locale: g,
+    locale: k,
     t: (t) => {
-      const a = e[g.value] || self
+      const a = e[k.value] || self
       return t.split('.').reduce((e, t) => (e ? e[t] : ''), a) || t
     }
   }
 }
-var x = {
+var w = l({
   props: ['name', 'value', 'options', 'placeholder', 'disabled', 'readonly', 'errors', 't'],
   setup: (e) => ({
-    selected: l(() => {
+    selected: s(() => {
       if (!e.value) return null
       return e.options.find((t) => String(t.value) === e.value).label
     })
   })
-}
-const S = v('data-v-b7096ca6')
-s('data-v-b7096ca6')
-const w = { class: 'input:select__wrapper' },
-  $ = { key: 0, class: 'input:select__selected' },
-  j = { key: 1, class: 'input:select__placeholder' },
-  O = c('i', { class: 'icon-caret-down', color: 'a' }, null, -1)
-n()
-const H = S(function (e, t) {
+})
+const $ = m('data-v-1e5e2816')
+n('data-v-1e5e2816')
+const S = { class: 'input:select__wrapper' },
+  j = { key: 0, class: 'input:select__selected' },
+  O = { key: 1, class: 'input:select__placeholder' },
+  H = u('i', { class: 'icon-caret-down', color: 'a' }, null, -1)
+o()
+const E = $(function (e, t) {
   return (
-    o(),
-    d(
+    d(),
+    r(
       'div',
       { class: ['input:select', { 'input:select--invalid': e.errors }] },
       [
-        r(e.$slots, 'before'),
-        c('div', w, [
-          c(
+        c(e.$slots, 'before'),
+        u('div', S, [
+          u(
             'select',
-            {
-              id: e.name + 'Id',
-              name: e.name,
-              value: e.value,
-              disabled: e.disabled,
-              readonly: e.readonly
-            },
+            { id: e.name + 'Id', name: e.name, value: e.value, disabled: e.disabled, readonly: e.readonly },
             [
-              (o(!0),
-              d(
-                u,
+              (d(!0),
+              r(
+                i,
                 null,
-                i(
+                p(
                   e.options,
                   (t) => (
-                    o(),
-                    d(
+                    d(),
+                    r(
                       'option',
                       { key: t, value: t.value, selected: t.value === e.value },
-                      p((e.t && e.t(t.label)) || t.label),
+                      v((e.t && e.t(t.label)) || t.label),
                       9,
                       ['value', 'selected']
                     )
@@ -91,41 +86,41 @@ const H = S(function (e, t) {
                 ),
                 128
               )),
-              r(e.$slots, 'default')
+              c(e.$slots, 'default')
             ],
             8,
             ['id', 'name', 'value', 'disabled', 'readonly']
           ),
           e.selected
-            ? (o(), d('div', $, p((e.t && e.t(e.selected)) || e.selected), 1))
-            : (o(), d('div', j, p((e.t && e.t(e.placeholder)) || 'Select an option'), 1)),
-          O
+            ? (d(), r('div', j, v((e.t && e.t(e.selected)) || e.selected), 1))
+            : (d(), r('div', O, v((e.t && e.t(e.placeholder)) || 'Select an option'), 1)),
+          H
         ]),
-        r(e.$slots, 'after')
+        c(e.$slots, 'after')
       ],
       2
     )
   )
 })
-;(x.render = H), (x.__scopeId = 'data-v-b7096ca6')
-var E = {
-  components: { InputSelect: x },
+;(w.render = E), (w.__scopeId = 'data-v-1e5e2816')
+var F = l({
+  components: { InputSelect: w },
   setup() {
-    const { locale: e } = k(),
+    const { locale: e } = x(),
       { theme: t } = b()
     return { locale: e, theme: t }
   }
-}
-const F = v('data-v-37a8663e')
-s('data-v-37a8663e')
-const z = { class: 'settings' }
-n()
-const B = F(function (e, t) {
+})
+const z = m('data-v-806bc95e')
+n('data-v-806bc95e')
+const D = { class: 'settings' }
+o()
+const G = z(function (e, t) {
   const a = f('InputSelect')
   return (
-    o(),
-    d('div', z, [
-      c(
+    d(),
+    r('div', D, [
+      u(
         a,
         {
           name: 'theme',
@@ -140,7 +135,7 @@ const B = F(function (e, t) {
         8,
         ['value']
       ),
-      c(
+      u(
         a,
         {
           name: 'locale',
@@ -158,53 +153,44 @@ const B = F(function (e, t) {
     ])
   )
 })
-;(E.render = B), (E.__scopeId = 'data-v-37a8663e')
-var C = {}
-const D = v('data-v-6b6cf4f0')
-s('data-v-6b6cf4f0')
-const P = { class: 'button:clean' }
-n()
-const T = D(function (e, t) {
-  return o(), d('button', P, [r(e.$slots, 'default')])
+;(F.render = G), (F.__scopeId = 'data-v-806bc95e')
+var P = l({})
+const T = m('data-v-18721f30')
+n('data-v-18721f30')
+const q = { class: 'button:ghosty' }
+o()
+const C = T(function (e, t) {
+  return d(), r('button', q, [c(e.$slots, 'default')])
 })
-;(C.render = T), (C.__scopeId = 'data-v-6b6cf4f0')
-var q = {}
-const G = v('data-v-c63b43ae')
-s('data-v-c63b43ae')
-const L = { class: 'button:glassy' }
-n()
-const N = G(function (e, t) {
-  return o(), d('button', L, [r(e.$slots, 'default')])
+;(P.render = C), (P.__scopeId = 'data-v-18721f30')
+var L = l({})
+const N = m('data-v-0e37e58c')
+n('data-v-0e37e58c')
+const A = { class: 'button:glassy' }
+o()
+const B = N(function (e, t) {
+  return d(), r('button', A, [c(e.$slots, 'default')])
 })
-;(q.render = N), (q.__scopeId = 'data-v-c63b43ae')
-var A = {
-  props: {
-    icon: { type: String },
-    size: { type: String, default: 'medium' },
-    skin: { type: String, default: 'glassy' },
-    reverse: { type: Boolean },
-    disabled: { type: Boolean }
-  },
-  components: { Clean: C, Glassy: q }
-}
-const J = v('data-v-28c89fd0')
-s('data-v-28c89fd0')
-const K = { 'data-test': 'slot' }
-n()
-const M = J(function (e, t) {
+;(L.render = B), (L.__scopeId = 'data-v-0e37e58c')
+var J = l({ props: ['icon', 'size', 'skin', 'reverse', 'disabled'], components: { Ghosty: P, Glassy: L } })
+const K = m('data-v-1994eb2d')
+n('data-v-1994eb2d')
+const M = { 'data-test': 'slot' }
+o()
+const Q = K(function (e, t) {
   return (
-    o(),
-    d(
-      m('' + e.skin),
+    d(),
+    r(
+      y(e.skin || 'glassy'),
       {
         'data-test': 'button',
         disabled: e.disabled,
-        class: ['button', 'button--' + e.size, { 'button--reverse': e.reverse }]
+        class: ['button', 'button--' + (e.size || 'medium'), { 'button--reverse': e.reverse }]
       },
       {
-        default: J(() => [
-          e.icon ? (o(), d('i', { key: 0, 'data-test': 'icon', class: e.icon }, null, 2)) : y('', !0),
-          c('span', K, [r(e.$slots, 'default')])
+        default: K(() => [
+          e.icon ? (d(), r('i', { key: 0, 'data-test': 'icon', class: e.icon }, null, 2)) : _('', !0),
+          u('span', M, [c(e.$slots, 'default')])
         ]),
         _: 1
       },
@@ -213,64 +199,62 @@ const M = J(function (e, t) {
     )
   )
 })
-;(A.render = M), (A.__scopeId = 'data-v-28c89fd0')
-const Q = (e) => {
+;(J.render = Q), (J.__scopeId = 'data-v-1994eb2d')
+const R = (e) => {
   for (let t of Object.values(e)) 'value' in t || (t.value = ''), 'errors' in t || (t.errors = [])
   return e
 }
-var R = { props: ['id', 'input', 't'] }
-const U = v('data-v-397f229e')
-s('data-v-397f229e')
-const V = { key: 0, class: 'field__detail' },
-  W = { key: 0, class: 'field__errors' }
-n()
-const X = U(function (e, t) {
+var U = l({ props: ['id', 'input', 't'] })
+const V = m('data-v-12dd4538')
+n('data-v-12dd4538')
+const W = { key: 0, class: 'field__detail' },
+  X = { key: 0, class: 'field__errors' }
+o()
+const Y = V(function (e, t) {
   return (
-    o(),
-    d(
+    d(),
+    r(
       'div',
       { class: ['field', { 'field--disabled': e.input.disabled }] },
       [
         e.input.label
-          ? (o(), d('label', { key: 0, class: 'field__label', for: e.id }, p(e.t(e.input.label)), 9, ['for']))
-          : y('', !0),
-        r(e.$slots, 'default'),
-        e.input.detail ? (o(), d('div', V, p(e.input.detail), 1)) : y('', !0),
+          ? (d(), r('label', { key: 0, class: 'field__label', for: e.id }, v(e.t(e.input.label)), 9, ['for']))
+          : _('', !0),
+        c(e.$slots, 'default'),
+        e.input.detail ? (d(), r('div', W, v(e.input.detail), 1)) : _('', !0),
         e.input.errors.length
-          ? (o(),
-            d('ul', W, [
-              (o(!0),
-              d(
-                u,
+          ? (d(),
+            r('ul', X, [
+              (d(!0),
+              r(
+                i,
                 null,
-                i(e.input.errors, (t) => (o(), d('li', { key: t }, p(e.t(t)), 1))),
+                p(e.input.errors, (t) => (d(), r('li', { key: t }, v(e.t(t)), 1))),
                 128
               ))
             ]))
-          : y('', !0)
+          : _('', !0)
       ],
       2
     )
   )
 })
-;(R.render = X), (R.__scopeId = 'data-v-397f229e')
-var Y = {
-  props: ['name', 'value', 'placeholder', 'disabled', 'readonly', 'errors', 't']
-}
-const Z = v('data-v-1e736226')
-s('data-v-1e736226')
-const ee = { class: 'input:text__wrapper' }
-n()
-const te = Z(function (e, t) {
+;(U.render = Y), (U.__scopeId = 'data-v-12dd4538')
+var Z = { props: ['name', 'value', 'placeholder', 'disabled', 'readonly', 'errors', 't'] }
+const ee = m('data-v-2a47fe12')
+n('data-v-2a47fe12')
+const te = { class: 'input:text__wrapper' }
+o()
+const ae = ee(function (e, t) {
   return (
-    o(),
-    d(
+    d(),
+    r(
       'div',
       { class: ['input:text', { 'input:text--invalid': e.errors.length }] },
       [
-        r(e.$slots, 'before'),
-        c('div', ee, [
-          c(
+        c(e.$slots, 'before'),
+        u('div', te, [
+          u(
             'input',
             {
               type: 'text',
@@ -286,31 +270,31 @@ const te = Z(function (e, t) {
             ['name', 'id', 'value', 'disabled', 'readonly', 'placeholder']
           )
         ]),
-        r(e.$slots, 'after')
+        c(e.$slots, 'after')
       ],
       2
     )
   )
 })
-;(Y.render = te), (Y.__scopeId = 'data-v-1e736226')
-var ae = {
+;(Z.render = ae), (Z.__scopeId = 'data-v-2a47fe12')
+var le = {
   props: ['name', 'value', 'placeholder', 'disabled', 'readonly', 'errors', 't'],
   data: () => ({ type: 'password' })
 }
-const le = v('data-v-f0d0dd64')
-s('data-v-f0d0dd64')
-const se = { class: 'input:text__wrapper' }
-n()
-const ne = le(function (e, t) {
+const se = m('data-v-61ed9647')
+n('data-v-61ed9647')
+const ne = { class: 'input:text__wrapper' }
+o()
+const oe = se(function (e, t) {
   return (
-    o(),
-    d(
+    d(),
+    r(
       'div',
       { class: ['input:text', { 'input:text--invalid': e.errors.length }] },
       [
-        r(e.$slots, 'before'),
-        c('div', se, [
-          c(
+        c(e.$slots, 'before'),
+        u('div', ne, [
+          u(
             'input',
             {
               type: e.type,
@@ -325,7 +309,7 @@ const ne = le(function (e, t) {
             8,
             ['type', 'name', 'id', 'value', 'disabled', 'readonly', 'placeholder']
           ),
-          c(
+          u(
             'i',
             {
               color: 'a',
@@ -336,26 +320,26 @@ const ne = le(function (e, t) {
             2
           )
         ]),
-        r(e.$slots, 'after')
+        c(e.$slots, 'after')
       ],
       2
     )
   )
 })
-;(ae.render = ne), (ae.__scopeId = 'data-v-f0d0dd64')
-var oe = {
-  props: ['schema', 'locale'],
-  components: { Field: R, InputText: Y, InputSelect: x, InputPassword: ae },
+;(le.render = oe), (le.__scopeId = 'data-v-61ed9647')
+var de = l({
+  props: { locale: Object, schema: Object },
+  components: { Field: U, InputText: Z, InputSelect: w, InputPassword: le },
   setup(e, t) {
-    const { t: a } = k(e.locale),
-      { schema: s, data: n, validate: o } = ((e) => {
-        const t = _(e),
-          a = l(() =>
+    const { t: a } = x(e.locale),
+      { schema: l, data: n, validate: o } = ((e) => {
+        const t = h(e),
+          a = s(() =>
             Object.keys(t)
               .map((e) => ({ [e]: t[e].value || '' }))
               .reduce((e, t) => ({ ...e, ...t }))
           ),
-          s = l(() =>
+          l = s(() =>
             Object.keys(t)
               .map((e) => ({ [e]: t[e].errors || [] }))
               .reduce((e, t) => ({ ...e, ...t }))
@@ -363,7 +347,7 @@ var oe = {
         return {
           data: a,
           schema: t,
-          errors: s,
+          errors: l,
           validate: async () => {
             for (let e in t) {
               let a = t[e],
@@ -378,15 +362,15 @@ var oe = {
           }
         }
       })(e.schema),
-      d = l(() => Object.entries(s))
+      d = s(() => Object.entries(l))
     return {
       t: a,
       data: n,
       entries: d,
       onInputHandler: (e) => {
         const { name: t, value: a } = e.target,
-          l = s[t]
-        ;(l.value = a), (l.errors = []), l.events && l.events.onInput && l.events.onInput(e, s)
+          s = l[t]
+        ;(s.value = a), (s.errors = []), s.events && s.events.onInput && s.events.onInput(e, l)
       },
       onSubmitHandler: async (e) => {
         e.preventDefault(), t.emit('submit', { ev: e, data: n.value })
@@ -394,38 +378,34 @@ var oe = {
       }
     }
   }
-}
-const de = { class: 'form__grid' }
-oe.render = function (e, t) {
+})
+const re = { class: 'form__grid' }
+de.render = function (e, t) {
   const a = f('Field')
   return (
-    o(),
-    d(
+    d(),
+    r(
       'form',
       { onSubmit: t[2] || (t[2] = (t) => e.onSubmitHandler(t)), class: 'form' },
       [
-        c('div', de, [
-          (o(!0),
-          d(
-            u,
+        u('div', re, [
+          (d(!0),
+          r(
+            i,
             null,
-            i(
+            p(
               e.entries,
               ([l, s]) => (
-                o(),
-                d(
+                d(),
+                r(
                   a,
                   { key: s.name, input: s, id: l + 'Id', t: e.t },
                   {
-                    default: h(() => [
-                      (o(),
-                      d(
-                        m('input-' + s.type),
-                        I(s, {
-                          onInput: t[1] || (t[1] = (t) => e.onInputHandler(t)),
-                          name: l,
-                          t: e.t
-                        }),
+                    default: I(() => [
+                      (d(),
+                      r(
+                        y('input-' + s.type),
+                        g(s, { onInput: t[1] || (t[1] = (t) => e.onInputHandler(t)), name: l, t: e.t }),
                         null,
                         16,
                         ['name', 't']
@@ -441,10 +421,10 @@ oe.render = function (e, t) {
             128
           ))
         ]),
-        r(e.$slots, 'default')
+        c(e.$slots, 'default')
       ],
       32
     )
   )
 }
-export { oe as a, E as b, Q as c, A as s, k as u }
+export { de as a, F as b, R as c, J as s, x as u }

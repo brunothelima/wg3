@@ -2,8 +2,8 @@
 {
   "en": {
     "heading": "Confirmation",
-    "modalButton": "Ask for confirmation",
-    "modal": {
+    "dialogButton": "Ask for confirmation",
+    "dialog": {
       "header": "Confirmation",
       "title": "Are you sure you want to delete this post?",
       "text": "Deleting this post will remove it from all the pages and widgets. This action can not be undone.",
@@ -13,8 +13,8 @@
   },
   "pt": {
     "heading": "Confirmação",
-    "modalButton": "Modal de confirmação",
-    "modal": {
+    "dialogButton": "Modal de confirmação",
+    "dialog": {
       "header": "Confirmação",
       "title": "Você tem certeza que quer Excluír este post?",
       "text": "Excluír post, resultará na retirada deste conteúdo de todas as paginas e widgets. Esta ação não pode ser disfeita",
@@ -28,44 +28,44 @@
 <template>
   <div class="confirmation-demo">
     <h6>{{ t('heading') }}</h6>
-    <Button model="glassy" icon="icon-thick-2px" :reverse="true" @click="showModal = true">{{
-      t('modalButton')
+    <Button model="glassy" icon="icon-thick-2px" :reverse="true" @click="showDialog = true">{{
+      t('dialogButton')
     }}</Button>
     <Confirmation
       icon="icon-trash-bin-small"
-      :header="t('modal.header')"
-      :title="t('modal.title')"
-      :text="t('modal.text')"
-      :buttonLeft="t('modal.buttonLeft')"
-      :buttonRight="t('modal.buttonRight')"
+      :header="t('dialog.header')"
+      :title="t('dialog.title')"
+      :text="t('dialog.text')"
+      :buttonLeft="t('dialog.buttonLeft')"
+      :buttonRight="t('dialog.buttonRight')"
     />
-    <Modal v-if="showModal">
+    <Dialog v-if="showDialog">
       <Confirmation
-        @cancel="showModal = false"
+        @cancel="showDialog = false"
         icon="icon-trash-bin-small"
-        :header="t('modal.header')"
-        :title="t('modal.title')"
-        :text="t('modal.text')"
-        :buttonLeft="t('modal.buttonLeft')"
-        @leftButtonClick="showModal = false"
-        :buttonRight="t('modal.buttonRight')"
-        @rightButtonClick="showModal = false"
+        :header="t('dialog.header')"
+        :title="t('dialog.title')"
+        :text="t('dialog.text')"
+        :buttonLeft="t('dialog.buttonLeft')"
+        @leftButtonClick="showDialog = false"
+        :buttonRight="t('dialog.buttonRight')"
+        @rightButtonClick="showDialog = false"
       />
-    </Modal>
+    </Dialog>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { useI18n } from '../../../composables/useI18n'
-import Modal from '../../../components/Modal/index.vue'
 import Button from '../../../components/Button/index.vue'
-import Confirmation from '../../../components/Modal/Confirmation.vue'
+import Dialog from '../../../components/Dialog/index.vue'
+import Confirmation from '../../../components/Dialog/Confirmation.vue'
 
 export default defineComponent({
-  data: () => ({ showModal: false }),
+  data: () => ({ showDialog: false }),
   components: {
-    Modal,
+    Dialog,
     Button,
     Confirmation
   },

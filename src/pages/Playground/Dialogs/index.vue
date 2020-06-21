@@ -1,12 +1,12 @@
 <i18n>
 {
   "en": {
-    "heading": "Modals and notifications",
+    "heading": "Dialogs and notifications",
     "notificationButton": "Notefy me!",
     "notificationMessage": "Notification message"
   },
   "pt": {
-    "heading": "Modais e notificações",
+    "heading": "Alertas e notificações",
     "notificationButton": "Notificação",
     "notificationMessage": "Mensagem de notificação"
   }
@@ -14,7 +14,7 @@
 </i18n>
 
 <template>
-  <section class="modals">
+  <section class="dialogs">
     <h1>{{ t('heading') }}</h1>
     <hr />
     <NotificationsDemo />
@@ -24,7 +24,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { useI18n } from '../../../composables/useI18n'
+import { useI18n } from '/@composables/useI18n'
 import ConfirmationDemo from './ConfirmationDemo.vue'
 import NotificationsDemo from './NotificationsDemo.vue'
 

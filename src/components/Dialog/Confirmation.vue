@@ -1,5 +1,5 @@
 <template>
-  <div class="modal:confirmation">
+  <div class="dialog:confirmation">
     <header v-if="header">
       <span @click="$emit('cancel')">
         <i class="icon-arrow-left" />
@@ -48,7 +48,7 @@ export default {
 <style lang="scss" scoped>
 @import '../../assets/scss/vars';
 
-.modal\:confirmation {
+.dialog\:confirmation {
   display: flex;
   flex-flow: column;
   overflow: hidden;

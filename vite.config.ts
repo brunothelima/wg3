@@ -10,7 +10,13 @@ const i18nTransform = (source: string = '{}') => {
 
 const config: UserConfig = {
   alias: {
-    '/@composables/': require('path').resolve(__dirname, 'src/composables')
+    '/@src/': require('path').resolve(__dirname, 'src'),
+    '/@assets/': require('path').resolve(__dirname, 'src/assets'),
+    '/@components/': require('path').resolve(__dirname, 'src/components'),
+    '/@composables/': require('path').resolve(__dirname, 'src/composables'),
+    '/@lib/': require('path').resolve(__dirname, 'src/lib'),
+    '/@pages/': require('path').resolve(__dirname, 'src/pages'),
+    '/@types/': require('path').resolve(__dirname, 'src/types')
   },
   vueCustomBlockTransforms: {
     i18n: i18nTransform
