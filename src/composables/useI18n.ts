@@ -30,7 +30,7 @@ export const useI18n = (resources: Resources = {}) => {
    * Querys through the resources json for a given path.
    * Returns the key value if it is found or the given path on fail
    */
-  const t = (path: string) => {
+  const t = (path: string = '') => {
     const resource = resources[locale.value] || self
     const reducer = (prev: any, curr: string) => (prev ? prev[curr] : '')
     return path.split('.').reduce(reducer, resource) || path

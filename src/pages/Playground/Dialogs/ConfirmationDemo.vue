@@ -57,10 +57,10 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { useI18n } from '../../../composables/useI18n'
-import Button from '../../../components/Button/index.vue'
-import Dialog from '../../../components/Dialog/index.vue'
-import Confirmation from '../../../components/Dialog/Confirmation.vue'
+import { useI18n } from '/@composables/useI18n'
+import Button from '/@components/Button/index.vue'
+import Dialog from '/@components/Dialog/index.vue'
+import Confirmation from '/@components/Dialog/Confirmation.vue'
 
 export default defineComponent({
   data: () => ({ showDialog: false }),

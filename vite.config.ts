@@ -1,5 +1,7 @@
 import { UserConfig } from 'vite'
 
+const { resolve } = require('path')
+
 const i18nTransform = (source: string = '{}') => {
   let resource = JSON.parse(source.trim())
   return `
@@ -10,13 +12,13 @@ const i18nTransform = (source: string = '{}') => {
 
 const config: UserConfig = {
   alias: {
-    '/@src/': require('path').resolve(__dirname, 'src'),
-    '/@assets/': require('path').resolve(__dirname, 'src/assets'),
-    '/@components/': require('path').resolve(__dirname, 'src/components'),
-    '/@composables/': require('path').resolve(__dirname, 'src/composables'),
-    '/@lib/': require('path').resolve(__dirname, 'src/lib'),
-    '/@pages/': require('path').resolve(__dirname, 'src/pages'),
-    '/@types/': require('path').resolve(__dirname, 'src/types')
+    // '/@src/': resolve(__dirname, 'src'),
+    '/@assets/': resolve(__dirname, 'src/assets'),
+    '/@components/': resolve(__dirname, 'src/components'),
+    '/@composables/': resolve(__dirname, 'src/composables'),
+    '/@utils/': resolve(__dirname, 'src/utils'),
+    '/@pages/': resolve(__dirname, 'src/pages'),
+    '/@types/': resolve(__dirname, 'src/types')
   },
   vueCustomBlockTransforms: {
     i18n: i18nTransform

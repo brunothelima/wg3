@@ -31,7 +31,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { useI18n } from '/@composables/useI18n'
-import router from '/@src/router'
+import router from '../../router'
 
 import Form from '/@components/Form/index.vue'
 import Button from '/@components/Button/index.vue'

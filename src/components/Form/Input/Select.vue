@@ -1,18 +1,18 @@
 <template>
-  <div :class="['input:select', { 'input:select--invalid': errors }]">
+  <div :class="['input:select', { 'input:select--invalid': errors && errors.length }]">
     <slot name="before" />
     <div class="input:select__wrapper">
       <select :id="`${name}Id`" :name="name" :value="value" :disabled="disabled" :readonly="readonly">
         <option v-for="option in options" :key="option" :value="option.value" :selected="option.value === value">{{
-          (t && t(option.label)) || option.label
+          t(option.label)
         }}</option>
         <slot />
       </select>
       <div class="input:select__selected" v-if="selected">
-        {{ (t && t(selected)) || selected }}
+        {{ t(selected) }}
       </div>
       <div class="input:select__placeholder" v-else>
-        {{ (t && t(placeholder)) || 'Select an option' }}
+        {{t(placeholder || 'Select an option') }}
       </div>
       <i class="icon-caret-down" color="a" />
     </div>
@@ -25,8 +25,17 @@ import { computed, defineComponent } from 'vue'
 import { FormInputOption, FormInputSelect } from '../../../types/form'
 
 export default defineComponent({
-  props: ['name', 'value', 'options', 'placeholder', 'disabled', 'readonly', 'errors', 't'],
-  setup(props: FormInputSelect) {
+  props:{
+    name: String,
+    value: String,
+    errors: Array,
+    options: Array,
+    disabled: Boolean,
+    readonly: Boolean,
+    placeholder: String,
+    t: { type: Function, default: path => path },
+  },
+  setup(props: FormInputSelect & { t: any }) {
     // Computes the current select option title for display
     const selected = computed(() => {
       if (!props.value) return null

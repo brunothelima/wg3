@@ -1,7 +1,7 @@
 <template>
-  <form @submit="onSubmitHandler" class="form">
+  <form data-test="form" @submit="onSubmitHandler" class="form">
     <div class="form__grid">
-      <Field v-for="[name, input] in entries" :key="input.name" :input="input" :id="`${name}Id`" :t="t">
+      <Field v-for="[name, input] in entries" :key="name" :input="input" :id="`${name}Id`" :t="t">
         <component v-bind="input" @input="onInputHandler" :is="`input-${input.type}`" :name="name" :t="t" />
       </Field>
     </div>
@@ -49,8 +49,11 @@ export default defineComponent({
 
       // Checking and calling the event calback function
       if (input.events && input.events.onInput) {
-        input.events.onInput(ev, schema)
+        input.events.onInput({ ev, schema })
+        context.emit('callback', 'onInput')
       }
+
+      context.emit('input', { ev, value })
     }
 
     const onSubmitHandler = async (ev: InputEvent) => {
@@ -64,7 +67,10 @@ export default defineComponent({
       if (isValid) {
         // Emiting success event if no error is found
         context.emit('success', { ev, data: data.value })
+        return
       }
+
+      context.emit('error', { ev, data: data.value })
     }
 
     return {

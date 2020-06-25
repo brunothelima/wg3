@@ -1,11 +1,12 @@
 import { createForm } from '/@composables/useForm'
-import { required, email } from '/@lib/validators'
+import { required, email } from '/@utils/validators/index'
 
 const schema = createForm({
   email: {
     type: 'text',
     label: 'Email',
     placeholder: 'email.placeholder',
+    detail: 'test message',
     validations: {
       email: { ...email, message: 'email.isEmail' },
       required: { ...required, message: 'email.required' }

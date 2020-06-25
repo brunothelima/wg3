@@ -1,9 +1,11 @@
 <template>
-  <div :class="['field', { 'field--disabled': input.disabled }]">
-    <label class="field__label" :for="id" v-if="input.label">{{ t(input.label) }}</label>
+  <div data-test="field" class="field">
+    <label data-test="label" class="field__label" :for="id" v-if="input.label">{{
+      t(input.label)
+    }}</label>
     <slot />
-    <div class="field__detail" v-if="input.detail">{{ input.detail }}</div>
-    <ul class="field__errors" v-if="input.errors.length">
+    <div data-test="detail" class="field__detail" v-if="input.detail">{{ (t && t(input.detail)) || input.detail }}</div>
+    <ul data-test="errors" class="field__errors" v-if="input.errors && input.errors.length">
       <li v-for="message in input.errors" :key="message">{{ t(message) }}</li>
     </ul>
   </div>
@@ -13,7 +15,11 @@
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-  props: ['id', 'input', 't']
+  props: {
+    id: String,
+    input: Object,
+    t: { type: Function, default: path => path }
+  }
 })
 </script>
 

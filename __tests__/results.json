@@ -1,14 +1,14 @@
 {
   "numFailedTestSuites": 0,
   "numFailedTests": 0,
-  "numPassedTestSuites": 9,
-  "numPassedTests": 26,
+  "numPassedTestSuites": 11,
+  "numPassedTests": 34,
   "numPendingTestSuites": 0,
   "numPendingTests": 0,
   "numRuntimeErrorTestSuites": 0,
   "numTodoTests": 0,
-  "numTotalTestSuites": 9,
-  "numTotalTests": 26,
+  "numTotalTestSuites": 11,
+  "numTotalTests": 34,
   "openHandles": [],
   "snapshot": {
     "added": 0,
@@ -26,87 +26,9 @@
     "unmatched": 0,
     "updated": 0
   },
-  "startTime": 1592689204503,
+  "startTime": 1592966735880,
   "success": true,
   "testResults": [
-    {
-      "assertionResults": [
-        {
-          "ancestorTitles": ["Glassy.spec.ts"],
-          "failureMessages": [],
-          "fullName": "Glassy.spec.ts Rendering a button with default settings",
-          "location": null,
-          "status": "passed",
-          "title": "Rendering a button with default settings"
-        }
-      ],
-      "endTime": 1592689208076,
-      "message": "",
-      "name": "/Applications/Ampps/www/wg3/__tests__/components/Button/Glassy.spec.ts",
-      "startTime": 1592689206311,
-      "status": "passed",
-      "summary": ""
-    },
-    {
-      "assertionResults": [
-        {
-          "ancestorTitles": ["Glassy.spec.ts"],
-          "failureMessages": [],
-          "fullName": "Glassy.spec.ts Rendering a button with default settings",
-          "location": null,
-          "status": "passed",
-          "title": "Rendering a button with default settings"
-        }
-      ],
-      "endTime": 1592689208359,
-      "message": "",
-      "name": "/Applications/Ampps/www/wg3/__tests__/components/Button/Ghosty.spec.ts",
-      "startTime": 1592689206336,
-      "status": "passed",
-      "summary": ""
-    },
-    {
-      "assertionResults": [
-        {
-          "ancestorTitles": ["useForm"],
-          "failureMessages": [],
-          "fullName": "useForm Sets the required properties to the schema object",
-          "location": null,
-          "status": "passed",
-          "title": "Sets the required properties to the schema object"
-        },
-        {
-          "ancestorTitles": ["useForm"],
-          "failureMessages": [],
-          "fullName": "useForm Computed \"data\" reacts to inputed value",
-          "location": null,
-          "status": "passed",
-          "title": "Computed \"data\" reacts to inputed value"
-        },
-        {
-          "ancestorTitles": ["useForm"],
-          "failureMessages": [],
-          "fullName": "useForm validate() function handles properly the given validation methods",
-          "location": null,
-          "status": "passed",
-          "title": "validate() function handles properly the given validation methods"
-        },
-        {
-          "ancestorTitles": ["useForm"],
-          "failureMessages": [],
-          "fullName": "useForm Computed \"errors\" reacts to the validate() function call",
-          "location": null,
-          "status": "passed",
-          "title": "Computed \"errors\" reacts to the validate() function call"
-        }
-      ],
-      "endTime": 1592689208365,
-      "message": "",
-      "name": "/Applications/Ampps/www/wg3/__tests__/composables/useForm.spec.ts",
-      "startTime": 1592689208104,
-      "status": "passed",
-      "summary": ""
-    },
     {
       "assertionResults": [
         {
@@ -158,52 +80,86 @@
           "title": "Renders a button with a given size"
         }
       ],
-      "endTime": 1592689208484,
+      "endTime": 1592966739337,
       "message": "",
       "name": "/Applications/Ampps/www/wg3/__tests__/components/Button/index.spec.ts",
-      "startTime": 1592689206323,
+      "startTime": 1592966737546,
       "status": "passed",
       "summary": ""
     },
     {
       "assertionResults": [
         {
-          "ancestorTitles": ["useI18n"],
+          "ancestorTitles": ["Field"],
           "failureMessages": [],
-          "fullName": "useI18n Initializes the locale ref",
+          "fullName": "Field Renders error messages list properly",
           "location": null,
           "status": "passed",
-          "title": "Initializes the locale ref"
+          "title": "Renders error messages list properly"
         },
         {
-          "ancestorTitles": ["useI18n"],
+          "ancestorTitles": ["Field"],
           "failureMessages": [],
-          "fullName": "useI18n Stores theme on localStorage",
+          "fullName": "Field Renders a given detail string",
           "location": null,
           "status": "passed",
-          "title": "Stores theme on localStorage"
+          "title": "Renders a given detail string"
         },
         {
-          "ancestorTitles": ["useI18n"],
+          "ancestorTitles": ["Field"],
           "failureMessages": [],
-          "fullName": "useI18n Successfully translates a given key string using t(key)",
+          "fullName": "Field Renders label for a given input id",
           "location": null,
           "status": "passed",
-          "title": "Successfully translates a given key string using t(key)"
-        },
-        {
-          "ancestorTitles": ["useI18n"],
-          "failureMessages": [],
-          "fullName": "useI18n Returns the given key if no match is found ",
-          "location": null,
-          "status": "passed",
-          "title": "Returns the given key if no match is found "
+          "title": "Renders label for a given input id"
         }
       ],
-      "endTime": 1592689208545,
+      "endTime": 1592966739471,
       "message": "",
-      "name": "/Applications/Ampps/www/wg3/__tests__/composables/useI18n.spec.ts",
-      "startTime": 1592689208380,
+      "name": "/Applications/Ampps/www/wg3/__tests__/components/Form/Field.spec.ts",
+      "startTime": 1592966737609,
+      "status": "passed",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": ["useForm"],
+          "failureMessages": [],
+          "fullName": "useForm Sets the required properties to the schema object",
+          "location": null,
+          "status": "passed",
+          "title": "Sets the required properties to the schema object"
+        },
+        {
+          "ancestorTitles": ["useForm"],
+          "failureMessages": [],
+          "fullName": "useForm Computed \"data\" reacts to inputed value",
+          "location": null,
+          "status": "passed",
+          "title": "Computed \"data\" reacts to inputed value"
+        },
+        {
+          "ancestorTitles": ["useForm"],
+          "failureMessages": [],
+          "fullName": "useForm validate() function handles properly the given validation methods",
+          "location": null,
+          "status": "passed",
+          "title": "validate() function handles properly the given validation methods"
+        },
+        {
+          "ancestorTitles": ["useForm"],
+          "failureMessages": [],
+          "fullName": "useForm Computed \"errors\" reacts to the validate() function call",
+          "location": null,
+          "status": "passed",
+          "title": "Computed \"errors\" reacts to the validate() function call"
+        }
+      ],
+      "endTime": 1592966739671,
+      "message": "",
+      "name": "/Applications/Ampps/www/wg3/__tests__/composables/useForm.spec.ts",
+      "startTime": 1592966739363,
       "status": "passed",
       "summary": ""
     },
@@ -226,10 +182,10 @@
           "title": "Dismisses the message after click on close icon"
         }
       ],
-      "endTime": 1592689208587,
+      "endTime": 1592966739687,
       "message": "",
       "name": "/Applications/Ampps/www/wg3/__tests__/components/Notifications.spec.ts",
-      "startTime": 1592689208378,
+      "startTime": 1592966739488,
       "status": "passed",
       "summary": ""
     },
@@ -268,10 +224,10 @@
           "title": "Dismisses a message after 6 seconds"
         }
       ],
-      "endTime": 1592689208689,
+      "endTime": 1592966739845,
       "message": "",
       "name": "/Applications/Ampps/www/wg3/__tests__/composables/useNotifications.spec.ts",
-      "startTime": 1592689208499,
+      "startTime": 1592966739681,
       "status": "passed",
       "summary": ""
     },
@@ -294,10 +250,10 @@
           "title": "Stores user data on localStorage"
         }
       ],
-      "endTime": 1592689208728,
+      "endTime": 1592966739884,
       "message": "",
       "name": "/Applications/Ampps/www/wg3/__tests__/composables/useUser.spec.ts",
-      "startTime": 1592689208564,
+      "startTime": 1592966739704,
       "status": "passed",
       "summary": ""
     },
@@ -320,10 +276,138 @@
           "title": "Stores theme on localStorage"
         }
       ],
-      "endTime": 1592689208758,
+      "endTime": 1592966740013,
       "message": "",
       "name": "/Applications/Ampps/www/wg3/__tests__/composables/useTheme.spec.ts",
-      "startTime": 1592689208614,
+      "startTime": 1592966739856,
+      "status": "passed",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": ["Glassy.spec.ts"],
+          "failureMessages": [],
+          "fullName": "Glassy.spec.ts Renders a button with button:glassy class",
+          "location": null,
+          "status": "passed",
+          "title": "Renders a button with button:glassy class"
+        }
+      ],
+      "endTime": 1592966740050,
+      "message": "",
+      "name": "/Applications/Ampps/www/wg3/__tests__/components/Button/Glassy.spec.ts",
+      "startTime": 1592966739893,
+      "status": "passed",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": ["Glassy.spec.ts"],
+          "failureMessages": [],
+          "fullName": "Glassy.spec.ts Renders a button with button:ghosty class",
+          "location": null,
+          "status": "passed",
+          "title": "Renders a button with button:ghosty class"
+        }
+      ],
+      "endTime": 1592966740230,
+      "message": "",
+      "name": "/Applications/Ampps/www/wg3/__tests__/components/Button/Ghosty.spec.ts",
+      "startTime": 1592966740059,
+      "status": "passed",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": ["useI18n"],
+          "failureMessages": [],
+          "fullName": "useI18n Initializes the locale ref",
+          "location": null,
+          "status": "passed",
+          "title": "Initializes the locale ref"
+        },
+        {
+          "ancestorTitles": ["useI18n"],
+          "failureMessages": [],
+          "fullName": "useI18n Stores theme on localStorage",
+          "location": null,
+          "status": "passed",
+          "title": "Stores theme on localStorage"
+        },
+        {
+          "ancestorTitles": ["useI18n"],
+          "failureMessages": [],
+          "fullName": "useI18n Successfully translates a given key string using t(key)",
+          "location": null,
+          "status": "passed",
+          "title": "Successfully translates a given key string using t(key)"
+        },
+        {
+          "ancestorTitles": ["useI18n"],
+          "failureMessages": [],
+          "fullName": "useI18n Returns the given key if no match is found ",
+          "location": null,
+          "status": "passed",
+          "title": "Returns the given key if no match is found "
+        }
+      ],
+      "endTime": 1592966740237,
+      "message": "",
+      "name": "/Applications/Ampps/www/wg3/__tests__/composables/useI18n.spec.ts",
+      "startTime": 1592966740032,
+      "status": "passed",
+      "summary": ""
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": ["Form"],
+          "failureMessages": [],
+          "fullName": "Form Render the inputs given as schema wrapped in fields",
+          "location": null,
+          "status": "passed",
+          "title": "Render the inputs given as schema wrapped in fields"
+        },
+        {
+          "ancestorTitles": ["Form"],
+          "failureMessages": [],
+          "fullName": "Form Updates the schema ref on input value change",
+          "location": null,
+          "status": "passed",
+          "title": "Updates the schema ref on input value change"
+        },
+        {
+          "ancestorTitles": ["Form"],
+          "failureMessages": [],
+          "fullName": "Form Updates the schema on a custom input callback",
+          "location": null,
+          "status": "passed",
+          "title": "Updates the schema on a custom input callback"
+        },
+        {
+          "ancestorTitles": ["Form"],
+          "failureMessages": [],
+          "fullName": "Form Triggers onSubmitHandler if and emmit error callback",
+          "location": null,
+          "status": "passed",
+          "title": "Triggers onSubmitHandler if and emmit error callback"
+        },
+        {
+          "ancestorTitles": ["Form"],
+          "failureMessages": [],
+          "fullName": "Form Triggers onSubmitHandler if and emmit success callback",
+          "location": null,
+          "status": "passed",
+          "title": "Triggers onSubmitHandler if and emmit success callback"
+        }
+      ],
+      "endTime": 1592966742946,
+      "message": "",
+      "name": "/Applications/Ampps/www/wg3/__tests__/components/Form/index.spec.ts",
+      "startTime": 1592966737541,
       "status": "passed",
       "summary": ""
     }

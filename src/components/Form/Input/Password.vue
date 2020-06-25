@@ -3,6 +3,7 @@
     <slot name="before" />
     <div class="input:text__wrapper">
       <input
+        class="input-text"
         :type="type"
         :name="name"
         :id="`${name}Id`"
@@ -23,7 +24,15 @@
 
 <script lang="ts">
 export default {
-  props: ['name', 'value', 'placeholder', 'disabled', 'readonly', 'errors', 't'],
+  props: {
+    name: String,
+    errors: Array,
+    disabled: Boolean,
+    readonly: Boolean,
+    placeholder: String,
+    value: [String, Number],
+    t: { type: Function, default: path => path },
+  }, 
   data: () => ({ type: 'password' })
 }
 </script>

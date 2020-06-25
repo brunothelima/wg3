@@ -1,5 +1,5 @@
 import { useForm, createForm } from '/@composables/useForm'
-import { required, email } from '/@lib/validators'
+import { required } from '/@utils/validators'
 import { FormSchema } from '/@types/form'
 
 const mock: FormSchema = {
@@ -15,15 +15,14 @@ const mock: FormSchema = {
 }
 
 describe('useForm', () => {
-  test('Sets the required properties to the schema object', () => {
-    const source = createForm(mock)
+  const source = createForm(mock)
 
+  test('Sets the required properties to the schema object', () => {
     expect(source.inputName.value).toBe('')
     expect(source.inputName.errors).toStrictEqual([])
   })
 
   test('Computed "data" reacts to inputed value', () => {
-    const source = createForm(mock)
     const { schema, data } = useForm(source)
 
     expect(data.value).toMatchObject({ inputName: '' })
@@ -34,7 +33,6 @@ describe('useForm', () => {
   })
 
   test('validate() function handles properly the given validation methods', async () => {
-    const source = createForm(mock)
     const { schema, validate } = useForm(source)
 
     expect(schema.inputName.errors.length).toBe(0)
@@ -47,7 +45,6 @@ describe('useForm', () => {
   })
 
   test('Computed "errors" reacts to the validate() function call', async () => {
-    const source = createForm(mock)
     const { schema, validate, errors } = useForm(source)
 
     schema.inputName.value = ''
