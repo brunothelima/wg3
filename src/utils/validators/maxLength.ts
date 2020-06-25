@@ -1,4 +1,4 @@
-import { FormValidator } from '../../types'
+import { FormValidator } from '/@types/form'
 
 interface MaxLengthValidator {
   (limit: number): FormValidator

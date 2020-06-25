@@ -1,5 +1,5 @@
 import { ref, watch } from 'vue'
-import { User } from '../types'
+import { User } from '/@types/user'
 
 // Initializing user ref with cached user data
 const cache = localStorage.getItem('wg3.user') || '{}'
