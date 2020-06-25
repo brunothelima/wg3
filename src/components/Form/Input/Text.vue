@@ -1,5 +1,5 @@
 <template>
-  <div data-test="input" :class="['input:text', { 'input:text--invalid': errors.length }]">
+  <div data-test="input" :class="['input:text', { 'input:text--invalid': errors && errors.length }]">
     <slot name="before" />
     <div class="input:text__wrapper">
       <input
@@ -17,7 +17,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue"
+import { defineComponent } from 'vue'
 
 export default defineComponent({
   props: {
@@ -27,7 +27,7 @@ export default defineComponent({
     readonly: Boolean,
     placeholder: String,
     value: [String, Number],
-    t: { type: Function, default: path => path },
+    t: { type: Function, default: (path) => path }
   }
 })
 </script>

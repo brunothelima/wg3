@@ -14,7 +14,7 @@ const mock: FormSchema = {
   }
 }
 
-describe('useForm', () => {
+describe('/@composables/useForm', () => {
   const source = createForm(mock)
 
   test('Sets the required properties to the schema object', () => {

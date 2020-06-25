@@ -7,7 +7,7 @@ export interface FormSchema {
 export interface FormInput {
   type: string
   label?: string
-  value?: string
+  value?: any
   errors?: string[]
   detail?: string
   disabled?: boolean
@@ -54,7 +54,7 @@ export interface FormInputEvents {
 }
 
 export interface FormOnInputEvent {
-  (args: { ev: any, schema: FormSchema }): void
+  (args: { ev: any; schema: FormSchema }): void
 }
 
 export type FormInputTypes =

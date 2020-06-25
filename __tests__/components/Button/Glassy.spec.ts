@@ -1,7 +1,7 @@
 import { mount } from '@vue/test-utils'
 import Glassy from '/@components/Button/Glassy.vue'
 
-describe('Glassy.spec.ts', () => {
+describe('/@components/Button/Glassy.spec.ts', () => {
   test('Renders a button with button:glassy class', () => {
     const wrapper = mount(Glassy)
     const button = wrapper.find('[data-test="glassy"]')

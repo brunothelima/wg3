@@ -1,15 +1,15 @@
 <template>
   <section class="tests">
     <h1>WG3 TESTS</h1>
+    <!-- <pre>{{tests}}</pre> -->
     <div v-for="(test, aIndex) of tests.testResults" :key="`test_${aIndex}`" class="test">
       <header>
         <p>
-          <b>Test: {{ test.name.split('/').pop() }}</b>
+          <b>Test: /@{{ test.name.split('/__tests__/').pop() }}</b>
         </p>
         <span :class="test.status">Status: {{ test.status }}</span>
       </header>
       <hr />
-
       <div class="assertions">
         <span><b>Assertions:</b></span>
         <div v-for="(assertion, bIndex) of test.assertionResults" :key="`asertion_${bIndex}`" class="assertion">

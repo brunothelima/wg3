@@ -1,7 +1,7 @@
 import { useTheme } from '/@composables/useTheme'
 import { nextTick } from 'vue'
 
-describe('useTheme', () => {
+describe('/@composables/useTheme', () => {
   const { theme } = useTheme()
 
   it('Initializes the theme ref', async () => {

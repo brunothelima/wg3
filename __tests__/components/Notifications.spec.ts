@@ -7,7 +7,7 @@ const mock = {
   message: 'Test Message'
 }
 
-describe('Notifications.spec.ts', () => {
+describe('/@components/Notifications.spec.ts', () => {
   const { notify, dismiss, notifications } = useNotifications()
 
   test('Renders a message correctly after notify() is called', async () => {

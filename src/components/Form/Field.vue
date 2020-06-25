@@ -1,10 +1,15 @@
 <template>
-  <div data-test="field" class="field">
-    <label data-test="label" class="field__label" :for="id" v-if="input.label">{{
-      t(input.label)
-    }}</label>
+  <div
+    data-test="field"
+    :class="['field', { 'field--disabled': !!input.disabled }]"
+  >
+    <label data-test="label" class="field__label" :for="id" v-if="input.label">{{ t(input.label) }}</label>
     <slot />
-    <div data-test="detail" class="field__detail" v-if="input.detail">{{ (t && t(input.detail)) || input.detail }}</div>
+    <div
+      data-test="detail"
+      class="field__detail"
+      v-if="input.detail"
+    >{{ (t && t(input.detail)) || input.detail }}</div>
     <ul data-test="errors" class="field__errors" v-if="input.errors && input.errors.length">
       <li v-for="message in input.errors" :key="message">{{ t(message) }}</li>
     </ul>
@@ -28,6 +33,10 @@ export default defineComponent({
   display: flex;
   flex-flow: column;
   margin-bottom: 1em;
+}
+.field--disabled {
+  opacity: 0.4;
+  pointer-events: none;
 }
 .field__label {
   margin: 0 0 0.5rem 1rem;

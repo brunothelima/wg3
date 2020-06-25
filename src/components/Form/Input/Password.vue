@@ -1,5 +1,5 @@
 <template>
-  <div :class="['input:text', { 'input:text--invalid': errors.length }]">
+  <div data-test="input" :class="['input:text', { 'input:password--invalid': errors && errors.length }]">
     <slot name="before" />
     <div class="input:text__wrapper">
       <input
@@ -13,6 +13,7 @@
         :placeholder="t(placeholder)"
       />
       <i
+        data-test="icon"
         color="a"
         :class="`icon-eye${type === 'text' ? '-closed' : ''}`"
         @click="type = type === 'text' ? 'password' : 'text'"
@@ -31,8 +32,8 @@ export default {
     readonly: Boolean,
     placeholder: String,
     value: [String, Number],
-    t: { type: Function, default: path => path },
-  }, 
+    t: { type: Function, default: (path) => path }
+  },
   data: () => ({ type: 'password' })
 }
 </script>
@@ -74,10 +75,10 @@ input::focus {
   border-color: var(--color-x-4);
   box-shadow: 0 0 0 var(--input-border-width) var(--color-x-4);
 }
-.input\:text--invalid input {
+.input\:password--invalid input {
   border-color: var(--color-error);
 }
-.input\:text--invalid i {
+.input\:password--invalid i {
   border-color: var(--color-error);
 }
 </style>

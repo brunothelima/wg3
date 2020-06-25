@@ -1,18 +1,25 @@
 <template>
-  <div :class="['input:select', { 'input:select--invalid': errors && errors.length }]">
+  <div data-test="input" :class="['input:select', { 'input:select--invalid': errors && errors.length }]">
     <slot name="before" />
     <div class="input:select__wrapper">
-      <select :id="`${name}Id`" :name="name" :value="value" :disabled="disabled" :readonly="readonly">
+      <select
+        data-test="select"
+        :id="`${name}Id`"
+        :name="name"
+        :value="value"
+        :disabled="disabled"
+        :readonly="readonly"
+      >
         <option v-for="option in options" :key="option" :value="option.value" :selected="option.value === value">{{
           t(option.label)
         }}</option>
         <slot />
       </select>
-      <div class="input:select__selected" v-if="selected">
+      <div data-test="selected" class="input:select__selected" v-if="selected">
         {{ t(selected) }}
       </div>
-      <div class="input:select__placeholder" v-else>
-        {{t(placeholder || 'Select an option') }}
+      <div data-test="placeholder" class="input:select__placeholder" v-else>
+        {{ t(placeholder || 'Select an option') }}
       </div>
       <i class="icon-caret-down" color="a" />
     </div>
@@ -25,15 +32,15 @@ import { computed, defineComponent } from 'vue'
 import { FormInputOption, FormInputSelect } from '../../../types/form'
 
 export default defineComponent({
-  props:{
+  props: {
     name: String,
-    value: String,
+    value: [String, Number],
     errors: Array,
-    options: Array,
+    options: { type: Array, default: () => [] },
     disabled: Boolean,
     readonly: Boolean,
     placeholder: String,
-    t: { type: Function, default: path => path },
+    t: { type: Function, default: (path) => path }
   },
   setup(props: FormInputSelect & { t: any }) {
     // Computes the current select option title for display
@@ -41,7 +48,7 @@ export default defineComponent({
       if (!props.value) return null
       // Query for the selected option title
       let query = (option: FormInputOption) => {
-        return String(option.value) === props.value
+        return `${option.value}` === `${props.value}`
       }
       return props.options.find(query).label
     })

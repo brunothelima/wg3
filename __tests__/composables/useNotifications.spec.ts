@@ -5,7 +5,7 @@ const mock: Notification = {
   message: 'Test message'
 }
 
-describe('useTheme', () => {
+describe('/@composables/useTheme', () => {
   const { dismiss, notify, notifications } = useNotifications()
 
   jest.useFakeTimers()

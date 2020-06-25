@@ -9,7 +9,7 @@ const mock: User = {
   jwt: 'JWTMOCK'
 }
 
-describe('useUser', () => {
+describe('/@composables/useUser', () => {
   const { user } = useUser()
 
   it('Initializes the user ref store', () => {
