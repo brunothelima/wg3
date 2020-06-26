@@ -1,46 +1,32 @@
 <template>
   <div class="playground">
-    <Settings />
-    <Colors />
-    <Text />
-    <Icons />
-    <Buttons />
-    <Dialogs />
-    <Inputs />
+    <Nav />
+    <main><router-view /></main>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import Settings from '/@components/Settings.vue'
-import Buttons from './Buttons/index.vue'
-import Icons from './Icons.vue'
-import Colors from './Colors/index.vue'
-import Text from './Text/index.vue'
-import Dialogs from './Dialogs/index.vue'
-import Inputs from './Inputs/index.vue'
+import Nav from './Nav.vue'
 
 export default defineComponent({
   components: {
-    Text,
-    Icons,
-    Colors,
-    Buttons,
-    Settings,
-    Dialogs,
-    Inputs
+    Nav
   }
 })
 </script>
 
 <style scoped>
 .playground {
+  display: flex;
+  align-items: flex-start;
+}
+.playground main {
+  flex: 1;
   padding: 2em;
+}
+.playground main > section {
   max-width: 1024px;
   margin: auto;
-  padding: 10vh 2em;
-}
-.playground > section {
-  margin-bottom: 20vh;
 }
 </style>

@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import playgroundRoutes from '/@pages/Playground/routes'
 
 // import { NavigationGuard } from 'vue-router'
 // import { useUser } from './composables/useUser'
@@ -23,9 +24,9 @@ import { createRouter, createWebHistory } from 'vue-router'
 const router = createRouter({
   history: createWebHistory(),
   routes: [
-    { path: '/', component: () => import('./pages/Playground/index.vue') },
-    { path: '/login', component: () => import('./pages/Login/index.vue') },
-    { path: '/tests', component: () => import('./pages/Tests.vue') }
+    { path: '/', component: () => import('/@pages/Login/index.vue') },
+    { path: '/tests', component: () => import('/@pages/Tests.vue') },
+    playgroundRoutes
   ]
 })
 

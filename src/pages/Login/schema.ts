@@ -6,7 +6,6 @@ const schema = createForm({
     type: 'text',
     label: 'Email',
     placeholder: 'email.placeholder',
-    detail: 'test message',
     validations: {
       email: { ...email, message: 'email.isEmail' },
       required: { ...required, message: 'email.required' }

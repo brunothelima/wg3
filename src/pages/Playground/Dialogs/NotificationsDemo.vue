@@ -71,9 +71,11 @@ export default defineComponent({
 <style scoped>
 .notification-demo {
   display: flex;
+  flex-wrap: wrap;
   margin-bottom: 2em;
 }
 .button {
+  margin-bottom: 1em;
   margin-right: 1em;
 }
 </style>

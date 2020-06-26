@@ -1,15 +1,8 @@
 <template>
-  <div
-    data-test="field"
-    :class="['field', { 'field--disabled': !!input.disabled }]"
-  >
+  <div data-test="field" :class="['field', { 'field--disabled': !!input.disabled }]">
     <label data-test="label" class="field__label" :for="id" v-if="input.label">{{ t(input.label) }}</label>
     <slot />
-    <div
-      data-test="detail"
-      class="field__detail"
-      v-if="input.detail"
-    >{{ (t && t(input.detail)) || input.detail }}</div>
+    <div data-test="detail" class="field__detail" v-if="input.detail">{{ (t && t(input.detail)) || input.detail }}</div>
     <ul data-test="errors" class="field__errors" v-if="input.errors && input.errors.length">
       <li v-for="message in input.errors" :key="message">{{ t(message) }}</li>
     </ul>
@@ -23,7 +16,7 @@ export default defineComponent({
   props: {
     id: String,
     input: Object,
-    t: { type: Function, default: path => path }
+    t: { type: Function, default: (path) => path }
   }
 })
 </script>

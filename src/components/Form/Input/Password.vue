@@ -71,7 +71,7 @@ i {
 input::placeholder {
   color: var(--color-x-7);
 }
-input::focus {
+input:focus {
   border-color: var(--color-x-4);
   box-shadow: 0 0 0 var(--input-border-width) var(--color-x-4);
 }

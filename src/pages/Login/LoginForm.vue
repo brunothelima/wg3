@@ -15,9 +15,9 @@
 
 <template>
   <div class="login-form">
-    <img src="../../assets/img/logo-vtc.svg" alt="Widgrid" />
+    <img src="/@assets/img/logo-vtc.svg" alt="Widgrid" />
     <p>{{ t('intro') }}</p>
-    <Form :schema="schema" :locale="messages" @success="({ data }) => login(data)">
+    <Form :schema="schema" :locale="messages" @success="login">
       <footer>
         <a href>{{ t('password-loss') }}</a>
         <Button :reverse="true" icon="icon-arrow-right" model="glassy">
@@ -31,13 +31,13 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { useI18n } from '/@composables/useI18n'
-import router from '../../router'
+import router from '/@utils/router'
 
 import Form from '/@components/Form/index.vue'
 import Button from '/@components/Button/index.vue'
 
-import schema from './schema'
-import messages from './messages.json'
+import schema from '/@pages/Login/schema'
+import messages from '/@pages/Login/messages.json'
 
 export default defineComponent({
   components: {
@@ -48,7 +48,7 @@ export default defineComponent({
     const { t } = useI18n()
 
     const login = () => {
-      router.push('/')
+      router.push('/playground/colors')
     }
 
     return {

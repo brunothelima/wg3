@@ -9,14 +9,12 @@ const schema = createForm({
   inputPassword: {
     type: 'password',
     label: 'password.label',
-    placeholder: 'password.placeholder',
-    disabled: true
+    placeholder: 'password.placeholder'
   },
   inputSelect: {
     type: 'select',
     label: 'select.label',
     placeholder: 'select.placeholder',
-    value: 1,
     options: [
       { value: 1, label: 'select.options.first' },
       { value: 2, label: 'select.options.second' },

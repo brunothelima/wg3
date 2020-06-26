@@ -2,7 +2,6 @@ import { mount } from '@vue/test-utils'
 import InputPassword from '/@components/Form/Input/Password.vue'
 
 describe('/@components/Form/Input/Password.spec.ts', () => {
- 
   const wrapper = mount(InputPassword, {
     props: { name: 'password' }
   })
@@ -16,7 +15,7 @@ describe('/@components/Form/Input/Password.spec.ts', () => {
     await wrapper.setProps({ placeholder })
     expect(wrapper.find(`[placeholder="${placeholder}"]`).exists()).toBe(true)
   })
-  
+
   test('Renders the "invalid" class on errors detected', async () => {
     expect(wrapper.find('[data-test="input"]').classes('input:password--invalid')).toBe(false)
     await wrapper.setProps({ errors: ['Error'] })
@@ -35,12 +34,10 @@ describe('/@components/Form/Input/Password.spec.ts', () => {
     expect(wrapper.find(`[readonly]`).exists()).toBe(true)
   })
 
-
   test('Toggles the input type between password/text on user action', async () => {
     await wrapper.find('[data-test="icon"]').trigger('click')
     expect(wrapper.find(`[type="text"]`).exists()).toBe(true)
     await wrapper.find('[data-test="icon"]').trigger('click')
     expect(wrapper.find(`[type="password"]`).exists()).toBe(true)
   })
-  
 })

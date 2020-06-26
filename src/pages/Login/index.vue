@@ -6,9 +6,9 @@
 </template>
 
 <script lang="ts">
-import LoginForm from './LoginForm.vue'
-import Settings from '/@components/Settings.vue'
 import { defineComponent } from 'vue'
+import Settings from '/@components/Settings.vue'
+import LoginForm from '/@pages/Login/LoginForm.vue'
 
 export default defineComponent({
   name: 'Login',
@@ -26,5 +26,8 @@ export default defineComponent({
   align-items: center;
   justify-content: center;
   height: 100vh;
+}
+.settings {
+  margin-bottom: 2em;
 }
 </style>

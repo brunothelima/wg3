@@ -49,6 +49,9 @@ export default defineComponent({
 .button i {
   font-size: 16px;
 }
+.button span {
+  text-decoration: none;
+}
 .button * ~ span {
   margin: 0 0 0 1em;
 }
