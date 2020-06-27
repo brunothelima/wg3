@@ -1,14 +1,39 @@
+<i18n>
+{
+  "en": {
+    "colors": "Colors",    
+    "buttons": "Buttons",    
+    "icons": "Icons",    
+    "text": "Text",    
+    "dialogs": "Dialogs",    
+    "images": "Images",    
+    "tests": "tests" 
+  },
+  "pt": {
+    "colors": "Cores",    
+    "buttons": "Botões",    
+    "icons": "Ícones",    
+    "text": "Texto",    
+    "dialogs": "Alertas",    
+    "inputs": "Formuláro",    
+    "images": "Imagens", 
+    "tests": "Testes" 
+  }
+}
+</i18n>
+
 <template>
   <nav>
     <header><Settings /></header>
     <ul>
-      <li><router-link to="colors">Colors</router-link></li>
-      <li><router-link to="buttons">Buttons</router-link></li>
-      <li><router-link to="icons">Icons</router-link></li>
-      <li><router-link to="text">Text</router-link></li>
-      <li><router-link to="dialogs">Dialogs</router-link></li>
-      <li><router-link to="inputs">Inputs</router-link></li>
-      <li><router-link to="/tests">Tests</router-link></li>
+      <li><router-link to="colors">{{ t('colors') }}</router-link></li>
+      <li><router-link to="buttons">{{ t('buttons') }}</router-link></li>
+      <li><router-link to="icons">{{ t('icons') }}</router-link></li>
+      <li><router-link to="text">{{ t('text') }}</router-link></li>
+      <li><router-link to="dialogs">{{ t('dialogs') }}</router-link></li>
+      <li><router-link to="inputs">{{ t('inputs') }}</router-link></li>
+      <li><router-link to="images">{{ t('images') }}</router-link></li>
+      <li><router-link to="/tests">{{ t('tests') }}</router-link></li>
     </ul>
   </nav>
 </template>
@@ -16,10 +41,14 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import Settings from '/@components/Settings.vue'
+import { useI18n } from '../../composables/useI18n'
 
 export default defineComponent({
   components: {
     Settings
+  },
+  setup() {
+    return useI18n()
   }
 })
 </script>
@@ -33,8 +62,8 @@ nav {
   background: var(--color-x-11);
   border-bottom-right-radius: var(--input-border-radius);
   box-shadow: var(--box-shadow-light);
-  border-right: var(--input-border-width) var(--input-border-style) var(--color-a-1);
-  border-bottom: var(--input-border-width) var(--input-border-style) var(--color-a-1);
+  border-right: var(--input-border-width) var(--input-border-style) var(--color-a-4);
+  border-bottom: var(--input-border-width) var(--input-border-style) var(--color-a-4);
   @media screen and (max-width: #{$tablet-brakepoint}) {
     position: fixed;
   }
@@ -47,7 +76,7 @@ nav header::v-deep(.input\:select__selected) {
   padding: 0.5em 48px 0.5em 1em;
 }
 nav header::v-deep(.input\:select__wrapper) {
-  border-color: var(--color-a-1);
+  border-color: var(--color-a-4);
 }
 nav ul li {
   padding: 1em 2em;

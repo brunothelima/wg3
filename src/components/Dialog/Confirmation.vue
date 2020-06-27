@@ -6,11 +6,11 @@
         <span>{{ header }}</span>
       </span>
     </header>
-    <main>
+    <div class="dialog:confirmation__content">
       <i :class="['big', icon]" color="a" v-if="icon" />
       <p v-if="title">{{ title }}</p>
       <span v-if="text">{{ text }}</span>
-    </main>
+    </div>
     <footer>
       <button v-if="buttonLeft" @click="$emit('leftButtonClick')">
         {{ buttonLeft }}
@@ -62,7 +62,7 @@ export default {
   }
 }
 
-main {
+.dialog\:confirmation__content {
   display: flex;
   flex-flow: column;
   justify-content: center;
@@ -73,21 +73,21 @@ main {
   @media screen and (max-width: #{$tablet-brakepoint}) {
     flex: 1;
   }
-}
-main p {
-  margin-bottom: 0.5em;
-  font-size: var(--font-size-xxl);
-  font-weight: 700;
-}
-main span {
-  color: var(--color-x-6);
-  font-size: var(--font-size);
-  line-height: 180%;
-}
-main i {
-  margin-bottom: 1rem;
-  font-size: 40px;
-}
+  p {
+    margin-bottom: 0.5em;
+    font-size: var(--font-size-xxl);
+    font-weight: 700;
+  }
+  span {
+    color: var(--color-x-6);
+    font-size: var(--font-size);
+    line-height: 180%;
+  }
+  i {
+    margin-bottom: 1rem;
+    font-size: 40px;
+  }
+} 
 
 header {
   display: flex;

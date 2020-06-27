@@ -4,6 +4,8 @@
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "moduleResolution": "node",
+    "module": "esnext",
+    "target": "esnext",
     "paths": {
       "/@assets/*": ["./src/assets/*"],
       "/@components/*": ["./src/components/*"],

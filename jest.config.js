@@ -1,6 +1,7 @@
 const { resolve } = require('path')
 
 module.exports = {
+  verbose: true,
   preset: 'ts-jest',
   transform: {
     '^.+\\.vue$': 'vue-jest',

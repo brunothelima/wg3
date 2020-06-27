@@ -24,9 +24,12 @@ export default defineComponent({
 .playground main {
   flex: 1;
   padding: 2em;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 .playground main > section {
-  max-width: 1024px;
+  max-width: 1200px;
   margin: auto;
+  padding: 5vh 0;
 }
 </style>

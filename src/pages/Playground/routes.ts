@@ -7,6 +7,7 @@ export default {
     { path: 'colors', component: () => import('/@pages/Playground/Colors/index.vue') },
     { path: 'dialogs', component: () => import('/@pages/Playground/Dialogs/index.vue') },
     { path: 'inputs', component: () => import('/@pages/Playground/Inputs/index.vue') },
+    { path: 'images', component: () => import('/@pages/Playground/Images.vue') },
     { path: 'text', component: () => import('/@pages/Playground/Text/index.vue') }
   ]
 }
