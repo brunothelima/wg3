@@ -10,9 +10,9 @@
         :disabled="disabled"
         :readonly="readonly"
       >
-        <option v-for="option in options" :key="option" :value="option.value" :selected="option.value === value">{{
-          t(option.label)
-        }}</option>
+        <option v-for="option in options" :key="option" :value="option.value" :selected="option.value === value">
+          {{ t(option.label) }}
+        </option>
         <slot />
       </select>
       <div data-test="selected" class="input:select__selected" v-if="selected">
@@ -29,20 +29,14 @@
 
 <script lang="ts">
 import { computed, defineComponent } from 'vue'
-import { FormInputOption, FormInputSelect } from '../../../types/form'
+import { useI18n } from '/@composables/useI18n'
+import { FormInputOption, FormInputSelect } from '/@types/form'
 
 export default defineComponent({
-  props: {
-    name: String,
-    value: [String, Number],
-    errors: Array,
-    options: { type: Array, default: () => [] },
-    disabled: Boolean,
-    readonly: Boolean,
-    placeholder: String,
-    t: { type: Function, default: (path) => path }
-  },
-  setup(props: FormInputSelect & { t: any }) {
+  props: ['name', 'value', 'errors', 'options', 'disabled', 'readonly', 'placeholder', 'messages'],
+  setup(props: FormInputSelect) {
+    const { t } = useI18n(props.messages)
+
     // Computes the current select option title for display
     const selected = computed(() => {
       if (!props.value) return null
@@ -52,8 +46,8 @@ export default defineComponent({
       }
       return props.options.find(query).label
     })
-
     return {
+      t,
       selected
     }
   }
@@ -97,6 +91,7 @@ select {
 }
 .input\:select__placeholder {
   color: var(--color-x-7);
+  opacity: 0.6;
 }
 i {
   grid-row: 1 / 2;

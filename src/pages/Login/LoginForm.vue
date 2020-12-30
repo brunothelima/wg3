@@ -17,7 +17,7 @@
   <div class="login-form">
     <img src="/@assets/img/logo-vtc.svg" alt="Widgrid" />
     <p>{{ t('intro') }}</p>
-    <Form :schema="schema" :locale="messages" @success="login">
+    <Form :schema="schema" :messages="messages" @success="login">
       <footer>
         <a href>{{ t('password-loss') }}</a>
         <Button :reverse="true" icon="icon-arrow-right" model="glassy">

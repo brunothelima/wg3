@@ -16,6 +16,18 @@
         "second": "Second option",
         "third": "Third option"
       }
+    },
+    "money": {
+      "label": "Input Money",
+      "placeholder": "Type any amount"
+    },
+    "file": {
+      "label": "Input File",
+      "placeholder": "Select a file"
+    },
+    "date": {
+      "label": "Input Date",
+      "placeholder": "Click to open the calendar"
     }
   },
   "pt": {
@@ -35,6 +47,18 @@
         "second": "Segunda opção",
         "third": "Terceira opção"
       }
+    },
+    "money": {
+      "label": "Campo de moeda",
+      "placeholder": "Digite aqui uma quantia"
+    },
+    "file": {
+      "label": "Input de arquivo",
+      "placeholder": "Selecione um arquivo"
+    },
+    "date": {
+      "label": "Input de data",
+      "placeholder": "Clique para abrir o calendário"
     }
   }
 }

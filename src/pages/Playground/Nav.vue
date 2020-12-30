@@ -7,7 +7,7 @@
     "text": "Text",    
     "dialogs": "Dialogs",    
     "images": "Images",    
-    "tests": "tests" 
+    "tests": "Tests" 
   },
   "pt": {
     "colors": "Cores",    
@@ -33,7 +33,7 @@
       <li><router-link to="dialogs">{{ t('dialogs') }}</router-link></li>
       <li><router-link to="inputs">{{ t('inputs') }}</router-link></li>
       <li><router-link to="images">{{ t('images') }}</router-link></li>
-      <li><router-link to="/tests">{{ t('tests') }}</router-link></li>
+      <li><router-link to="tests">{{ t('tests') }}</router-link></li>
     </ul>
   </nav>
 </template>

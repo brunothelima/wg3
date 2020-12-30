@@ -11,6 +11,9 @@ const i18nTransform = ({ code }) => {
 }
 
 const config: UserConfig = {
+  optimizeDeps: {
+    include: ['flatpickr/dist/l10n/pt.js']
+  },
   alias: {
     '/@assets/': resolve(__dirname, 'src/assets'),
     '/@components/': resolve(__dirname, 'src/components'),

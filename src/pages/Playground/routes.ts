@@ -8,6 +8,7 @@ export default {
     { path: 'dialogs', component: () => import('/@pages/Playground/Dialogs/index.vue') },
     { path: 'inputs', component: () => import('/@pages/Playground/Inputs/index.vue') },
     { path: 'images', component: () => import('/@pages/Playground/Images.vue') },
-    { path: 'text', component: () => import('/@pages/Playground/Text/index.vue') }
+    { path: 'text', component: () => import('/@pages/Playground/Text/index.vue') },
+    { path: 'tests', component: () => import('/@pages/Playground/Tests.vue') }
   ]
 }

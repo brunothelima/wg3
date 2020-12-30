@@ -18,16 +18,16 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import { useI18n } from '/@composables/useI18n'
+import { FormInputText } from '/@types/form'
 
 export default defineComponent({
-  props: {
-    name: String,
-    errors: Array,
-    disabled: Boolean,
-    readonly: Boolean,
-    placeholder: String,
-    value: [String, Number],
-    t: { type: Function, default: (path) => path }
+  props: ['name', 'errors', 'disabled', 'readonly', 'placeholder', 'value', 'messages'],
+  setup(props: FormInputText) {
+    const { t } = useI18n(props.messages)
+    return {
+      t
+    }
   }
 })
 </script>

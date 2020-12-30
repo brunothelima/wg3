@@ -1,8 +1,11 @@
 <template>
   <div data-test="field" :class="['field', { 'field--disabled': !!input.disabled }]">
     <label data-test="label" class="field__label" :for="id" v-if="input.label">{{ t(input.label) }}</label>
-    <slot />
-    <div data-test="detail" class="field__detail" v-if="input.detail">{{ (t && t(input.detail)) || input.detail }}</div>
+    <div class="field__slot">
+      <slot />
+      <Help data-test="help" v-if="input.help">{{ t(input.help) }}</Help>
+    </div>
+    <div data-test="detail" class="field__detail" v-if="input.detail">{{ t(input.detail) }}</div>
     <ul data-test="errors" class="field__errors" v-if="input.errors && input.errors.length">
       <li v-for="message in input.errors" :key="message">{{ t(message) }}</li>
     </ul>
@@ -11,12 +14,24 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import { useI18n } from '/@composables/useI18n'
+import Help from './Help.vue'
 
 export default defineComponent({
+  components: {
+    Help
+  },
   props: {
     id: String,
     input: Object,
-    t: { type: Function, default: (path) => path }
+    messages: Object,
+  },
+  setup(props) {
+    const { t } = useI18n(props.messages)
+    
+    return {
+      t
+    }
   }
 })
 </script>
@@ -39,6 +54,14 @@ export default defineComponent({
 .field__label:empty {
   display: none;
 }
+.field__slot {
+  display: flex;
+}
+
+.field__slot [class*="input:"] {
+  flex: 1;
+}
+
 .field__errors {
   display: flex;
   flex-flow: column;

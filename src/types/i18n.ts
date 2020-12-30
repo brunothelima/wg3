@@ -1,3 +1,3 @@
-export interface Resources {
-  [key: string]: string | Resources
+export interface Messages {
+  [key: string]: string | Messages
 }

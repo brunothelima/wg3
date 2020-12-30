@@ -1,8 +1,9 @@
 <template>
   <form data-test="form" @submit="onSubmitHandler" class="form">
+    <pre>{{data}}</pre>
     <div class="form__grid">
-      <Field v-for="[name, input] in entries" :key="name" :input="input" :id="`${name}Id`" :t="t">
-        <component v-bind="input" @input="onInputHandler" :is="`input-${input.type}`" :name="name" :t="t" />
+      <Field v-for="[name, input] in entries" :key="name" :input="input" :id="`${name}Id`" :messages="messages">
+        <component v-bind="input" @input="onInputHandler" :is="`input-${input.type}`" :name="name" :messages="messages" />
       </Field>
     </div>
     <slot />
@@ -19,18 +20,23 @@ import Field from './Field.vue'
 import InputText from './Input/Text.vue'
 import InputSelect from './Input/Select.vue'
 import InputPassword from './Input/Password.vue'
+import InputMoney from './Input/Money.vue'
+import InputFile from './Input/File.vue'
+import InputDate from './Input/Date.vue'
+
 
 export default defineComponent({
-  props: ['schema', 'locale'],
+  props: ['schema', 'messages'],
   components: {
     Field,
     InputText,
     InputSelect,
-    InputPassword
+    InputPassword,
+    InputMoney,
+    InputFile,
+    InputDate
   },
   setup(props: FormProps, context) {
-    const { t } = useI18n(props.locale)
-
     const { schema, data, validate } = useForm(props.schema)
 
     const entries = computed(() => Object.entries(schema))
@@ -74,7 +80,6 @@ export default defineComponent({
     }
 
     return {
-      t,
       data,
       entries,
       onInputHandler,

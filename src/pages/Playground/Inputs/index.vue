@@ -13,7 +13,7 @@
   <section class="inputs">
     <h1>{{ t('title') }}</h1>
     <hr />
-    <Form :schema="schema" :locale="messages" />
+    <Form :schema="schema" :messages="messages" />
   </section>
 </template>
 

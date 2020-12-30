@@ -26,6 +26,8 @@ export default defineComponent({
   padding: 2em;
   overflow: hidden;
   box-sizing: border-box;
+  min-height: 100vh;
+  overflow: auto;  
 }
 .playground main > section {
   max-width: 1200px;

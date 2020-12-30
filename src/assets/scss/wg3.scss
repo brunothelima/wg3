@@ -1,8 +1,9 @@
 @import './vars';
 @import '../icons/widgricon/style';
-@import './themes/seafoam';
 @import './resets/normalize';
 @import './resets/reset';
+
+@import './themes/seafoam';
 
 html,
 body {
@@ -14,24 +15,13 @@ body.scroll-lock {
   overflow: hidden;
 }
 
-h1 {
-  font-size: var(--font-size-h1);
-}
-h2 {
-  font-size: var(--font-size-h2);
-}
-h3 {
-  font-size: var(--font-size-h3);
-}
-h4 {
-  font-size: var(--font-size-h4);
-}
-h5 {
-  font-size: var(--font-size-h5);
-}
-h6 {
-  font-size: var(--font-size-h6);
-}
+h1 { font-size: var(--font-size-h1); }
+h2 { font-size: var(--font-size-h2); }
+h3 { font-size: var(--font-size-h3); }
+h4 { font-size: var(--font-size-h4); }
+h5 { font-size: var(--font-size-h5); }
+h6 { font-size: var(--font-size-h6); }
+
 h1,
 h2,
 h3 {

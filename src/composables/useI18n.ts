@@ -1,9 +1,9 @@
 import { getCurrentInstance, ref, watch } from 'vue'
-import { Resources } from '/@types/i18n'
+import { Messages } from '/@types/i18n'
 
 // Initializing locale ref with cached language or default
-const cache = localStorage.getItem('wg3.locale') || 'en'
-const locale = ref(cache)
+const cache = localStorage.getItem('wg3.locale') as 'pt' | 'en'
+const locale = ref<'pt' | 'en'>(cache || 'en')
 
 // Resets cache with new locale value
 // Updates the html tag "lang" attr
@@ -19,19 +19,19 @@ document.documentElement.lang = locale.value
  * Translation composable, exports a translator function
  * from a given resource(json) or i18n custom block
  */
-export const useI18n = (resources: Resources = {}) => {
+export const useI18n = (messages: Messages = {}) => {
   const instance = getCurrentInstance()
-  // Extrancting resources from the i18n custom block
+  // Extrancting messages from the i18n custom block
   if (instance && 'i18n' in instance.type) {
-    resources = instance.type.i18n
+    messages = instance.type.i18n
   }
 
   /**
-   * Querys through the resources json for a given path.
+   * Querys through the messages json for a given path.
    * Returns the key value if it is found or the given path on fail
    */
   const t = (path: string = '') => {
-    const resource = resources[locale.value] || self
+    const resource = messages[locale.value] || self
     const reducer = (prev: any, curr: string) => (prev ? prev[curr] : '')
     return path.split('.').reduce(reducer, resource) || path
   }
