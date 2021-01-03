@@ -12,11 +12,11 @@
     <InputSelect
       name="locale"
       :value="locale"
+      @input="locale = $event.target.value"
       :options="[
         { value: 'en', label: 'EN' },
         { value: 'pt', label: 'PT' }
       ]"
-      @input="locale = $event.target.value"
     />
   </div>
 </template>

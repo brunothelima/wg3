@@ -1,0 +1,94 @@
+:root {
+  /* Font Props */
+  --font-size: 14px;
+  --font-family: Helvetica, Arial, Times;
+  --icon-family: 'Widgricon';
+
+  --font-size-h1: 4.571em;
+  --font-size-h2: 4em;
+  --font-size-h3: 3.429em;
+  --font-size-h4: 2.857em;
+  --font-size-h5: 2.286em;
+  --font-size-h6: 1.714em;
+
+  --font-size-xxl: calc(var(--font-size) + 4px);
+  --font-size-xl: calc(var(--font-size) + 2px);
+  --font-size-xs: calc(var(--font-size) - 2px);
+  --font-size-xxs: calc(var(--font-size) - 4px);
+
+
+   /* Button Props  */
+  --button-padding: 1em;
+  --button-border-radius: 0.5em;
+
+  /* Card Props */
+  --card-border-radius: 0.5em;
+  --card-border-width: 1px;
+  --card-border-style: solid;
+
+  /* Image Props */
+  --img-border-radius: 0.5em;
+
+  /* Input Props */
+  --input-border-width: 1px;
+  --input-border-style: solid;
+  --input-border-radius: 0.5em;
+
+  /* Box Shadow Props */
+  --box-shadow-x: 1px;
+  --box-shadow-y: 1px;
+  --box-shadow-blur: 4px;
+  --box-shadow-spread: 4px;
+  --box-shadow-color: 4px;
+
+  --box-shadow-light: 
+    var(--box-shadow-x) 
+    var(--box-shadow-y) 
+    var(--box-shadow-blur) 
+    var(--box-shadow-spread)
+    rgba(17, 13, 41, 0.04);
+
+  --box-shadow-heavy: 
+    calc(var(--box-shadow-x) * 2) 
+    calc(var(--box-shadow-y) * 2) 
+    calc(var(--box-shadow-blur) * 2)
+    calc(var(--box-shadow-spread) * 2)
+    rgba(17, 13, 41, 0.16);
+
+  /* Transition Props */
+  --transition-duration: 150ms;
+  --transition-timing-function: ease-out;
+
+   /* Color Props */
+   --color-info: #3b9dea;
+   --color-error: #fa4646;
+   --color-warning: #dbc53d;
+   --color-success: #46cd72;
+
+   --color-x-1: #171a1e;
+   --color-x-2: #22272c;
+   --color-x-3: #373e45;
+   --color-x-4: #5c636f;
+   --color-x-5: #768091;
+   --color-x-6: #8c95a3;
+   --color-x-7: #babfc8;
+   --color-x-8: #e5e7eb;
+   --color-x-9: #f2f3f5;
+   --color-x-10: #f7f8f9;
+   --color-x-11: #ffffff;
+}
+
+.dark {
+  /* Color Props : Dark Theme */
+  --color-x-1: #171a1e;
+  --color-x-2: #22272c;
+  --color-x-3: #373e45;
+  --color-x-4: #5c636f;
+  --color-x-5: #768091;
+  --color-x-6: #8c95a3;
+  --color-x-7: #babfc8;
+  --color-x-8: #e5e7eb;
+  --color-x-9: #f2f3f5;
+  --color-x-10: #f7f8f9;
+  --color-x-11: #ffffff;
+}

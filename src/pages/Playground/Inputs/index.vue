@@ -1,10 +1,12 @@
 <i18n>
 {
   "en": {
-    "title": "Form inputs"
+    "title": "Form inputs",
+    "submit": "Submit"
   },
   "pt": {
-    "title": "Formulário"
+    "title": "Formulário",
+    "submit": "Enviar"
   }
 }
 </i18n>
@@ -13,7 +15,14 @@
   <section class="inputs">
     <h1>{{ t('title') }}</h1>
     <hr />
-    <Form :schema="schema" :messages="messages" />
+    <Form :schema="schema" :messages="messages">
+      <footer>
+        <br>
+        <Button :reverse="true" icon="icon-arrow-right" model="glassy">
+          {{ t('submit') }}
+        </Button>
+      </footer>
+    </Form>
   </section>
 </template>
 
@@ -21,12 +30,14 @@
 import { defineComponent } from 'vue'
 import { useI18n } from '/@composables/useI18n'
 import Form from '/@components/Form/index.vue'
+import Button from '/@components/Button/index.vue'
 import schema from './schema'
 import messages from './messages.json'
 
 export default defineComponent({
   components: {
-    Form
+    Form,
+    Button
   },
   setup() {
     const { t } = useI18n()
@@ -41,8 +52,6 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import '../../../assets/scss/vars';
-
 h1 {
   color: var(--color-a-1);
 }
@@ -50,8 +59,5 @@ h1 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 1em;
-  @media screen and (max-width: #{$tablet-brakepoint}) {
-    display: block;
-  }
 }
 </style>

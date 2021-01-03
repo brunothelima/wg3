@@ -58,77 +58,91 @@ export default defineComponent({
 
 <style lang="scss">
 @import 'flatpickr/dist/flatpickr.min.css';
-
-.flatpickr {
-  &-calendar {
-    box-sizing: content-box;
-    padding: 1em;
-    border: none;
-    background-color: var(--color-x-10);
-    box-shadow: var(--box-shadow-light);
-    font-family: var(--font-family);
-  }
-  &-current-month {
-    margin-left: 0.5em;
-    font-size: var(--font-size);
-    color: var(--color-a-1);
-    select {
-      text-align: right;
-      -moz-appearance: none !important;
-      -webkit-appearance: none !important;
+.wg3 {
+  .flatpickr {
+    &-calendar {
+      box-sizing: content-box;
+      padding: 1em;
+      border: none;
+      left: 2px;
+      background-color: var(--color-x-10);
+      box-shadow: var(--box-shadow-medium);
+      font-family: var(--font-family);
+      &.arrowBottom {
+        top: unset;
+        bottom: calc(100% - 6px);
+      }
     }
-    option {
-      color: #222;
+    &-current-month {
+      margin-left: 0.5em;
+      font-size: var(--font-size);
+      color: var(--color-a-1);
+      select {
+        text-align: right;
+        -moz-appearance: none !important;
+        -webkit-appearance: none !important;
+      }
+      option {
+        color: #222;
+      }
     }
-  }
-  &-days .dayContainer {
-    justify-content: flex-start;
-  }
-  &-day {
-    font-size: var(--font-size-xs);
-    height: 26px;
-    max-width: 26px;
-    line-height: 26px;
-    border-radius: 13px;
-    margin: 0.5em;
-    color: var(--color-x-2);
-    &.today {
-      border-color: var(--color-a-1);
+    &-days .dayContainer {
+      justify-content: flex-start;
     }
-    &.prevMonthDay,
-    &.nextMonthDay {
-      color: var(--color-x-7);
-    }
-    &.selected {
-      background-color: var(--color-a-1);
-      border-color: var(--color-a-1);
-    }
-    &:hover,
-    &.prevMonthDay:hover,
-    &.nextMonthDay:hover {
-      border-color: var(--color-x-6);
-      background-color: var(--color-x-8);
+    &-weekday {
+      font-size: var(--font-size-xs);
       color: var(--color-x-1);
     }
-  }
-  &-months {
-    margin-bottom: 2em;
-    .flatpickr-next-month,
-    .flatpickr-prev-month {
-      top: 1em;
-      padding-left: 2em;
-      padding-right: 2em;
-      svg {
-        fill: var(--color-x-1);
+    &-day {
+      font-size: var(--font-size-xs);
+      height: 26px;
+      max-width: 26px;
+      line-height: 26px;
+      border-radius: 13px;
+      margin: 0.5em;
+      color: var(--color-x-2);
+      &.today {
+        border-color: var(--color-a-1);
       }
-      &:hover svg {
-        fill: var(--color-a-1);
+      &.prevMonthDay,
+      &.nextMonthDay {
+        color: var(--color-x-7);
+      }
+      &.selected {
+        background-color: var(--color-a-1);
+        border-color: var(--color-a-1);
+      }
+      &:hover,
+      &.prevMonthDay:hover,
+      &.nextMonthDay:hover {
+        border-color: var(--color-x-6);
+        background-color: var(--color-x-8);
+        color: var(--color-x-1);
       }
     }
-  }
-  span.flatpickr-weekday {
-    color: var(--color-x-7);
-    font-weight: 400;
+    &-months {
+      margin-bottom: 2em;
+      .flatpickr-next-month,
+      .flatpickr-prev-month {
+        top: 1em;
+        padding-left: 2em;
+        padding-right: 2em;
+        svg {
+          fill: var(--color-x-1);
+        }
+        &:hover svg {
+          fill: var(--color-a-1);
+        }
+      }
+    }
+    &-current-month .numInputWrapper span {
+      &.arrowUp:after {
+        border-bottom-color: var(--color-x-1);
+      }
+      &.arrowDown:after {
+        border-top-color: var(--color-x-1);
+      }
+    }
   }
 }
 </style>
@@ -158,6 +172,12 @@ i {
   &::after,
   &::before {
     border-bottom-color: var(--color-x-10);
+  }
+}
+.input\:date::v-deep(.flatpickr-calendar.arrowBottom) {
+  &::after,
+  &::before {
+    border-top-color: var(--color-x-10);
   }
 }
 input {

@@ -1,6 +1,4 @@
 export * from './form'
-export * from './user'
-export * from './auth'
 export * from './i18n'
 
 export interface Notification {
@@ -9,6 +7,12 @@ export interface Notification {
   timeout?: any
 }
 
-export interface LocaleMessages {
-  [key: string]: LocaleMessages | string
+export interface ImageProps {
+  w: number,
+  h: number,
+  x: number,
+  y: number,
+  src: string,
+  ratio: string,
+  smart: boolean
 }

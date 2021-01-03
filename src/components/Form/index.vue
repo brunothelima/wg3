@@ -46,12 +46,12 @@ export default defineComponent({
      * and calls onInput callback if one is given in the schema
      */
     const onInputHandler = (ev: InputEvent) => {
-      const { name, value } = ev.target as HTMLInputElement
+      const { name, value, files } = ev.target as HTMLInputElement
       const input = schema[name]
 
       // Updating the schema input value
-      input.value = value
       input.errors = []
+      input.value = files ? files : value
 
       // Checking and calling the event calback function
       if (input.events && input.events.onInput) {

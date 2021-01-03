@@ -3,7 +3,7 @@ import { Messages } from '/@types/i18n'
 
 // Initializing locale ref with cached language or default
 const cache = localStorage.getItem('wg3.locale') as 'pt' | 'en'
-const locale = ref<'pt' | 'en'>(cache || 'en')
+const locale = ref<'pt' | 'en'>(cache)
 
 // Resets cache with new locale value
 // Updates the html tag "lang" attr

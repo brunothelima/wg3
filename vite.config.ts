@@ -20,7 +20,7 @@ const config: UserConfig = {
     '/@composables/': resolve(__dirname, 'src/composables'),
     '/@utils/': resolve(__dirname, 'src/utils'),
     '/@pages/': resolve(__dirname, 'src/pages'),
-    '/@types/': resolve(__dirname, 'src/types')
+    '/@types/': resolve(__dirname, 'src/types/index.ts')
   },
   vueCustomBlockTransforms: {
     i18n: i18nTransform

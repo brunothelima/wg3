@@ -25,6 +25,7 @@ export default defineComponent({
   props: ['name', 'errors', 'disabled', 'readonly', 'placeholder', 'value', 'messages'],
   setup(props: FormInputText) {
     const { t } = useI18n(props.messages)
+    
     return {
       t
     }

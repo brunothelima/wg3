@@ -11,25 +11,16 @@
 
 <script lang="ts">
 import { defineComponent, computed, ref, Ref } from 'vue'
+import { ImageProps } from '/@types/index'
 
 export default defineComponent({
-  props: {
-    w: Number,
-    h: Number,
-    x: Number,
-    y: Number,
-    src: String,
-    ratio: String,
-    smart: Boolean
-  },
-  setup(props) {
+  setup(props: ImageProps) {
     const image: Ref<HTMLImageElement> = ref(null)
 
     const path = computed(() => {
       const url = new URL(`${import.meta.env.VITE_API_URL}/image`)
       for (const prop in props) {
-        if (props[prop]) 
-          url.searchParams.append(prop, props[prop])
+        url.searchParams.append(prop, props[prop] || '')
       }
       return url
     })

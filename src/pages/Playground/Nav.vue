@@ -55,6 +55,7 @@ export default defineComponent({
 
 <style scoped lang="scss">
 @import '../../assets/scss/vars';
+
 nav {
   position: sticky;
   z-index: 2;

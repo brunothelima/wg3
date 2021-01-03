@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'Widgricon';
-  src: url('assets/icons/widgricon/fonts/Widgricon.eot?b5aawo');
-  src: url('assets/icons/widgricon/fonts/Widgricon.eot?b5aawo#iefix') format('embedded-opentype'),
-    url('assets/icons/widgricon/fonts/Widgricon.ttf?b5aawo') format('truetype'),
-    url('assets/icons/widgricon/fonts/Widgricon.woff?b5aawo') format('woff'),
-    url('assets/icons/widgricon/fonts/Widgricon.svg?b5aawo#Widgricon') format('svg');
+  src: url('assets/scss/icons/fonts/Widgricon.eot?b5aawo');
+  src: url('assets/scss/icons/fonts/Widgricon.eot?b5aawo#iefix') format('embedded-opentype'),
+    url('assets/scss/icons/fonts/Widgricon.ttf?b5aawo') format('truetype'),
+    url('assets/scss/icons/fonts/Widgricon.woff?b5aawo') format('woff'),
+    url('assets/scss/icons/fonts/Widgricon.svg?b5aawo#Widgricon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -12,7 +12,7 @@
 [class^='icon-'],
 [class*=' icon-'] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: var(--icons-family);
+  font-family: var(--icon-family);
   font-style: normal;
   font-weight: normal;
   font-variant: normal;

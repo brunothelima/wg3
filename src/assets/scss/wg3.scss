@@ -1,9 +1,12 @@
 @import './vars';
-@import '../icons/widgricon/style';
-@import './resets/normalize';
-@import './resets/reset';
 
+@import './themes/default';
 @import './themes/seafoam';
+@import './icons/style';
+
+@import './normalize';
+@import './reset';
+
 
 html,
 body {
