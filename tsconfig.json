@@ -7,13 +7,7 @@
     "module": "esnext",
     "target": "esnext",
     "paths": {
-      "/@assets/*": ["./src/assets/*"],
-      "/@components/*": ["./src/components/*"],
-      "/@composables/*": ["./src/composables/*"],
-      "/@utils/*": ["./src/utils/*"],
-      "/@pages/*": ["./src/pages/*"],
-      "/@types/*": ["./src/types/*"]
-      // "/@src/*": ["./src/*"],
-    }
+      "/@wg3/*": ["./src/*"]
+    },
   }
 }

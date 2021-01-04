@@ -22,7 +22,7 @@
 </template>
 
 <script lang="ts">
-import { useI18n } from '/@composables/useI18n'
+import { useI18n } from '/@wg3/composables/useI18n'
 import Headings from './Headings.vue'
 import Paragraph from './Paragraph.vue'
 import Labels from './Labels.vue'

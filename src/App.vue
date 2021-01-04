@@ -7,8 +7,8 @@
 </template>
 
 <script lang="ts">
-import { useTheme } from '/@composables/useTheme'
-import Notifications from '/@components/Notifications.vue'
+import { useTheme } from '/@wg3/composables/useTheme'
+import Notifications from '/@wg3/components/Notifications.vue'
 
 export default {
   components: {

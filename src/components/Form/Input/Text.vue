@@ -18,8 +18,8 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { useI18n } from '/@composables/useI18n'
-import { FormInputText } from '/@types/form'
+import { useI18n } from '/@wg3/composables/useI18n'
+import { FormInputText } from '/@wg3/types/form'
 
 export default defineComponent({
   props: ['name', 'errors', 'disabled', 'readonly', 'placeholder', 'value', 'messages'],

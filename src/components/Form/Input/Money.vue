@@ -19,8 +19,8 @@
 <script lang="ts">
 import VMasker from 'vanilla-masker'
 import { defineComponent, onMounted, ref } from 'vue'
-import { useI18n } from '/@composables/useI18n'
-import { FormInputMoney } from '/@types/form'
+import { useI18n } from '/@wg3/composables/useI18n'
+import { FormInputMoney } from '/@wg3/types/form'
 
 export default defineComponent({
   props: ['name', 'value', 'errors', 'disabled', 'readonly', 'placeholder', 'currency', 'messages'],

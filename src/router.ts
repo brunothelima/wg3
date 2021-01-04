@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import playgroundRoutes from '/@pages/Playground/routes'
+import playgroundRoutes from '/@wg3/pages/Playground/routes'
 
 // import { NavigationGuard } from 'vue-router'
 // import { useUser } from './composables/useUser'
@@ -24,7 +24,7 @@ import playgroundRoutes from '/@pages/Playground/routes'
 const router = createRouter({
   history: createWebHistory(),
   routes: [
-    { path: '/', component: () => import('/@pages/Login/index.vue') },
+    { path: '/', component: () => import('/@wg3/pages/Login/index.vue') },
     playgroundRoutes
   ]
 })

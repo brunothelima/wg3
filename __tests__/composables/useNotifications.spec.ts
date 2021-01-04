@@ -1,5 +1,5 @@
-import { useNotifications } from '/@composables/useNotifications'
-import { Notification } from '/@types/index'
+import { useNotifications } from '/@wg3/composables/useNotifications'
+import { Notification } from '/@wg3/types/index'
 
 const mock: Notification = {
   message: 'Test message'

@@ -1,7 +1,7 @@
 import { mount } from '@vue/test-utils'
 import { nextTick } from 'vue'
-import { useNotifications } from '/@composables/useNotifications'
-import Notifications from '/@components/Notifications.vue'
+import { useNotifications } from '/@wg3/composables/useNotifications'
+import Notifications from '/@wg3/components/Notifications.vue'
 
 const mock = {
   message: 'Test Message'

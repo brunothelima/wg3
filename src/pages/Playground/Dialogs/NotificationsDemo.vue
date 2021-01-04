@@ -48,9 +48,9 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { useI18n } from '/@composables/useI18n'
-import { useNotifications } from '/@composables/useNotifications'
-import Button from '/@components/Button/index.vue'
+import { useI18n } from '/@wg3/composables/useI18n'
+import { useNotifications } from '/@wg3/composables/useNotifications'
+import Button from '/@wg3/components/Button/index.vue'
 
 export default defineComponent({
   components: {

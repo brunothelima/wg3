@@ -24,7 +24,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { useI18n } from '/@composables/useI18n'
+import { useI18n } from '/@wg3/composables/useI18n'
 import ConfirmationDemo from './ConfirmationDemo.vue'
 import NotificationsDemo from './NotificationsDemo.vue'
 

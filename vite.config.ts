@@ -15,12 +15,7 @@ const config: UserConfig = {
     include: ['flatpickr/dist/l10n/pt.js']
   },
   alias: {
-    '/@assets/': resolve(__dirname, 'src/assets'),
-    '/@components/': resolve(__dirname, 'src/components'),
-    '/@composables/': resolve(__dirname, 'src/composables'),
-    '/@utils/': resolve(__dirname, 'src/utils'),
-    '/@pages/': resolve(__dirname, 'src/pages'),
-    '/@types/': resolve(__dirname, 'src/types/index.ts')
+    '/@wg3/': resolve(__dirname, 'src/'),
   },
   vueCustomBlockTransforms: {
     i18n: i18nTransform

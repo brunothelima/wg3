@@ -11,7 +11,7 @@
 
 <script lang="ts">
 import { defineComponent, computed, ref, Ref } from 'vue'
-import { ImageProps } from '/@types/index'
+import { ImageProps } from '/@wg3/types/index'
 
 export default defineComponent({
   setup(props: ImageProps) {

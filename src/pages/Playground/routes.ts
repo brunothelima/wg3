@@ -1,14 +1,14 @@
 export default {
   path: '/playground',
-  component: () => import('/@pages/Playground/index.vue'),
+  component: () => import('/@wg3/pages/Playground/index.vue'),
   children: [
-    { path: 'icons', component: () => import('/@pages/Playground/Icons.vue') },
-    { path: 'buttons', component: () => import('/@pages/Playground/Buttons/index.vue') },
-    { path: 'colors', component: () => import('/@pages/Playground/Colors/index.vue') },
-    { path: 'dialogs', component: () => import('/@pages/Playground/Dialogs/index.vue') },
-    { path: 'inputs', component: () => import('/@pages/Playground/Inputs/index.vue') },
-    { path: 'images', component: () => import('/@pages/Playground/Images.vue') },
-    { path: 'text', component: () => import('/@pages/Playground/Text/index.vue') },
-    { path: 'tests', component: () => import('/@pages/Playground/Tests.vue') }
+    { path: 'icons', component: () => import('/@wg3/pages/Playground/Icons.vue') },
+    { path: 'buttons', component: () => import('/@wg3/pages/Playground/Buttons/index.vue') },
+    { path: 'colors', component: () => import('/@wg3/pages/Playground/Colors/index.vue') },
+    { path: 'dialogs', component: () => import('/@wg3/pages/Playground/Dialogs/index.vue') },
+    { path: 'inputs', component: () => import('/@wg3/pages/Playground/Inputs/index.vue') },
+    { path: 'images', component: () => import('/@wg3/pages/Playground/Images.vue') },
+    { path: 'text', component: () => import('/@wg3/pages/Playground/Text/index.vue') },
+    { path: 'tests', component: () => import('/@wg3/pages/Playground/Tests.vue') }
   ]
 }

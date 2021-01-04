@@ -7,8 +7,8 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import Settings from '/@components/Settings.vue'
-import LoginForm from '/@pages/Login/LoginForm.vue'
+import Settings from '/@wg3/components/Settings.vue'
+import LoginForm from '/@wg3/pages/Login/LoginForm.vue'
 
 export default defineComponent({
   name: 'Login',

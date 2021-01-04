@@ -7,7 +7,7 @@
 
 <script>
 import { defineComponent } from 'vue'
-import Tooltip from '/@components/Tooltip.vue'
+import Tooltip from '/@wg3/components/Tooltip.vue'
 
 export default defineComponent({
   components: {

@@ -1,6 +1,6 @@
-import { useForm, createForm } from '/@composables/useForm'
-import { required } from '/@utils/validators'
-import { FormSchema } from '/@types/form'
+import { useForm, createForm } from '/@wg3/composables/useForm'
+import { required } from '/@wg3/utils/validators'
+import { FormSchema } from '/@wg3/types/form'
 
 const mock: FormSchema = {
   inputName: {

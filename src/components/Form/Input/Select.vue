@@ -29,8 +29,8 @@
 
 <script lang="ts">
 import { computed, defineComponent } from 'vue'
-import { useI18n } from '/@composables/useI18n'
-import { FormInputOption, FormInputSelect } from '/@types/form'
+import { useI18n } from '/@wg3/composables/useI18n'
+import { FormInputOption, FormInputSelect } from '/@wg3/types/form'
 
 export default defineComponent({
   props: ['name', 'value', 'errors', 'options', 'disabled', 'readonly', 'placeholder', 'messages'],
