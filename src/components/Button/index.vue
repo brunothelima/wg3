@@ -18,7 +18,13 @@ import Ghosty from './Ghosty.vue'
 import Glassy from './Glassy.vue'
 
 export default defineComponent({
-  props: ['icon', 'size', 'skin', 'reverse', 'disabled'],
+  props: {
+    icon: String,
+    size: String,
+    skin: String,
+    reverse: Boolean,
+    disabled: Boolean,
+  },
   components: {
     Ghosty,
     Glassy

@@ -1,7 +1,7 @@
-import { FormValidator } from '/@src/types/form'
+import { WgValidator } from '/@src/types/form'
 
 interface MinLengthValidator {
-  (limit: number): FormValidator
+  (limit: number): WgValidator
 }
 
 const validator: MinLengthValidator = (limit: number) => ({

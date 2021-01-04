@@ -26,7 +26,14 @@
 import { onMounted, onUnmounted } from 'vue'
 
 export default {
-  props: ['status', 'header', 'icon', 'title', 'text', 'buttonLeft', 'buttonRight'],
+  props: {
+    header: String,
+    icon: String,
+    title: String,
+    text: String,
+    buttonLeft: String,
+    buttonRight: String,
+  },
   setup(props, context) {
     const onEsc = (event: KeyboardEvent) => {
       if (event.key === 'Escape') context.emit('cancel', event)

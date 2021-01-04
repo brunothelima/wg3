@@ -30,18 +30,18 @@
 <script lang="ts">
 import { computed, defineComponent } from 'vue'
 import { useI18n } from '/@src/composables/useI18n'
-import { FormInputOption, FormInputSelect } from '/@src/types/form'
+import { WgInputOption, WgInputSelect } from '/@src/types/form'
 
 export default defineComponent({
   props: ['name', 'value', 'errors', 'options', 'disabled', 'readonly', 'placeholder', 'messages'],
-  setup(props: FormInputSelect) {
+  setup(props: WgInputSelect) {
     const { t } = useI18n(props.messages)
 
     // Computes the current select option title for display
     const selected = computed(() => {
       if (!props.value) return null
       // Query for the selected option title
-      let query = (option: FormInputOption) => {
+      let query = (option: WgInputOption) => {
         return `${option.value}` === `${props.value}`
       }
       return props.options.find(query).label

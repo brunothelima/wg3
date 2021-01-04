@@ -1,10 +1,24 @@
-import { Messages } from './i18n'
+import { WgMessages } from './i18n'
 
-export interface FormSchema {
-  [inputName: string]: FormInputTypes
+// MAIN TYPES
+export interface WgForm {
+  locale: WgMessages
+  schema: WgFormSchema
 }
 
-export interface FormInput {
+export interface WgFormSchema {
+  [inputName: string]: WgInput
+}
+
+export interface WgField extends WgInput {
+  id: string
+  input: WgInputTypes
+  messages: WgMessages
+}
+
+
+// INPUT TYPES
+export interface WgInput {
   type?: string
   label?: string
   value?: any
@@ -13,74 +27,60 @@ export interface FormInput {
   help?: string
   disabled?: boolean
   readonly?: boolean
-  validations?: FormValidatiorsType
-  events?: FormInputEvents,
-  messages?: Messages
+  validations?: WgValidators
+  events?: WgInputEvents,
+  messages?: WgMessages
 }
-
-export interface FormInputText extends FormInput {
+export interface WgInputText extends WgInput {
   placeholder?: string
 }
-
-export interface FormInputSelect extends FormInput {
+export interface WgInputSelect extends WgInput {
   placeholder?: string
-  options: FormInputOption[]
+  options: WgInputOption[]
 }
-export interface FormInputOption {
-  value: string | number
-  label: string
-}
-
-export interface FormInputMoney extends FormInput {
+export interface WgInputMoney extends WgInput {
   placeholder?: string
   currency?: string
 }
-
-export interface FormInputDate extends FormInput {
+export interface WgInputDate extends WgInput {
   placeholder?: string
   static: boolean
   locale: 'pt' | 'en'
   time: boolean
   mode: 'time' | 'single' | 'multiple' | 'range'
-  dateFormat: 'Y/m/d H:i' | 'Y/m/d'
+  dateWgat: 'Y/m/d H:i' | 'Y/m/d'
   defaultDate: string | null
 }
 
-export interface FormInputEvents {
-  onInput?: FormOnInputEvent
+// SUPPORT TYPES
+export interface WgInputOption {
+  value: string | number
+  label: string
 }
 
-export interface FormOnInputEvent {
-  (args: { ev: InputEvent; schema: FormSchema }): void
+export interface WgInputEvents {
+  onInput?: WgOnInputEvent
+}
+export interface WgOnInputEvent {
+  (args: { ev: InputEvent; schema: WgFormSchema }): void
 }
 
-export type FormInputTypes =
-  | FormInputText
-  | FormInputSelect
-  | FormInputDate
-  | FormInputMoney
-
-export interface FormValidator {
+export interface WgValidator {
   message: string
-  handler: FormValidatorHandler
+  handler: WgValidatorHandler
 }
-
-export interface FormValidatorHandler {
+export interface WgValidatorHandler {
   (value: any): any
 }
-
-export interface FormValidatiorsType {
-  [validationName: string]: FormValidator
+export interface WgValidators {
+  [validationName: string]: WgValidator
 }
 
-export interface FormProps {
-  locale: Messages
-  schema: FormSchema
-}
+export type WgInputTypes =
+  | WgInputText
+  | WgInputSelect
+  | WgInputDate
+  | WgInputMoney
 
 
-export interface FormField extends FormInput {
-  id: string
-  input: FormInputTypes
-  locale: Messages
-}
+

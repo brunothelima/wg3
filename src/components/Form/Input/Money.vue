@@ -20,11 +20,11 @@
 import VMasker from 'vanilla-masker'
 import { defineComponent, onMounted, ref } from 'vue'
 import { useI18n } from '/@src/composables/useI18n'
-import { FormInputMoney } from '/@src/types/form'
+import { WgInputMoney } from '/@src/types/form'
 
 export default defineComponent({
   props: ['name', 'value', 'errors', 'disabled', 'readonly', 'placeholder', 'currency', 'messages'],
-  setup(props: FormInputMoney) {
+  setup(props: WgInputMoney) {
     const input = ref(null)
     const { t } = useI18n(props.messages)
 

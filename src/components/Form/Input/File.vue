@@ -22,16 +22,16 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
 import { useI18n } from '/@src/composables/useI18n'
-import { FormInput } from '/@src/types/form'
+import { WgInput } from '/@src/types/form'
 
 export default defineComponent({
   props: ['name', 'errors', 'disabled', 'readonly', 'placeholder', 'value', 'messages'],
-  setup(props: FormInput, context) {
-    const input = ref<HTMLInputElement>(null)
-    const file = ref<File | undefined>(props.value[0] || '')
+  setup(props: WgInput) {
+    const input = ref<HTMLInputElement>()
+    const file = ref<File>(props.value[0] || '')
     const { t } = useI18n(props.messages)
 
-    const onInput = ({ target }: { target: HTMLInputElement }) => {
+    const onInput = ({ target }) => {
       file.value = !target.files ? undefined : target.files[0] 
     }
 

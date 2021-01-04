@@ -1,9 +1,9 @@
 import { getCurrentInstance, ref, watch } from 'vue'
-import { Messages } from '/@src/types/i18n'
+import { WgMessages } from '/@src/types/i18n'
 
 // Initializing locale ref with cached language or default
-const cache = localStorage.getItem('wg3.locale') as 'pt' | 'en'
-const locale = ref<'pt' | 'en'>(cache)
+const cache = localStorage.getItem('wg3.locale') as 'pt' | 'en' || 'en'
+const locale = ref<'pt' | 'en'>(cache )
 
 // Resets cache with new locale value
 // Updates the html tag "lang" attr
@@ -19,7 +19,7 @@ document.documentElement.lang = locale.value
  * Translation composable, exports a translator function
  * from a given resource(json) or i18n custom block
  */
-export const useI18n = (messages: Messages = {}) => {
+export const useI18n = (messages: WgMessages = {}) => {
   const instance = getCurrentInstance()
   // Extrancting messages from the i18n custom block
   if (instance && 'i18n' in instance.type) {

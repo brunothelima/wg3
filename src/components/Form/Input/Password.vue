@@ -26,11 +26,11 @@
 <script lang="ts">
 import { defineComponent, ref } from "vue"
 import { useI18n } from '/@src/composables/useI18n'
-import { FormInputText } from '/@src/types/form'
+import { WgInputText } from '/@src/types/form'
 
 export default defineComponent({
   props: ['name', 'errors', 'disabled', 'readonly', 'placeholder', 'value', 'messages'],
-  setup(props: FormInputText) {
+  setup(props: WgInputText) {
     const type = ref('password')
     const { t } = useI18n(props.messages)
     

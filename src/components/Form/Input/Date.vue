@@ -18,7 +18,7 @@
 
 <script lang="ts">
 import { computed, onMounted, ref, watch, defineComponent } from 'vue'
-import { FormInputDate } from '/@src/types/form'
+import { WgInputDate } from '/@src/types/form'
 import { useI18n } from '/@src/composables/useI18n'
 
 import flatpickr from 'flatpickr'
@@ -26,8 +26,8 @@ import 'flatpickr/dist/l10n/pt.js'
 
 export default defineComponent({
   props: ['name', 'value', 'time', 'mode', 'placeholder', 'readonly', 'disabled', 'errors', 'messages'],
-  setup(props: FormInputDate, context) {
-    const input = ref<HTMLInputElement>(null)
+  setup(props: WgInputDate, context) {
+    const input = ref<HTMLInputElement>()
     const { locale, t } = useI18n(props.messages)
 
     const options = computed(() => ({

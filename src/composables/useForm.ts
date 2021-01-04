@@ -1,10 +1,10 @@
 import { reactive, computed } from 'vue'
-import { FormSchema, FormInput } from '/@src/types/form'
+import { WgFormSchema, WgInput } from '/@src/types/form'
 
 /**
  * Clones the given schema and insures it has the correct structure
  */
-export const createForm = (source: FormSchema) => {
+export const createForm = (source: WgFormSchema) => {
   for (let input of Object.values(source)) {
     if (!('value' in input)) {
       input.value = ''
@@ -17,7 +17,7 @@ export const createForm = (source: FormSchema) => {
   return source
 }
 
-export const useForm = (source: FormSchema) => {
+export const useForm = (source: WgFormSchema) => {
   // Reactive schema from the given schema
   const schema = reactive(source)
 
@@ -92,7 +92,7 @@ export const useForm = (source: FormSchema) => {
       }
     }
     // Checks for any input that accused an error
-    const query = ({ errors }: FormInput) => errors?.length
+    const query = ({ errors }: WgInput) => errors?.length
     return !Object.values(schema).some(query)
   }
 

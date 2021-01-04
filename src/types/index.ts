@@ -1,13 +1,13 @@
 export * from './form'
 export * from './i18n'
 
-export interface Notification {
+export interface WgNotification {
   message: string
   status?: string
   timeout?: any
 }
 
-export interface ImageProps {
+export interface WgImage {
   w: number,
   h: number,
   x: number,

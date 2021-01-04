@@ -1,7 +1,7 @@
-import { FormValidator } from '/@src/types/form'
+import { WgValidator } from '/@src/types/form'
 import v from 'validator'
 
-const validator: FormValidator = {
+const validator: WgValidator = {
   message: 'Invalid numeric value',
   handler: (value: string) => v.isNumeric(value)
 }

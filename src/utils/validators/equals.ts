@@ -1,8 +1,8 @@
-import { FormValidator } from '/@src/types/form'
+import { WgValidator } from '/@src/types/form'
 import v from 'validator'
 
 interface EqualsValidator {
-  (comparison: string): FormValidator
+  (comparison: string): WgValidator
 }
 
 const validator: EqualsValidator = (comparison: any) => ({

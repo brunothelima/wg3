@@ -1,8 +1,7 @@
 import { useForm, createForm } from '/@src/composables/useForm'
 import { required } from '/@src/utils/validators'
-import { FormSchema } from '/@src/types/form'
 
-const mock: FormSchema = {
+const mock = {
   inputName: {
     type: 'text',
     validations: {

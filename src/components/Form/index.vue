@@ -14,7 +14,7 @@
 import { computed, defineComponent } from 'vue'
 import { useForm } from '/@src/composables/useForm'
 import { useI18n } from '/@src/composables/useI18n'
-import { FormProps } from '/@src/types/form'
+import { WgForm } from '/@src/types/form'
 
 import Field from './Field.vue'
 import InputText from './Input/Text.vue'
@@ -36,7 +36,7 @@ export default defineComponent({
     InputFile,
     InputDate
   },
-  setup(props: FormProps, context) {
+  setup(props: WgForm, context) {
     const { schema, data, validate } = useForm(props.schema)
 
     const entries = computed(() => Object.entries(schema))

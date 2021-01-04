@@ -1,7 +1,7 @@
 import { useNotifications } from '/@src/composables/useNotifications'
-import { Notification } from '/@src/types/index'
+import { WgNotification } from '/@src/types/index'
 
-const mock: Notification = {
+const mock: WgNotification = {
   message: 'Test message'
 }
 

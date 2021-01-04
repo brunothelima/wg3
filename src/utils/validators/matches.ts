@@ -1,8 +1,8 @@
-import { FormValidator } from '/@src/types/form'
+import { WgValidator } from '/@src/types/form'
 import v from 'validator'
 
 interface MatchesValidator {
-  (pattern: string): FormValidator
+  (pattern: string): WgValidator
 }
 
 const validator: MatchesValidator = (pattern: string) => ({

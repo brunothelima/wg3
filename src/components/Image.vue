@@ -11,11 +11,12 @@
 
 <script lang="ts">
 import { defineComponent, computed, ref, Ref } from 'vue'
-import { ImageProps } from '/@src/types/index'
+import { WgImage } from '/@src/types/index'
 
 export default defineComponent({
-  setup(props: ImageProps) {
-    const image: Ref<HTMLImageElement> = ref(null)
+  props: ['w', 'h', 'x', 'y', 'src', 'ratio', 'smart'],
+  setup(props: WgImage) {
+    const image: Ref<HTMLImageElement> = ref()
 
     const path = computed(() => {
       const url = new URL(`${import.meta.env.VITE_API_URL}/image`)
