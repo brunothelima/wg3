@@ -34,13 +34,13 @@ describe('useForm', () => {
   test('validate() function handles properly the given validation methods', async () => {
     const { schema, validate } = useForm(source)
 
-    expect(schema.inputName.errors.length).toBe(0)
+    expect(schema.inputName.errors?.length).toBe(0)
 
     schema.inputName.value = ''
 
     await validate()
 
-    expect(schema.inputName.errors.length).toBe(1)
+    expect(schema.inputName.errors?.length).toBe(1)
   })
 
   test('Computed "errors" reacts to the validate() function call', async () => {
