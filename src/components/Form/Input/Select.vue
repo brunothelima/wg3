@@ -34,7 +34,7 @@ import { WgInputOption, WgInputSelect } from '/@src/types/form'
 
 export default defineComponent({
   props: ['name', 'value', 'errors', 'options', 'disabled', 'readonly', 'placeholder', 'messages'],
-  setup(props: WgInputSelect) {
+  setup(props) {
     const { t } = useI18n(props.messages)
 
     // Computes the current select option title for display

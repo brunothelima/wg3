@@ -6,6 +6,11 @@
     "moduleResolution": "node",
     "module": "esnext",
     "target": "esnext",
+    "strict": true,
+    "jsx": "preserve",
+    "sourceMap": true,
+    "lib": ["esnext", "dom"],
+    "plugins": [{ "name": "@vuedx/typescript-plugin-vue" }],
     "paths": {
       "/@src/*": ["./src/*"]
     },

@@ -15,13 +15,13 @@ import { WgImage } from '/@src/types/index'
 
 export default defineComponent({
   props: ['w', 'h', 'x', 'y', 'src', 'ratio', 'smart'],
-  setup(props: WgImage) {
-    const image: Ref<HTMLImageElement> = ref()
+  setup(props) {
+    const image: Ref<HTMLImageElement> = ref(new Image())
 
     const path = computed(() => {
       const url = new URL(`${import.meta.env.VITE_API_URL}/image`)
-      for (const prop in props) {
-        url.searchParams.append(prop, props[prop] || '')
+      for (const [prop, value] of Object.entries(props)) {
+        url.searchParams.append(prop, value || '')
       }
       return url
     })

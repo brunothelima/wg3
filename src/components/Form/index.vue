@@ -36,7 +36,7 @@ export default defineComponent({
     InputFile,
     InputDate
   },
-  setup(props: WgForm, context) {
+  setup(props, context) {
     const { schema, data, validate } = useForm(props.schema)
 
     const entries = computed(() => Object.entries(schema))

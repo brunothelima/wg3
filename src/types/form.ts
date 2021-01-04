@@ -7,7 +7,7 @@ export interface WgForm {
 }
 
 export interface WgFormSchema {
-  [inputName: string]: WgInput
+  [inputName: string]: WgInputTypes
 }
 
 export interface WgField extends WgInput {

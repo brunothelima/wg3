@@ -24,8 +24,8 @@ import { WgInputMoney } from '/@src/types/form'
 
 export default defineComponent({
   props: ['name', 'value', 'errors', 'disabled', 'readonly', 'placeholder', 'currency', 'messages'],
-  setup(props: WgInputMoney) {
-    const input = ref(null)
+  setup(props) {
+    const input = ref()
     const { t } = useI18n(props.messages)
 
     onMounted(() => {

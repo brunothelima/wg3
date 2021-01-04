@@ -2,7 +2,7 @@ import { UserConfig } from 'vite'
 
 const { resolve } = require('path')
 
-const i18nTransform = ({ code }) => {
+const i18nTransform = ({ code }: { code: string}) => {
   let resource = JSON.parse(code.trim())
   return `
     export default Component => {

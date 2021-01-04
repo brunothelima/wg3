@@ -26,17 +26,17 @@ import { WgInput } from '/@src/types/form'
 
 export default defineComponent({
   props: ['name', 'errors', 'disabled', 'readonly', 'placeholder', 'value', 'messages'],
-  setup(props: WgInput) {
+  setup(props) {
     const input = ref<HTMLInputElement>()
-    const file = ref<File>(props.value[0] || '')
+    const file = ref<File | undefined>(props.value[0] || '')
     const { t } = useI18n(props.messages)
 
-    const onInput = ({ target }) => {
+    const onInput = ({ target }: { target: HTMLInputElement }) => {
       file.value = !target.files ? undefined : target.files[0] 
     }
 
     const onClick = () => {
-      input.value.click()
+      input.value?.click()
     }
 
     return {

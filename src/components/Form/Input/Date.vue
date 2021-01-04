@@ -26,8 +26,8 @@ import 'flatpickr/dist/l10n/pt.js'
 
 export default defineComponent({
   props: ['name', 'value', 'time', 'mode', 'placeholder', 'readonly', 'disabled', 'errors', 'messages'],
-  setup(props: WgInputDate, context) {
-    const input = ref<HTMLInputElement>()
+  setup(props, context) {
+    const input = ref()
     const { locale, t } = useI18n(props.messages)
 
     const options = computed(() => ({
@@ -40,7 +40,7 @@ export default defineComponent({
     }))
 
     watch(() => locale, l10n => {
-      flatpickr.localize(flatpickr.l10ns[l10n.value])
+      // flatpickr.localize(flatpickr.l10ns[l10n.value])
       flatpickr(input.value, options.value)
     })
 

@@ -14,7 +14,6 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { WgField } from '/@src/types'
 import { useI18n } from '/@src/composables/useI18n'
 import Help from './Help.vue'
 
@@ -23,7 +22,7 @@ export default defineComponent({
     Help
   },
   props: ['id', 'input', 'messages'],
-  setup(props: WgField) {
+  setup(props) {
     const { t } = useI18n(props.messages)
     
     return {

@@ -15,7 +15,7 @@
 
 <template>
   <div class="login-form">
-    <img src="/@assets/img/logo-vtc.svg" alt="Widgrid" />
+    <img src="/@src/assets/img/logo-vtc.svg" alt="Widgrid" />
     <p>{{ t('intro') }}</p>
     <Form :schema="schema" :messages="messages" @success="login">
       <footer>
