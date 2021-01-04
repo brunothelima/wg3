@@ -1,4 +1,4 @@
-import { useI18n } from '/@wg3/composables/useI18n'
+import { useI18n } from '/@src/composables/useI18n'
 import { nextTick } from 'vue'
 
 const mock = {

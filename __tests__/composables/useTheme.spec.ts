@@ -1,4 +1,4 @@
-import { useTheme } from '/@wg3/composables/useTheme'
+import { useTheme } from '/@src/composables/useTheme'
 import { nextTick } from 'vue'
 
 describe('/@composables/useTheme', () => {

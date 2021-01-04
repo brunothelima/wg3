@@ -22,7 +22,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { useI18n } from '/@wg3/composables/useI18n'
+import { useI18n } from '/@src/composables/useI18n'
 
 export default defineComponent({
   setup() {
@@ -31,8 +31,6 @@ export default defineComponent({
 })
 </script>
 <style lang="scss" scoped>
-@import '../../../assets/scss/vars';
-
 .system-colors ul {
   display: flex;
   @media screen and (max-width: #{$tablet-brakepoint}) {

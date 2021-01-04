@@ -1,11 +1,9 @@
-@import './vars';
-
 @import './themes/default';
 @import './themes/seafoam';
 @import './icons/style';
 
-@import './normalize';
-@import './reset';
+@import './vendors/normalize';
+@import './vendors/reset';
 
 
 html,

@@ -1,9 +1,9 @@
 import { mount } from '@vue/test-utils'
-import { createForm, useForm } from '/@wg3/composables/useForm'
+import { createForm, useForm } from '/@src/composables/useForm'
 import flushPromises from 'flush-promises'
-import { required } from '/@wg3/utils/validators'
-import InputText from '/@wg3/components/Form/Input/Text.vue'
-import Form from '/@wg3/components/Form/index.vue'
+import { required } from '/@src/utils/validators'
+import InputText from '/@src/components/Form/Input/Text.vue'
+import Form from '/@src/components/Form/index.vue'
 
 const mock = createForm({
   name: {

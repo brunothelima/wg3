@@ -1,4 +1,4 @@
-import { FormValidator } from '/@wg3/types/form'
+import { FormValidator } from '/@src/types/form'
 import v from 'validator'
 
 interface MatchesValidator {

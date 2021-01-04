@@ -28,9 +28,9 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { useI18n } from '/@wg3/composables/useI18n'
-import Form from '/@wg3/components/Form/index.vue'
-import Button from '/@wg3/components/Button/index.vue'
+import { useI18n } from '/@src/composables/useI18n'
+import Form from '/@src/components/Form/index.vue'
+import Button from '/@src/components/Button/index.vue'
 import schema from './schema'
 import messages from './messages.json'
 

@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import InputText from '/@wg3/components/Form/Input/Text.vue'
+import InputText from '/@src/components/Form/Input/Text.vue'
 
 const mock = {
   name: 'inputName',

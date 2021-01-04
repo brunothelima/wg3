@@ -12,9 +12,9 @@
 
 <script lang="ts">
 import { computed, defineComponent } from 'vue'
-import { useForm } from '/@wg3/composables/useForm'
-import { useI18n } from '/@wg3/composables/useI18n'
-import { FormProps } from '/@wg3/types/form'
+import { useForm } from '/@src/composables/useForm'
+import { useI18n } from '/@src/composables/useI18n'
+import { FormProps } from '/@src/types/form'
 
 import Field from './Field.vue'
 import InputText from './Input/Text.vue'

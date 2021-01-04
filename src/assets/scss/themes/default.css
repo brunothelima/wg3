@@ -80,15 +80,15 @@
 
 .dark {
   /* Color Props : Dark Theme */
-  --color-x-1: #171a1e;
-  --color-x-2: #22272c;
-  --color-x-3: #373e45;
-  --color-x-4: #5c636f;
-  --color-x-5: #768091;
+  --color-x-1: #ffffff;
+  --color-x-2: #f7f8f9;
+  --color-x-3: #f2f3f5;
+  --color-x-4: #e5e7eb;
+  --color-x-5: #babfc8;
   --color-x-6: #8c95a3;
-  --color-x-7: #babfc8;
-  --color-x-8: #e5e7eb;
-  --color-x-9: #f2f3f5;
-  --color-x-10: #f7f8f9;
-  --color-x-11: #ffffff;
+  --color-x-7: #768091;
+  --color-x-8: #5c636f;
+  --color-x-9: #373e45;
+  --color-x-10: #22272c;
+  --color-x-11: #171a1e;
 }

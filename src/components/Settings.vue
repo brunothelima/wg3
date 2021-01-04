@@ -23,9 +23,9 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { useI18n } from '/@wg3/composables/useI18n'
-import { useTheme } from '/@wg3/composables/useTheme'
-import InputSelect from '/@wg3/components/Form/Input/Select.vue'
+import { useI18n } from '/@src/composables/useI18n'
+import { useTheme } from '/@src/composables/useTheme'
+import InputSelect from '/@src/components/Form/Input/Select.vue'
 
 export default defineComponent({
   components: {

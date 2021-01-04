@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import Field from '/@wg3/components/Form/Field.vue'
+import Field from '/@src/components/Form/Field.vue'
 
 describe('/@components/Form/Field.spec.ts', () => {
   test('Renders error messages list properly', () => {

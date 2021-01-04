@@ -1,39 +1,26 @@
-// import { UserConfig } from 'vite'
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
 
-// const { resolve } = require('path')
+const { resolve } = require('path')
 
-// const i18nTransform = ({ code }) => {
-//   let resource = JSON.parse(code.trim())
-//   return `
-//     export default Component => {
-//       Component.i18n = ${JSON.stringify(resource || {})}
-//     }`.trim()
-// }
+const i18nPlugin = {
+  name: 'vue-i18n',
+  transform(code, id) {
+    if (!/vue&type=i18n/.test(id)) {
+      return
+    }
+    return `export default Comp => {
+      Comp.i18n = ${JSON.stringify(code || {})}
+    }`
+  }
+}
 
-// const config: UserConfig = {
-//   optimizeDeps: {
-//     include: ['flatpickr/dist/l10n/pt.js']
-//   },
-//   cssPreprocessOptions: {
-//     scss: {
-//       additionalData: `
-//         $tablet-brakepoint: 1024px;
-//         $mobile-brakepoint: 640px;
-//       `
-//     }
-//   },
-  
-//   alias: {
-//     'wg3/assets/': resolve(__dirname, 'src/assets'),
-//     'wg3/components/': resolve(__dirname, 'src/components'),
-//     'wg3/composables/': resolve(__dirname, 'src/composables'),
-//     'wg3/utils/': resolve(__dirname, 'src/utils'),
-//     'wg3/pages/': resolve(__dirname, 'src/pages'),
-//     'wg3/types/': resolve(__dirname, 'src/types/index.ts')
-//   },
-//   vueCustomBlockTransforms: {
-//     i18n: i18nTransform
-//   }
-// }
-
-// export default config
+export default defineConfig({
+  plugins: [vue(), i18nPlugin],
+  alias: {
+    '/@src/': resolve(__dirname, 'src/'),
+  },
+  optimizeDeps: {
+    include: ['flatpickr/dist/l10n/pt.js']
+  },
+})

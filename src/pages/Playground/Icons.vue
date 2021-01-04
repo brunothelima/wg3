@@ -23,7 +23,7 @@
 </template>
 
 <script lang="ts">
-import { useI18n } from '/@wg3/composables/useI18n'
+import { useI18n } from '/@src/composables/useI18n'
 import { defineComponent } from 'vue'
 
 export default defineComponent({
@@ -104,8 +104,6 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import '../../assets/scss/vars';
-
 h1 {
   color: var(--color-a-1);
 }

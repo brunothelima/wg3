@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import Ghosty from '/@wg3/components/Button/Ghosty.vue'
+import Ghosty from '/@src/components/Button/Ghosty.vue'
 
 describe('/@components/Button/Glassy.spec.ts', () => {
   test('Renders a button with button:ghosty class', () => {

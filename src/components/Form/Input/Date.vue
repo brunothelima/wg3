@@ -18,8 +18,8 @@
 
 <script lang="ts">
 import { computed, onMounted, ref, watch, defineComponent } from 'vue'
-import { FormInputDate } from '/@wg3/types/form'
-import { useI18n } from '/@wg3/composables/useI18n'
+import { FormInputDate } from '/@src/types/form'
+import { useI18n } from '/@src/composables/useI18n'
 
 import flatpickr from 'flatpickr'
 import 'flatpickr/dist/l10n/pt.js'

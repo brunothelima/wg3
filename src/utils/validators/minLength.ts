@@ -1,4 +1,4 @@
-import { FormValidator } from '/@wg3/types/form'
+import { FormValidator } from '/@src/types/form'
 
 interface MinLengthValidator {
   (limit: number): FormValidator

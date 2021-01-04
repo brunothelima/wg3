@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import Image from '/@wg3/components/Image.vue'
+import Image from '/@src/components/Image.vue'
 
 describe('/@components/Image.spec.ts', () => {
   test('Renders a button with button:glassy class', async () => {

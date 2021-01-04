@@ -25,7 +25,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { useI18n } from '/@wg3/composables/useI18n'
+import { useI18n } from '/@src/composables/useI18n'
 import Primary from './Primary.vue'
 import Secondary from './Secondary.vue'
 import Grayish from './Grayish.vue'
@@ -47,8 +47,6 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import '../../../assets/scss/vars';
-
 .colors-demo > h1 {
   color: var(--color-a-1);
 }

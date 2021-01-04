@@ -1,4 +1,4 @@
-import { createForm } from '/@wg3/composables/useForm'
+import { createForm } from '/@src/composables/useForm'
 
 const schema = createForm({
   inputText: {

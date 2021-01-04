@@ -1,5 +1,5 @@
 import { reactive, computed } from 'vue'
-import { FormSchema, FormInput } from '/@wg3/types/form'
+import { FormSchema, FormInput } from '/@src/types/form'
 
 /**
  * Clones the given schema and insures it has the correct structure

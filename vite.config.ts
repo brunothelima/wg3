@@ -15,7 +15,15 @@ const config: UserConfig = {
     include: ['flatpickr/dist/l10n/pt.js']
   },
   alias: {
-    '/@wg3/': resolve(__dirname, 'src/'),
+    '/@src/': resolve(__dirname, 'src/'),
+  },
+  cssPreprocessOptions: {
+    scss: {
+      additionalData: `
+        $tablet-brakepoint: 1024px;
+        $mobile-brakepoint: 640px;
+      `
+    }
   },
   vueCustomBlockTransforms: {
     i18n: i18nTransform

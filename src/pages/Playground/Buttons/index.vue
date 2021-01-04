@@ -28,7 +28,7 @@
 </template>
 
 <script lang="ts">
-import { useI18n } from '/@wg3/composables/useI18n'
+import { useI18n } from '/@src/composables/useI18n'
 import GhostyButtons from './GhostyButtons.vue'
 import GlassyButtons from './GlassyButtons.vue'
 import { defineComponent } from 'vue'

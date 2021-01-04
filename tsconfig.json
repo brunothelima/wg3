@@ -7,7 +7,7 @@
     "module": "esnext",
     "target": "esnext",
     "paths": {
-      "/@wg3/*": ["./src/*"]
+      "/@src/*": ["./src/*"]
     },
   }
 }

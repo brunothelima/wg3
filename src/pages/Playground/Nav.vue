@@ -40,8 +40,8 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import Settings from '/@wg3/components/Settings.vue'
-import { useI18n } from '/@wg3/composables/useI18n'
+import Settings from '/@src/components/Settings.vue'
+import { useI18n } from '/@src/composables/useI18n'
 
 export default defineComponent({
   components: {
@@ -54,8 +54,6 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-@import '../../assets/scss/vars';
-
 nav {
   position: sticky;
   z-index: 2;

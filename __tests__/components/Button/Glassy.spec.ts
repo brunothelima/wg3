@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import Glassy from '/@wg3/components/Button/Glassy.vue'
+import Glassy from '/@src/components/Button/Glassy.vue'
 
 describe('/@components/Button/Glassy.spec.ts', () => {
   test('Renders a button with button:glassy class', () => {
