@@ -36,8 +36,8 @@ import router from '../../router'
 import Form from '/@src/components/Form/index.vue'
 import Button from '/@src/components/Button/index.vue'
 
-import schema from '/@src/pages/Login/schema'
-import messages from '/@src/pages/Login/messages.json'
+import schema from '/@src/views/Login/schema'
+import messages from '/@src/views/Login/messages.json'
 
 export default defineComponent({
   components: {
