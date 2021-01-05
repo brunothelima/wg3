@@ -10,19 +10,27 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed, ref, Ref } from 'vue'
+import { defineComponent, computed, ref } from 'vue'
 import { WgImage } from '/@src/types/index'
 
 export default defineComponent({
-  props: ['w', 'h', 'x', 'y', 'src', 'ratio', 'smart'],
+  props: { 
+    w: Number, 
+    h: Number, 
+    x: Number, 
+    y: Number, 
+    src: String, 
+    ratio: String, 
+    smart: Boolean
+  },
   setup(props) {
-    const image: Ref<HTMLImageElement> = ref(new Image())
+    const image = ref<HTMLImageElement>(new Image())
 
     const path = computed(() => {
       const url = new URL(`${import.meta.env.VITE_API_URL}/image`)
       for (const [prop, value] of Object.entries(props)) {
-        url.searchParams.append(prop, value || '')
-      }
+        url.searchParams.append(prop, `${value}`)
+      } 
       return url
     })
     

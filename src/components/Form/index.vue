@@ -11,10 +11,10 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent } from 'vue'
+import { computed, defineComponent, PropType } from 'vue'
 import { useForm } from '/@src/composables/useForm'
 import { useI18n } from '/@src/composables/useI18n'
-import { WgForm } from '/@src/types/form'
+import { WgMessages, WgFormSchema } from '/@src/types'
 
 import Field from './Field.vue'
 import InputText from './Input/Text.vue'
@@ -26,7 +26,10 @@ import InputDate from './Input/Date.vue'
 
 
 export default defineComponent({
-  props: ['schema', 'messages'],
+  props: {
+    schema: Object as PropType<WgFormSchema>,
+    messages: Object as PropType<WgMessages>,
+  },
   components: {
     Field,
     InputText,
@@ -37,7 +40,7 @@ export default defineComponent({
     InputDate
   },
   setup(props, context) {
-    const { schema, data, validate } = useForm(props.schema)
+    const { schema, data, validate } = useForm(props.schema || {})
 
     const entries = computed(() => Object.entries(schema))
 
@@ -51,7 +54,7 @@ export default defineComponent({
 
       // Updating the schema input value
       input.errors = []
-      input.value = files ? files : value
+      input.value = files ? files[0] : value
 
       // Checking and calling the event calback function
       if (input.events && input.events.onInput) {

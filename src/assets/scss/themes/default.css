@@ -4,17 +4,28 @@
   --font-family: Helvetica, Arial, Times;
   --icon-family: 'Widgricon';
 
-  --font-size-h1: 4.571em;
-  --font-size-h2: 4em;
-  --font-size-h3: 3.429em;
-  --font-size-h4: 2.857em;
-  --font-size-h5: 2.286em;
-  --font-size-h6: 1.714em;
+  /* --font-size-base: -0.875rem + 8.333vw; */
+  /* --font-size-h1: 4.571em; */
+  --font-size-h1: clamp(2.285rem, 5.7vw, 4.571rem);
+  /* --font-size-h2: 4em; */
+  --font-size-h2: clamp(2rem, 5vw, 4rem);
+  /* --font-size-h3: 3.429em; */
+  --font-size-h3: clamp(1.714rem, 4.3vw, 3.429rem);
+  /* --font-size-h4: 2.857em; */
+  --font-size-h4: clamp(1.428rem, 3.6vw, 2.857rem);
+  /* --font-size-h5: 2.286em; */
+  --font-size-h5: clamp(1.143rem, 2.5vw, 2.286em);
+  /* --font-size-h6: 1.714em; */
+  --font-size-h6: clamp(1.05rem, 2.15vw, 1.714rem);
 
-  --font-size-xxl: calc(var(--font-size) + 4px);
-  --font-size-xl: calc(var(--font-size) + 2px);
+  /* --font-size-xxl: calc(var(--font-size) + 4px); */
+  --font-size-xxl: clamp(1.1rem, 2vw, 1.2rem);
+  /* --font-size-xl: calc(var(--font-size) + 2px); */
+  --font-size-xl: clamp(1.025rem, 1.5vw, 1.05rem);
   --font-size-xs: calc(var(--font-size) - 2px);
+  /* --font-size-xs: clamp(0.8rem, 0.9vw, 0.9rem); */
   --font-size-xxs: calc(var(--font-size) - 4px);
+  /* --font-size-xxs: clamp(0.8rem, 0.9vw, 0.9rem); */
 
 
    /* Button Props  */

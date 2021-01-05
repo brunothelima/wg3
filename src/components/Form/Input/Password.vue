@@ -24,13 +24,21 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from "vue"
+import { defineComponent, ref, PropType } from "vue"
 import { useI18n } from '/@src/composables/useI18n'
-import { WgInputText } from '/@src/types/form'
+import { WgMessages } from '/@src/types'
 
 export default defineComponent({
-  props: ['name', 'errors', 'disabled', 'readonly', 'placeholder', 'value', 'messages'],
-  setup(props: WgInputText) {
+  props: {
+    name: String,
+    value: String,
+    placeholder: String,
+    disabled: Boolean,
+    readonly: Boolean,
+    errors: Array,
+    messages: Object as PropType<WgMessages>,
+  },
+  setup(props) {
     const type = ref('password')
     const { t } = useI18n(props.messages)
     

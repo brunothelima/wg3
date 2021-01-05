@@ -48,7 +48,7 @@ export interface WgInputDate extends WgInput {
   locale: 'pt' | 'en'
   time: boolean
   mode: 'time' | 'single' | 'multiple' | 'range'
-  dateWgat: 'Y/m/d H:i' | 'Y/m/d'
+  dateFormat: 'Y/m/d H:i' | 'Y/m/d'
   defaultDate: string | null
 }
 

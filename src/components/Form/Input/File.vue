@@ -12,7 +12,7 @@
       />
       <span
         :class="file ? 'input:file__selected' : 'input:file__placeholder'"
-      >{{ (file) ? file.name : (value.name || t(placeholder)) }}</span>
+      >{{ file?.name || value?.name || t(placeholder) }}</span>
       <i color="a" class="icon-upload" />
     </div>
     <slot name="after" />
@@ -20,19 +20,27 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
+import { defineComponent, ref, PropType } from 'vue'
+import { WgMessages } from '/@src/types'
 import { useI18n } from '/@src/composables/useI18n'
-import { WgInput } from '/@src/types/form'
 
 export default defineComponent({
-  props: ['name', 'errors', 'disabled', 'readonly', 'placeholder', 'value', 'messages'],
+   props: {
+    name: String,
+    placeholder: String,
+    disabled: Boolean,
+    readonly: Boolean,
+    errors: Array,
+    value: Object as PropType<File | undefined>,
+    messages: Object as PropType<WgMessages>,
+  },
   setup(props) {
     const input = ref<HTMLInputElement>()
-    const file = ref<File | undefined>(props.value[0] || '')
+    const file = ref(props.value)
     const { t } = useI18n(props.messages)
 
-    const onInput = ({ target }: { target: HTMLInputElement }) => {
-      file.value = !target.files ? undefined : target.files[0] 
+    const onInput = () => {
+      file.value = input.value?.files?.[0]
     }
 
     const onClick = () => {

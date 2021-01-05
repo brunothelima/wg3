@@ -17,15 +17,27 @@
 </template>
 
 <script lang="ts">
-import { computed, onMounted, ref, watch, defineComponent } from 'vue'
-import { WgInputDate } from '/@src/types/form'
+import { computed, onMounted, ref, watch, defineComponent, PropType } from 'vue'
+import { WgMessages } from '/@src/types'
+import { CustomLocale } from 'flatpickr/dist/types/locale'
 import { useI18n } from '/@src/composables/useI18n'
 
 import flatpickr from 'flatpickr'
 import 'flatpickr/dist/l10n/pt.js'
+import 'flatpickr/dist/flatpickr.min.css'
 
 export default defineComponent({
-  props: ['name', 'value', 'time', 'mode', 'placeholder', 'readonly', 'disabled', 'errors', 'messages'],
+  props: {
+    name: String,
+    value: String,
+    placeholder: String,
+    disabled: Boolean,
+    readonly: Boolean,
+    errors: Array,
+    time: Boolean,
+    mode: String as PropType<'single' | 'multiple' | 'range' | 'time'>,
+    messages: Object as PropType<WgMessages>,
+  },
   setup(props, context) {
     const input = ref()
     const { locale, t } = useI18n(props.messages)
@@ -34,13 +46,15 @@ export default defineComponent({
       static: true,
       locale: locale.value,
       enableTime: props.time,
-      mode: props.mode || 'single',
+      mode: props.mode,
       dateFormat: props.time ? 'Y/m/d H:i' : 'Y/m/d',
-      defaultDate: props.value || null,
+      defaultDate: props.value,
     }))
 
-    watch(() => locale, l10n => {
-      // flatpickr.localize(flatpickr.l10ns[l10n.value])
+    watch(() => locale, lang => {
+      flatpickr.localize(
+        flatpickr.l10ns[lang.value] as CustomLocale
+      )
       flatpickr(input.value, options.value)
     })
 
@@ -57,7 +71,6 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
-@import 'flatpickr/dist/flatpickr.min.css';
 .wg3 {
   .flatpickr {
     &-calendar {

@@ -28,12 +28,22 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent } from 'vue'
+import { computed, defineComponent, defineProps, PropType } from 'vue'
 import { useI18n } from '/@src/composables/useI18n'
+import { WgMessages } from '/@src/types'
 import { WgInputOption, WgInputSelect } from '/@src/types/form'
 
 export default defineComponent({
-  props: ['name', 'value', 'errors', 'options', 'disabled', 'readonly', 'placeholder', 'messages'],
+  props: {
+    name: String,
+    value: String,
+    placeholder: String,
+    disabled: Boolean,
+    readonly: Boolean,
+    errors: Array,
+    messages: Object as PropType<WgMessages>,
+    options: Object as PropType<WgInputOption[]>,
+  },
   setup(props) {
     const { t } = useI18n(props.messages)
 
@@ -44,7 +54,7 @@ export default defineComponent({
       let query = (option: WgInputOption) => {
         return `${option.value}` === `${props.value}`
       }
-      return props.options.find(query).label
+      return props.options?.find(query)?.label
     })
     return {
       t,

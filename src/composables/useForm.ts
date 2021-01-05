@@ -7,7 +7,7 @@ import { WgFormSchema, WgInput } from '/@src/types/form'
 export const createForm = (source: WgFormSchema) => {
   for (let input of Object.values(source)) {
     if (!('value' in input)) {
-      input.value = ''
+      input.value = undefined
     }
 
     if (!('errors' in input)) {

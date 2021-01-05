@@ -18,12 +18,21 @@
 
 <script lang="ts">
 import VMasker from 'vanilla-masker'
-import { defineComponent, onMounted, ref } from 'vue'
+import { defineComponent, onMounted, ref, PropType } from 'vue'
 import { useI18n } from '/@src/composables/useI18n'
-import { WgInputMoney } from '/@src/types/form'
+import { WgMessages } from '/@src/types'
 
 export default defineComponent({
-  props: ['name', 'value', 'errors', 'disabled', 'readonly', 'placeholder', 'currency', 'messages'],
+  props: {
+    name: String,
+    value: String,
+    placeholder: String,
+    disabled: Boolean,
+    readonly: Boolean,
+    errors: Array,
+    currency: String,
+    messages: Object as PropType<WgMessages>,
+  },
   setup(props) {
     const input = ref()
     const { t } = useI18n(props.messages)

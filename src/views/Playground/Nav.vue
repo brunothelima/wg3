@@ -83,10 +83,9 @@ nav ul li {
 }
 nav ul li a {
   display: inline-block;
-  transition: var(--transition-duration);
+  transition: color var(--transition-duration);
 }
 nav ul li a.router-link-exact-active {
   color: var(--color-x-1);
-  transform: translateX(0.5em);
 }
 </style>
