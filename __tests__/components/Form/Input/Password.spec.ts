@@ -1,7 +1,7 @@
 import { mount } from '@vue/test-utils'
 import InputPassword from '/@src/components/Form/Input/Password.vue'
 
-describe('/@components/Form/Input/Password.spec.ts', () => {
+describe('/@src/components/Form/Input/Password.spec.ts', () => {
   const wrapper = mount(InputPassword, {
     props: { name: 'password' }
   })

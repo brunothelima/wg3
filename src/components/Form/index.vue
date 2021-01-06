@@ -1,6 +1,6 @@
 <template>
   <form data-test="form" @submit="onSubmitHandler" class="form">
-    <pre>{{data}}</pre>
+    <pre>{{data}}</pre><br><br><br>
     <div class="form__grid">
       <Field v-for="[name, input] in entries" :key="name" :input="input" :id="`${name}Id`" :messages="messages">
         <component v-bind="input" @input="onInputHandler" :is="`input-${input.type}`" :name="name" :messages="messages" />
@@ -14,7 +14,7 @@
 import { computed, defineComponent, PropType } from 'vue'
 import { useForm } from '/@src/composables/useForm'
 import { useI18n } from '/@src/composables/useI18n'
-import { WgMessages, WgFormSchema } from '/@src/types'
+import { I18nMessages, FormSchema } from '/@src/types'
 
 import Field from './Field.vue'
 import InputText from './Input/Text.vue'
@@ -23,12 +23,13 @@ import InputPassword from './Input/Password.vue'
 import InputMoney from './Input/Money.vue'
 import InputFile from './Input/File.vue'
 import InputDate from './Input/Date.vue'
-
+import InputCheckbox from './Input/Checkbox.vue'
+import InputToggle from './Input/Toggle.vue'
 
 export default defineComponent({
   props: {
-    schema: Object as PropType<WgFormSchema>,
-    messages: Object as PropType<WgMessages>,
+    schema: Object as PropType<FormSchema>,
+    messages: Object as PropType<I18nMessages>,
   },
   components: {
     Field,
@@ -37,7 +38,9 @@ export default defineComponent({
     InputPassword,
     InputMoney,
     InputFile,
-    InputDate
+    InputDate,
+    InputCheckbox,
+    InputToggle
   },
   setup(props, context) {
     const { schema, data, validate } = useForm(props.schema || {})
@@ -49,12 +52,20 @@ export default defineComponent({
      * and calls onInput callback if one is given in the schema
      */
     const onInputHandler = (ev: InputEvent) => {
-      const { name, value, files } = ev.target as HTMLInputElement
+      const { name, value, files, checked, type } = ev.target as HTMLInputElement
       const input = schema[name]
 
       // Updating the schema input value
       input.errors = []
-      input.value = files ? files[0] : value
+      
+      switch (type) {
+        case 'file': input.value = files?.[0] 
+          break;
+        case 'checkbox': input.value = checked       
+          break;
+        default: input.value = value
+          break;
+      }
 
       // Checking and calling the event calback function
       if (input.events && input.events.onInput) {

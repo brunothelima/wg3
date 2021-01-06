@@ -1,7 +1,7 @@
-import { WgValidator } from '/@src/types/form'
+import { FormValidator } from '/@src/types'
 
 interface BetweenValidator {
-  (min: number, max: number): WgValidator
+  (min: number, max: number): FormValidator
 }
 
 const validator: BetweenValidator = (min: number, max: number) => ({

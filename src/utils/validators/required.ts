@@ -1,7 +1,7 @@
-import { WgValidator } from '/@src/types/form'
+import { FormValidator } from '/@src/types'
 import v from 'validator'
 
-const validator: WgValidator = {
+const validator: FormValidator = {
   message: 'This input is required',
   handler: (value: string) => v.isEmpty(value)
 }

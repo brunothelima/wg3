@@ -7,6 +7,7 @@
         ref="input"
         type="text"
         :name="name"
+        :id="`${name}Id`"
         :readonly="readonly"
         :disabled="disabled"
         :placeholder="t(placeholder)"
@@ -17,14 +18,14 @@
 </template>
 
 <script lang="ts">
-import { computed, onMounted, ref, watch, defineComponent, PropType } from 'vue'
-import { WgMessages } from '/@src/types'
+import { computed, ref, watch, watchEffect, onMounted, onUnmounted, defineComponent, PropType } from 'vue'
+import { I18nMessages } from '/@src/types'
 import { CustomLocale } from 'flatpickr/dist/types/locale'
 import { useI18n } from '/@src/composables/useI18n'
 
-import flatpickr from 'flatpickr'
+import FP from 'flatpickr'
 import 'flatpickr/dist/l10n/pt.js'
-import 'flatpickr/dist/flatpickr.min.css'
+import flatpickr from 'flatpickr'
 
 export default defineComponent({
   props: {
@@ -34,32 +35,37 @@ export default defineComponent({
     disabled: Boolean,
     readonly: Boolean,
     errors: Array,
-    time: Boolean,
-    mode: String as PropType<'single' | 'multiple' | 'range' | 'time'>,
-    messages: Object as PropType<WgMessages>,
+    mode: String as PropType<'single' | 'range' | 'time'>,
+    messages: Object as PropType<I18nMessages>,
   },
   setup(props, context) {
-    const input = ref()
     const { locale, t } = useI18n(props.messages)
-
+    
+    const input = ref()
     const options = computed(() => ({
       static: true,
       locale: locale.value,
-      enableTime: props.time,
       mode: props.mode,
-      dateFormat: props.time ? 'Y/m/d H:i' : 'Y/m/d',
-      defaultDate: props.value,
+      dateFormat: 
+        props.mode === 'time' 
+        ? 'Y/m/d H:i' 
+        : 'Y/m/d',
     }))
+    
+    const FPInstance = ref()
 
-    watch(() => locale, lang => {
-      flatpickr.localize(
-        flatpickr.l10ns[lang.value] as CustomLocale
+    watch(() => locale.value, lang => {
+      FP.localize(
+        FP.l10ns[lang] as CustomLocale
       )
-      flatpickr(input.value, options.value)
+    })
+    
+    onMounted(() => {
+      FPInstance.value = FP(input.value, options.value)
     })
 
-    onMounted(() => {
-      flatpickr(input.value, options.value)
+    onUnmounted(() => {
+      FPInstance.value?.destroy()
     })
 
     return {
@@ -71,6 +77,8 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
+@import 'flatpickr/dist/flatpickr.min.css';
+
 .wg3 {
   .flatpickr {
     &-calendar {
@@ -84,6 +92,9 @@ export default defineComponent({
       &.arrowBottom {
         top: unset;
         bottom: calc(100% - 6px);
+      }
+      &.hasTime .flatpickr-time {
+        border-top: none;
       }
     }
     &-current-month {

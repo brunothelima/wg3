@@ -1,7 +1,7 @@
-import { WgValidator } from '/@src/types/form'
+import { FormValidator } from '/@src/types'
 import v from 'validator'
 
-const validator: WgValidator = {
+const validator: FormValidator = {
   message: 'Url format invalid',
   handler: (value: string) => v.isURL(value)
 }

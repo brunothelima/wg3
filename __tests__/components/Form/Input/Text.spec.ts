@@ -8,7 +8,7 @@ const mock = {
   readonly: false
 }
 
-describe('/@components/Form/Input/Text.spec.ts', () => {
+describe('/@src/components/Form/Input/Text.spec.ts', () => {
   const wrapper = mount(InputText, {
     props: mock
   })

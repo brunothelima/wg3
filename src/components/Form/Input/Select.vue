@@ -30,19 +30,18 @@
 <script lang="ts">
 import { computed, defineComponent, defineProps, PropType } from 'vue'
 import { useI18n } from '/@src/composables/useI18n'
-import { WgMessages } from '/@src/types'
-import { WgInputOption, WgInputSelect } from '/@src/types/form'
+import { I18nMessages, FormInputOption } from '/@src/types'
 
 export default defineComponent({
   props: {
     name: String,
-    value: String,
+    value: [String, Number],
     placeholder: String,
     disabled: Boolean,
     readonly: Boolean,
     errors: Array,
-    messages: Object as PropType<WgMessages>,
-    options: Object as PropType<WgInputOption[]>,
+    messages: Object as PropType<I18nMessages>,
+    options: Object as PropType<FormInputOption[]>,
   },
   setup(props) {
     const { t } = useI18n(props.messages)
@@ -51,7 +50,7 @@ export default defineComponent({
     const selected = computed(() => {
       if (!props.value) return null
       // Query for the selected option title
-      let query = (option: WgInputOption) => {
+      let query = (option: FormInputOption) => {
         return `${option.value}` === `${props.value}`
       }
       return props.options?.find(query)?.label

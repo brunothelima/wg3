@@ -21,7 +21,7 @@ const mock = createForm({
   }
 })
 
-describe('/@components/Form/index.spec.ts', () => {
+describe('/@src/components/Form/index.spec.ts', () => {
   const { schema } = useForm(mock)
   const locale = { en: {}, pt: {} }
 

@@ -36,8 +36,19 @@ const schema = createForm({
     type: 'date',
     label: 'date.label',
     placeholder: 'date.placeholder',
-    help: 'Selecione uma data'
-  }
+    mode: 'single',
+    help: 'date.help'
+  },
+  inputCheckbox: {
+    type: 'checkbox',
+    label: 'checkbox.label',
+    title: 'checkbox.title'
+  },
+  inputToggle: {
+    type: 'toggle',
+    label: 'toggle.label',
+    title: 'toggle.title'
+  },
 })
 
 export default schema

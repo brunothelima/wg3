@@ -1,7 +1,7 @@
 import { mount } from '@vue/test-utils'
 import Field from '/@src/components/Form/Field.vue'
 
-describe('/@components/Form/Field.spec.ts', () => {
+describe('/@src/components/Form/Field.spec.ts', () => {
   test('Renders error messages list properly', () => {
     const errors = ['Error 1', 'Error 2']
     const wrapper = mount(Field, {

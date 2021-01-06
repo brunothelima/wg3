@@ -13,11 +13,11 @@ const mock = {
   }
 }
 
-describe('useForm', () => {
+describe('/@src/composables/useForm', () => {
   const source = createForm(mock)
 
   test('Sets the required properties to the schema object', () => {
-    expect(source.inputName.value).toBe('')
+    expect(source.inputName.value).toBe(undefined)
     expect(source.inputName.errors).toStrictEqual([])
   })
 

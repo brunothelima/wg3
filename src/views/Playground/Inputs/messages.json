@@ -27,7 +27,16 @@
     },
     "date": {
       "label": "Input Date",
-      "placeholder": "Click to open the calendar"
+      "placeholder": "Click to open the calendar",
+      "help": "This is an aditional iformation message"
+    },
+    "checkbox": {
+      "label": "Input Checkbox",
+      "title": "Click here check/uncheck"
+    },
+    "toggle": {
+      "label": "Input Toggle",
+      "title": "Click here check/uncheck"
     }
   },
   "pt": {
@@ -58,7 +67,16 @@
     },
     "date": {
       "label": "Input de data",
-      "placeholder": "Clique para abrir o calendário"
+      "placeholder": "Clique para abrir o calendário",
+      "help": "Esta é uma mensagem de informações adicionais"
+    },
+    "checkbox": {
+      "label": "Input de checkbox",
+      "title": "Clique aqui para marcar/desmarcar"
+    },
+    "toggle": {
+      "label": "Input de toggle",
+      "title": "Clique aqui para marcar/desmarcar"
     }
   }
 }

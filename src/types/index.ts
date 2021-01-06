@@ -1,18 +1,10 @@
-export * from './form'
-export * from './i18n'
+export * from './Form'
 
-export interface WgNotification {
+export interface I18nMessages {
+  [key: string]: string | I18nMessages
+}
+export interface Notification {
   message: string
   status?: string
   timeout?: any
-}
-
-export interface WgImage {
-  w: number,
-  h: number,
-  x: number,
-  y: number,
-  src: string,
-  ratio: string,
-  smart: boolean
 }

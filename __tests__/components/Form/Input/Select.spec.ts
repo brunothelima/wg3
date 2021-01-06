@@ -10,7 +10,7 @@ const mock = {
   readonly: false
 }
 
-describe('/@components/Form/Input/Select.spec.ts', () => {
+describe('/@src/components/Form/Input/Select.spec.ts', () => {
   const wrapper = mount(InputSelect, {
     attachTo: document.documentElement,
     props: mock

@@ -9,7 +9,6 @@ module.exports = {
   },
   moduleFileExtensions: ['vue', 'js', 'json', 'ts'],
   moduleNameMapper: {
-    // '^/@src/(.*)$': resolve(__dirname, 'src/$1'),
     '^/@src/(.*)$': resolve(__dirname, 'src/$1'),
   }
 }

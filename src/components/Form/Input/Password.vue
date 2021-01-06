@@ -26,17 +26,17 @@
 <script lang="ts">
 import { defineComponent, ref, PropType } from "vue"
 import { useI18n } from '/@src/composables/useI18n'
-import { WgMessages } from '/@src/types'
+import { I18nMessages } from '/@src/types'
 
 export default defineComponent({
   props: {
     name: String,
-    value: String,
+    value: [String, Number],
     placeholder: String,
     disabled: Boolean,
     readonly: Boolean,
     errors: Array,
-    messages: Object as PropType<WgMessages>,
+    messages: Object as PropType<I18nMessages>,
   },
   setup(props) {
     const type = ref('password')

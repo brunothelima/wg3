@@ -15,7 +15,7 @@
 <script lang="ts">
 import { defineComponent, PropType } from 'vue'
 import { useI18n } from '/@src/composables/useI18n'
-import { WgInputTypes, WgMessages } from '/@src/types'
+import { FormInputTypes, I18nMessages } from '/@src/types'
 import Help from './Help.vue'
 
 export default defineComponent({
@@ -24,8 +24,8 @@ export default defineComponent({
   },
   props: {
     id: String,
-    input: Object as PropType<WgInputTypes>,
-    messages: Object as PropType<WgMessages>
+    input: Object as PropType<FormInputTypes>,
+    messages: Object as PropType<I18nMessages>
   },
   setup(props) {
     const { t } = useI18n(props.messages)

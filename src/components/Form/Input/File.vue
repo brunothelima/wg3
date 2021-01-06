@@ -3,11 +3,12 @@
     <slot name="before" />
     <div class="input:file__wrapper" @click="onClick">
       <input
-        :name="name"
-        :disabled="disabled"
-        :readonly="readonly"
         ref="input"
         type="file"
+        :name="name"
+        :id="`${name}Id`"
+        :disabled="disabled"
+        :readonly="readonly"
         @input="onInput"
       />
       <span
@@ -21,7 +22,7 @@
 
 <script lang="ts">
 import { defineComponent, ref, PropType } from 'vue'
-import { WgMessages } from '/@src/types'
+import { I18nMessages } from '/@src/types'
 import { useI18n } from '/@src/composables/useI18n'
 
 export default defineComponent({
@@ -32,7 +33,7 @@ export default defineComponent({
     readonly: Boolean,
     errors: Array,
     value: Object as PropType<File | undefined>,
-    messages: Object as PropType<WgMessages>,
+    messages: Object as PropType<I18nMessages>,
   },
   setup(props) {
     const input = ref<HTMLInputElement>()

@@ -1,8 +1,8 @@
 import { ref } from 'vue'
-import { WgNotification } from '/@src/types'
+import { Notification } from '/@src/types'
 
 // Notification messages store
-const notifications = ref([] as WgNotification[])
+const notifications = ref([] as Notification[])
 
 /**
  * Notification messages handler.
@@ -15,7 +15,7 @@ export const useNotifications = () => {
   }
 
   // Creates a notification cycle
-  const notify = (notification: WgNotification) => {
+  const notify = (notification: Notification) => {
     notifications.value.push(notification)
 
     // Notification cycle of 6 seconds

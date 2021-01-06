@@ -1,11 +1,11 @@
 import { useNotifications } from '/@src/composables/useNotifications'
-import { WgNotification } from '/@src/types/index'
+import { Notification } from '/@src/types'
 
-const mock: WgNotification = {
+const mock: Notification = {
   message: 'Test message'
 }
 
-describe('/@composables/useTheme', () => {
+describe('/@src/composables/useTheme', () => {
   const { dismiss, notify, notifications } = useNotifications()
 
   jest.useFakeTimers()

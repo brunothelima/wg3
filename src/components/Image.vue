@@ -11,7 +11,6 @@
 
 <script lang="ts">
 import { defineComponent, computed, ref } from 'vue'
-import { WgImage } from '/@src/types/index'
 
 export default defineComponent({
   props: { 

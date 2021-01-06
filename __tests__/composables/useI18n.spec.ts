@@ -6,7 +6,7 @@ const mock = {
   pt: { lang: 'Portugês' }
 }
 
-describe('/@composables/useI18n', () => {
+describe('/@src/composables/useI18n', () => {
   const { locale, t } = useI18n(mock)
 
   it('Initializes the locale ref', async () => {

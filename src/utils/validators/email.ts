@@ -1,7 +1,7 @@
-import { WgValidator } from '/@src/types/form'
+import { FormValidator } from '/@src/types'
 import v from 'validator'
 
-const validator: WgValidator = {
+const validator: FormValidator = {
   message: 'Invalid email',
   handler: (value: string) => !v.isEmail(value)
 }

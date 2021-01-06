@@ -1,3 +1,3 @@
-export interface WgMessages {
-  [key: string]: string | WgMessages
+export interface I18nMessages {
+  [key: string]: string | I18nMessages
 }
