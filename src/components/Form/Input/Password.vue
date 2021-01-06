@@ -24,9 +24,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, PropType } from "vue"
+import { inject, ref, defineComponent } from "vue"
 import { useI18n } from '/@src/composables/useI18n'
-import { I18nMessages } from '/@src/types'
 
 export default defineComponent({
   props: {
@@ -35,12 +34,11 @@ export default defineComponent({
     placeholder: String,
     disabled: Boolean,
     readonly: Boolean,
-    errors: Array,
-    messages: Object as PropType<I18nMessages>,
+    errors: Array
   },
   setup(props) {
     const type = ref('password')
-    const { t } = useI18n(props.messages)
+    const { t } = useI18n(inject('messages', {}))
     
     return {
       t,

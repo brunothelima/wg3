@@ -1,33 +1,37 @@
-import { UserConfig } from 'vite'
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
 
-const { resolve } = require('path')
+const path = require('path')
 
-const i18nTransform = ({ code }: { code: string}) => {
-  let resource = JSON.parse(code.trim())
-  return `
-    export default Component => {
-      Component.i18n = ${JSON.stringify(resource || {})}
-    }`.trim()
-}
-
-const config: UserConfig = {
-  optimizeDeps: {
-    include: ['flatpickr/dist/l10n/pt.js']
-  },
-  alias: {
-    '/@src/': resolve(__dirname, 'src/'),
-  },
-  cssPreprocessOptions: {
-    scss: {
-      additionalData: `
-        $tablet-brakepoint: 1024px;
-        $mobile-brakepoint: 640px;
-      `
+const i18nPlugin = {
+  name: 'vue-i18n',
+  transform(code: string, id: string) {
+    if (!/vue&type=i18n/.test(id)) {
+      return
     }
-  },
-  vueCustomBlockTransforms: {
-    i18n: i18nTransform
+    let messages = JSON.parse(code.trim())
+    return `export default Comp => {
+      Comp.i18n = ${JSON.stringify(messages || {})}
+    }`
   }
 }
 
-export default config
+export default defineConfig({
+  plugins: [vue(), i18nPlugin],
+  alias: [
+    { find: '/@src', replacement: path.resolve(__dirname, './src') }
+  ],
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `
+          $tablet-brakepoint: 1024px;
+          $mobile-brakepoint: 640px;
+        `
+      }
+    }
+  },
+  optimizeDeps: {
+    include: ['flatpickr/dist/l10n/pt.js']
+  },
+})

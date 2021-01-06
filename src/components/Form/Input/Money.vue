@@ -19,9 +19,8 @@
 
 <script lang="ts">
 import VMasker from 'vanilla-masker'
-import { defineComponent, onMounted, ref, PropType } from 'vue'
+import { ref, inject, defineComponent, onMounted } from 'vue'
 import { useI18n } from '/@src/composables/useI18n'
-import { I18nMessages } from '/@src/types'
 
 export default defineComponent({
   props: {
@@ -31,12 +30,11 @@ export default defineComponent({
     disabled: Boolean,
     readonly: Boolean,
     errors: Array,
-    currency: String,
-    messages: Object as PropType<I18nMessages>,
+    currency: String
   },
   setup(props) {
     const input = ref()
-    const { t } = useI18n(props.messages)
+    const { t } = useI18n(inject('messages', {}))
 
     onMounted(() => {
       VMasker(input.value).maskMoney({

@@ -13,8 +13,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, PropType } from 'vue'
-import { I18nMessages } from '/@src/types'
+import { ref, inject, defineComponent, PropType } from 'vue'
 import { useI18n } from '/@src/composables/useI18n'
 
 export default defineComponent({
@@ -23,11 +22,10 @@ export default defineComponent({
     disabled: Boolean,
     value: Boolean,
     title: String,
-    messages: Object as PropType<I18nMessages>,
   },
   setup(props) {
     const checkbox = ref<HTMLInputElement>()
-    const { t } = useI18n(props.messages)
+    const { t } = useI18n(inject('messages', {}))
 
     const onClick = (ev: InputEvent) => {
       checkbox.value?.click()

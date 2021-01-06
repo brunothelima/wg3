@@ -28,9 +28,9 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, defineProps, PropType } from 'vue'
+import { computed, inject, defineComponent, defineProps, PropType } from 'vue'
 import { useI18n } from '/@src/composables/useI18n'
-import { I18nMessages, FormInputOption } from '/@src/types'
+import { FormInputOption } from '/@src/types'
 
 export default defineComponent({
   props: {
@@ -40,11 +40,10 @@ export default defineComponent({
     disabled: Boolean,
     readonly: Boolean,
     errors: Array,
-    messages: Object as PropType<I18nMessages>,
     options: Object as PropType<FormInputOption[]>,
   },
   setup(props) {
-    const { t } = useI18n(props.messages)
+    const { t } = useI18n(inject('messages', {}))
 
     // Computes the current select option title for display
     const selected = computed(() => {

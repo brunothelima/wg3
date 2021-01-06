@@ -2,8 +2,8 @@
   <form data-test="form" @submit="onSubmitHandler" class="form">
     <pre>{{data}}</pre><br><br><br>
     <div class="form__grid">
-      <Field v-for="[name, input] in entries" :key="name" :input="input" :id="`${name}Id`" :messages="messages">
-        <component v-bind="input" @input="onInputHandler" :is="`input-${input.type}`" :name="name" :messages="messages" />
+      <Field v-for="[name, input] in entries" :key="name" :input="input" :id="`${name}Id`">
+        <component v-bind="input" @input="onInputHandler" :is="`input-${input.type}`" :name="name"/>
       </Field>
     </div>
     <slot />
@@ -11,7 +11,7 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, PropType } from 'vue'
+import { computed, provide, defineComponent, PropType } from 'vue'
 import { useForm } from '/@src/composables/useForm'
 import { useI18n } from '/@src/composables/useI18n'
 import { I18nMessages, FormSchema } from '/@src/types'
@@ -46,6 +46,8 @@ export default defineComponent({
     const { schema, data, validate } = useForm(props.schema || {})
 
     const entries = computed(() => Object.entries(schema))
+
+    provide('messages', props.messages)
 
     /**
      * This function updates the schema with the new input value

@@ -21,8 +21,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, PropType } from 'vue'
-import { I18nMessages } from '/@src/types'
+import { ref, inject, defineComponent, PropType } from 'vue'
 import { useI18n } from '/@src/composables/useI18n'
 
 export default defineComponent({
@@ -32,13 +31,12 @@ export default defineComponent({
     disabled: Boolean,
     readonly: Boolean,
     errors: Array,
-    value: Object as PropType<File | undefined>,
-    messages: Object as PropType<I18nMessages>,
+    value: Object as PropType<File | undefined>
   },
   setup(props) {
     const input = ref<HTMLInputElement>()
     const file = ref(props.value)
-    const { t } = useI18n(props.messages)
+    const { t } = useI18n(inject('messages', {}))
 
     const onInput = () => {
       file.value = input.value?.files?.[0]

@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'Widgricon';
-  src: url('assets/scss/icons/fonts/Widgricon.eot?b5aawo');
-  src: url('assets/scss/icons/fonts/Widgricon.eot?b5aawo#iefix') format('embedded-opentype'),
-    url('assets/scss/icons/fonts/Widgricon.ttf?b5aawo') format('truetype'),
-    url('assets/scss/icons/fonts/Widgricon.woff?b5aawo') format('woff'),
-    url('assets/scss/icons/fonts/Widgricon.svg?b5aawo#Widgricon') format('svg');
+  src: url('/@src/assets/scss/icons/fonts/Widgricon.eot?b5aawo');
+  src: url('/@src/assets/scss/icons/fonts/Widgricon.eot?b5aawo#iefix') format('embedded-opentype'),
+    url('/@src/assets/scss/icons/fonts/Widgricon.ttf?b5aawo') format('truetype'),
+    url('/@src/assets/scss/icons/fonts/Widgricon.woff?b5aawo') format('woff'),
+    url('/@src/assets/scss/icons/fonts/Widgricon.svg?b5aawo#Widgricon') format('svg');
   font-weight: normal;
   font-style: normal;
 }

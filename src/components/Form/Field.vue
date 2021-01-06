@@ -13,7 +13,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from 'vue'
+import { inject, defineComponent, PropType } from 'vue'
 import { useI18n } from '/@src/composables/useI18n'
 import { FormInputTypes, I18nMessages } from '/@src/types'
 import Help from './Help.vue'
@@ -25,10 +25,9 @@ export default defineComponent({
   props: {
     id: String,
     input: Object as PropType<FormInputTypes>,
-    messages: Object as PropType<I18nMessages>
   },
   setup(props) {
-    const { t } = useI18n(props.messages)
+    const { t } = useI18n(inject('messages', {}))
     
     return {
       t

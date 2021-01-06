@@ -18,8 +18,7 @@
 </template>
 
 <script lang="ts">
-import { computed, ref, watch, watchEffect, onMounted, onUnmounted, defineComponent, PropType } from 'vue'
-import { I18nMessages } from '/@src/types'
+import { computed, ref, inject, watch, watchEffect, onMounted, onUnmounted, defineComponent, PropType } from 'vue'
 import { CustomLocale } from 'flatpickr/dist/types/locale'
 import { useI18n } from '/@src/composables/useI18n'
 
@@ -35,11 +34,10 @@ export default defineComponent({
     disabled: Boolean,
     readonly: Boolean,
     errors: Array,
-    mode: String as PropType<'single' | 'range' | 'time'>,
-    messages: Object as PropType<I18nMessages>,
+    mode: String as PropType<'single' | 'range' | 'time'>
   },
   setup(props, context) {
-    const { locale, t } = useI18n(props.messages)
+    const { locale, t } = useI18n(inject('messages', {}))
     
     const input = ref()
     const options = computed(() => ({
