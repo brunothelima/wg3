@@ -40,8 +40,8 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import Settings from '/@src/components/Settings.vue'
-import { useI18n } from '/@src/composables/useI18n'
+import Settings from '@src/components/Settings.vue'
+import { useI18n } from '@src/composables/useI18n'
 
 export default defineComponent({
   components: {

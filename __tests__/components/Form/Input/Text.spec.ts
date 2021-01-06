@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import InputText from '/@src/components/Form/Input/Text.vue'
+import InputText from '@src/components/Form/Input/Text.vue'
 
 const mock = {
   name: 'inputName',
@@ -8,7 +8,7 @@ const mock = {
   readonly: false
 }
 
-describe('/@src/components/Form/Input/Text.spec.ts', () => {
+describe('@src/components/Form/Input/Text.spec.ts', () => {
   const wrapper = mount(InputText, {
     props: mock
   })

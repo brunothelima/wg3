@@ -1,7 +1,7 @@
 <template>
   <div :class="['input:file', { 'input:file--invalid': errors && errors.length }]">
     <slot name="before" />
-    <div class="input:file__wrapper" @click="onClick">
+    <div class="input:file__wrapper" @click="input.click()">
       <input
         ref="input"
         type="file"
@@ -11,9 +11,8 @@
         :readonly="readonly"
         @input="onInput"
       />
-      <span
-        :class="file ? 'input:file__selected' : 'input:file__placeholder'"
-      >{{ file?.name || value?.name || t(placeholder) }}</span>
+      <span class="input:file__selected" v-if="file">{{ file?.name }}</span>
+      <span class="input:file__placeholder" v-else>{{ t(placeholder) }}</span>
       <i color="a" class="icon-upload" />
     </div>
     <slot name="after" />
@@ -22,7 +21,7 @@
 
 <script lang="ts">
 import { ref, inject, defineComponent, PropType } from 'vue'
-import { useI18n } from '/@src/composables/useI18n'
+import { useI18n } from '@src/composables/useI18n'
 
 export default defineComponent({
    props: {
@@ -31,7 +30,7 @@ export default defineComponent({
     disabled: Boolean,
     readonly: Boolean,
     errors: Array,
-    value: Object as PropType<File | undefined>
+    value: [String, Object] as PropType<File | ''>
   },
   setup(props) {
     const input = ref<HTMLInputElement>()
@@ -42,16 +41,11 @@ export default defineComponent({
       file.value = input.value?.files?.[0]
     }
 
-    const onClick = () => {
-      input.value?.click()
-    }
-
     return {
       t,
       file,
       input,
-      onInput,
-      onClick
+      onInput
     }
   }
 })

@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import InputCheckbox from '/@src/components/Form/Input/Checkbox.vue'
+import InputCheckbox from '@src/components/Form/Input/Checkbox.vue'
 
 const mock = {
   name: 'inputName',
@@ -9,7 +9,7 @@ const mock = {
   readonly: false
 }
 
-describe('/@src/components/Form/Input/Checkbox.spec.ts', () => {
+describe('@src/components/Form/Input/Checkbox.spec.ts', () => {
   const wrapper = mount(InputCheckbox, {
     props: mock
   })

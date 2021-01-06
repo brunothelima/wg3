@@ -1,4 +1,4 @@
-import { createForm } from '/@src/composables/useForm'
+import { createForm } from '@src/composables/useForm'
 
 const schema = createForm({
   inputText: {
@@ -48,6 +48,14 @@ const schema = createForm({
     type: 'toggle',
     label: 'toggle.label',
     title: 'toggle.title'
+  },
+  inputRadio: {
+    type: 'radio',
+    label: 'radio.label',
+    options: [
+      { value: 1, label: 'radio.options.first' },
+      { value: 2, label: 'radio.options.second' },
+    ]
   },
 })
 

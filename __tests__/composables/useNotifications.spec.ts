@@ -1,11 +1,11 @@
-import { useNotifications } from '/@src/composables/useNotifications'
-import { Notification } from '/@src/types'
+import { useNotifications } from '@src/composables/useNotifications'
+import { Notification } from '@src/types'
 
 const mock: Notification = {
   message: 'Test message'
 }
 
-describe('/@src/composables/useTheme', () => {
+describe('@src/composables/useTheme', () => {
   const { dismiss, notify, notifications } = useNotifications()
 
   jest.useFakeTimers()

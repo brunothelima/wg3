@@ -19,7 +19,7 @@ const i18nPlugin = {
 export default defineConfig({
   plugins: [vue(), i18nPlugin],
   alias: [
-    { find: '/@src', replacement: path.resolve(__dirname, './src') }
+    { find: '@src', replacement: path.resolve(__dirname, './src') }
   ],
   css: {
     preprocessorOptions: {

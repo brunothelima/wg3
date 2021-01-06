@@ -18,8 +18,8 @@
 
 <script lang="ts">
 import { inject, defineComponent } from 'vue'
-import { useI18n } from '/@src/composables/useI18n'
-import { I18nMessages } from '/@src/types'
+import { useI18n } from '@src/composables/useI18n'
+import { I18nMessages } from '@src/types'
 
 export default defineComponent({
   props: {

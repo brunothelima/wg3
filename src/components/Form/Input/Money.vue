@@ -20,7 +20,7 @@
 <script lang="ts">
 import VMasker from 'vanilla-masker'
 import { ref, inject, defineComponent, onMounted } from 'vue'
-import { useI18n } from '/@src/composables/useI18n'
+import { useI18n } from '@src/composables/useI18n'
 
 export default defineComponent({
   props: {

@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import InputSelect from '/@src/components/Form/Input/Select.vue'
+import InputSelect from '@src/components/Form/Input/Select.vue'
 
 const mock = {
   name: 'inputName',
@@ -10,7 +10,7 @@ const mock = {
   readonly: false
 }
 
-describe('/@src/components/Form/Input/Select.spec.ts', () => {
+describe('@src/components/Form/Input/Select.spec.ts', () => {
   const wrapper = mount(InputSelect, {
     attachTo: document.documentElement,
     props: mock

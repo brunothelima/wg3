@@ -1,5 +1,5 @@
-import { useForm, createForm } from '/@src/composables/useForm'
-import { required } from '/@src/utils/validators'
+import { useForm, createForm } from '@src/composables/useForm'
+import { required } from '@src/utils/validators'
 
 const mock = {
   inputName: {
@@ -13,11 +13,11 @@ const mock = {
   }
 }
 
-describe('/@src/composables/useForm', () => {
+describe('@src/composables/useForm', () => {
   const source = createForm(mock)
 
   test('Sets the required properties to the schema object', () => {
-    expect(source.inputName.value).toBe(undefined)
+    expect(source.inputName.value).toBe('')
     expect(source.inputName.errors).toStrictEqual([])
   })
 

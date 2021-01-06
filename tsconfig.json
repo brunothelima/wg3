@@ -12,7 +12,7 @@
     "lib": ["esnext", "dom"],
     "plugins": [{ "name": "@vuedx/typescript-plugin-vue" }],
     "paths": {
-      "/@src/*": ["./src/*"]
+      "@src/*": ["./src/*"]
     },
   }
 }

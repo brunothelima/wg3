@@ -49,7 +49,7 @@
 </template>
 
 <script lang="ts">
-import { useI18n } from '/@src/composables/useI18n'
+import { useI18n } from '@src/composables/useI18n'
 
 export default {
   setup() {

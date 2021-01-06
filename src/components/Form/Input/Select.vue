@@ -29,8 +29,8 @@
 
 <script lang="ts">
 import { computed, inject, defineComponent, defineProps, PropType } from 'vue'
-import { useI18n } from '/@src/composables/useI18n'
-import { FormInputOption } from '/@src/types'
+import { useI18n } from '@src/composables/useI18n'
+import { FormInputOption } from '@src/types'
 
 export default defineComponent({
   props: {
@@ -40,7 +40,7 @@ export default defineComponent({
     disabled: Boolean,
     readonly: Boolean,
     errors: Array,
-    options: Object as PropType<FormInputOption[]>,
+    options: Array as PropType<FormInputOption[]>,
   },
   setup(props) {
     const { t } = useI18n(inject('messages', {}))

@@ -13,7 +13,7 @@
 </template>
 
 <script lang="ts">
-import { useNotifications } from '/@src/composables/useNotifications'
+import { useNotifications } from '@src/composables/useNotifications'
 import { defineComponent } from 'vue'
 
 export default defineComponent({

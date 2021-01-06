@@ -1,6 +1,6 @@
 <template>
-  <div data-test="input" :class="['input:checkbox', { 'input:checkbox--checked': value }]">
-    <i data-test="ui" class="input:checkbox__ui" @click="onClick"/>
+  <div data-test="input" :class="['input:checkbox', { 'input:checkbox--checked': checkbox?.checked }]">
+    <i data-test="ui" class="input:checkbox__ui" @click="checkbox.click()"/>
     <input
       ref="checkbox"
       type="checkbox"
@@ -13,28 +13,22 @@
 </template>
 
 <script lang="ts">
-import { ref, inject, defineComponent, PropType } from 'vue'
-import { useI18n } from '/@src/composables/useI18n'
+import { ref, inject, defineComponent } from 'vue'
+import { useI18n } from '@src/composables/useI18n'
 
 export default defineComponent({
    props: {
     name: String,
     disabled: Boolean,
-    value: Boolean,
     title: String,
   },
   setup(props) {
     const checkbox = ref<HTMLInputElement>()
     const { t } = useI18n(inject('messages', {}))
 
-    const onClick = (ev: InputEvent) => {
-      checkbox.value?.click()
-    }
-
     return {
       t,
-      checkbox,
-      onClick
+      checkbox
     }
   }
 })

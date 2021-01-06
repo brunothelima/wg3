@@ -1,13 +1,13 @@
 import { mount } from '@vue/test-utils'
 import { nextTick } from 'vue'
-import { useNotifications } from '/@src/composables/useNotifications'
-import Notifications from '/@src/components/Notifications.vue'
+import { useNotifications } from '@src/composables/useNotifications'
+import Notifications from '@src/components/Notifications.vue'
 
 const mock = {
   message: 'Test Message'
 }
 
-describe('/@src/components/Notifications.spec.ts', () => {
+describe('@src/components/Notifications.spec.ts', () => {
   const { notify, dismiss, notifications } = useNotifications()
 
   test('Renders a message correctly after notify() is called', async () => {

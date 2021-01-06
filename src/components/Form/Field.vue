@@ -14,8 +14,8 @@
 
 <script lang="ts">
 import { inject, defineComponent, PropType } from 'vue'
-import { useI18n } from '/@src/composables/useI18n'
-import { FormInputTypes, I18nMessages } from '/@src/types'
+import { useI18n } from '@src/composables/useI18n'
+import { FormInputTypes, I18nMessages } from '@src/types'
 import Help from './Help.vue'
 
 export default defineComponent({

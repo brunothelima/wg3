@@ -1,5 +1,5 @@
 import { ref } from 'vue'
-import { Notification } from '/@src/types'
+import { Notification } from '@src/types'
 
 // Notification messages store
 const notifications = ref([] as Notification[])

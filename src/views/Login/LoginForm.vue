@@ -15,7 +15,7 @@
 
 <template>
   <div class="login-form">
-    <img src="/@src/assets/img/logo-vtc.svg" alt="Widgrid" />
+    <img src="src/assets/img/logo-vtc.svg" alt="Widgrid" />
     <p>{{ t('intro') }}</p>
     <Form :schema="schema" :messages="messages" @success="login">
       <footer>
@@ -30,14 +30,14 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { useI18n } from '/@src/composables/useI18n'
-import router from '../../router'
+import { useI18n } from '@src/composables/useI18n'
+import router from '@src/router'
 
-import Form from '/@src/components/Form/index.vue'
-import Button from '/@src/components/Button/index.vue'
+import Form from '@src/components/Form/index.vue'
+import Button from '@src/components/Button/index.vue'
 
-import schema from '/@src/views/Login/schema'
-import messages from '/@src/views/Login/messages.json'
+import schema from '@src/views/Login/schema'
+import messages from '@src/views/Login/messages.json'
 
 export default defineComponent({
   components: {

@@ -18,7 +18,7 @@
 // export default defineConfig({
 //   plugins: [vue(), i18nPlugin],
 //   alias: {
-//     '/@src/': resolve(__dirname, './src'),
+//     '@src/': resolve(__dirname, './src'),
 //   },
 //   css: {
 //     preprocessorOptions: {

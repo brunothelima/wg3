@@ -1,4 +1,4 @@
-import { FormValidator } from '/@src/types'
+import { FormValidator } from '@src/types'
 
 interface BetweenValidator {
   (min: number, max: number): FormValidator

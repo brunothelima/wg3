@@ -23,9 +23,9 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { useI18n } from '/@src/composables/useI18n'
-import { useTheme } from '/@src/composables/useTheme'
-import InputSelect from '/@src/components/Form/Input/Select.vue'
+import { useI18n } from '@src/composables/useI18n'
+import { useTheme } from '@src/composables/useTheme'
+import InputSelect from '@src/components/Form/Input/Select.vue'
 
 export default defineComponent({
   components: {

@@ -37,6 +37,13 @@
     "toggle": {
       "label": "Input Toggle",
       "title": "Click here check/uncheck"
+    },
+    "radio": {
+      "label": "Input Radio",
+      "options": {
+        "first": "First option",
+        "second": "Second option"
+      }
     }
   },
   "pt": {
@@ -77,6 +84,13 @@
     "toggle": {
       "label": "Input de toggle",
       "title": "Clique aqui para marcar/desmarcar"
+    },
+    "radio": {
+      "label": "Campo de opções",
+      "options": {
+        "first": "Primeira opção",
+        "second": "Segunda opção"
+      }
     }
   }
 }

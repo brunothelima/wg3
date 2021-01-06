@@ -1,7 +1,7 @@
 import { mount } from '@vue/test-utils'
-import Button from '/@src/components/Button/index.vue'
+import Button from '@src/components/Button/index.vue'
 
-describe('/@src/components/Button/index.spec.ts', () => {
+describe('@src/components/Button/index.spec.ts', () => {
   test('Rendering a button with default settings', () => {
     const wrapper = mount(Button)
     const button = wrapper.find('[data-test="button"]')

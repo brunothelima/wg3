@@ -1,4 +1,4 @@
-import { FormValidator } from '/@src/types'
+import { FormValidator } from '@src/types'
 
 interface MinLengthValidator {
   (limit: number): FormValidator

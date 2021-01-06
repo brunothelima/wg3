@@ -1,9 +1,9 @@
 import { mount } from '@vue/test-utils'
-import { createForm, useForm } from '/@src/composables/useForm'
+import { createForm, useForm } from '@src/composables/useForm'
 import flushPromises from 'flush-promises'
-import { required } from '/@src/utils/validators'
-import InputText from '/@src/components/Form/Input/Text.vue'
-import Form from '/@src/components/Form/index.vue'
+import { required } from '@src/utils/validators'
+import InputText from '@src/components/Form/Input/Text.vue'
+import Form from '@src/components/Form/index.vue'
 
 const mock = createForm({
   name: {
@@ -21,7 +21,7 @@ const mock = createForm({
   }
 })
 
-describe('/@src/components/Form/index.spec.ts', () => {
+describe('@src/components/Form/index.spec.ts', () => {
   const { schema } = useForm(mock)
   const locale = { en: {}, pt: {} }
 

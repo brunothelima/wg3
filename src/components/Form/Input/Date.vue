@@ -20,7 +20,7 @@
 <script lang="ts">
 import { computed, ref, inject, watch, watchEffect, onMounted, onUnmounted, defineComponent, PropType } from 'vue'
 import { CustomLocale } from 'flatpickr/dist/types/locale'
-import { useI18n } from '/@src/composables/useI18n'
+import { useI18n } from '@src/composables/useI18n'
 
 import FP from 'flatpickr'
 import 'flatpickr/dist/l10n/pt.js'

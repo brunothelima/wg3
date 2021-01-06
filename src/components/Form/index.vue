@@ -12,9 +12,9 @@
 
 <script lang="ts">
 import { computed, provide, defineComponent, PropType } from 'vue'
-import { useForm } from '/@src/composables/useForm'
-import { useI18n } from '/@src/composables/useI18n'
-import { I18nMessages, FormSchema } from '/@src/types'
+import { useForm } from '@src/composables/useForm'
+import { useI18n } from '@src/composables/useI18n'
+import { I18nMessages, FormSchema } from '@src/types'
 
 import Field from './Field.vue'
 import InputText from './Input/Text.vue'
@@ -23,6 +23,7 @@ import InputPassword from './Input/Password.vue'
 import InputMoney from './Input/Money.vue'
 import InputFile from './Input/File.vue'
 import InputDate from './Input/Date.vue'
+import InputRadio from './Input/Radio.vue'
 import InputCheckbox from './Input/Checkbox.vue'
 import InputToggle from './Input/Toggle.vue'
 
@@ -39,6 +40,7 @@ export default defineComponent({
     InputMoney,
     InputFile,
     InputDate,
+    InputRadio,
     InputCheckbox,
     InputToggle
   },

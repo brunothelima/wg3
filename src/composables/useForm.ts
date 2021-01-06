@@ -1,5 +1,5 @@
 import { reactive, computed } from 'vue'
-import { FormSchema, FormInputTypes } from '/@src/types'
+import { FormSchema, FormInputTypes } from '@src/types'
 
 /**
  * Clones the given schema and insures it has the correct structure
@@ -7,7 +7,7 @@ import { FormSchema, FormInputTypes } from '/@src/types'
 export const createForm = (source: FormSchema) => {
   for (let input of Object.values(source)) {
     if (!('value' in input)) {
-      input.value = undefined
+      input.value = ''
     }
 
     if (!('errors' in input)) {
