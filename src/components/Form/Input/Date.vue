@@ -9,7 +9,7 @@
       :readonly="readonly"
       :disabled="disabled"
       :placeholder="t(placeholder)"
-      @input.prevent="onInput"
+      @input="$emit('update', [$event, name, input?.value])"
     />
   </div>
 </template>
@@ -46,11 +46,6 @@ export default defineComponent({
     }))
 
     let FPInstance: FPInstance;
-    
-    function onInput(ev: OnInputEvent) {
-      const { name, value } = ev.target
-      context.emit('update', ev, { name, value })
-    }
 
     watch(() => locale.value, lang => {
       FP.localize(FP.l10ns[lang] as CustomLocale)
@@ -64,8 +59,7 @@ export default defineComponent({
 
     return {
       t,
-      input,
-      onInput
+      input
     }
   }
 })

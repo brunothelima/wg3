@@ -78,12 +78,9 @@ declare interface OnInputCustomEvent {
 declare interface OnInputEvent extends InputEvent {
   target: HTMLInputElement
 }
-declare interface OnInputPayload {
-  name: string
-  value: any
-}
+
 declare interface FormOnUpdateHandler {
-  (ev: OnInputEvent, payload: OnInputPayload): void
+  (args: [ev: OnInputEvent, name: string, end: number]): void
 }
 
 declare interface FormValidator {

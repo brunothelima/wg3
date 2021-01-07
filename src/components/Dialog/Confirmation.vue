@@ -33,21 +33,6 @@ export default {
     text: String,
     buttonLeft: String,
     buttonRight: String,
-  },
-  setup(props, context) {
-    const onEsc = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') context.emit('cancel', event)
-    }
-
-    onMounted(() => {
-      window.addEventListener('keyup', onEsc)
-    })
-
-    onUnmounted(() => {
-      window.removeEventListener('keyup', onEsc)
-    })
-
-    return {}
   }
 }
 </script>

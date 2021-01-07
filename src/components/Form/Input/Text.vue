@@ -7,7 +7,7 @@
       :disabled="disabled"
       :readonly="readonly"
       :placeholder="t(placeholder)"
-      @input.prevent="onInput"
+      @input="$emit('update', [$event, name, $event.target.value])"
     />
   </div>
 </template>
@@ -27,15 +27,9 @@ export default defineComponent({
   },
   setup(props, context) {
     const { t } = inject('i18n', useI18n()) 
-
-    function onInput(ev: OnInputEvent) {
-      const { name, value } = ev.target
-      context.emit('update', ev, { name, value })
-    }
     
     return {
-      t,
-      onInput,
+      t
     }
   }
 })

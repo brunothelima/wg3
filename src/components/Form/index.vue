@@ -1,6 +1,6 @@
 <template>
   <form data-test="form" @submit="onSubmitHandler" class="form">
-    <!-- <pre>{{data}}</pre><br><br><br> -->
+    <pre>{{data}}</pre><br><br><br>
     <div class="form__grid">
       <Field v-for="[name, input] in entries" :key="name" :input="input" :id="`${name}Id`">
         <component v-bind="input" @update="onUpdateHandler" :is="`input-${input.type}`" :name="name"/>
@@ -37,11 +37,11 @@ export default defineComponent({
      * This function updates the schema with the new input value
      * and calls onInput callback if one is given in the schema
      */
-    const onUpdateHandler: FormOnUpdateHandler = (ev, payload) => {
-      const input = schema[payload.name]
+    const onUpdateHandler: FormOnUpdateHandler = ([ev, name, value]) => {
+      const input = schema[name]
 
       input.errors = []
-      input.value = payload.value
+      input.value = value
 
       // Checking and calling the event calback function
       if (input.events && input.events.onInput) {
@@ -49,7 +49,7 @@ export default defineComponent({
         context.emit('callback', 'onInput')
       }
 
-      context.emit('input', { ev, payload })
+      context.emit('input', arguments)
     }
 
     const onSubmitHandler = async (ev: Event) => {

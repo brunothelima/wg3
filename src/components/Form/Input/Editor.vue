@@ -34,10 +34,7 @@ export default defineComponent({
       CKInstance?.destroy()
       CKInstance = await CK.create(input.value, options.value)
       CKInstance.model.document.on( 'change:data', (ev: OnInputEvent) => {
-        context.emit('update', ev, { 
-          name: props.name, 
-          value: CKInstance?.getData() 
-        })
+        context.emit('update', [ev, props.name, CKInstance?.getData() ])
       });
     }
 

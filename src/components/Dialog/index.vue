@@ -13,12 +13,17 @@
 import { onMounted, onUnmounted } from 'vue'
 
 export default {
-  setup() {
+  setup(props, context) {
+    const onEsc = (ev: KeyboardEvent) => {
+      if (ev.key === 'Escape') context.emit('cancel', ev)
+    }
     onMounted(() => {
       document.body.classList.add('scroll-lock')
+      window.addEventListener('keyup', onEsc)
     })
     onUnmounted(() => {
       document.body.classList.remove('scroll-lock')
+      window.removeEventListener('keyup', onEsc)
     })
   }
 }

@@ -7,19 +7,15 @@
       :value="value"
       :disabled="disabled"
       :readonly="readonly"
-      @input.prevent="onInput"
+      @input="$emit('update', [$event, name, $event.target.value])"
     >
       <option v-for="option in options" :key="option" :value="option.value" :selected="option.value === value">
         {{ t(option.label) }}
       </option>
       <slot />
     </select>
-    <div data-test="selected" class="input:select__selected" v-if="selected">
-      {{ t(selected) }}
-    </div>
-    <div data-test="placeholder" class="input:select__placeholder" v-else>
-      {{ t(placeholder || 'Select an option') }}
-    </div>
+    <div data-test="selected" class="input:select__selected" v-if="selected">{{ t(selected) }}</div>
+    <div data-test="placeholder" class="input:select__placeholder" v-else>{{ t(placeholder || 'Select an option') }}</div>
     <i class="icon-caret-down" color="a" />
   </div>
 </template>
@@ -51,15 +47,9 @@ export default defineComponent({
       return props.options?.find(query)?.label
     })
 
-    function onInput(ev: OnInputEvent) {
-      const { name, value } = ev.target
-      context.emit('update', ev, { name, value })
-    }
-
     return {
       t,
-      selected,
-      onInput
+      selected 
     }
   }
 })

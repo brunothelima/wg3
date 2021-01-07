@@ -7,7 +7,7 @@
       :name="name"
       :id="`${name}Id`"
       :disabled="disabled"
-      @input.prevent="onInput"
+      @input="$emit('update', [$event, name, input?.checked])"
     />
     <label :for="`${name}Id`">{{ t(title) }}</label>
   </div>
@@ -27,15 +27,9 @@ export default defineComponent({
     const input = ref<HTMLInputElement>()
     const { t } = inject('i18n', useI18n())
 
-    function onInput(ev: OnInputEvent) {
-      const { name, checked } = ev.target
-      context.emit('update', ev, { name, value: checked })
-    }
-
     return {
       t,
-      input,
-      onInput
+      input
     }
   }
 })

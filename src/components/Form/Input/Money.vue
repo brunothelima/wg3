@@ -10,7 +10,7 @@
       :disabled="disabled"
       :readonly="readonly"
       :placeholder="t(placeholder)"
-      @input.prevent="onInput"
+      @input="$emit('update', [$event, name, input?.value])"
     />
   </div>
 </template>
@@ -34,11 +34,6 @@ export default defineComponent({
     const input = ref()
     const { t } = inject('i18n', useI18n()) 
 
-    function onInput(ev: OnInputEvent) {
-      const { name, value } = ev.target
-      context.emit('update', ev, { name, value })
-    }
-
     onMounted(() => {
       VMasker(input.value).maskMoney({
         precision: 2,
@@ -49,8 +44,7 @@ export default defineComponent({
 
     return {
       t,
-      input,
-      onInput
+      input
     }
   }
 })

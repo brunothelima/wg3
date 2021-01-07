@@ -59,8 +59,8 @@ h1 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 1em;
+  @media screen and (max-width: #{$mobile-brakepoint}) {
+    grid-template-columns: 1fr;   
+  }
 }
-// .inputs .form::v-deep(.form__grid) .field:last-child {
-//   grid-column: 1 / 3;
-// }
 </style>

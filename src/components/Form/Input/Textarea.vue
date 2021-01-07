@@ -7,7 +7,7 @@
       :placeholder="t(placeholder)"
       :disabled="disabled"
       :maxlength="maxlength"
-      @input.prevent="onInput"
+      @input="onInput"
     ></textarea>
     <small>{{ maxlength ? `${value.length}/${maxlength}` : value.length }}</small>
   </div>
@@ -38,7 +38,7 @@ export default defineComponent({
       }
 
       const { name, value } = ev.target
-      context.emit('update', ev, { name, value })
+      context.emit('update', [ev, name, value ])
     }
     
     return {

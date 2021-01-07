@@ -13,7 +13,7 @@
         :disabled="disabled"
         :value="option.value"
         :checked="option.value == value"
-        @input.prevent="onInput"
+        @input="$emit('update', [$event, name, input?.value])"
       />
       <label :for="`${name}${index}Id`">{{ t(option.label) }}</label>
     </div>    
@@ -35,14 +35,8 @@ export default defineComponent({
   setup(props, context) {
     const { t } = inject('i18n', useI18n()) 
 
-    function onInput(ev: OnInputEvent) {
-      const { name, value } = ev.target
-      context.emit('update', ev, { name, value })
-    }
-
     return {
-      t,
-      onInput
+      t
     }
   }
 })
