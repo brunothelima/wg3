@@ -1,7 +1,7 @@
 <template>
   <div :class="['input:file', { 'input:file--invalid': errors && errors.length }]">
     <slot name="before" />
-    <div class="input:file__wrapper" @click="input.click()">
+    <div class="input:file__wrapper" @click="input?.click()">
       <input
         ref="input"
         type="file"
@@ -9,9 +9,9 @@
         :id="`${name}Id`"
         :disabled="disabled"
         :readonly="readonly"
-        @input="onInput"
+        @input.prevent="onInput"
       />
-      <span class="input:file__selected" v-if="file">{{ file?.name }}</span>
+      <span class="input:file__selected" v-if="value">{{ value?.name }}</span>
       <span class="input:file__placeholder" v-else>{{ t(placeholder) }}</span>
       <i color="a" class="icon-upload" />
     </div>
@@ -21,7 +21,7 @@
 
 <script lang="ts">
 import { ref, inject, defineComponent, PropType } from 'vue'
-import { useI18n } from '@src/composables/useI18n'
+import { useI18n } from '@src/composables'
 
 export default defineComponent({
    props: {
@@ -32,18 +32,17 @@ export default defineComponent({
     errors: Array,
     value: [String, Object] as PropType<File | ''>
   },
-  setup(props) {
+  setup(props, context) {
     const input = ref<HTMLInputElement>()
-    const file = ref(props.value)
     const { t } = useI18n(inject('messages', {}))
 
-    const onInput = () => {
-      file.value = input.value?.files?.[0]
+    function onInput(ev: OnInputEvent) {
+      const { name, files } = ev.target
+      context.emit('update', ev, { name, value: files?.[0] })
     }
 
     return {
       t,
-      file,
       input,
       onInput
     }
@@ -84,10 +83,10 @@ input {
   color: var(--color-x-7);
   opacity: 0.6;
 }
-.input\:file--error .input-file__wrapper {
+.input\:file--invalid .input\:file__wrapper {
   border-color: var(--color-error);
 }
-.input\:file--error i {
+.input\:file--invalid i {
   color: var(--color-error);
 }
 </style>

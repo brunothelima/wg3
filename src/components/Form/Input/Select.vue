@@ -1,36 +1,32 @@
 <template>
-  <div data-test="input" :class="['input:select', { 'input:select--invalid': errors && errors.length }]">
-    <slot name="before" />
-    <div class="input:select__wrapper">
-      <select
-        data-test="select"
-        :id="`${name}Id`"
-        :name="name"
-        :value="value"
-        :disabled="disabled"
-        :readonly="readonly"
-      >
-        <option v-for="option in options" :key="option" :value="option.value" :selected="option.value === value">
-          {{ t(option.label) }}
-        </option>
-        <slot />
-      </select>
-      <div data-test="selected" class="input:select__selected" v-if="selected">
-        {{ t(selected) }}
-      </div>
-      <div data-test="placeholder" class="input:select__placeholder" v-else>
-        {{ t(placeholder || 'Select an option') }}
-      </div>
-      <i class="icon-caret-down" color="a" />
+  <div data-test="input" :class="['input:select', { 'input:select--invalid': errors?.length }]">
+    <select
+      data-test="select"
+      :id="`${name}Id`"
+      :name="name"
+      :value="value"
+      :disabled="disabled"
+      :readonly="readonly"
+      @input.prevent="onInput"
+    >
+      <option v-for="option in options" :key="option" :value="option.value" :selected="option.value === value">
+        {{ t(option.label) }}
+      </option>
+      <slot />
+    </select>
+    <div data-test="selected" class="input:select__selected" v-if="selected">
+      {{ t(selected) }}
     </div>
-    <slot name="after" />
+    <div data-test="placeholder" class="input:select__placeholder" v-else>
+      {{ t(placeholder || 'Select an option') }}
+    </div>
+    <i class="icon-caret-down" color="a" />
   </div>
 </template>
 
 <script lang="ts">
 import { computed, inject, defineComponent, defineProps, PropType } from 'vue'
-import { useI18n } from '@src/composables/useI18n'
-import { FormInputOption } from '@src/types'
+import { useI18n } from '@src/composables'
 
 export default defineComponent({
   props: {
@@ -42,7 +38,7 @@ export default defineComponent({
     errors: Array,
     options: Array as PropType<FormInputOption[]>,
   },
-  setup(props) {
+  setup(props, context) {
     const { t } = useI18n(inject('messages', {}))
 
     // Computes the current select option title for display
@@ -54,19 +50,22 @@ export default defineComponent({
       }
       return props.options?.find(query)?.label
     })
+
+    function onInput(ev: OnInputEvent) {
+      const { name, value } = ev.target
+      context.emit('update', ev, { name, value })
+    }
+
     return {
       t,
-      selected
+      selected,
+      onInput
     }
   }
 })
 </script>
 
 <style scoped>
-.input\:select {
-  display: flex;
-  margin-bottom: 0.5rem;
-}
 select {
   opacity: 0;
   position: absolute;
@@ -77,7 +76,9 @@ select {
   height: 100%;
   cursor: pointer;
 }
-.input\:select__wrapper {
+.input\:select {
+  display: flex;
+  margin-bottom: 0.5rem;
   display: grid;
   grid-template-columns: auto 48px;
   position: relative;
@@ -107,10 +108,10 @@ i {
   align-self: center;
   justify-self: center;
 }
-.input\:select--error .input-select__wrapper {
+.input\:select--invalid {
   border-color: var(--color-error);
 }
-.input\:select--error [class*='icon-'] {
+.input\:select--invalid [class*='icon-'] {
   color: var(--color-error);
 }
 </style>

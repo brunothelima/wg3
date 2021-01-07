@@ -1,31 +1,27 @@
 <template>
-  <div data-test="input" :class="['input:text', { 'input:password--invalid': errors && errors.length }]">
-    <slot name="before" />
-    <div class="input:text__wrapper">
-      <input
-        class="input-text"
-        :type="type"
-        :name="name"
-        :id="`${name}Id`"
-        :value="value"
-        :disabled="disabled"
-        :readonly="readonly"
-        :placeholder="t(placeholder)"
-      />
-      <i
-        data-test="icon"
-        color="a"
-        :class="`icon-eye${type === 'text' ? '-closed' : ''}`"
-        @click="type = type === 'text' ? 'password' : 'text'"
-      />
-    </div>
-    <slot name="after" />
+  <div data-test="input" :class="['input:text', { 'input:password--invalid': errors?.length }]">
+    <input
+      :type="type"
+      :name="name"
+      :id="`${name}Id`"
+      :value="value"
+      :disabled="disabled"
+      :readonly="readonly"
+      :placeholder="t(placeholder)"
+      @input.prevent="onInput"
+    />
+    <i
+      data-test="icon"
+      color="a"
+      :class="`icon-eye${type === 'text' ? '-closed' : ''}`"
+      @click="type = type === 'text' ? 'password' : 'text'"
+    />
   </div>
 </template>
 
 <script lang="ts">
 import { inject, ref, defineComponent } from "vue"
-import { useI18n } from '@src/composables/useI18n'
+import { useI18n } from '@src/composables'
 
 export default defineComponent({
   props: {
@@ -35,14 +31,20 @@ export default defineComponent({
     disabled: Boolean,
     readonly: Boolean,
     errors: Array
-  },
-  setup(props) {
+  },  
+  setup(props, context) {
     const type = ref('password')
     const { t } = useI18n(inject('messages', {}))
+
+    function onInput(ev: OnInputEvent) {
+      const { name, value } = ev.target
+      context.emit('update', ev, { name, value })
+    }
     
     return {
       t,
-      type
+      type,
+      onInput
     }
   }
 })
@@ -50,10 +52,7 @@ export default defineComponent({
 
 <style scoped>
 .input\:text {
-  display: flex;
-  margin-bottom: 0.5rem;
-}
-.input\:text__wrapper {
+  display: flex; 
   flex: 1;
   display: grid;
   grid-template-columns: auto 48px;

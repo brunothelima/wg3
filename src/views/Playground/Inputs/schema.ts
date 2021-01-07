@@ -1,15 +1,18 @@
-import { createForm } from '@src/composables/useForm'
+import { createForm } from '@src/composables'
+import { required } from '@src/utils/validators'
 
 const schema = createForm({
   inputText: {
     type: 'text',
     label: 'text.label',
-    placeholder: 'text.placeholder'
+    placeholder: 'text.placeholder',
+    validations: { required }
   },
   inputPassword: {
     type: 'password',
     label: 'password.label',
-    placeholder: 'password.placeholder'
+    placeholder: 'password.placeholder',
+    validations: { required }
   },
   inputSelect: {
     type: 'select',
@@ -19,35 +22,41 @@ const schema = createForm({
       { value: 1, label: 'select.options.first' },
       { value: 2, label: 'select.options.second' },
       { value: 3, label: 'select.options.third' }
-    ]
+    ],
+    validations: { required }
   },
   inputMoney: {
     type: 'money',
     label: 'money.label',
     placeholder: 'money.placeholder',
-    currency: 'R$'
+    currency: 'R$',
+    validations: { required }
   },
   inputFile: {
     type: 'file',
     label: 'file.label',
     placeholder: 'file.placeholder',
+    validations: { required }
   },
   inputDate: {
     type: 'date',
     label: 'date.label',
     placeholder: 'date.placeholder',
     mode: 'single',
-    help: 'date.help'
+    help: 'date.help',
+    validations: { required }
   },
   inputCheckbox: {
     type: 'checkbox',
     label: 'checkbox.label',
-    title: 'checkbox.title'
+    title: 'checkbox.title',
+    validations: { required }
   },
   inputToggle: {
     type: 'toggle',
     label: 'toggle.label',
-    title: 'toggle.title'
+    title: 'toggle.title',
+    validations: { required }
   },
   inputRadio: {
     type: 'radio',
@@ -55,7 +64,14 @@ const schema = createForm({
     options: [
       { value: 1, label: 'radio.options.first' },
       { value: 2, label: 'radio.options.second' },
-    ]
+    ],
+    validations: { required }
+  },
+  inputEditor: {
+    type: 'editor',
+    label: 'editor.label',
+    placeholder: 'editor.placeholder',
+    validations: { required }
   },
 })
 

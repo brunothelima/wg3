@@ -22,7 +22,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { useI18n } from '@src/composables/useI18n'
+import { useI18n } from '@src/composables'
 
 export default defineComponent({
   setup() {

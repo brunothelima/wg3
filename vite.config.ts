@@ -32,6 +32,9 @@ export default defineConfig({
     }
   },
   optimizeDeps: {
-    include: ['flatpickr/dist/l10n/pt.js']
+    include: [
+      'flatpickr/dist/l10n/pt.js',
+      '@ckeditor/ckeditor5-build-balloon-block/build/translations/pt.js'
+    ]
   },
 })

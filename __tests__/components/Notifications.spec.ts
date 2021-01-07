@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { nextTick } from 'vue'
-import { useNotifications } from '@src/composables/useNotifications'
+import { useNotifications } from '@src/composables'
 import Notifications from '@src/components/Notifications.vue'
 
 const mock = {

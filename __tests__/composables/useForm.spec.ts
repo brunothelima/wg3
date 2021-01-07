@@ -1,4 +1,4 @@
-import { useForm, createForm } from '@src/composables/useForm'
+import { useForm, createForm } from '@src/composables'
 import { required } from '@src/utils/validators'
 
 const mock = {

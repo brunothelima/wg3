@@ -1,4 +1,3 @@
-import { FormValidator } from '@src/types'
 import v from 'validator'
 
 interface EqualsValidator {

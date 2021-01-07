@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import { createForm, useForm } from '@src/composables/useForm'
+import { createForm, useForm } from '@src/composables'
 import flushPromises from 'flush-promises'
 import { required } from '@src/utils/validators'
 import InputText from '@src/components/Form/Input/Text.vue'

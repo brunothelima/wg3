@@ -18,7 +18,7 @@ export interface FormInput {
   detail?: string
   errors?: string[]
   validations?: FormValidatorOption
-  events?: FormInputEvents,
+  events?: FormCustomEvents,
   messages?: I18nMessages
 }
 
@@ -59,11 +59,23 @@ export interface FormInputOption {
   label: string
 }
 
-export interface FormInputEvents {
-  onInput?: OnInputEvent
+export interface FormCustomEvents {
+  onInput?: OnInputCustomEvent
 }
-export interface OnInputEvent {
+export interface OnInputCustomEvent {
   (args: { ev: InputEvent; schema: FormSchema }): void
+}
+
+export interface OnInputEvent extends InputEvent {
+  target: HTMLInputElement
+}
+export interface OnInputPayload {
+  name: string
+  value: any
+}
+
+export interface FormOnUpdateHandler {
+  (ev: OnInputEvent, payload: OnInputPayload): void
 }
 
 export interface FormValidator {

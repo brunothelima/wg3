@@ -1,25 +1,20 @@
 <template>
-  <div data-test="input" :class="['input:text', { 'input:text--invalid': errors && errors.length }]">
-    <slot name="before" />
-    <div class="input:text__wrapper">
-      <input
-        type="text"
-        :name="name"
-        :id="`${name}Id`"
-        :value="value"
-        :disabled="disabled"
-        :readonly="readonly"
-        :placeholder="t(placeholder)"
-      />
-    </div>
-    <slot name="after" />
+  <div data-test="input" :class="['input:text', { 'input:text--invalid': errors?.length }]">
+    <input
+      type="text"
+      :name="name"
+      :id="`${name}Id`" 
+      :disabled="disabled"
+      :readonly="readonly"
+      :placeholder="t(placeholder)"
+      @input.prevent="onInput"
+    />
   </div>
 </template>
 
 <script lang="ts">
-import { inject, defineComponent } from 'vue'
-import { useI18n } from '@src/composables/useI18n'
-import { I18nMessages } from '@src/types'
+import { ref, inject, defineComponent } from 'vue'
+import { useI18n } from '@src/composables'
 
 export default defineComponent({
   props: {
@@ -30,11 +25,17 @@ export default defineComponent({
     readonly: Boolean,
     errors: Array
   },
-  setup(props) {
+  setup(props, context) {
     const { t } = useI18n(inject('messages', {}))
+
+    function onInput(ev: OnInputEvent) {
+      const { name, value } = ev.target
+      context.emit('update', ev, { name, value })
+    }
     
     return {
-      t
+      t,
+      onInput,
     }
   }
 })

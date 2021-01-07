@@ -5,6 +5,9 @@
 @import './vendors/normalize';
 @import './vendors/reset';
 
+* {
+  outline: transparent;
+}
 
 html,
 body {
@@ -97,3 +100,6 @@ hr {
     background: var(--color-b-3);
   }
 }
+
+@import './vendors/ckeditor5';
+@import './vendors/flatpickr';

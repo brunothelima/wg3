@@ -27,8 +27,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import { useI18n } from '@src/composables/useI18n'
+import { defineComponent, onUnmounted } from 'vue'
+import { useI18n } from '@src/composables'
 import Form from '@src/components/Form/index.vue'
 import Button from '@src/components/Button/index.vue'
 import schema from './schema'
@@ -60,4 +60,7 @@ h1 {
   grid-template-columns: 1fr 1fr;
   grid-gap: 1em;
 }
+// .inputs .form::v-deep(.form__grid) .field:last-child {
+//   grid-column: 1 / 3;
+// }
 </style>

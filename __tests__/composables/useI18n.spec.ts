@@ -1,4 +1,4 @@
-import { useI18n } from '@src/composables/useI18n'
+import { useI18n } from '@src/composables'
 import { nextTick } from 'vue'
 
 const mock = {
@@ -6,7 +6,7 @@ const mock = {
   pt: { lang: 'Portugês' }
 }
 
-describe('@src/composables/useI18n', () => {
+describe('@src/composables', () => {
   const { locale, t } = useI18n(mock)
 
   it('Initializes the locale ref', async () => {

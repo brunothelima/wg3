@@ -1,26 +1,24 @@
 <template>
   <div :class="['input:money', { 'input:money--error': errors && errors.length }]">
-    <slot name="before" />
-    <div class="input:money__wrapper">
-      <span class="input:money__currency">{{ currency }}</span>
-      <input
-        ref="input"
-        type="text"
-        :name="name"
-        :id="`${name}Id`"
-        :disabled="disabled"
-        :readonly="readonly"
-        :placeholder="t(placeholder)"
-      />
-    </div>
-    <slot name="after" />
+    <span class="input:money__currency">{{ currency }}</span>
+    <input
+      ref="input"
+      type="text"
+      :name="name"
+      :id="`${name}Id`"
+      :value="value"
+      :disabled="disabled"
+      :readonly="readonly"
+      :placeholder="t(placeholder)"
+      @input.prevent="onInput"
+    />
   </div>
 </template>
 
 <script lang="ts">
 import VMasker from 'vanilla-masker'
 import { ref, inject, defineComponent, onMounted } from 'vue'
-import { useI18n } from '@src/composables/useI18n'
+import { useI18n } from '@src/composables'
 
 export default defineComponent({
   props: {
@@ -32,9 +30,14 @@ export default defineComponent({
     errors: Array,
     currency: String
   },
-  setup(props) {
+  setup(props, context) {
     const input = ref()
     const { t } = useI18n(inject('messages', {}))
+
+    function onInput(ev: OnInputEvent) {
+      const { name, value } = ev.target
+      context.emit('update', ev, { name, value })
+    }
 
     onMounted(() => {
       VMasker(input.value).maskMoney({
@@ -46,7 +49,8 @@ export default defineComponent({
 
     return {
       t,
-      input
+      input,
+      onInput
     }
   }
 })
@@ -54,8 +58,6 @@ export default defineComponent({
 <style lang="scss" scoped>
 .input\:money {
   display: flex;
-}
-.input\:money__wrapper {
   position: relative;
   flex: 1;
   display: grid;
@@ -91,7 +93,7 @@ input {
     box-shadow: 0 0 0 var(--input-border-width) var(--color-x-4);
   }
 }
-.input\:money--error {
+.input\:money--invalid {
   input {
     border-color: var(--color-error);
   }

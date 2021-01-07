@@ -18,7 +18,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { useI18n } from '@src/composables/useI18n'
+import { useI18n } from '@src/composables'
 import Palette from './Palette.vue'
 
 export default defineComponent({

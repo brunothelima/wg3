@@ -1,5 +1,4 @@
 import { getCurrentInstance, ref, watch } from 'vue'
-import { I18nMessages } from '@src/types'
 
 // Initializing locale ref with cached language or default
 const cache = localStorage.getItem('wg3.locale') as 'pt' | 'en' || 'en'

@@ -1,5 +1,4 @@
 import { reactive, computed } from 'vue'
-import { FormSchema, FormInputTypes } from '@src/types'
 
 /**
  * Clones the given schema and insures it has the correct structure

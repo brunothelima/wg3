@@ -15,7 +15,7 @@
 
 <template>
   <div class="login-form">
-    <img src="src/assets/img/logo-vtc.svg" alt="Widgrid" />
+    <img src="@src/assets/img/logo-vtc.svg" alt="Widgrid" />
     <p>{{ t('intro') }}</p>
     <Form :schema="schema" :messages="messages" @success="login">
       <footer>
@@ -30,7 +30,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { useI18n } from '@src/composables/useI18n'
+import { useI18n } from '@src/composables'
 import router from '@src/router'
 
 import Form from '@src/components/Form/index.vue'

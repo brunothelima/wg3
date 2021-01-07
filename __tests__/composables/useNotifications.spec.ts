@@ -1,7 +1,6 @@
-import { useNotifications } from '@src/composables/useNotifications'
-import { Notification } from '@src/types'
+import { useNotifications } from '@src/composables'
 
-const mock: Notification = {
+const mock: CustomNotification = {
   message: 'Test message'
 }
 

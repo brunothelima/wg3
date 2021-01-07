@@ -57,7 +57,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { useI18n } from '@src/composables/useI18n'
+import { useI18n } from '@src/composables'
 import Button from '@src/components/Button/index.vue'
 import Dialog from '@src/components/Dialog/index.vue'
 import Confirmation from '@src/components/Dialog/Confirmation.vue'

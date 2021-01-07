@@ -55,7 +55,7 @@
 
 <script>
 import { defineComponent } from 'vue'
-import { useI18n } from '../../composables/useI18n'
+import { useI18n } from '../../composables'
 import Image from '@src/components/Image.vue'
 
 export default defineComponent({

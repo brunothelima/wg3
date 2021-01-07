@@ -1,12 +1,13 @@
 <template>
-  <div data-test="input" :class="['input:toggle', { 'input:toggle--checked': checkbox?.checked }]">
-    <i data-test="ui" class="input:toggle__ui" @click="checkbox.click()" />
+  <div data-test="input" :class="['input:toggle', { 'input:toggle--checked': input?.checked }]">
+    <i data-test="ui" class="input:toggle__ui" @click="input.click()" />
     <input
-      ref="checkbox"
+      ref="input"
       type="checkbox"
       :name="name"
       :id="`${name}Id`"
       :disabled="disabled"
+      @input.prevent="onInput"
     />
     <label :for="`${name}Id`">{{ t(title) }}</label>
   </div>
@@ -14,7 +15,7 @@
 
 <script lang="ts">
 import { ref, inject, defineComponent } from 'vue'
-import { useI18n } from '@src/composables/useI18n'
+import { useI18n } from '@src/composables'
 
 export default defineComponent({
    props: {
@@ -22,13 +23,19 @@ export default defineComponent({
     disabled: Boolean,
     title: String,
   },
-  setup(props) {
-    const checkbox = ref<HTMLInputElement>()
+  setup(props, context) {
+    const input = ref<HTMLInputElement>()
     const { t } = useI18n(inject('messages', {}))
+
+    function onInput(ev: OnInputEvent) {
+      const { name, checked } = ev.target
+      context.emit('update', ev, { name, value: checked })
+    }
 
     return {
       t,
-      checkbox
+      input,
+      onInput
     }
   }
 })

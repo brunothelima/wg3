@@ -1,9 +1,9 @@
 <template>
-  <div data-test="input" class="input:radio">
+  <div data-test="input" :class="['input:radio', { 'input:radio--invalid': errors && errors.length }]">
     <div
       v-for="(option, index) of options"
       :key="`option-${index}`"
-      :class="{ 'input:radio--checked': option.value == value }"
+      :class="{ 'input:radio__option--checked': option.value == value }"
     >
       <i class="input:radio__ui" @click="$event.target.nextElementSibling.click()" />
       <input
@@ -13,29 +13,36 @@
         :disabled="disabled"
         :value="option.value"
         :checked="option.value == value"
+        @input.prevent="onInput"
       />
       <label :for="`${name}${index}Id`">{{ t(option.label) }}</label>
-    </div>
+    </div>    
   </div>
 </template>
 
 <script lang="ts">
 import { ref, inject, defineComponent, PropType } from 'vue'
-import { useI18n } from '@src/composables/useI18n'
-import { FormInputOption } from '@src/types'
-
+import { useI18n } from '@src/composables'
+  
 export default defineComponent({
    props: {
     name: String,
     value: String,
     disabled: Boolean,
     options: Array as PropType<FormInputOption[]>,
+    errors: Array
   },
-  setup(props) {
+  setup(props, context) {
     const { t } = useI18n(inject('messages', {}))
 
+    function onInput(ev: OnInputEvent) {
+      const { name, value } = ev.target
+      context.emit('update', ev, { name, value })
+    }
+
     return {
-      t
+      t,
+      onInput
     }
   }
 })
@@ -82,7 +89,7 @@ export default defineComponent({
     border-color: var(--color-info);
   }
 }
-.input\:radio--checked .input\:radio__ui {
+.input\:radio__option--checked .input\:radio__ui {
   border-color: var(--color-info);
   &:before {
     opacity: 1;

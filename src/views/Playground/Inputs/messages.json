@@ -44,6 +44,10 @@
         "first": "First option",
         "second": "Second option"
       }
+    },
+    "editor": {
+      "label": "Text Editor",
+      "placeholder": "Click here and start typing"
     }
   },
   "pt": {
@@ -91,6 +95,10 @@
         "first": "Primeira opção",
         "second": "Segunda opção"
       }
+    },
+    "editor": {
+      "label": "Editor de texto",
+      "placeholder": "Clique aqui e começe a digitar"
     }
   }
 }

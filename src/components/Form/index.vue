@@ -3,7 +3,7 @@
     <pre>{{data}}</pre><br><br><br>
     <div class="form__grid">
       <Field v-for="[name, input] in entries" :key="name" :input="input" :id="`${name}Id`">
-        <component v-bind="input" @input="onInputHandler" :is="`input-${input.type}`" :name="name"/>
+        <component v-bind="input" @update="onUpdateHandler" :is="`input-${input.type}`" :name="name"/>
       </Field>
     </div>
     <slot />
@@ -11,21 +11,11 @@
 </template>
 
 <script lang="ts">
-import { computed, provide, defineComponent, PropType } from 'vue'
-import { useForm } from '@src/composables/useForm'
-import { useI18n } from '@src/composables/useI18n'
-import { I18nMessages, FormSchema } from '@src/types'
+import { computed, provide, defineComponent, defineAsyncComponent, PropType } from 'vue'
+import { useForm, useI18n } from '@src/composables/'
 
 import Field from './Field.vue'
-import InputText from './Input/Text.vue'
-import InputSelect from './Input/Select.vue'
-import InputPassword from './Input/Password.vue'
-import InputMoney from './Input/Money.vue'
-import InputFile from './Input/File.vue'
-import InputDate from './Input/Date.vue'
-import InputRadio from './Input/Radio.vue'
-import InputCheckbox from './Input/Checkbox.vue'
-import InputToggle from './Input/Toggle.vue'
+import * as Inputs from './Input'
 
 export default defineComponent({
   props: {
@@ -34,15 +24,7 @@ export default defineComponent({
   },
   components: {
     Field,
-    InputText,
-    InputSelect,
-    InputPassword,
-    InputMoney,
-    InputFile,
-    InputDate,
-    InputRadio,
-    InputCheckbox,
-    InputToggle
+    ...Inputs
   },
   setup(props, context) {
     const { schema, data, validate } = useForm(props.schema || {})
@@ -55,21 +37,11 @@ export default defineComponent({
      * This function updates the schema with the new input value
      * and calls onInput callback if one is given in the schema
      */
-    const onInputHandler = (ev: InputEvent) => {
-      const { name, value, files, checked, type } = ev.target as HTMLInputElement
-      const input = schema[name]
+    const onUpdateHandler: FormOnUpdateHandler = (ev, payload) => {
+      const input = schema[payload.name]
 
-      // Updating the schema input value
       input.errors = []
-      
-      switch (type) {
-        case 'file': input.value = files?.[0] 
-          break;
-        case 'checkbox': input.value = checked       
-          break;
-        default: input.value = value
-          break;
-      }
+      input.value = payload.value
 
       // Checking and calling the event calback function
       if (input.events && input.events.onInput) {
@@ -77,10 +49,10 @@ export default defineComponent({
         context.emit('callback', 'onInput')
       }
 
-      context.emit('input', { ev, value })
+      context.emit('input', { ev, payload })
     }
 
-    const onSubmitHandler = async (ev: InputEvent) => {
+    const onSubmitHandler = async (ev: Event) => {
       ev.preventDefault()
 
       context.emit('submit', { ev, data: data.value })
@@ -100,7 +72,7 @@ export default defineComponent({
     return {
       data,
       entries,
-      onInputHandler,
+      onUpdateHandler,
       onSubmitHandler
     }
   }
