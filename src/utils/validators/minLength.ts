@@ -4,7 +4,7 @@ interface MinLengthValidator {
 
 const validator: MinLengthValidator = (limit: number) => ({
   message: `This input must have ${limit} or more characters`,
-  handler: (value: string) => value.length >= limit
+  handler: (value: any) => value.length >= limit
 })
 
 export default validator

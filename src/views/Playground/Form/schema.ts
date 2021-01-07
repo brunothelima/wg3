@@ -46,6 +46,19 @@ const schema = createForm({
     help: 'date.help',
     validations: { required }
   },
+  inputTextarea: {
+    type: 'textarea',
+    label: 'textarea.label',
+    placeholder: 'textarea.placeholder',
+    maxlength: 50,
+    validations: { required }
+  },
+  inputEditor: {
+    type: 'editor',
+    label: 'editor.label',
+    placeholder: 'editor.placeholder',
+    validations: { required }
+  },
   inputCheckbox: {
     type: 'checkbox',
     label: 'checkbox.label',
@@ -66,13 +79,7 @@ const schema = createForm({
       { value: 2, label: 'radio.options.second' },
     ],
     validations: { required }
-  },
-  inputEditor: {
-    type: 'editor',
-    label: 'editor.label',
-    placeholder: 'editor.placeholder',
-    validations: { required }
-  },
+  }
 })
 
 export default schema

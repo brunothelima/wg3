@@ -3,7 +3,6 @@
     <div
       ref="input"
       :name="name"
-      :placeholder="t(placeholder)"
       :id="`${name}Id`"
     ></div>
   </div>
@@ -23,7 +22,7 @@ export default defineComponent({
   },
   setup(props, context) {
     const input = ref()
-    const { t, locale } = useI18n(inject('messages', {}))
+    const { t, locale } = inject('i18n', useI18n()) 
     const options = computed(() => ({
       locale: locale.value,
       placeholder: t(props.placeholder)

@@ -15,7 +15,6 @@
 <script lang="ts">
 import { inject, defineComponent, PropType } from 'vue'
 import { useI18n } from '@src/composables'
-import { FormInputTypes, I18nMessages } from '@src/types'
 import Help from './Help.vue'
 
 export default defineComponent({
@@ -27,7 +26,7 @@ export default defineComponent({
     input: Object as PropType<FormInputTypes>,
   },
   setup(props) {
-    const { t } = useI18n(inject('messages', {}))
+    const { t } = inject('i18n', useI18n()) 
     
     return {
       t

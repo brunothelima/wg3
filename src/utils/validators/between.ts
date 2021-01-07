@@ -4,7 +4,7 @@ interface BetweenValidator {
 
 const validator: BetweenValidator = (min: number, max: number) => ({
   message: `This input must be a number between ${min} and ${max}`,
-  handler: (value: string) => +value >= min && +value <= max
+  handler: (value: any) => +value >= min && +value <= max
 })
 
 export default validator

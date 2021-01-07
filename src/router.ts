@@ -26,7 +26,10 @@ const router = createRouter({
   routes: [
     { path: '/', component: () => import('@src/views/Login/index.vue') },
     playgroundRoutes
-  ]
+  ],
+  scrollBehavior() {
+    return { top: 0 }
+  }
 })
 
 // router.beforeEach(isAuthorized)

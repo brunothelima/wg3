@@ -33,7 +33,7 @@ export default defineComponent({
     errors: Array
   },
   setup(props, context) {
-    const { t } = useI18n(inject('messages', {}))
+    const { t } = inject('i18n', useI18n()) 
 
     function onInput(ev: OnInputEvent) {
       const { name, value } = ev.target

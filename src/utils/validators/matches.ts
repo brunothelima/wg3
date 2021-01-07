@@ -6,7 +6,7 @@ interface MatchesValidator {
 
 const validator: MatchesValidator = (pattern: string) => ({
   message: `Invalid format`,
-  handler: (value: string) => v.matches(value, pattern)
+  handler: (value: any) => v.matches(value, pattern)
 })
 
 export default validator

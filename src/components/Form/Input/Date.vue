@@ -36,7 +36,7 @@ export default defineComponent({
   },
   setup(props, context) {
     const input = ref()
-    const { locale, t } = useI18n(inject('messages', {}))
+    const { t, locale } = inject('i18n', useI18n()) 
     const options = computed(() => ({
       static: true,
       mode: props.mode,

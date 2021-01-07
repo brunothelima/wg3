@@ -1,5 +1,5 @@
 <template>
-  <div :class="['input:money', { 'input:money--error': errors && errors.length }]">
+  <div :class="['input:money', { 'input:money--invalid': errors?.length }]">
     <span class="input:money__currency">{{ currency }}</span>
     <input
       ref="input"
@@ -32,7 +32,7 @@ export default defineComponent({
   },
   setup(props, context) {
     const input = ref()
-    const { t } = useI18n(inject('messages', {}))
+    const { t } = inject('i18n', useI18n()) 
 
     function onInput(ev: OnInputEvent) {
       const { name, value } = ev.target
@@ -93,9 +93,7 @@ input {
     box-shadow: 0 0 0 var(--input-border-width) var(--color-x-4);
   }
 }
-.input\:money--invalid {
-  input {
-    border-color: var(--color-error);
-  }
+.input\:money--invalid input {
+  border-color: var(--color-error);
 }
 </style>

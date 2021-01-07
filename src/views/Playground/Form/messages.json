@@ -45,6 +45,10 @@
         "second": "Second option"
       }
     },
+    "textarea": {
+      "label": "Input textarea",
+      "placeholder": "Type here"
+    },
     "editor": {
       "label": "Text Editor",
       "placeholder": "Click here and start typing"
@@ -95,6 +99,10 @@
         "first": "Primeira opção",
         "second": "Segunda opção"
       }
+    },
+    "text": {
+      "label": "Campo de texto grande",
+      "placeholder": "Digite aqui"
     },
     "editor": {
       "label": "Editor de texto",

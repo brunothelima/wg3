@@ -25,7 +25,7 @@ export default defineComponent({
   },
   setup(props, context) {
     const input = ref<HTMLInputElement>()
-    const { t } = useI18n(inject('messages', {}))
+    const { t } = inject('i18n', useI18n())
 
     function onInput(ev: OnInputEvent) {
       const { name, checked } = ev.target

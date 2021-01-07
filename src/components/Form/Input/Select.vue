@@ -39,7 +39,7 @@ export default defineComponent({
     options: Array as PropType<FormInputOption[]>,
   },
   setup(props, context) {
-    const { t } = useI18n(inject('messages', {}))
+    const { t } = inject('i18n', useI18n())
 
     // Computes the current select option title for display
     const selected = computed(() => {

@@ -5,7 +5,8 @@
     "buttons": "Buttons",    
     "icons": "Icons",    
     "text": "Text",    
-    "dialogs": "Dialogs",    
+    "dialogs": "Dialogs",
+    "form": "Form",    
     "images": "Images",    
     "tests": "Tests" 
   },
@@ -15,7 +16,7 @@
     "icons": "Ícones",    
     "text": "Texto",    
     "dialogs": "Alertas",    
-    "inputs": "Formuláro",    
+    "inputs": "Formulário",    
     "images": "Imagens", 
     "tests": "Testes" 
   }
@@ -31,7 +32,7 @@
       <li><router-link to="icons">{{ t('icons') }}</router-link></li>
       <li><router-link to="text">{{ t('text') }}</router-link></li>
       <li><router-link to="dialogs">{{ t('dialogs') }}</router-link></li>
-      <li><router-link to="inputs">{{ t('inputs') }}</router-link></li>
+      <li><router-link to="form">{{ t('form') }}</router-link></li>
       <li><router-link to="images">{{ t('images') }}</router-link></li>
       <li><router-link to="tests">{{ t('tests') }}</router-link></li>
     </ul>

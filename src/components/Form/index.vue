@@ -1,6 +1,6 @@
 <template>
   <form data-test="form" @submit="onSubmitHandler" class="form">
-    <pre>{{data}}</pre><br><br><br>
+    <!-- <pre>{{data}}</pre><br><br><br> -->
     <div class="form__grid">
       <Field v-for="[name, input] in entries" :key="name" :input="input" :id="`${name}Id`">
         <component v-bind="input" @update="onUpdateHandler" :is="`input-${input.type}`" :name="name"/>
@@ -15,7 +15,7 @@ import { computed, provide, defineComponent, defineAsyncComponent, PropType } fr
 import { useForm, useI18n } from '@src/composables/'
 
 import Field from './Field.vue'
-import * as Inputs from './Input'
+import * as InputCollection from './Input'
 
 export default defineComponent({
   props: {
@@ -24,14 +24,14 @@ export default defineComponent({
   },
   components: {
     Field,
-    ...Inputs
+    ...InputCollection
   },
   setup(props, context) {
     const { schema, data, validate } = useForm(props.schema || {})
 
     const entries = computed(() => Object.entries(schema))
 
-    provide('messages', props.messages)
+    provide('i18n', useI18n(props.messages))
 
     /**
      * This function updates the schema with the new input value

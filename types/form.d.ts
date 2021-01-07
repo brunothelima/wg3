@@ -30,6 +30,10 @@ declare interface FormInput {
 declare interface FormInputText extends FormInput {
   placeholder?: string
 }
+declare interface FormInputTextarea extends FormInput {
+  placeholder?: string
+  maxlength?: number
+}
 declare interface FormInputSelect extends FormInput {
   placeholder?: string
   options: FormInputOption[]
@@ -56,6 +60,7 @@ declare type FormInputTypes =
   | FormInputDate
   | FormInputMoney
   | FormInputCheckbox
+  | FormInputTextarea
 
 // // SUPPORT TYPES
 declare interface FormInputOption {
