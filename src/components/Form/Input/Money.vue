@@ -10,7 +10,7 @@
       :disabled="disabled"
       :readonly="readonly"
       :placeholder="t(placeholder)"
-      @input="$emit('update', [$event, name, input?.value])"
+      @input="$emit('update', [$event, name, inputRef?.value])"
     />
   </div>
 </template>

@@ -9,7 +9,7 @@
       :readonly="readonly"
       :disabled="disabled"
       :placeholder="t(placeholder)"
-      @input="$emit('update', [$event, name, input?.value])"
+      @input="$emit('update', [$event, name, inputRef?.value])"
     />
   </div>
 </template>
@@ -46,7 +46,6 @@ export default defineComponent({
       dateFormat: props.mode === 'time' 
         ? 'Y/m/d H:i' : 'Y/m/d',
     }))
-
 
     watch(() => locale.value, newLocale => {
       FP.localize(FP.l10ns[newLocale] as CustomLocale)

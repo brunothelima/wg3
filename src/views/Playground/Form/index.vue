@@ -15,7 +15,7 @@
   <section class="inputs">
     <h1>{{ t('title') }}</h1>
     <hr />
-    <Form :schema="schema" :messages="messages">
+    <Form :schema="schema" :messages="messages" @error="onError" @success="onSuccess">
       <footer>
         <br>
         <Button :reverse="true" icon="icon-arrow-right" model="glassy">
@@ -42,10 +42,20 @@ export default defineComponent({
   setup() {
     const { t } = useI18n()
 
+    function onSuccess(data: FormSchema) {
+      console.log('success', data.value)
+    }
+
+    function onError(data: FormSchema) {
+      console.log('error', data.value)
+    }
+
     return {
       t,
       schema,
-      messages
+      messages,
+      onSuccess,
+      onError
     }
   }
 })
