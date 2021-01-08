@@ -65,8 +65,10 @@ export default defineComponent({
 .login-form {
   width: 300px;
   padding: 2em;
+  box-shadow: var(--box-shadow-light);
   border: var(--card-border-width) var(--card-border-style) var(--color-x-8);
   border-radius: var(--card-border-radius);
+  background-color: var(--color-x-10);
 }
 img {
   display: block;

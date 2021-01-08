@@ -65,7 +65,7 @@ nav {
   box-shadow: var(--box-shadow-light);
   border-right: var(--input-border-width) var(--input-border-style) var(--color-a-4);
   border-bottom: var(--input-border-width) var(--input-border-style) var(--color-a-4);
-  transition: all 200ms;
+  transition: transform 200ms ease;
   @media screen and (max-width: #{$tablet-brakepoint}) {
     position: fixed;
     transform: translateX(-95%);
