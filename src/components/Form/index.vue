@@ -27,41 +27,31 @@ export default defineComponent({
     ...InputCollection
   },
   setup(props, context) {
+    provide('i18n', useI18n(props.messages))
     const { schema, data, validate } = useForm(props.schema || {})
-
     const entries = computed(() => Object.entries(schema))
 
-    provide('i18n', useI18n(props.messages))
-
-    /**
-     * This function updates the schema with the new input value
-     * and calls onInput callback if one is given in the schema
-     */
-    const onUpdateHandler: FormOnUpdateHandler = () => {
-      const [updateEvent, inputName, inputValue] = arguments
+    const onUpdateHandler: FormOnUpdateHandler = event => {
+      const [_, inputName, inputValue] = event
       const inputRef = schema[inputName]
 
       inputRef.errors = []
       inputRef.value = inputValue
 
-      // Checking and calling the event calback function
       if (inputRef.events && inputRef.events.onUpdate) {
-        inputRef.events.onUpdate(updateEvent)              
+        inputRef.events.onUpdate(event)              
       }
       
-      context.emit('update', updateEvent)
+      context.emit('update', event)
     }
 
     const onSubmitHandler = async (event: Event) => {
       event.preventDefault()
 
       context.emit('submit', data)
-
-      // Awaits for the validation result
       const isFormValid = await validate()
 
       if (isFormValid) {
-        // Emiting success event if no error is found
         context.emit('success', data)
         return
       }

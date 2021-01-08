@@ -56,6 +56,7 @@ export default defineComponent({
 
 <style scoped lang="scss">
 nav {
+  overflow: visible;
   position: sticky;
   z-index: 2;
   top: 0;
@@ -64,8 +65,20 @@ nav {
   box-shadow: var(--box-shadow-light);
   border-right: var(--input-border-width) var(--input-border-style) var(--color-a-4);
   border-bottom: var(--input-border-width) var(--input-border-style) var(--color-a-4);
+  transition: all 200ms;
   @media screen and (max-width: #{$tablet-brakepoint}) {
     position: fixed;
+    transform: translateX(-95%);
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    right: -40px; top: 0;
+    height: 100%;
+    width: 40px;
+  }
+  &:hover {
+    transform: translateX(0);
   }
 }
 nav header {

@@ -71,16 +71,12 @@ declare interface FormInputOption {
 declare interface FormCustomEvents {
   onUpdate?: FormOnUpdateHandler | undefined
 }
-declare interface FormOnUpdateEvent extends InputEvent {
+declare interface OnInputEvent extends InputEvent {
   target: HTMLInputElement
 }
 
 declare interface FormOnUpdateHandler {
-  (arguments: [
-    updateEvent: FormOnUpdateEvent, 
-    inputName: string, 
-    inputValue: any
-  ]): void
+  (args: [inputEvent: OnInputEvent, inputName: string, inputValue: any]): void
 }
 
 declare interface FormValidator {
