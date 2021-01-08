@@ -1,13 +1,13 @@
 <template>
-  <div data-test="input" :class="['input:checkbox', { 'input:checkbox--checked': input?.checked }]">
-    <i data-test="ui" class="input:checkbox__ui" @click="input?.click()"/>
+  <div data-test="input" :class="['input:checkbox', { 'input:checkbox--checked': inputRef?.checked }]">
+    <i data-test="ui" class="input:checkbox__ui" @click="inputRef?.click()"/>
     <input
-      ref="input"
+      ref="inputRef"
       type="checkbox"
       :name="name"
       :id="`${name}Id`"
       :disabled="disabled"
-      @input="$emit('update', [$event, name, input?.checked])"
+      @input="$emit('update', [$event, name, inputRef?.checked])"
     />
     <label :for="`${name}Id`">{{ t(title) }}</label>  
   </div>
@@ -24,12 +24,12 @@ export default defineComponent({
     title: String,
   },
   setup(props, { emit }) {
-    const input = ref<HTMLInputElement>()
+    const inputRef = ref<HTMLInputElement>()
     const { t } = inject('i18n', useI18n()) 
 
     return {
       t,
-      input
+      inputRef
     }
   }
 })

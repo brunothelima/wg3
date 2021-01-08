@@ -1,15 +1,15 @@
 <template>
   <div :class="['input:file', { 'input:file--invalid': errors?.length }]">
     <slot name="before" />
-    <div class="input:file__wrapper" @click="input?.click()">
+    <div class="input:file__wrapper" @click="inputRef?.click()">
       <input
-        ref="input"
+        ref="inputRef"
         type="file"
         :name="name"
         :id="`${name}Id`"
         :disabled="disabled"
         :readonly="readonly"
-        @input="$emit('update', [ev, name, input?.files?.[0]])"
+        @input="$emit('update', [ev, name, inputRef?.files?.[0]])"
       />
       <span class="input:file__selected" v-if="value">{{ value?.name }}</span>
       <span class="input:file__placeholder" v-else>{{ t(placeholder) }}</span>
@@ -33,18 +33,12 @@ export default defineComponent({
     value: [String, Object] as PropType<File | ''>
   },
   setup(props, context) {
-    const input = ref<HTMLInputElement>()
+    const inputRef = ref<HTMLInputElement>()
     const { t } = inject('i18n', useI18n()) 
-
-    function onInput(ev: OnInputEvent) {
-      const { name, files } = ev.target
-      context.emit('update', ev, { name, value: files?.[0] })
-    }
 
     return {
       t,
-      input,
-      onInput
+      inputRef
     }
   }
 })

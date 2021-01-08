@@ -13,15 +13,15 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, PropType } from 'vue'
 import Ghosty from './Ghosty.vue'
 import Glassy from './Glassy.vue'
 
 export default defineComponent({
   props: {
     icon: String,
-    size: String,
-    skin: String,
+    size: String as PropType<'small' | 'medium' | 'large' >,
+    skin: String as PropType<'glassy' | 'ghosty'>,
     reverse: Boolean,
     disabled: Boolean,
   },

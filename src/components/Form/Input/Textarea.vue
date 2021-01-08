@@ -1,13 +1,13 @@
 <template>
   <div :class="['input:textarea', { 'input:textarea--invalid': errors?.length }]">
     <textarea
-      ref="input"
+      ref="inputRef"
       :value="value"
       :name="name"
       :placeholder="t(placeholder)"
       :disabled="disabled"
       :maxlength="maxlength"
-      @input="onInput"
+      @input="$emit('update', [$event, name, $event.target.value])"
     ></textarea>
     <small>{{ maxlength ? `${value.length}/${maxlength}` : value.length }}</small>
   </div>
@@ -28,23 +28,12 @@ export default defineComponent({
     maxlength: Number
   },
   setup(props, context) {
-    const input = ref<HTMLInputElement>()
+    const inputRef = ref<HTMLInputElement>()
     const { t } = inject('i18n', useI18n()) 
-
-    function onInput(ev: OnInputEvent) {
-      if (props.value && props.maxlength 
-      && props.value.length >= props.maxlength) {
-        return
-      }
-
-      const { name, value } = ev.target
-      context.emit('update', [ev, name, value ])
-    }
     
     return {
       t,
-      input,
-      onInput,
+      inputRef
     }
   }
 })

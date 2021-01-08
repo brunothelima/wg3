@@ -1,5 +1,5 @@
 <template>
-  <div data-test="input" :class="['input:radio', { 'input:radio--invalid': errors && errors.length }]">
+  <div data-test="input" :class="['input:radio', { 'input:radio--invalid': errors?.length }]">
     <div
       v-for="(option, index) of options"
       :key="`option-${index}`"
@@ -29,8 +29,8 @@ export default defineComponent({
     name: String,
     value: String,
     disabled: Boolean,
-    options: Array as PropType<FormInputOption[]>,
-    errors: Array
+    errors: Array,
+    options: Array as PropType<FormInputOption[]>
   },
   setup(props, context) {
     const { t } = inject('i18n', useI18n()) 

@@ -1,13 +1,8 @@
 <template>
   <ul data-test="notifications" class="notifications">
-    <li
-      data-test="message"
-      v-for="(notification, index) in notifications"
-      :key="notification"
-      :class="notification.status"
-    >
+    <li data-test="message" v-for="(note, index) in list" :key="note" :class="note.status">
       <i data-test="icon" class="icon-close-small" @click="dismiss(index)" />
-      <span data-test="text">{{ notification.message }}</span>
+      <span data-test="text">{{ note.message }}</span>
     </li>
   </ul>
 </template>
@@ -18,10 +13,10 @@ import { defineComponent } from 'vue'
 
 export default defineComponent({
   setup() {
-    const { notifications, dismiss } = useNotifications()
+    const { list, dismiss } = useNotifications()
 
     return {
-      notifications,
+      list,
       dismiss
     }
   }

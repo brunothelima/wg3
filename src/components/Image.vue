@@ -1,11 +1,14 @@
 <template>
-  <figure ref="figure">
+  <figure>
     <picture>
-      <img data-test="image" :src="path" ref="image" @load="onload($event)" />
+      <img 
+        data-test="image" 
+        ref="imageRef" 
+        :src="imageSrc" 
+        @load="imageOnload($event)" 
+      />
     </picture>
-    <figcaption>
-      <slot />
-    </figcaption>
+    <figcaption><slot /></figcaption>
   </figure>
 </template>
 
@@ -23,25 +26,27 @@ export default defineComponent({
     smart: Boolean
   },
   setup(props) {
-    const image = ref<HTMLImageElement>(new Image())
+    const imageRef = ref<HTMLImageElement>()
 
-    const path = computed(() => {
-      const url = new URL(`${import.meta.env.VITE_API_URL}/image`)
-      for (const [prop, value] of Object.entries(props)) {
-        url.searchParams.append(prop, `${value}`)
+    const imageSrc = computed(() => {
+      const src = new URL(`${import.meta.env.VITE_API_URL}/image`)
+      for (const [propName, propValue] of Object.entries(props)) {
+        src.searchParams.append(propName, `${propValue}`)
       } 
-      return url
+      return src
     })
     
-    const onload = () => {
-      image.value.style.maxWidth = 
-        `${image.value.naturalWidth}px`
+    const imageOnload = () => {
+      if (!imageRef.value) return
+
+      imageRef.value.style.maxWidth = 
+        `${imageRef.value.naturalWidth}px`
     }
 
     return {
-      image,
-      path,
-      onload,
+      imageRef,
+      imageSrc,
+      imageOnload,
     }
   }
 })

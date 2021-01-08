@@ -37,36 +37,36 @@ export default defineComponent({
      * This function updates the schema with the new input value
      * and calls onInput callback if one is given in the schema
      */
-    const onUpdateHandler: FormOnUpdateHandler = ([ev, name, value]) => {
-      const input = schema[name]
+    const onUpdateHandler: FormOnUpdateHandler = () => {
+      const [updateEvent, inputName, inputValue] = arguments
+      const inputRef = schema[inputName]
 
-      input.errors = []
-      input.value = value
+      inputRef.errors = []
+      inputRef.value = inputValue
 
       // Checking and calling the event calback function
-      if (input.events && input.events.onInput) {
-        input.events.onInput({ ev, schema })
-        context.emit('callback', 'onInput')
+      if (inputRef.events && inputRef.events.onUpdate) {
+        inputRef.events.onUpdate(updateEvent)              
       }
-
-      context.emit('input', arguments)
+      
+      context.emit('update', updateEvent)
     }
 
-    const onSubmitHandler = async (ev: Event) => {
-      ev.preventDefault()
+    const onSubmitHandler = async (event: Event) => {
+      event.preventDefault()
 
-      context.emit('submit', { ev, data: data.value })
+      context.emit('submit', data)
 
       // Awaits for the validation result
-      const isValid = await validate()
+      const isFormValid = await validate()
 
-      if (isValid) {
+      if (isFormValid) {
         // Emiting success event if no error is found
-        context.emit('success', { ev, data: data.value })
+        context.emit('success', data)
         return
       }
 
-      context.emit('error', { ev, data: data.value })
+      context.emit('error', data)
     }
 
     return {

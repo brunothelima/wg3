@@ -1,0 +1,89 @@
+@import 'flatpickr/dist/flatpickr.min.css';
+
+
+.flatpickr-calendar {
+  box-sizing: content-box;
+  padding: 1em;
+  border: none;
+  left: 2px;
+  background-color: var(--color-x-10);
+  box-shadow: var(--box-shadow-medium);
+  font-family: var(--font-family);
+}
+.flatpickr-calendar.arrowBottom {
+  top: unset;
+  bottom: calc(100% - 6px);
+}
+.flatpickr-calendar.hasTime .flatpickr-time {
+  border-top: none;
+}
+.flatpickr-current-month {
+  margin-left: 0.5em;
+  font-size: var(--font-size);
+  color: var(--color-a-1);
+}
+.flatpickr-current-month select {
+  text-align: right;
+  -moz-appearance: none !important;
+  -webkit-appearance: none !important;
+}
+.flatpickr-current-month option {
+  color: #222;
+}
+.flatpickr-days .dayContainer {
+  justify-content: flex-start;
+}
+.flatpickr-weekday {
+  font-size: var(--font-size-xs);
+  color: var(--color-x-1);
+}
+.flatpickr-day {
+  font-size: var(--font-size-xs);
+  height: 26px;
+  max-width: 26px;
+  line-height: 26px;
+  border-radius: 13px;
+  margin: 0.5em;
+  color: var(--color-x-2);
+}
+.flatpickr-day.today {
+  border-color: var(--color-a-1);
+}
+.flatpickr-day.prevMonthDay,
+.flatpickr-day.nextMonthDay {
+  color: var(--color-x-7);
+}
+.flatpickr-day.selected {
+  background-color: var(--color-a-1);
+  border-color: var(--color-a-1);
+}
+.flatpickr-day:hover,
+.flatpickr-day.prevMonthDay:hover,
+.flatpickr-day.nextMonthDay:hover {
+  border-color: var(--color-x-6);
+  background-color: var(--color-x-8);
+  color: var(--color-x-1);
+}
+.flatpickr-months {
+  margin-bottom: 2em;
+}
+.flatpickr-next-month,
+.flatpickr-prev-month {
+  top: 1em;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+.flatpickr-next-month svg,
+.flatpickr-prev-month svg {
+  fill: var(--color-x-1);
+}
+.flatpickr-next-month:hover svg,
+.flatpickr-prev-month:hover svg {
+  fill: var(--color-a-1);
+}
+.flatpickr-current-month .arrowUp:after {
+  border-bottom-color: var(--color-x-1);
+}
+.flatpickr-current-month .arrowDown:after {
+  border-top-color: var(--color-x-1);
+}

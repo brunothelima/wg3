@@ -2,7 +2,7 @@
   <div :class="['input:money', { 'input:money--invalid': errors?.length }]">
     <span class="input:money__currency">{{ currency }}</span>
     <input
-      ref="input"
+      ref="inputRef"
       type="text"
       :name="name"
       :id="`${name}Id`"
@@ -16,9 +16,9 @@
 </template>
 
 <script lang="ts">
-import VMasker from 'vanilla-masker'
 import { ref, inject, defineComponent, onMounted } from 'vue'
 import { useI18n } from '@src/composables'
+import VMasker from 'vanilla-masker'
 
 export default defineComponent({
   props: {
@@ -31,11 +31,11 @@ export default defineComponent({
     currency: String
   },
   setup(props, context) {
-    const input = ref()
+    const inputRef = ref()
     const { t } = inject('i18n', useI18n()) 
 
     onMounted(() => {
-      VMasker(input.value).maskMoney({
+      VMasker(inputRef.value).maskMoney({
         precision: 2,
         separator: ',',
         delimiter: '.'
@@ -44,7 +44,7 @@ export default defineComponent({
 
     return {
       t,
-      input
+      inputRef
     }
   }
 })

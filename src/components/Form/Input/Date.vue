@@ -2,7 +2,7 @@
   <div data-test="input" :class="['input:date', { 'input:date--invalid': errors?.length }]">
     <i color="a" class="icon-calendar" />
     <input
-      ref="input"
+      ref="inputRef"
       type="text"
       :name="name"
       :id="`${name}Id`"
@@ -21,8 +21,9 @@ import { CustomLocale } from 'flatpickr/dist/types/locale'
 import { useI18n } from '@src/composables'
 
 import FP from 'flatpickr'
-import 'flatpickr/dist/l10n/pt.js'
 import flatpickr from 'flatpickr'
+import 'flatpickr/dist/l10n/pt.js'
+import '@src/assets/scss/vendors/flatpickr.css';
 
 export default defineComponent({
   props: {
@@ -35,9 +36,11 @@ export default defineComponent({
     mode: String as PropType<'single' | 'range' | 'time'>
   },
   setup(props, context) {
-    const input = ref()
+    const inputRef = ref()
     const { t, locale } = inject('i18n', useI18n()) 
-    const options = computed(() => ({
+    
+    let fpInstance: FPInstance;
+    const fpOptions = computed(() => ({
       static: true,
       mode: props.mode,
       locale: locale.value,
@@ -45,26 +48,24 @@ export default defineComponent({
         ? 'Y/m/d H:i' : 'Y/m/d',
     }))
 
-    let FPInstance: FPInstance;
 
-    watch(() => locale.value, lang => {
-      FP.localize(FP.l10ns[lang] as CustomLocale)
+    watch(() => locale.value, newLocale => {
+      FP.localize(FP.l10ns[newLocale] as CustomLocale)
     })
     
     onMounted(() => {
-      FPInstance = FP(input.value, options.value)
+      fpInstance = FP(inputRef.value, fpOptions.value)
     })
 
-    onUnmounted(() => FPInstance.destroy())
+    onUnmounted(() => fpInstance.destroy())
 
     return {
       t,
-      input
+      inputRef
     }
   }
 })
 </script>
-
 <style lang="scss" scoped>
 .input\:date {
   display: flex;

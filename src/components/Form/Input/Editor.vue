@@ -1,7 +1,7 @@
 <template>
-  <div data-test="input" :class="['input:editor', { 'input:editor--invalid': errors && errors.length }]">
+  <div data-test="input" :class="['input:editor', { 'input:editor--invalid': errors.length }]">
     <div
-      ref="input"
+      ref="inputRef"
       :name="name"
       :id="`${name}Id`"
     ></div>
@@ -12,6 +12,7 @@
 import { ref, computed, inject, watch, defineComponent, onMounted, onUnmounted } from 'vue'
 import { useI18n } from '@src/composables'
 import CK from '@ckeditor/ckeditor5-build-balloon-block'
+import '@src/assets/scss/vendors/ckeditor5.css'
 
 export default defineComponent({
   props: {
@@ -21,38 +22,38 @@ export default defineComponent({
     errors: Array
   },
   setup(props, context) {
-    const input = ref()
+    const inputRef = ref()
     const { t, locale } = inject('i18n', useI18n()) 
-    const options = computed(() => ({
+    
+    let ckInstance: typeof CK;
+    const ckOptions = computed(() => ({
       locale: locale.value,
       placeholder: t(props.placeholder)
     }))
 
-    let CKInstance: typeof CK;
-
-    async function buildCK() {
-      CKInstance?.destroy()
-      CKInstance = await CK.create(input.value, options.value)
-      CKInstance.model.document.on( 'change:data', (ev: OnInputEvent) => {
-        context.emit('update', [ev, props.name, CKInstance?.getData() ])
+    async function ckBuild() {
+      ckInstance?.destroy()
+      ckInstance = await CK.create(inputRef.value, ckOptions.value)
+      ckInstance.model.document.on( 'change:data', (ev: OnInputEvent) => {
+        context.emit('update', [ev, props.name, ckInstance?.getData() ])
       });
     }
 
-    watch(() => locale.value, () => buildCK())
+    watch(() => locale.value, () => ckBuild())
 
-    onMounted(() => buildCK())
+    onMounted(() => ckBuild())
     
-    onUnmounted(() => CKInstance?.destroy())
+    onUnmounted(() => ckInstance.destroy())
     
     return {
-      input
+      inputRef
     }
   }
 })
 </script>
 
 <style lang="scss">
-.input\:editor {
-  margin-bottom: 2em;
-}
+  .input\:editor {
+    margin-bottom: 2em;
+  }
 </style>

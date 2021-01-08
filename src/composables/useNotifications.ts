@@ -1,7 +1,7 @@
 import { ref } from 'vue'
 
 // Notification messages store
-const notifications = ref([] as CustomNotification[])
+const list = ref([] as CustomNotification[])
 
 /**
  * Notification messages handler.
@@ -9,23 +9,23 @@ const notifications = ref([] as CustomNotification[])
 export const useNotifications = () => {
   // Dismisses a message by its index
   const dismiss = (index: number) => {
-    clearTimeout(notifications.value[index].timeout)
-    notifications.value.splice(index, 1)
+    clearTimeout(list.value[index].timeout)
+    list.value.splice(index, 1)
   }
 
   // Creates a notification cycle
   const notify = (notification: CustomNotification) => {
-    notifications.value.push(notification)
+    list.value.push(notification)
 
     // Notification cycle of 6 seconds
     notification.timeout = setTimeout(() => {
-      notifications.value.splice(notifications.value.indexOf(notification), 1)
+      list.value.splice(list.value.indexOf(notification), 1)
     }, 6000)
   }
 
   return {
+    list,
     notify,
-    dismiss,
-    notifications
+    dismiss
   }
 }

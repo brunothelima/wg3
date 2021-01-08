@@ -1,14 +1,3 @@
-<i18n>
-{
-  "en": {
-   "loading": "Loading..." 
-  },
-  "pt": {
-   "loading": "Carregando..." 
-  }
-}
-</i18n>
-
 <template>
   <div class="loader">
     <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 38 38" stroke="#fff">
@@ -23,21 +12,6 @@
     </svg>
   </div>
 </template>
-
-<script lang="ts">
-import { defineComponent } from "vue";
-import { useI18n } from "@src/composables";
-
-export default defineComponent({
-  setup() {
-    const { t } = useI18n()
-
-    return {
-      t
-    }
-  }
-})
-</script>
 
 <style lang="scss">
 .loader {

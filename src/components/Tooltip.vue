@@ -20,12 +20,12 @@
   </div>
 </template>
 
-<script>
-import { defineComponent } from "vue"
+<script lang="ts">  
+import { defineComponent, PropType } from "vue"
 
 export default defineComponent({
   props: {
-    direction: String
+    direction: String as PropType<'left' | 'center' | 'right'>
   }
 })
 </script>
