@@ -27,7 +27,7 @@ import { useI18n } from '@src/composables'
 export default defineComponent({
    props: {
     name: String,
-    value: String,
+    value: [String, Number],
     disabled: Boolean,
     errors: Array,
     options: Array as PropType<FormInputOption[]>
