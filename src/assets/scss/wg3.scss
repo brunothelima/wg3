@@ -18,3 +18,6 @@
     background: var(--color-b-3);
   }
 }
+
+@import './vendors/ckeditor5';
+@import './vendors/flatpickr';

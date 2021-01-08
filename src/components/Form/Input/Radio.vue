@@ -13,7 +13,7 @@
         :disabled="disabled"
         :value="option.value"
         :checked="option.value == value"
-        @input="$emit('update', [$event, name, input?.value])"
+        @input="$emit('update', [$event, name, option.value])"
       />
       <label :for="`${name}${index}Id`">{{ t(option.label) }}</label>
     </div>    
@@ -71,6 +71,7 @@ export default defineComponent({
   font-family: var(--icon-family);
   font-style: normal;
   cursor: pointer;
+  background-color: var(--color-x-11);
   &:before {
     content: "";
     width: 16px;

@@ -100,7 +100,7 @@
         "second": "Segunda opção"
       }
     },
-    "text": {
+    "textarea": {
       "label": "Campo de texto grande",
       "placeholder": "Digite aqui"
     },

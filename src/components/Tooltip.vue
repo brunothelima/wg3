@@ -53,10 +53,11 @@ export default defineComponent({
   display: block;
   background-color: var(--color-x-9);
   padding: 1em;
-  border-radius: var(--border-radius);
+  border-radius: var(--card-border-radius);
   box-shadow: var(--box-shadow-light);
   border: 1px solid var(--color-x-8);
   font-size: var(--font-size-xs);
+  line-height: 150%;
 }
 svg {
   position: relative;

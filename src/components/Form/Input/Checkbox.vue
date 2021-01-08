@@ -55,11 +55,12 @@ export default defineComponent({
   justify-content: center;
   height: 20px;
   width: 20px;
+  background-color: var(--color-x-11);
   border: 1px var(--input-border-style) var(--color-x-6);
   border-radius: 2px;
   font-family: var(--icon-family);
   font-style: normal;
-  color: white;
+  color: var(--color-x-11);
   cursor: pointer;
   &:before {
     content: "\e90c";

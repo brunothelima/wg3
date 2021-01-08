@@ -12,7 +12,6 @@
 import { ref, computed, inject, watch, defineComponent, onMounted, onUnmounted } from 'vue'
 import { useI18n } from '@src/composables'
 import CK from '@ckeditor/ckeditor5-build-balloon-block'
-import '@src/assets/scss/vendors/ckeditor5.css'
 
 export default defineComponent({
   props: {

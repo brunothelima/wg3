@@ -16,7 +16,7 @@
     "icons": "Ícones",    
     "text": "Texto",    
     "dialogs": "Alertas",    
-    "inputs": "Formulário",    
+    "form": "Formulário",    
     "images": "Imagens", 
     "tests": "Testes" 
   }

@@ -23,7 +23,6 @@ import { useI18n } from '@src/composables'
 import FP from 'flatpickr'
 import flatpickr from 'flatpickr'
 import 'flatpickr/dist/l10n/pt.js'
-import '@src/assets/scss/vendors/flatpickr.css';
 
 export default defineComponent({
   props: {
@@ -74,6 +73,24 @@ export default defineComponent({
   display: grid;
   grid-template-columns: 48px auto;
   margin-bottom: 0.5rem;
+
+  &::v-deep(.flatpickr-wrapper),
+  &::v-deep(input.flatpickr-mobile) {
+    grid-row: 1 / 2;
+    grid-column: 1 / 3;
+  }
+  &::v-deep(.flatpickr-calendar) {
+    &::after,
+    &::before {
+      border-bottom-color: var(--color-x-10);
+    }
+  }
+  &::v-deep(.flatpickr-calendar.arrowBottom) {
+    &::after,
+    &::before {
+      border-top-color: var(--color-x-10);
+    }
+  }
 }
 i {
   grid-row: 1 / 2;
@@ -82,23 +99,8 @@ i {
   justify-self: center;
   color: var(--color-x-5);
 }
-.input\:date::v-deep(.flatpickr-wrapper) {
-  grid-row: 1 / 2;
-  grid-column: 1 / 3;
-}
-.input\:date::v-deep(.flatpickr-calendar) {
-  &::after,
-  &::before {
-    border-bottom-color: var(--color-x-10);
-  }
-}
-.input\:date::v-deep(.flatpickr-calendar.arrowBottom) {
-  &::after,
-  &::before {
-    border-top-color: var(--color-x-10);
-  }
-}
-input {
+input,
+.input\:date::v-deep(.flatpickr-mobile) {
   width: 100%;
   box-sizing: border-box;
   padding: 1em 1em 1em 48px;
@@ -108,13 +110,13 @@ input {
   color: var(--color-x-3);
   outline: none;
   cursor: pointer;
-}
-input::placeholder {
-  color: var(--color-x-7);
-}
-input:focus {
-  border-color: var(--color-x-4);
-  box-shadow: 0 0 0 var(--input-border-width) var(--color-x-4);
+  &::placeholder {
+    color: var(--color-x-7);
+  }
+  &:focus {
+    border-color: var(--color-x-4);
+    box-shadow: 0 0 0 var(--input-border-width) var(--color-x-4);
+  }
 }
 .input\:date--invalid input {
   border-color: var(--color-error);

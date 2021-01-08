@@ -62,7 +62,7 @@ export default defineComponent({
     height: 20px;
     border-radius: 10px;
     transform: scale(1.2);
-    background: white;
+    background: var(--color-x-11);
     border: 1px solid var(--color-x-7);
   }
 }
