@@ -46,6 +46,12 @@ const schema = createForm({
     help: 'date.help',
     validations: { required }
   },
+  inputTextButton: {
+    type: 'text-button',
+    label: 'text.label',
+    placeholder: 'text.placeholder',
+    validations: { required }
+  },
   inputTextarea: {
     type: 'textarea',
     label: 'textarea.label',
@@ -79,7 +85,24 @@ const schema = createForm({
       { value: 2, label: 'radio.options.second' },
     ],
     validations: { required }
-  }
+  },
+  inputTextMagic: {
+    type: 'text-magic',
+    label: 'text.label',
+    placeholder: 'text.placeholder',
+    validations: { required }
+  },
+  inputSelectMagic: {
+    type: 'select-magic',
+    label: 'select.label',
+    placeholder: 'select.placeholder',
+    options: [
+      { value: 1, label: 'select.options.first' },
+      { value: 2, label: 'select.options.second' },
+      { value: 3, label: 'select.options.third' }
+    ],
+    validations: { required }
+  },
 })
 
 export default schema
