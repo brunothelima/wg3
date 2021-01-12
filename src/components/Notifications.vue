@@ -23,7 +23,7 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 ul {
   display: flex;
   align-items: center;
@@ -53,6 +53,21 @@ ul li {
   animation-duration: var(--transition-duration);
   animation-timing-function: var(--transition-timing-function);
   animation-fill-mode: forwards;
+  span {
+    padding-left: 0.5em;
+  }
+  i {
+    cursor: pointer;
+  }
+  &.error {
+    background-color: var(--color-error);
+  }
+  &.success {
+    background-color: var(--color-success);
+  }
+  &.warning {
+    background-color: var(--color-warning);
+  }
 }
 @keyframes bounce-in {
   from {
@@ -63,21 +78,5 @@ ul li {
     opacity: 1;
     transform: translateY(0) scale(1);
   }
-}
-ul li.error {
-  background-color: var(--color-error);
-}
-ul li.success {
-  background-color: var(--color-success);
-}
-ul li.warning {
-  background-color: var(--color-warning);
-}
-
-ul li span {
-  padding-left: 0.5em;
-}
-ul li i {
-  cursor: pointer;
 }
 </style>

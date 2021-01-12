@@ -22,8 +22,8 @@ declare interface FormInput {
   detail?: string
   errors?: string[]
   validations?: FormValidatorOption
-  events?: FormCustomEvents,
   messages?: I18nMessages
+  onUpdate?: onUpdateHandler
 }
 
 // INPUT TYPES
@@ -54,6 +54,14 @@ declare interface FormInputDate extends FormInput {
 declare interface FormInputCheckbox extends FormInput {
   title?: string
 }
+declare interface FormInputTextButton extends FormInputText {
+  button: FormInputTextButtonProps
+}
+declare interface FormInputTextButtonProps extends CustomButton {
+  onClick?: onUpdateHandler,
+  text?: string
+}
+
 declare type FormInputTypes =
   | FormInputText
   | FormInputSelect
@@ -61,6 +69,7 @@ declare type FormInputTypes =
   | FormInputMoney
   | FormInputCheckbox
   | FormInputTextarea
+  | FormInputTextButton
 
 // // SUPPORT TYPES
 declare interface FormInputOption {
@@ -68,15 +77,15 @@ declare interface FormInputOption {
   label: string
 }
 
-declare interface FormCustomEvents {
-  onUpdate?: FormOnUpdateHandler | undefined
-}
+// declare interface FormCustomEvents {
+  
+// }
 declare interface OnInputEvent extends InputEvent {
   target: HTMLInputElement
 }
 
-declare interface FormOnUpdateHandler {
-  (args: [inputEvent: OnInputEvent, inputName: string, inputValue: any]): void
+declare interface onUpdateHandler {
+  (args:[inputEvent: OnInputEvent, inputName: string, inputValue: any]): void
 }
 
 declare interface FormValidator {

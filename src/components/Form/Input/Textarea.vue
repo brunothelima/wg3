@@ -69,13 +69,13 @@ export default defineComponent({
       box-shadow: 0 0 0 var(--input-border-width) var(--color-x-4);
     }
   }
-}
-.input\:textarea--invalid {
-  textarea {
-    border-color: var(--color-error);
-  }
-  i {
-    color: var(--color-error);
+  &--invalid {
+    textarea {
+      border-color: var(--color-error);
+    }
+    i {
+      color: var(--color-error);
+    }
   }
 }
 </style>

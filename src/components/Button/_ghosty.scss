@@ -1,0 +1,20 @@
+.button\:ghosty {
+  position: relative;
+  padding: 0.8em 0.25em;
+  background-color: transparent;
+  border: none;
+  color: var(--color-x-1);
+  font-weight: 400;
+  &:not([disabled]):hover,
+  &:not([disabled]).button--hover {
+    color: var(--color-a-3);
+  }
+  &:not([disabled]):active,
+  &:not([disabled]).button--active {
+    color: var(--color-x-6);
+  }
+  &::v-deep(i),
+  &::v-deep(span) {
+    color: inherit;
+  }
+}

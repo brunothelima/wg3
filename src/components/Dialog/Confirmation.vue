@@ -85,38 +85,38 @@ header {
   align-items: center;
   background-color: var(--color-x-10);
   color: var(--color-x-6);
-}
-header span {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-}
-header i {
-  margin-right: 0.5em;
+  span {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  i {
+    margin-right: 0.5em;
+  }
 }
 
 footer {
   display: flex;
   border-top: var(--card-border-width) var(--card-border-style) var(--color-x-8);
-}
-footer button {
-  flex: 1;
-  padding: 1.313em;
-  background-color: transparent;
-  border: none;
-  color: var(--color-x-6);
-  font-size: var(--font-size-xl);
-  outline: none;
-  cursor: pointer;
-}
-footer button:hover {
-  background-color: var(--color-x-10);
-}
-footer button + button {
-  color: var(--color-error);
-  border-left: var(--card-border-width) var(--card-border-style) var(--color-x-8);
-}
-footer button[style*='color:'] {
-  font-weight: 700;
+  button {
+    flex: 1;
+    padding: 1.313em;
+    background-color: transparent;
+    border: none;
+    color: var(--color-x-6);
+    font-size: var(--font-size-xl);
+    outline: none;
+    cursor: pointer;
+    &:hover {
+      background-color: var(--color-x-10);
+    }
+    & + button {
+      color: var(--color-error);
+      border-left: var(--card-border-width) var(--card-border-style) var(--color-x-8);
+    }
+    &[style*='color:'] {
+      font-weight: 700;
+    }
+  }
 }
 </style>

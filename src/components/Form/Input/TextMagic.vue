@@ -4,6 +4,7 @@
       type="text"
       :name="name"
       :id="`${name}Id`" 
+      :value="value"
       :disabled="disabled"
       :readonly="readonly"
       :placeholder="t(placeholder)"
@@ -41,33 +42,36 @@ export default defineComponent({
   display: flex;
   margin-bottom: 0.5rem;
   flex: 1;
-}
-input {
-  width: 100%;
-  box-sizing: border-box;
-  padding: 0.5em 1em;
-  border-radius: var(--input-border-radius);
-  border: var(--input-border-width) var(--input-border-style) transparent;
-  background-color: transparent;
-  color: var(--color-x-3);
-  outline: none;
-}
-input::placeholder {
-  color: var(--color-x-7);
-}
-input:hover {
-  border-color: var(--color-x-8);
-}
-input:focus {
-  border-color: var(--color-x-4);
-  box-shadow: 0 0 0 var(--input-border-width) var(--color-x-4);
-  background-color: var(--color-x-11);
-}
-.input\:text-magic--invalid i,
-.input\:text-magic--invalid input {
-  color: var(--color-error);
-}
-.input\:text-magic--invalid input::placeholder {
-  color: var(--color-error);
+  
+  input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.5em 1em;
+    border-radius: var(--input-border-radius);
+    border: var(--input-border-width) var(--input-border-style) transparent;
+    background-color: transparent;
+    color: var(--color-x-3);
+    outline: none;
+    &::placeholder {
+      color: var(--color-x-7);
+    }
+    &:hover {
+      border-color: var(--color-x-8);
+    }
+    &:focus {
+      border-color: var(--color-x-4);
+      box-shadow: 0 0 0 var(--input-border-width) var(--color-x-4);
+      background-color: var(--color-x-11);
+    }
+  }
+  &--invalid {
+    i,
+    input {
+      color: var(--color-error);
+    }
+    input::placeholder {
+      color: var(--color-error);
+    }
+  } 
 }
 </style>

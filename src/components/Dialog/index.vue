@@ -29,7 +29,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .dialog {
   display: grid;
   overflow: auto;
@@ -39,29 +39,29 @@ export default {
   height: 100%;
   padding: 0 2em;
   box-sizing: border-box;
-}
-.dialog__mask {
-  z-index: 1;
-  grid-row: 1 / 2;
-  grid-column: 1 / 2;
-  background: var(--color-x-11);
-  opacity: 0.6;
-}
-.dialog__content {
-  position: relative;
-  grid-row: 1 / 2;
-  grid-column: 1 / 2;
-  align-self: center;
-  z-index: 2;
-  margin: 2em auto;
-}
-.dialog__content > [class*='dialog:'] {
-  opacity: 0;
-  animation-name: fade-in;
-  animation-duration: var(--transition-duration);
-  animation-delay: var(--transition-duration);
-  animation-timing-function: var(--transition-timing-function);
-  animation-fill-mode: forwards;
+  &__mask {
+    z-index: 1;
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+    background: var(--color-x-11);
+    opacity: 0.6;
+  }
+  &__content {
+    position: relative;
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+    align-self: center;
+    z-index: 2;
+    margin: 2em auto;
+    > [class*='dialog:'] {
+      opacity: 0;
+      animation-name: fade-in;
+      animation-duration: var(--transition-duration);
+      animation-delay: var(--transition-duration);
+      animation-timing-function: var(--transition-timing-function);
+      animation-fill-mode: forwards;
+    }
+  }
 }
 @keyframes fade-in {
   from {

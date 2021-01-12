@@ -51,8 +51,8 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss">
-  .input\:editor {
-    margin-bottom: 2em;
-  }
+<style>
+.input\:editor {
+  margin-bottom: 2em;
+}
 </style>

@@ -57,37 +57,37 @@ export default defineComponent({
   display: grid;
   grid-template-columns: 48px auto;
   margin-bottom: 0.5rem;
-}
-.input\:money__currency {
-  grid-row: 1 / 2;
-  grid-column: 1 / 2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--color-x-10);
-  font-weight: 600;
-  color: var(--color-a-1);
-  border-radius: var(--input-border-radius) 0 0 var(--input-border-radius);
-}
-input {
-  grid-row: 1 / 2;
-  grid-column: 1 / 3;
-  box-sizing: border-box;
-  padding: 1em 1em 1em calc(48px + 1em);
-  border-radius: var(--input-border-radius);
-  border: var(--input-border-width) var(--input-border-style) var(--color-x-8);
-  background-color: transparent;
-  color: var(--color-x-3);
-  outline: none;
-  &::placeholder {
-    color: var(--color-x-7);
+  &__currency {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-x-10);
+    font-weight: 600;
+    color: var(--color-a-1);
+    border-radius: var(--input-border-radius) 0 0 var(--input-border-radius);
   }
-  &:focus {
-    border-color: var(--color-x-4);
-    box-shadow: 0 0 0 var(--input-border-width) var(--color-x-4);
+  input {
+    grid-row: 1 / 2;
+    grid-column: 1 / 3;
+    box-sizing: border-box;
+    padding: 1em 1em 1em calc(48px + 1em);
+    border-radius: var(--input-border-radius);
+    border: var(--input-border-width) var(--input-border-style) var(--color-x-8);
+    background-color: transparent;
+    color: var(--color-x-3);
+    outline: none;
+    &::placeholder {
+      color: var(--color-x-7);
+    }
+    &:focus {
+      border-color: var(--color-x-4);
+      box-shadow: 0 0 0 var(--input-border-width) var(--color-x-4);
+    }
   }
-}
-.input\:money--invalid input {
-  border-color: var(--color-error);
+  &--invalid input {
+    border-color: var(--color-error);
+  }
 }
 </style>

@@ -13,13 +13,12 @@
   </div>
 </template>
 
-<style lang="scss">
+<style scoped>
 .loader {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  
   position: absolute;
   z-index: 99;
   left: 0;

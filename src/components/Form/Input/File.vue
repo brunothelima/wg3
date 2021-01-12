@@ -1,21 +1,17 @@
 <template>
-  <div :class="['input:file', { 'input:file--invalid': errors?.length }]">
-    <slot name="before" />
-    <div class="input:file__wrapper" @click="inputRef?.click()">
-      <input
-        ref="inputRef"
-        type="file"
-        :name="name"
-        :id="`${name}Id`"
-        :disabled="disabled"
-        :readonly="readonly"
-        @input="$emit('update', [ev, name, inputRef?.files?.[0]])"
-      />
-      <span class="input:file__selected" v-if="value">{{ value?.name }}</span>
-      <span class="input:file__placeholder" v-else>{{ t(placeholder) }}</span>
-      <i color="a" class="icon-upload" />
-    </div>
-    <slot name="after" />
+  <div :class="['input:file', { 'input:file--invalid': errors?.length }]" @click="inputRef?.click()">
+    <input
+      ref="inputRef"
+      type="file"
+      :name="name"
+      :id="`${name}Id`"
+      :disabled="disabled"
+      :readonly="readonly"
+      @input="$emit('update', [ev, name, inputRef?.files?.[0]])"
+    />
+    <span class="input:file__selected" v-if="value">{{ value?.name }}</span>
+    <span class="input:file__placeholder" v-else>{{ t(placeholder) }}</span>
+    <i color="a" class="icon-upload" />
   </div>
 </template>
 
@@ -44,16 +40,10 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .input\:file {
   display: flex;
-}
-input {
-  display: none;
-}
-.input\:file__wrapper {
   position: relative;
-  display: flex;
   overflow: hidden;
   box-sizing: border-box;
   width: 100%;
@@ -64,23 +54,26 @@ input {
   background-color: var(--color-x-11);
   outline: none;
   cursor: pointer;
-}
-.input\:file__selected,
-.input\:file__placeholder {
-  flex: 1;
-  padding-right: 1em;
-}
-.input\:file__selected {
-  color: var(--color-x-3);
-}
-.input\:file__placeholder {
-  color: var(--color-x-7);
-  opacity: 0.6;
-}
-.input\:file--invalid .input\:file__wrapper {
-  border-color: var(--color-error);
-}
-.input\:file--invalid i {
-  color: var(--color-error);
+  input {
+    display: none;
+  }
+  &__selected,
+  &__placeholder {
+    flex: 1;
+    padding-right: 1em;
+  }
+  &__selected {
+    color: var(--color-x-3);
+  }
+  &__placeholder {
+    color: var(--color-x-7);
+    opacity: 0.6;
+  }
+  &--invalid {
+    border-color: var(--color-error);
+    i {
+      color: var(--color-error);
+    }
+  }
 }
 </style>

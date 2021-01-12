@@ -46,10 +46,8 @@ export default defineComponent({
 .settings {
   display: flex;
   margin-left: -1em;
-  /* margin-bottom: 1em; */
 }
-.input\:select,
-a {
+.input\:select {
   margin-left: 1em;
   margin-bottom: 0;
 }

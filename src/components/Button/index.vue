@@ -1,9 +1,15 @@
 <template>
   <component
     data-test="button"
-    :is="skin || 'glassy'"
+    :is="tag || 'button'"
     :disabled="disabled"
-    :class="['button', `button--${size || 'medium'}`, { 'button--reverse': reverse }]"
+    :class="[
+      'button', 
+      `button:${skin || 'glassy'}`, 
+      `button--${size || 'medium'}`, 
+      { 'button--reverse': reverse },
+      { 'button--disabled': disabled }
+    ]"
   >
     <i data-test="icon" :class="icon" v-if="icon" />
     <span data-test="slot">
@@ -14,25 +20,20 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from 'vue'
-import Ghosty from './Ghosty.vue'
-import Glassy from './Glassy.vue'
 
 export default defineComponent({
   props: {
     icon: String,
-    size: String as PropType<'small' | 'medium' | 'large' >,
-    skin: String as PropType<'glassy' | 'ghosty'>,
     reverse: Boolean,
     disabled: Boolean,
-  },
-  components: {
-    Ghosty,
-    Glassy
+    skin: String as PropType<'glassy' | 'ghosty' | 'default'>,
+    tag: String as PropType<'a' | 'span' | 'button' | 'div'>,
+    size: String as PropType<'small' | 'medium' | 'large'>
   }
 })
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .button {
   overflow: hidden;
   display: flex;
@@ -42,36 +43,42 @@ export default defineComponent({
   font-size: inherit;
   outline: none;
   cursor: pointer;
+  i,
+  svg,
+  span {
+    display: inline-flex;
+  }
+  i {
+    font-size: 16px;
+  }
+  span {
+    text-decoration: none;
+  }
+  * ~ span {
+    margin: 0 0 0 1em;
+  }
+  &--disabled {
+    opacity: 0.24;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+  &--reverse {
+    flex-direction: row-reverse;
+  }
+  &--reverse * ~ span {
+    margin: 0 1em 0 0;
+  }
+  &--small {
+    font-size: var(--font-size-xs);
+    padding: 0.8em 1.5em;
+  }
+  &--large {
+    font-size: var(--font-size-xl);
+  }
 }
-.button[disabled] {
-  opacity: 0.24;
-  cursor: not-allowed;
-}
-.button i,
-.button svg,
-.button span {
-  display: inline-flex;
-}
-.button i {
-  font-size: 16px;
-}
-.button span {
-  text-decoration: none;
-}
-.button * ~ span {
-  margin: 0 0 0 1em;
-}
-.button--reverse {
-  flex-direction: row-reverse;
-}
-.button--reverse * ~ span {
-  margin: 0 1em 0 0;
-}
-.button--small {
-  font-size: var(--font-size-xs);
-  padding: 0.8em 1.5em;
-}
-.button--large {
-  font-size: var(--font-size-xl);
-}
+</style>
+
+<style lang="scss" scoped>
+  @import './_ghosty.scss';
+  @import './_glassy.scss';
 </style>

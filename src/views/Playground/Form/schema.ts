@@ -1,4 +1,4 @@
-import { createForm } from '@src/composables'
+import { createForm, useNotifications } from '@src/composables'
 import { required } from '@src/utils/validators'
 
 const schema = createForm({
@@ -6,7 +6,7 @@ const schema = createForm({
     type: 'text',
     label: 'text.label',
     placeholder: 'text.placeholder',
-    validations: { required }
+    validations: { required },
   },
   inputPassword: {
     type: 'password',
@@ -46,18 +46,24 @@ const schema = createForm({
     help: 'date.help',
     validations: { required }
   },
-  inputTextButton: {
-    type: 'text-button',
-    label: 'text.label',
-    placeholder: 'text.placeholder',
-    validations: { required }
-  },
   inputTextarea: {
     type: 'textarea',
     label: 'textarea.label',
     placeholder: 'textarea.placeholder',
     maxlength: 50,
     validations: { required }
+  },
+  inputTextButton: {
+    type: 'text-button',
+    label: 'text.label',
+    placeholder: 'text.placeholder',
+    validations: { required },
+    button: {
+      text: 'Click',
+      onClick([event, inputName, inputValue]) { 
+        schema.inputTextButton.value = 'Click! =)'
+      }
+    }
   },
   inputEditor: {
     type: 'editor',

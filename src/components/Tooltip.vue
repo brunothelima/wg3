@@ -1,10 +1,6 @@
 <template>
   <div :class="['tooltip', `tooltip--${direction}`]">
-    <svg
-      width="16px"
-      height="8px"
-      viewBox="0 0 16 8"
-    >
+    <svg width="16px" height="8px" viewBox="0 0 16 8">
       <g bstroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g transform="translate(-148.000000, 1.000000)">
           <g transform="translate(150.000000, 1.000000)">
@@ -30,7 +26,7 @@ export default defineComponent({
 })
 </script>
 
-<style>
+<style lang="scss" scoped>
 .tooltip {
   display: flex;
   flex-direction: column;
@@ -43,53 +39,56 @@ export default defineComponent({
   transform: translate(0, 0.5em);
   visibility: hidden;
   opacity: 0;
+  svg {
+    position: relative;
+    z-index: 2;
+    margin-bottom: -1px;
+  }
+  svg polygon {
+    fill: var(--color-x-9);
+  }
+  svg path {
+    stroke: var(--color-x-8);
+  }
+  &--left {
+    left: 0;
+  }
+  &--left svg {
+    align-self: flex-start;
+    margin-left: 1em;
+  }
+  &--center {
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+  &--center svg {
+    align-self: center;
+  }
+  &--right {
+    right: 0;
+  }
+  &--right svg {
+    align-self: flex-end;
+    margin-right: 1em;
+  }
+  &__content {
+    display: block;
+    background-color: var(--color-x-9);
+    padding: 1em;
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--box-shadow-light);
+    border: 1px solid var(--color-x-8);
+    font-size: var(--font-size-xs);
+    line-height: 150%;
+  }
 }
+</style>
+
+<style>
 *:hover > .tooltip {
   transform: translate(0, 0);
   visibility: visible;
   opacity: 1;
-}
-.tooltip__content {
-  display: block;
-  background-color: var(--color-x-9);
-  padding: 1em;
-  border-radius: var(--card-border-radius);
-  box-shadow: var(--box-shadow-light);
-  border: 1px solid var(--color-x-8);
-  font-size: var(--font-size-xs);
-  line-height: 150%;
-}
-svg {
-  position: relative;
-  z-index: 2;
-  margin-bottom: -1px;
-}
-svg polygon {
-  fill: var(--color-x-9);
-}
-svg path {
-  stroke: var(--color-x-8);
-}
-.tooltip--left {
-  left: 0;
-}
-.tooltip--left svg {
-  align-self: flex-start;
-  margin-left: 1em;
-}
-.tooltip--center {
-  left: 0;
-  right: 0;
-  margin: auto;
-}
-.tooltip--center svg {
-  align-self: center;
-}
-.tooltip--right {
-  right: 0;
-}
-.tooltip--right svg {
-  align-self: flex-end;
-  margin-right: 1em;
 }
 </style>

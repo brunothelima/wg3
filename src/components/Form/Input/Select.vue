@@ -55,17 +55,7 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
-select {
-  opacity: 0;
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
-}
+<style lang="scss" scoped>
 .input\:select {
   display: flex;
   margin-bottom: 0.5rem;
@@ -78,30 +68,40 @@ select {
   border: var(--input-border-width) var(--input-border-style) var(--color-x-8);
   background-color: var(--color-x-11);
   outline: none;
-}
-.input\:select__selected,
-.input\:select__placeholder {
-  padding: 1em 48px 1em 1em;
-  grid-row: 1 / 2;
-  grid-column: 1 / 3;
-}
-.input\:select__selected {
-  color: var(--color-x-3);
-}
-.input\:select__placeholder {
-  color: var(--color-x-7);
-  opacity: 0.6;
-}
-i {
-  grid-row: 1 / 2;
-  grid-column: 2 / 3;
-  align-self: center;
-  justify-self: center;
-}
-.input\:select--invalid {
-  border-color: var(--color-error);
-}
-.input\:select--invalid [class*='icon-'] {
-  color: var(--color-error);
+  select {
+    opacity: 0;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
+  i {
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+    align-self: center;
+    justify-self: center;
+  }
+  &__selected,
+  &__placeholder {
+    padding: 1em 48px 1em 1em;
+    grid-row: 1 / 2;
+    grid-column: 1 / 3;
+  }
+  &__selected {
+    color: var(--color-x-3);
+  }
+  &__placeholder {
+    color: var(--color-x-7);
+    opacity: 0.6;
+  }
+  &--invalid {
+    border-color: var(--color-error);
+    [class*='icon-'] {
+      color: var(--color-error);
+    }
+  }
 }
 </style>

@@ -13,13 +13,10 @@ export const createForm = (source: FormSchema) => {
       input.errors = []
     }
   }
-  return source
+  return reactive(source)
 }
 
-export const useForm = (source: FormSchema) => {
-  // Reactive schema from the given schema
-  const schema = reactive(source)
-
+export const useForm = (schema: FormSchema) => {
   /**
    * Computed variable, containing a reduced object
    * with the given schema inputs names as keys and
@@ -57,6 +54,12 @@ export const useForm = (source: FormSchema) => {
       .map((name) => ({ [name]: schema[name].errors || [] }))
       .reduce((prev, next) => ({ ...prev, ...next }))
   })
+
+  const update: onUpdateHandler = ([event, inputName, inputValue]) => {
+    console.log('form')
+    schema[inputName].errors = []
+    schema[inputName].value = inputValue
+  }
 
   /**
    * This function iterates over each schema input,
@@ -99,6 +102,7 @@ export const useForm = (source: FormSchema) => {
     data,
     schema,
     errors,
+    update,
     validate
   }
 }

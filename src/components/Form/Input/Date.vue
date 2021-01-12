@@ -6,6 +6,7 @@
       type="text"
       :name="name"
       :id="`${name}Id`"
+      :value="value"
       :readonly="readonly"
       :disabled="disabled"
       :placeholder="t(placeholder)"
@@ -72,7 +73,12 @@ export default defineComponent({
   display: grid;
   grid-template-columns: 48px auto;
   margin-bottom: 0.5rem;
-
+  i {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+    align-self: center;
+    justify-self: center;
+  }
   &::v-deep(.flatpickr-wrapper),
   &::v-deep(input.flatpickr-mobile) {
     grid-row: 1 / 2;
@@ -90,37 +96,31 @@ export default defineComponent({
       border-top-color: var(--color-x-10);
     }
   }
-}
-i {
-  grid-row: 1 / 2;
-  grid-column: 1 / 2;
-  align-self: center;
-  justify-self: center;
-  color: var(--color-x-5);
-}
-input,
-.input\:date::v-deep(.flatpickr-mobile) {
-  width: 100%;
-  box-sizing: border-box;
-  padding: 1em 1em 1em 48px;
-  border-radius: var(--input-border-radius);
-  border: var(--input-border-width) var(--input-border-style) var(--color-x-8);
-  background-color: transparent;
-  color: var(--color-x-3);
-  outline: none;
-  cursor: pointer;
-  &::placeholder {
-    color: var(--color-x-7);
+  input,
+  &::v-deep(.flatpickr-mobile) {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1em 1em 1em 48px;
+    border-radius: var(--input-border-radius);
+    border: var(--input-border-width) var(--input-border-style) var(--color-x-8);
+    background-color: transparent;
+    color: var(--color-x-3);
+    outline: none;
+    cursor: pointer;
+    &::placeholder {
+      color: var(--color-x-7);
+    }
+    &:focus {
+      border-color: var(--color-x-4);
+      box-shadow: 0 0 0 var(--input-border-width) var(--color-x-4);
+    }
   }
-  &:focus {
-    border-color: var(--color-x-4);
-    box-shadow: 0 0 0 var(--input-border-width) var(--color-x-4);
+  &--invalid input,
+  &--invalid::v-deep(.flatpickr-mobile) {
+    border-color: var(--color-error);
   }
-}
-.input\:date--invalid input {
-  border-color: var(--color-error);
-}
-.input\:date--invalid i {
-  color: var(--color-error);
+  &--invalid i {
+    color: var(--color-error);
+  }
 }
 </style>

@@ -59,35 +59,35 @@ export default defineComponent({
   input {
     display: none;
   }
-}
-.input\:radio__ui {
-  display: grid;
-  align-content: center;
-  justify-content: center;
-  height: 20px;
-  width: 20px;
-  border: 1px var(--input-border-style) var(--color-x-6);
-  border-radius: 10px;
-  font-family: var(--icon-family);
-  font-style: normal;
-  cursor: pointer;
-  background-color: var(--color-x-11);
-  &:before {
-    content: "";
-    width: 16px;
-    height: 16px;
-    border-radius: 8px;
-    background-color: var(--color-info);
-    opacity: 0;
+  &__ui {
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    height: 20px;
+    width: 20px;
+    border: 1px var(--input-border-style) var(--color-x-6);
+    border-radius: 10px;
+    font-family: var(--icon-family);
+    font-style: normal;
+    cursor: pointer;
+    background-color: var(--color-x-11);
+    &:before {
+      content: "";
+      width: 16px;
+      height: 16px;
+      border-radius: 8px;
+      background-color: var(--color-info);
+      opacity: 0;
+    }
+    &:hover {
+      border-color: var(--color-info);
+    }
   }
-  &:hover {
+  &__option--checked .input\:radio__ui {
     border-color: var(--color-info);
-  }
-}
-.input\:radio__option--checked .input\:radio__ui {
-  border-color: var(--color-info);
-  &:before {
-    opacity: 1;
+    &:before {
+      opacity: 1;
+    }
   }
 }
 </style>

@@ -65,33 +65,33 @@ export default defineComponent({
   background-color: var(--color-x-11);
   border: var(--input-border-width) var(--input-border-style) transparent;
   outline: none;
-}
-select {
-  opacity: 0;
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
-}
-.input\:select-magic:hover {
-  border-color: var(--color-x-8);
+  select {
+    opacity: 0;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
+  &:hover {
+    border-color: var(--color-x-8);
+  }
+  &__selected,
+  &__placeholder {
+    display: block;
+    padding: 0.5em 1em;
+  }
+  &__selected {
+    color: var(--color-x-3);
+  }
+  &__placeholder {
+    color: var(--color-x-7);
+  }
+  &--invalid {
+    border-color: var(--color-error);
+  }
 }
 
-.input\:select-magic__selected,
-.input\:select-magic__placeholder {
-  display: block;
-  padding: 0.5em 1em;
-}
-.input\:select-magic__selected {
-  color: var(--color-x-3);
-}
-.input\:select-magic__placeholder {
-  color: var(--color-x-7);
-}
-.input\:select-magic--invalid {
-  border-color: var(--color-error);
-}
 </style>

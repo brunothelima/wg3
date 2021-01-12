@@ -26,7 +26,7 @@ export default defineComponent({
     smart: Boolean
   },
   setup(props) {
-    const imageRef = ref<HTMLImageElement>()
+    const imageRef = ref<HTMLImageElement>(new Image())
 
     const imageSrc = computed(() => {
       const src = new URL(`${import.meta.env.VITE_API_URL}/image`)
@@ -37,8 +37,6 @@ export default defineComponent({
     })
     
     const imageOnload = () => {
-      if (!imageRef.value) return
-
       imageRef.value.style.maxWidth = 
         `${imageRef.value.naturalWidth}px`
     }
@@ -52,7 +50,7 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 figure {
   overflow: hidden;
   display: flex;
@@ -61,13 +59,13 @@ figure {
   background-color: var(--color-x-9);
   align-items: center;
   justify-content: center;
-}
-img {
-  display: block;
-  object-fit: contain;
-}
-figcaption {
-  padding: 1em;
-  align-self: flex-start;
+  img {
+    display: block;
+    object-fit: contain;
+  }
+  figcaption {
+    padding: 1em;
+    align-self: flex-start;
+  }
 }
 </style>

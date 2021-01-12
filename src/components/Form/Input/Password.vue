@@ -44,44 +44,46 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .input\:text {
   display: flex; 
   flex: 1;
   display: grid;
   grid-template-columns: auto 48px;
-}
-input {
-  width: 100%;
-  box-sizing: border-box;
-  padding: 1em;
-  border-radius: var(--input-border-radius);
-  border: var(--input-border-width) var(--input-border-style) var(--color-x-8);
-  background-color: var(--color-x-11);
-  color: var(--color-x-3);
-  outline: none;
-  grid-column: 1 / 3;
-  grid-row: 1 / 2;
-}
-i {
-  padding: 0.25em;
-  align-self: center;
-  justify-self: center;
-  grid-column: 2 / 3;
-  grid-row: 1 / 2;
-  cursor: pointer;
-}
-input::placeholder {
-  color: var(--color-x-7);
-}
-input:focus {
-  border-color: var(--color-x-4);
-  box-shadow: 0 0 0 var(--input-border-width) var(--color-x-4);
-}
-.input\:password--invalid input {
-  border-color: var(--color-error);
-}
-.input\:password--invalid i {
-  border-color: var(--color-error);
+  input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1em;
+    border-radius: var(--input-border-radius);
+    border: var(--input-border-width) var(--input-border-style) var(--color-x-8);
+    background-color: var(--color-x-11);
+    color: var(--color-x-3);
+    outline: none;
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+    &::placeholder {
+      color: var(--color-x-7);
+    }
+    &:focus {
+      border-color: var(--color-x-4);
+      box-shadow: 0 0 0 var(--input-border-width) var(--color-x-4);
+    }
+  }
+  i {
+    padding: 0.25em;
+    align-self: center;
+    justify-self: center;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    cursor: pointer;
+  }
+  &--invalid {
+    input {
+      border-color: var(--color-error);
+    }
+    i {
+      border-color: var(--color-error);
+    }
+  } 
 }
 </style>

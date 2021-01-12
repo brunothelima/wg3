@@ -48,33 +48,33 @@ export default defineComponent({
   input {
     display: none;
   }
-}
-.input\:checkbox__ui {
-  display: grid;
-  align-content: center;
-  justify-content: center;
-  height: 20px;
-  width: 20px;
-  background-color: var(--color-x-11);
-  border: 1px var(--input-border-style) var(--color-x-6);
-  border-radius: 2px;
-  font-family: var(--icon-family);
-  font-style: normal;
-  color: var(--color-x-11);
-  cursor: pointer;
-  &:before {
-    content: "\e90c";
-    opacity: 0;
+  &__ui {
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    height: 20px;
+    width: 20px;
+    background-color: var(--color-x-11);
+    border: 1px var(--input-border-style) var(--color-x-6);
+    border-radius: 2px;
+    font-family: var(--icon-family);
+    font-style: normal;
+    color: var(--color-x-11);
+    cursor: pointer;
+    &:before {
+      content: "\e90c";
+      opacity: 0;
+    }
+    &:hover {
+      border-color: var(--color-info);
+    }
   }
-  &:hover {
+  &--checked .input\:checkbox__ui {
     border-color: var(--color-info);
-  }
-}
-.input\:checkbox--checked .input\:checkbox__ui {
-  border-color: var(--color-info);
-  background-color: var(--color-info);
-  &:before {
-    opacity: 1;
+    background-color: var(--color-info);
+    &:before {
+      opacity: 1;
+    }
   }
 }
 </style>
