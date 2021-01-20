@@ -55,12 +55,6 @@ export const useForm = (schema: FormSchema) => {
       .reduce((prev, next) => ({ ...prev, ...next }))
   })
 
-  const update: onUpdateHandler = ([event, inputName, inputValue]) => {
-    console.log('form')
-    schema[inputName].errors = []
-    schema[inputName].value = inputValue
-  }
-
   /**
    * This function iterates over each schema input,
    * validating their values with their specified validators.
@@ -102,7 +96,6 @@ export const useForm = (schema: FormSchema) => {
     data,
     schema,
     errors,
-    update,
     validate
   }
 }

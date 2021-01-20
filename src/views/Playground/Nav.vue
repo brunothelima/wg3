@@ -7,6 +7,7 @@
     "text": "Text",    
     "dialogs": "Dialogs",
     "form": "Form",    
+    "editor": "Editor",    
     "images": "Images",    
     "tests": "Tests" 
   },
@@ -17,6 +18,7 @@
     "text": "Texto",    
     "dialogs": "Alertas",    
     "form": "Formulário",    
+    "editor": "Editor",
     "images": "Imagens", 
     "tests": "Testes" 
   }
@@ -33,6 +35,7 @@
       <li><router-link to="text">{{ t('text') }}</router-link></li>
       <li><router-link to="dialogs">{{ t('dialogs') }}</router-link></li>
       <li><router-link to="form">{{ t('form') }}</router-link></li>
+      <li><router-link to="editor">{{ t('editor') }}</router-link></li>
       <li><router-link to="images">{{ t('images') }}</router-link></li>
       <li><router-link to="tests">{{ t('tests') }}</router-link></li>
     </ul>

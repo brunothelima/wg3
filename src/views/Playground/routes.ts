@@ -7,6 +7,7 @@ export default {
     { path: 'colors', component: () => import('@src/views/Playground/Colors/index.vue') },
     { path: 'dialogs', component: () => import('@src/views/Playground/Dialogs/index.vue') },
     { path: 'form', component: () => import('@src/views/Playground/Form/index.vue') },
+    { path: 'editor', component: () => import('@src/views/Playground/Editor/index.vue') },
     { path: 'images', component: () => import('@src/views/Playground/Images.vue') },
     { path: 'text', component: () => import('@src/views/Playground/Text/index.vue') },
     { path: 'tests', component: () => import('@src/views/Playground/Tests.vue') }

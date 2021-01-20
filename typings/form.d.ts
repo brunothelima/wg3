@@ -23,7 +23,7 @@ declare interface FormInput {
   errors?: string[]
   validations?: FormValidatorOption
   messages?: I18nMessages
-  onUpdate?: onUpdateHandler
+  onUpdate?: OnUpdateHandler
 }
 
 // INPUT TYPES
@@ -58,7 +58,7 @@ declare interface FormInputTextButton extends FormInputText {
   button: FormInputTextButtonProps
 }
 declare interface FormInputTextButtonProps extends CustomButton {
-  onClick?: onUpdateHandler,
+  onClick?: OnUpdateHandler,
   text?: string
 }
 
@@ -84,7 +84,7 @@ declare interface OnInputEvent extends InputEvent {
   target: HTMLInputElement
 }
 
-declare interface onUpdateHandler {
+declare interface OnUpdateHandler {
   (args:[inputEvent: OnInputEvent, inputName: string, inputValue: any]): void
 }
 

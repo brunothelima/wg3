@@ -6,8 +6,8 @@ const locale = ref<'pt' | 'en'>(cache )
 
 // Resets cache with new locale value
 // Updates the html tag "lang" attr
-watch(locale, (payload: string) => {
-  localStorage.setItem('wg3.locale', payload)
+watch(locale, (language: string) => {
+  localStorage.setItem('wg3.locale', language)
   document.documentElement.lang = locale.value
 })
 

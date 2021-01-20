@@ -35,6 +35,7 @@
   },
   "dependencies": {
     "@ckeditor/ckeditor5-build-balloon-block": "^24.0.0",
+    "@ckeditor/ckeditor5-build-classic": "^24.0.0",
     "flatpickr": "^4.6.9",
     "moment": "^2.29.1",
     "validator": "^13.5.2",

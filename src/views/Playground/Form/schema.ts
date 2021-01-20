@@ -65,10 +65,21 @@ const schema = createForm({
       }
     }
   },
-  inputEditor: {
-    type: 'editor',
-    label: 'editor.label',
-    placeholder: 'editor.placeholder',
+  inputTextMagic: {
+    type: 'text-magic',
+    label: 'text.label',
+    placeholder: 'text.placeholder',
+    validations: { required }
+  },
+  inputSelectMagic: {
+    type: 'select-magic',
+    label: 'select.label',
+    placeholder: 'select.placeholder',
+    options: [
+      { value: 1, label: 'select.options.first' },
+      { value: 2, label: 'select.options.second' },
+      { value: 3, label: 'select.options.third' }
+    ],
     validations: { required }
   },
   inputCheckbox: {
@@ -89,23 +100,6 @@ const schema = createForm({
     options: [
       { value: 1, label: 'radio.options.first' },
       { value: 2, label: 'radio.options.second' },
-    ],
-    validations: { required }
-  },
-  inputTextMagic: {
-    type: 'text-magic',
-    label: 'text.label',
-    placeholder: 'text.placeholder',
-    validations: { required }
-  },
-  inputSelectMagic: {
-    type: 'select-magic',
-    label: 'select.label',
-    placeholder: 'select.placeholder',
-    options: [
-      { value: 1, label: 'select.options.first' },
-      { value: 2, label: 'select.options.second' },
-      { value: 3, label: 'select.options.third' }
     ],
     validations: { required }
   },

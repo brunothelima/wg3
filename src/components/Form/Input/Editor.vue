@@ -21,7 +21,7 @@ export default defineComponent({
     errors: Array
   },
   setup(props, context) {
-    const inputRef = ref()
+    const inputRef = ref<HTMLElement>()
     const { t, locale } = inject('i18n', useI18n()) 
     
     let ckInstance: typeof CK;
@@ -34,7 +34,7 @@ export default defineComponent({
       ckInstance?.destroy()
       ckInstance = await CK.create(inputRef.value, ckOptions.value)
       ckInstance.model.document.on( 'change:data', (ev: OnInputEvent) => {
-        context.emit('update', [ev, props.name, ckInstance?.getData() ])
+        context.emit('update', [ev, props.name, ckInstance?.getData()])
       });
     }
 
@@ -54,5 +54,9 @@ export default defineComponent({
 <style>
 .input\:editor {
   margin-bottom: 2em;
+  padding-left: 60px;
 }
+/* .input\:editor [data-placeholder] {
+  font-size: var(--fornt-size-h1)
+} */
 </style>

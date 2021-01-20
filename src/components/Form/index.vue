@@ -3,7 +3,7 @@
     <pre>{{data}}</pre><br><br><br>
     <div class="form__grid">
       <Field v-for="[name, input] in entries" :key="name" :input="input" :id="`${name}Id`">
-        <component v-bind="input" @update="update" :is="`input-${input.type}`" :name="name"/>
+        <component :is="`input-${input.type}`" v-bind="input" :name="name" @update="onUpdateHandler"/>
       </Field>
     </div>
     <slot />
@@ -15,7 +15,7 @@ import { computed, provide, defineComponent, defineAsyncComponent, PropType } fr
 import { useForm, useI18n } from '@src/composables/'
 
 import Field from './Field.vue'
-import * as InputCollection from './Input'
+import * as Inputs from './Input'
 
 export default defineComponent({
   props: {
@@ -24,12 +24,17 @@ export default defineComponent({
   },
   components: {
     Field,
-    ...InputCollection
+    ...Inputs
   },
   setup(props, context) {
     provide('i18n', useI18n(props.messages))
-    const { schema, data, validate, update } = useForm(props.schema || {})
+    const { schema, data, validate } = useForm(props.schema || {})
     const entries = computed(() => Object.entries(schema))
+
+    const onUpdateHandler: OnUpdateHandler = ([event, inputName, inputValue]) => { 
+      schema[inputName].errors = []
+      schema[inputName].value = inputValue
+    }
 
     const onSubmitHandler = async (event: Event) => {
       event.preventDefault()
@@ -46,7 +51,7 @@ export default defineComponent({
     return {
       data,
       entries,
-      update,
+      onUpdateHandler,
       onSubmitHandler
     }
   }
