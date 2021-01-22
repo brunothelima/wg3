@@ -1,6 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { glob2Routes } from '@src/utils'
 
+const playgroundRoutes = glob2Routes( 
+  '/playground',
+  import.meta.glob('./Pages/Playground/*.vue'),
+  import.meta.glob('./Pages/Playground/*/index.vue')
+)
+
 const router = createRouter({
   history: createWebHistory(),
   scrollBehavior: () => ({ top: 0 }),
@@ -12,11 +18,7 @@ const router = createRouter({
     { 
       path: '/playground',  
       component: () => import('@src/pages/Playground/index.vue'),
-      children: glob2Routes( 
-        '/playground',
-        import.meta.glob('./Pages/Playground/*.vue'),
-        import.meta.glob('./Pages/Playground/*/index.vue')
-      )
+      children: playgroundRoutes 
     }
   ],
 })

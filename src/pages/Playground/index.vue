@@ -46,20 +46,15 @@ export default defineComponent({
   margin: auto;
   padding: 5vh 0;
 }
-
 .fade-enter-active {
   opacity: 1;
   transition: all 0.5s ease;
 }
-
 .fade-enter-from,
 .fade-leave-to,
 .fade-leave-active {
   opacity: 0;
 }
- 
-
-
 @keyframes fade {
   0% {
     opacity: 0;
