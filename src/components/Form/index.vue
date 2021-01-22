@@ -13,7 +13,7 @@
 <script lang="ts">
 import { computed, provide, defineComponent, PropType } from 'vue'
 import { useForm, useI18n } from '@src/composables/'
-import { glob2Component } from '@src/utils/'
+import { glob2Components } from '@src/utils/'
 
 import Field from './Field.vue'
 
@@ -24,7 +24,7 @@ export default defineComponent({
   },
   components: {
     Field,
-    ...glob2Component(
+    ...glob2Components(
       import.meta.glob('./Input/**.vue')
     )
   },
