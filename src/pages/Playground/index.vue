@@ -18,7 +18,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import Nav from './Nav.vue'
+import Nav from '../Nav.vue'
 import Loader from '@src/components/Loader.vue'
 
 export default defineComponent({

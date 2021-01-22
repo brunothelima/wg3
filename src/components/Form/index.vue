@@ -3,7 +3,7 @@
     <pre>{{data}}</pre><br><br><br>
     <div class="form__grid">
       <Field v-for="[name, input] in entries" :key="name" :input="input" :id="`${name}Id`">
-        <component :is="`input-${input.type}`" v-bind="input" :name="name" @update="onUpdateHandler"/>
+        <component :is="`${input.type}`" v-bind="input" :name="name" @update="onUpdateHandler"/>
       </Field>
     </div>
     <slot />
@@ -11,11 +11,11 @@
 </template>
 
 <script lang="ts">
-import { computed, provide, defineComponent, defineAsyncComponent, PropType } from 'vue'
+import { computed, provide, defineComponent, PropType } from 'vue'
 import { useForm, useI18n } from '@src/composables/'
+import { glob2Component } from '@src/utils/'
 
 import Field from './Field.vue'
-import * as Inputs from './Input'
 
 export default defineComponent({
   props: {
@@ -24,7 +24,9 @@ export default defineComponent({
   },
   components: {
     Field,
-    ...Inputs
+    ...glob2Component(
+      import.meta.glob('./Input/**.vue')
+    )
   },
   setup(props, context) {
     provide('i18n', useI18n(props.messages))
@@ -32,8 +34,8 @@ export default defineComponent({
     const entries = computed(() => Object.entries(schema))
 
     const onUpdateHandler: OnUpdateHandler = ([event, inputName, inputValue]) => { 
-      schema[inputName].errors = []
       schema[inputName].value = inputValue
+      schema[inputName].errors = []
     }
 
     const onSubmitHandler = async (event: Event) => {
