@@ -26,6 +26,7 @@ export const glob2Components = (...args: any) => {
 
 export const glob2Routes = (indexPath: string, ...args: any) => {
   const components = glob2Components(...args)
+  
   const routes: any = {
     path: indexPath,
     component: components.index,
