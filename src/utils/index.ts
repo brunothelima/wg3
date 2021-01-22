@@ -21,12 +21,13 @@ export const glob2Components = (...args: any) => {
 }
 
 // Creates a route list based on file structure from glob arguments
-export const glob2Routes = (urlPrefix: string, ...args: any) => {
+// Todo: make it camelCase sensitive on path definition
+export const glob2Routes = (routePrefix: string, ...args: any) => {
   const routes = []
   const components = glob2Components(...args)
   for (let componentName in components) {
     routes.push({
-      path: `${urlPrefix}/${componentName.toLowerCase()}`,
+      path: `${routePrefix}/${componentName.toLowerCase()}`,
       component: components[componentName]
     })
   }
