@@ -5,9 +5,7 @@
       <Suspense>
         <template #default>
           <router-view v-slot="{ Component }">
-            <transition name="fade">
-              <component :is="Component" />
-            </transition>
+            <transition name="fade"><component :is="Component" /></transition>
           </router-view>
         </template>
         <template #fallback><Loader /></template>
@@ -18,7 +16,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import Nav from '../Nav.vue'
+import Nav from '@src/pages/Nav.vue'
 import Loader from '@src/components/Loader.vue'
 
 export default defineComponent({

@@ -19,21 +19,15 @@ export const glob2Components = (...args: any) => {
   return components
 }
 
-export const glob2Routes = (indexPath: string, ...args: any) => {
+export const glob2Routes = (urlPrefix: string, ...args: any) => {
+  const routes = []
   const components = glob2Components(...args)
-
-  const routes: any = {
-    path: indexPath,
-    component: components.index,
-    children: []
-  }
-
   for (let componentName in components) {
-    routes.children.push({
-      path: `${indexPath}/${componentName.toLowerCase()}`,
+    routes.push({
+      path: `${urlPrefix}/${componentName.toLowerCase()}`,
       component: components[componentName]
     })
   }
-
+  console.log(routes);
   return routes
 }
