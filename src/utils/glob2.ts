@@ -1,3 +1,4 @@
+import { cpuUsage } from 'process'
 import { defineAsyncComponent } from 'vue'
 
 // Creates a .vue component collection, using their file names template tag ref
@@ -17,18 +18,21 @@ export const glob2Components = (...args: any) => {
       () => globs[componentPath]()
     )
   }
+
   return components
 }
 
 // Creates a route list based on file structure from glob arguments
-// Todo: make it camelCase sensitive on path definition
-export const glob2Routes = (routePrefix: string, ...args: any) => {
+export const glob2Routes = (routeIndex: string, ...args: any) => {
   const routes = []
   const components = glob2Components(...args)
 
-  for (let componentName in components) {
+  for (let componentName in components) {    
+    let routePath = componentName.replace(/([a-z])([A-Z])/g, '$1 $2')
+    routePath = routePath.replace(' ', '-').toLowerCase()
+
     routes.push({
-      path: `${routePrefix}/${componentName.toLowerCase()}`,
+      path: `${routeIndex}/${routePath}`,
       component: components[componentName]
     })
   }
