@@ -18,8 +18,8 @@ export const createForm = (source: FormSchema) => {
 
 export const useForm = (schema: FormSchema) => {
   /**
-   * Computed variable, containing a reduced object
-   * with the given schema inputs names as keys and
+   * Computed variable containing a reduced object
+   * with the given schema input names as keys and
    * the inputs current values as the keys values,
    *
    * console.log(data);

@@ -1,6 +1,6 @@
 <template>
   <form data-test="form" @submit="onSubmitHandler" class="form">
-    <pre>{{data}}</pre><br><br><br>
+    <!-- <pre>{{data}}</pre><br><br><br> -->
     <div class="form__grid">
       <Field v-for="[name, input] in entries" :key="name" :input="input" :id="`${name}Id`">
         <component :is="`${input.type}`" v-bind="input" :name="name" @update="onUpdateHandler"/>
@@ -34,13 +34,15 @@ export default defineComponent({
     const entries = computed(() => Object.entries(schema))
 
     const onUpdateHandler: OnUpdateHandler = ([event, inputName, inputValue]) => { 
-      schema[inputName].value = inputValue
-      schema[inputName].errors = []
+      let input = schema[inputName]
+      input.value = inputValue
+      input.errors = []
     }
 
     const onSubmitHandler = async (event: Event) => {
       event.preventDefault()
-      const isFormValid = await validate()
+      
+      let isFormValid = await validate()
 
       if (isFormValid) {
         context.emit('success', data)
