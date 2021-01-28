@@ -2,14 +2,9 @@
   <div class="playground">
     <Nav />
     <main>
-      <Suspense>
-        <template #default>
-          <router-view v-slot="{ Component }">
-            <transition name="fade"><component :is="Component" /></transition>
-          </router-view>
-        </template>
-        <template #fallback><Loader /></template>
-      </Suspense>
+      <router-view v-slot="{ Component }">
+        <transition name="fade"><component :is="Component" /></transition>
+      </router-view>
     </main>
   </div>
 </template>

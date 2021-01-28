@@ -1,8 +1,5 @@
-import v from 'validator'
-
-const validator: FormValidator = {
+export default {
   message: 'This input is required',
-  handler: (value: any) => v.isEmpty(String(value))
-}
+  handler: (value: any) => String(value).length < 1
+} as FormValidator
 
-export default validator

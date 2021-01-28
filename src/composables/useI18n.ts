@@ -41,7 +41,6 @@ export const useI18n = (messages: I18nMessages = {}) => {
    * 
    * t('hello') // Hello there!
    * t('path.that.dont.exists') // path.that.dont.exists
-   * 
    */
   const t = (path: string = '') => {
     const resource = messages[locale.value] || self

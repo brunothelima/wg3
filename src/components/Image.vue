@@ -11,13 +11,13 @@
 import { computed, ref, defineProps } from 'vue'
 
 const props = defineProps<{
-  w: number, // Width
-  h: number, // Height
-  x: number, // Focal point x coord
-  y: number, // Focal point y coord
+  w?: number, // Width
+  h?: number, // Height
+  x?: number, // Focal point x coord
+  y?: number, // Focal point y coord
   src: string, // Source path
-  ratio: string, // Size ratios
-  smart: boolean // Use smartcrop
+  ratio?: string, // Size ratios
+  smart?: boolean // Use smartcrop
 }>()
 
 const imageRef = ref()

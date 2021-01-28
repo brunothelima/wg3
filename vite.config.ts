@@ -32,6 +32,6 @@ export default defineConfig({
     }
   },
   optimizeDeps: {
-    include: ['validator', 'flatpickr', '@ckeditor/ckeditor5-build-balloon-block']
+    include: ['flatpickr', '@ckeditor/ckeditor5-build-balloon-block']
   },
 })

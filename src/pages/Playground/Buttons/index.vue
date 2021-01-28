@@ -22,8 +22,8 @@
     <h1>{{ t('title') }}</h1>
     <hr />
     <div class="text"></div>
-    <GhostyExample />
     <GlassyExample />
+    <GhostyExample />
   </section>
 </template>
 
