@@ -1,33 +1,47 @@
 import { getCurrentInstance, ref, watch } from 'vue'
 
 // Initializing locale ref with cached language or default
-const cache = localStorage.getItem('wg3.locale') as 'pt' | 'en' || 'en'
-const locale = ref<'pt' | 'en'>(cache )
+const cache = sessionStorage.getItem('wg3.locale') as I18nLocales || 'en'
+const locale = ref(cache)
 
-// Resets cache with new locale value
-// Updates the html tag "lang" attr
-watch(locale, (language: string) => {
-  localStorage.setItem('wg3.locale', language)
+// Updates the locale cache value and the document lang attr
+watch(locale, (language: I18nLocales) => {
+  sessionStorage.setItem('wg3.locale', language)
   document.documentElement.lang = locale.value
 })
 
-// Setting the initial value for the html tag "lang" attr
-document.documentElement.lang = locale.value
-
 /**
- * Translation composable, exports a translator function
- * from a given resource(json) or i18n custom block
+ * This composable will recieve a I18nMessages object/json,
+ * and export a translator (t) function for any given path
+ * that matches the messages
  */
 export const useI18n = (messages: I18nMessages = {}) => {
-  const instance = getCurrentInstance()
+  const component = getCurrentInstance()
+  
   // Extrancting messages from the i18n custom block
-  if (instance && 'i18n' in instance.type) {
-    messages = instance.type.i18n
+  if (component && ('i18n' in component.type)) {
+    messages = component.type.i18n
   }
 
   /**
-   * Querys through the messages json for a given path.
-   * Returns the key value if it is found or the given path on fail
+   * This function querys through the i18nMessages and returns
+   * the matched key value from a given path string. If no key is matched, 
+   * it will return the path string as the query result
+   
+   * for example:
+   * 
+   * locale.value = 'en'
+   * 
+   * messages = {
+   *   "en": { "hello":"hello": "Hello there!"  }
+   *   "pt": { "hello": "Ei, você aí!" }
+   * }
+   * 
+   * const { t } = useI18n(messages)
+   * 
+   * t('hello') // Hello there!
+   * t('path.that.dont.exists') // path.that.dont.exists
+   * 
    */
   const t = (path: string = '') => {
     const resource = messages[locale.value] || self

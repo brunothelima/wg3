@@ -15,29 +15,21 @@
   </div>
 </template>
 
-<script lang="ts">
-import { ref, inject, defineComponent, PropType } from 'vue'
+<script lang="ts" setup>
+import { ref, inject, defineProps } from 'vue'
 import { useI18n } from '@src/composables'
 
-export default defineComponent({
-   props: {
-    name: String,
-    placeholder: String,
-    disabled: Boolean,
-    readonly: Boolean,
-    errors: Array,
-    value: [String, Object] as PropType<File | ''>
-  },
-  setup(props, context) {
-    const inputRef = ref<HTMLInputElement>()
-    const { t } = inject('i18n', useI18n()) 
+const props = defineProps<{
+  name?: string,
+  placeholder?: string,
+  disabled?: boolean,
+  readonly?: boolean,
+  errors?: string[],
+  value?: File
+}>()
 
-    return {
-      t,
-      inputRef
-    }
-  }
-})
+const inputRef = ref()
+const { t } = inject('i18n', useI18n()) 
 </script>
 
 <style lang="scss" scoped>

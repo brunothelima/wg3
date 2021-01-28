@@ -17,34 +17,26 @@
   </div>
 </template>
 
-<script lang="ts">
-import { ref, inject, defineComponent, PropType } from 'vue'
+<script lang="ts" setup>
+import { ref, inject, defineAsyncComponent, defineProps } from 'vue'
 import { useI18n } from '@src/composables'
-import Button from '@src/components/Button/index.vue'
 
-export default defineComponent({
-  components: { 
-    Button 
-  },
-  props: {
-    name: String,
-    value: [String, Number],
-    placeholder: String,
-    disabled: Boolean,
-    readonly: Boolean,
-    errors: Array,
-    button: Object as PropType<FormInputTextButtonProps>
-  },
-  setup(props, context) {
-    const inputRef = ref<HTMLInputElement>()
-    const { t } = inject('i18n', useI18n()) 
-    
-    return {
-      inputRef,
-      t
-    }
-  }
-})
+const Button = defineAsyncComponent(
+  () => import('@src/components/Button/index.vue')
+) 
+
+const props = defineProps<{
+  name?: string,
+  value?: string | number
+  placeholder?: string,
+  disabled?: boolean,
+  readonly?: boolean,
+  errors?: string[],
+  button?: FormInputTextButtonProps
+}>()
+
+const inputRef = ref()
+const { t } = inject('i18n', useI18n()) 
 </script>
 
 <style lang="scss" scoped>

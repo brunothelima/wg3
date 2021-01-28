@@ -53,19 +53,15 @@
   </section>
 </template>
 
-<script>
-import { defineComponent } from 'vue'
-import { useI18n } from '../../composables'
-import Image from '@src/components/Image.vue'
+<script lang="ts" setup>
+import { defineAsyncComponent } from 'vue'
+import { useI18n } from '@src/composables'
 
-export default defineComponent({
-  components: {
-    Image
-  },
-  setup() {
-    return useI18n()
-  }
-})
+const Image = defineAsyncComponent(
+  () => import('@src/components/Image.vue')
+) 
+
+const { t } = useI18n()
 </script>
 
 <style scoped>

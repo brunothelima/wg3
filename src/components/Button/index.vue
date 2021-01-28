@@ -18,19 +18,17 @@
   </component>
 </template>
 
-<script lang="ts">
-import { defineComponent, PropType } from 'vue'
+<script lang="ts" setup>  
+import { defineProps } from "vue"
 
-export default defineComponent({
-  props: {
-    icon: String,
-    reverse: Boolean,
-    disabled: Boolean,
-    skin: String as PropType<'glassy' | 'ghosty' | 'default'>,
-    tag: String as PropType<'a' | 'span' | 'button' | 'div'>,
-    size: String as PropType<'small' | 'medium' | 'large'>
-  }
-})
+const props = defineProps<{
+  icon?: string,
+  reverse?: boolean,
+  disabled?: boolean,
+  skin?: 'glassy' | 'ghosty' | 'default',
+  tag?: 'a' | 'span' | 'button' | 'div',
+  size?: 'small' | 'medium' | 'large'
+}>()
 </script>
 
 <style lang="scss" scoped>
@@ -76,71 +74,7 @@ export default defineComponent({
     font-size: var(--font-size-xl);
   }
 }
-</style>
 
-<style lang="scss" scoped>
-// GHOSTY
-.button\:ghosty {
-  position: relative;
-  padding: 0.8em 0.25em;
-  background-color: transparent;
-  border: none;
-  color: var(--color-x-1);
-  font-weight: 400;
-  &:not([disabled]):hover,
-  &:not([disabled]).button--hover {
-    color: var(--color-a-3);
-  }
-  &:not([disabled]):active,
-  &:not([disabled]).button--active {
-    color: var(--color-x-6);
-  }
-  &::v-deep(i),
-  &::v-deep(span) {
-    color: inherit;
-  }
-}
-
-// GLASSY
-.button\:glassy {
-  position: relative;
-  background-color: var(--color-x-11);
-  border: 1px solid var(--color-a-1);
-  color: var(--color-a-1);
-  font-weight: 600;
-  &:before {
-    content: '';
-    display: block;
-    position: absolute;
-    z-index: 0;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    background-color: var(--color-a-7);
-  }
-  &:not(.button\:glassy--disabled):hover,
-  &:not(.button\:glassy--disabled).button--hover {
-    color: var(--color-x-11);
-  }
-  &:not(.button\:glassy--disabled):hover:before,
-  &:not(.button\:glassy--disabled).button--hover:before {
-    background-color: var(--color-a-3);
-  }
-  &:not(.button\:glassy--disabled):active,
-  &:not(.button\:glassy--disabled).button--active {
-    color: var(--color-x-11);
-  }
-  &:not(.button\:glassy--disabled):active:before,
-  &:not(.button\:glassy--disabled).button--active:before {
-    background-color: var(--color-a-1);
-  }
-  &::v-deep(i),
-  &::v-deep(span) {
-    position: relative;
-    z-index: 1;
-    color: inherit;
-    white-space: nowrap;
-  }
-}
+@import './_glassy.scss';
+@import './_ghosty.scss';
 </style>

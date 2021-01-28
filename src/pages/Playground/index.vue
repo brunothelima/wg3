@@ -14,17 +14,15 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
-import Nav from '@src/pages/Nav.vue'
-import Loader from '@src/components/Loader.vue'
+<script lang="ts" setup>
+import { defineAsyncComponent, defineComponent } from 'vue'
 
-export default defineComponent({
-  components: {
-    Nav,
-    Loader
-  }
-})
+const Nav =  defineAsyncComponent(
+  () => import('@src/pages/Nav.vue')
+)
+const Loader =  defineAsyncComponent(
+  () => import('@src/components/Loader.vue')
+)
 </script>
 
 <style scoped>

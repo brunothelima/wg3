@@ -16,19 +16,13 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
+import { defineAsyncComponent } from 'vue'
 import { useI18n } from '@src/composables'
-import Palette from './Palette.vue'
 
-export default defineComponent({
-  components: {
-    Palette
-  },
-  setup() {
-    return useI18n()
-  }
-})
+const Palette =  defineAsyncComponent(() => import('../Palette.vue'))
+
+const { t } = useI18n()
 </script>
 
 <style lang="scss" scoped>

@@ -1,31 +1,41 @@
 import { ref } from 'vue'
 
-// Notification messages store
-const list = ref([] as CustomNotification[])
+const notifications = ref<CustomNotification[]>([])
 
 /**
- * Notification messages handler.
+ * This composable exports the notification center controllers
  */
 export const useNotifications = () => {
-  // Dismisses a message by its index
-  const dismiss = (index: number) => {
-    clearTimeout(list.value[index].timeout)
-    list.value.splice(index, 1)
+
+  /**
+   * This function will dismiss a notification 
+   * by the matched given index.
+   */
+  function dismiss(index: number) {
+    clearTimeout(notifications.value[index].timeout)
+    notifications.value.splice(index, 1)
   }
 
-  // Creates a notification cycle
-  const notify = (notification: CustomNotification) => {
-    list.value.push(notification)
+  /**
+   * This function adds a notification to the ui
+   * and sets a timeout for it to be dismissed in
+   * the correct order.
+   */
+  function notify(notification: CustomNotification) {
+    notifications.value.push(notification)
 
     // Notification cycle of 6 seconds
     notification.timeout = setTimeout(() => {
-      list.value.splice(list.value.indexOf(notification), 1)
+      notifications.value.splice(
+        notifications.value.indexOf(notification),
+        1
+      )
     }, 6000)
   }
 
   return {
-    list,
     notify,
-    dismiss
+    dismiss,
+    notifications
   }
 }

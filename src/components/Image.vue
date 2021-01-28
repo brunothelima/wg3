@@ -1,52 +1,49 @@
 <template>
-  <figure>
-    <picture>
-      <img 
-        data-test="image" 
-        ref="imageRef" 
-        :src="imageSrc" 
-        @load="imageOnload($event)" 
-      />
-    </picture>
-    <figcaption><slot /></figcaption>
-  </figure>
+<figure>
+  <picture>
+    <img data-test="image" ref="imageRef" :src="imageSrc" />
+  </picture>
+  <figcaption><slot /></figcaption>
+</figure>
 </template>
 
-<script lang="ts">
-import { defineComponent, computed, ref } from 'vue'
+<script lang="ts" setup>
+import { computed, ref, defineProps } from 'vue'
 
-export default defineComponent({
-  props: { 
-    w: Number, 
-    h: Number, 
-    x: Number, 
-    y: Number, 
-    src: String, 
-    ratio: String, 
-    smart: Boolean
-  },
-  setup(props) {
-    const imageRef = ref<HTMLImageElement>(new Image())
+const props = defineProps<{
+  w: number, // Width
+  h: number, // Height
+  x: number, // Focal point x coord
+  y: number, // Focal point y coord
+  src: string, // Source path
+  ratio: string, // Size ratios
+  smart: boolean // Use smartcrop
+}>()
 
-    const imageSrc = computed(() => {
-      const src = new URL(`${import.meta.env.VITE_API_URL}/image`)
-      for (const [propName, propValue] of Object.entries(props)) {
-        src.searchParams.append(propName, `${propValue}`)
-      } 
-      return src
-    })
-    
-    const imageOnload = () => {
-      imageRef.value.style.maxWidth = 
-        `${imageRef.value.naturalWidth}px`
-    }
+const imageRef = ref()
 
-    return {
-      imageRef,
-      imageSrc,
-      imageOnload,
-    }
-  }
+/**
+ * ImageSrc returns the src path to access the image api url,
+ * using the component given props as the url query string params.
+ *   
+ * If the given props are:
+ * 
+ * {
+ *   w: 200,
+ *   h: 100,
+ *   src: '/subpath/MyImage.png'
+ * } 
+ * 
+ * We get the following url: 
+ * "http://wg3.com/image?w=200&h=100&src=/subpath/MyImage.png" 
+ *
+*/
+const imageSrc = computed(() => {
+  const url = new URL(`${import.meta.env.VITE_API_URL}/image`)
+  for (const [propName, propValue] of Object.entries(props)) {
+    url.searchParams.append(propName, String(propValue))
+  } 
+  return url
 })
 </script>
 

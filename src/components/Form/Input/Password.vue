@@ -1,5 +1,5 @@
 <template>
-  <div data-test="input" :class="['input:text', { 'input:password--invalid': errors?.length }]">
+  <div data-test="input" :class="['input:password', { 'input:password--invalid': errors?.length }]">
     <input
       :type="type"
       :name="name"
@@ -19,33 +19,25 @@
   </div>
 </template>
 
-<script lang="ts">
-import { inject, ref, defineComponent } from "vue"
+<script lang="ts" setup>
+import { inject, ref, defineProps } from "vue"
 import { useI18n } from '@src/composables'
 
-export default defineComponent({
-  props: {
-    name: String,
-    value: [String, Number],
-    placeholder: String,
-    disabled: Boolean,
-    readonly: Boolean,
-    errors: Array
-  },  
-  setup(props, context) {
-    const type = ref('password')
-    const { t } = inject('i18n', useI18n()) 
-    
-    return {
-      t,
-      type
-    }
-  }
-})
+const props = defineProps<{
+  name?: string,
+  value?: string | number
+  placeholder?: string,
+  disabled?: boolean,
+  readonly?: boolean,
+  errors?: string[]
+}>()
+
+const type = ref('password')
+const { t } = inject('i18n', useI18n()) 
 </script>
 
 <style lang="scss" scoped>
-.input\:text {
+.input\:password {
   display: flex; 
   flex: 1;
   display: grid;

@@ -5,18 +5,15 @@
   </section>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
-import Settings from '@src/components/Settings.vue'
-import LoginForm from '@src/pages/Login/LoginForm.vue'
+<script lang="ts" setup>
+import { defineAsyncComponent } from 'vue'
 
-export default defineComponent({
-  name: 'Login',
-  components: {
-    LoginForm,
-    Settings
-  }
-})
+const Settings = defineAsyncComponent(
+  () => import('@src/components/Settings.vue')
+)
+const LoginForm = defineAsyncComponent(
+  () => import('@src/pages/Login/LoginForm.vue')
+)
 </script>
 
 <style scoped>

@@ -26,39 +26,29 @@
   </section>
 </template>
 
-<script lang="ts">
-import { defineComponent, onUnmounted } from 'vue'
+<script lang="ts" setup>
+import { defineAsyncComponent } from 'vue'
 import { useI18n } from '@src/composables'
-import Form from '@src/components/Form/index.vue'
-import Button from '@src/components/Button/index.vue'
+
 import schema from './schema'
 import messages from './messages.json'
 
-export default defineComponent({
-  components: {
-    Form,
-    Button
-  },
-  setup() {
-    const { t } = useI18n()
+const Form = defineAsyncComponent(
+  () => import('@src/components/Form/index.vue')
+)
+const Button = defineAsyncComponent(
+  () => import('@src/components/Button/index.vue')
+)
 
-    function onSuccess(data: FormSchema) {
-      console.log('success', data.value)
-    }
+const { t } = useI18n()
 
-    function onError(data: FormSchema) {
-      console.log('error', data.value)
-    }
+function onSuccess(data: FormSchema) {
+  console.log('success', data.value)
+}
 
-    return {
-      t,
-      schema,
-      messages,
-      onSuccess,
-      onError
-    }
-  }
-})
+function onError(data: FormSchema) {
+  console.log('error', data.value)
+}
 </script>
 
 <style lang="scss" scoped>

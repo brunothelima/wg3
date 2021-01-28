@@ -17,26 +17,23 @@
   <section class="dialogs">
     <h1>{{ t('heading') }}</h1>
     <hr />
-    <NotificationsDemo />
-    <ConfirmationDemo />
+    <NotificationsExample />
+    <ConfirmationExample />
   </section>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
+import { defineAsyncComponent } from 'vue'
 import { useI18n } from '@src/composables'
-import ConfirmationDemo from './ConfirmationDemo.vue'
-import NotificationsDemo from './NotificationsDemo.vue'
 
-export default defineComponent({
-  components: {
-    ConfirmationDemo,
-    NotificationsDemo
-  },
-  setup() {
-    return useI18n()
-  }
-})
+const ConfirmationExample = defineAsyncComponent(
+  () => import('./Examples/Confirmation.vue')
+)
+const NotificationsExample = defineAsyncComponent(
+  () => import('./Examples/Notifications.vue')
+)
+
+const { t } = useI18n()
 </script>
 
 <style scoped>

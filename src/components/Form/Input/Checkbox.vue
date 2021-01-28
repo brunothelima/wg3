@@ -13,26 +13,18 @@
   </div>
 </template>
 
-<script lang="ts">
-import { ref, inject, defineComponent } from 'vue'
+<script lang="ts" setup>
+import { ref, inject, defineProps } from 'vue'
 import { useI18n } from '@src/composables'
 
-export default defineComponent({
-   props: {
-    name: String,
-    disabled: Boolean,
-    title: String,
-  },
-  setup(props, { emit }) {
-    const inputRef = ref<HTMLInputElement>()
-    const { t } = inject('i18n', useI18n()) 
+const props = defineProps<{
+  name?: string,
+  disabled?: boolean,
+  title?: string
+}>()
 
-    return {
-      t,
-      inputRef
-    }
-  }
-})
+const inputRef = ref()
+const { t } = inject('i18n', useI18n()) 
 </script>
 
 <style lang="scss" scoped>

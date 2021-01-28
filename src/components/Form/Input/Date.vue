@@ -15,56 +15,53 @@
   </div>
 </template>
 
-<script lang="ts">
-import { computed, ref, inject, watch, watchEffect, onMounted, onUnmounted, defineComponent, PropType } from 'vue'
-import { Instance as FPInstance } from 'flatpickr/dist/types/instance'
-import { CustomLocale } from 'flatpickr/dist/types/locale'
+<script lang="ts" setup>
+import { computed, ref, inject, watch, onMounted, onUnmounted, defineProps } from 'vue'
 import { useI18n } from '@src/composables'
 
+// Flatpickr import of typings, instance and localizations
+// import { Instance as FPInstance } from 'flatpickr/dist/types/instance'
+// import { CustomLocale as FPLocale } from 'flatpickr/dist/types/locale'
+
 import FP from 'flatpickr'
-import flatpickr from 'flatpickr'
-import 'flatpickr/dist/l10n/pt.js'
+// import 'flatpickr/dist/l10n/pt.js'
 
-export default defineComponent({
-  props: {
-    name: String,
-    value: String,
-    placeholder: String,
-    disabled: Boolean,
-    readonly: Boolean,
-    errors: Array,
-    mode: String as PropType<'single' | 'range' | 'time'>
-  },
-  setup(props, context) {
-    const inputRef = ref()
-    const { t, locale } = inject('i18n', useI18n()) 
-    
-    let fpInstance: FPInstance;
-    const fpOptions = computed(() => ({
-      static: true,
-      mode: props.mode,
-      locale: locale.value,
-      dateFormat: props.mode === 'time' 
-        ? 'Y/m/d H:i' : 'Y/m/d',
-    }))
+const props = defineProps<{
+  name?: string,
+  value?: string,
+  placeholder?: string,
+  disabled?: boolean,
+  readonly?: boolean,
+  errors?: string[],
+  mode?: 'single' | 'range' | 'time'
+}>()
 
-    watch(() => locale.value, newLocale => {
-      FP.localize(FP.l10ns[newLocale] as CustomLocale)
-    })
-    
-    onMounted(() => {
-      fpInstance = FP(inputRef.value, fpOptions.value)
-    })
+const inputRef = ref()
+const { t, locale } = inject('i18n', useI18n()) 
 
-    onUnmounted(() => fpInstance.destroy())
+const fpOptions = computed(() => ({
+  mode: props.mode,
+  static: true, // true so the fpInstance element is crated in the component's parentElement
+  locale: locale.value,
+  dateFormat: props.mode === 'time' ? 'Y/m/d H:i' : 'Y/m/d'
+}))
 
-    return {
-      t,
-      inputRef
-    }
-  }
+let fpInstance: any;
+
+onMounted(() => {
+  fpInstance = FP(inputRef.value, fpOptions.value)
+})
+
+// On locale change we relocalize the flatpickr instance
+watch(() => locale.value, newLocale => {  
+  FP.localize(FP.l10ns[newLocale] as any)
+})
+
+onUnmounted(() => {
+  fpInstance.destroy()
 })
 </script>
+
 <style lang="scss" scoped>
 .input\:date {
   display: flex;

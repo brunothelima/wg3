@@ -15,40 +15,35 @@
   </div>
 </template>
 
-<script lang="ts">
-import { ref, inject, defineComponent, onMounted } from 'vue'
+<script lang="ts" setup>
+import { ref, inject, onMounted, defineProps } from 'vue'
 import { useI18n } from '@src/composables'
+
 import VMasker from 'vanilla-masker'
 
-export default defineComponent({
-  props: {
-    name: String,
-    value: [String, Number],
-    placeholder: String,
-    disabled: Boolean,
-    readonly: Boolean,
-    errors: Array,
-    currency: String
-  },
-  setup(props, context) {
-    const inputRef = ref()
-    const { t } = inject('i18n', useI18n()) 
+const props = defineProps<{
+  name?: string,
+  value?: string | number
+  placeholder?: string,
+  disabled?: boolean,
+  readonly?: boolean,
+  errors?: string[],
+  currency?: string
+}>()
 
-    onMounted(() => {
-      VMasker(inputRef.value).maskMoney({
-        precision: 2,
-        separator: ',',
-        delimiter: '.'
-      })
+const inputRef = ref()
+const { t } = inject('i18n', useI18n()) 
+
+onMounted(() => {
+  VMasker(inputRef.value)
+    .maskMoney({
+      precision: 2,
+      separator: ',',
+      delimiter: '.'
     })
-
-    return {
-      t,
-      inputRef
-    }
-  }
 })
 </script>
+
 <style lang="scss" scoped>
 .input\:money {
   display: flex;

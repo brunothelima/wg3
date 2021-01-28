@@ -28,37 +28,26 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
+import { defineAsyncComponent, defineComponent } from 'vue'
 import { useI18n } from '@src/composables'
 import router from '@src/router'
-
-import Form from '@src/components/Form/index.vue'
-import Button from '@src/components/Button/index.vue'
 
 import schema from '@src/pages/Login/schema'
 import messages from '@src/pages/Login/messages.json'
 
-export default defineComponent({
-  components: {
-    Form,
-    Button
-  },
-  setup() {
-    const { t } = useI18n()
+const Form = defineAsyncComponent(
+  () => import('@src/components/Form/index.vue')
+)
+const Button = defineAsyncComponent(
+  () => import('@src/components/Button/index.vue')
+)
 
-    const login = () => {
-      router.push('/playground/colors')
-    }
+const { t } = useI18n()
 
-    return {
-      t,
-      login,
-      messages,
-      schema
-    }
-  }
-})
+function login() {
+  router.push('/playground/colors')
+}
 </script>
 
 <style scoped>
@@ -66,7 +55,10 @@ export default defineComponent({
   width: 300px;
   padding: 2em;
   box-shadow: var(--box-shadow-light);
-  border: var(--card-border-width) var(--card-border-style) var(--color-x-8);
+  border: 
+    var(--card-border-width) 
+    var(--card-border-style) 
+    var(--color-x-8);
   border-radius: var(--card-border-radius);
   background-color: var(--color-x-10);
 }

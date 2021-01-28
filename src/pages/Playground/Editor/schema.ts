@@ -3,9 +3,9 @@ import { required } from '@src/utils/validators'
 
 const schema = createForm({
   inputEditor: {
-    type: 'editor',
-    label: 'editor.label',
-    placeholder: 'editor.placeholder',
+    type: 'Editor',
+    label: 'inputEditor.label',
+    placeholder: 'inputEditor.placeholder',
     validations: { required }
   },
 })

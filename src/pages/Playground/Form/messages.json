@@ -1,14 +1,14 @@
 {
   "en": {
-    "text": {
+    "inputText": {
       "label": "Input text",
       "placeholder": "Type here"
     },
-    "password": {
+    "inputPassword": {
       "label": "Input passowrd",
       "placeholder": "Type your password here"
     },
-    "select": {
+    "inputselect": {
       "label": "Input select",
       "placeholder": "Select an option",
       "options": {
@@ -17,53 +17,49 @@
         "third": "Third option"
       }
     },
-    "money": {
+    "inputMoney": {
       "label": "Input Money",
       "placeholder": "Type any amount"
     },
-    "file": {
+    "inputFile": {
       "label": "Input File",
       "placeholder": "Select a file"
     },
-    "date": {
+    "inputDate": {
       "label": "Input Date",
       "placeholder": "Click to open the calendar",
       "help": "This is an aditional iformation message"
     },
-    "checkbox": {
+    "inputCheckbox": {
       "label": "Input Checkbox",
       "title": "Click here check/uncheck"
     },
-    "toggle": {
+    "inputToggle": {
       "label": "Input Toggle",
       "title": "Click here check/uncheck"
     },
-    "radio": {
+    "inputTadio": {
       "label": "Input Radio",
       "options": {
         "first": "First option",
         "second": "Second option"
       }
     },
-    "textarea": {
+    "inputTextarea": {
       "label": "Input textarea",
       "placeholder": "Type here"
-    },
-    "editor": {
-      "label": "Text Editor",
-      "placeholder": "Click here and start typing"
     }
   },
   "pt": {
-    "text": {
+    "inputText": {
       "label": "Campo de texto",
       "placeholder": "Digite aqui"
     },
-    "password": {
+    "inputPassword": {
       "label": "Campo de senha",
       "placeholder": "Digite sua senha aqui"
     },
-    "select": {
+    "inputSelect": {
       "label": "Campo de seleção",
       "placeholder": "Selecione uma das opções",
       "options": {
@@ -72,41 +68,37 @@
         "third": "Terceira opção"
       }
     },
-    "money": {
+    "inputMoney": {
       "label": "Campo de moeda",
       "placeholder": "Digite aqui uma quantia"
     },
-    "file": {
+    "inputFile": {
       "label": "Input de arquivo",
       "placeholder": "Selecione um arquivo"
     },
-    "date": {
+    "inputDate": {
       "label": "Input de data",
       "placeholder": "Clique para abrir o calendário",
       "help": "Esta é uma mensagem de informações adicionais"
     },
-    "checkbox": {
+    "inputCheckbox": {
       "label": "Input de checkbox",
       "title": "Clique aqui para marcar/desmarcar"
     },
-    "toggle": {
+    "inputToggle": {
       "label": "Input de toggle",
       "title": "Clique aqui para marcar/desmarcar"
     },
-    "radio": {
+    "inputRadio": {
       "label": "Campo de opções",
       "options": {
         "first": "Primeira opção",
         "second": "Segunda opção"
       }
     },
-    "textarea": {
+    "inputTextarea": {
       "label": "Campo de texto grande",
       "placeholder": "Digite aqui"
-    },
-    "editor": {
-      "label": "Editor de texto",
-      "placeholder": "Clique aqui e começe a digitar"
     }
   }
 }

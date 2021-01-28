@@ -12,27 +12,18 @@
   </div>
 </template>
 
-<script lang="ts">
-import { inject, defineComponent, PropType } from 'vue'
+<script lang="ts" setup>
+import { inject, defineAsyncComponent, defineProps } from 'vue'
 import { useI18n } from '@src/composables'
-import Help from './Help.vue'
 
-export default defineComponent({
-  components: {
-    Help
-  },
-  props: {
-    id: String,
-    input: Object as PropType<FormInputTypes>,
-  },
-  setup(props) {
-    const { t } = inject('i18n', useI18n()) 
-    
-    return {
-      t
-    }
-  }
-})
+const Help = defineAsyncComponent(() => import('./Help.vue'))
+
+const props = defineProps<{
+  id: string,
+  input: FormInputTypes,
+}>()
+
+const { t } = inject('i18n', useI18n()) 
 </script>
 
 <style lang="scss" scoped>

@@ -16,16 +16,21 @@
   </div>
 </template>
 
-<script lang="ts">  
-import { defineComponent, PropType } from "vue"
+<script lang="ts" setup>  
+import { defineProps } from "vue"
 
-export default defineComponent({
-  props: {
-    direction: String as PropType<'left' | 'center' | 'right'>
-  }
-})
+const props = defineProps<{
+  direction?: 'left' | 'center' | 'right'
+}>()
 </script>
 
+<style>
+*:hover > .tooltip {
+  transform: translate(0, 0);
+  visibility: visible;
+  opacity: 1;
+}
+</style>
 <style lang="scss" scoped>
 .tooltip {
   display: flex;
@@ -50,6 +55,16 @@ export default defineComponent({
   svg path {
     stroke: var(--color-x-8);
   }
+  &__content {
+    display: block;
+    background-color: var(--color-x-9);
+    padding: 1em;
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--box-shadow-light);
+    border: 1px solid var(--color-x-8);
+    font-size: var(--font-size-xs);
+    line-height: 150%;
+  }
   &--left {
     left: 0;
   }
@@ -72,23 +87,5 @@ export default defineComponent({
     align-self: flex-end;
     margin-right: 1em;
   }
-  &__content {
-    display: block;
-    background-color: var(--color-x-9);
-    padding: 1em;
-    border-radius: var(--card-border-radius);
-    box-shadow: var(--box-shadow-light);
-    border: 1px solid var(--color-x-8);
-    font-size: var(--font-size-xs);
-    line-height: 150%;
-  }
-}
-</style>
-
-<style>
-*:hover > .tooltip {
-  transform: translate(0, 0);
-  visibility: visible;
-  opacity: 1;
 }
 </style>

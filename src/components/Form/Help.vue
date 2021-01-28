@@ -5,15 +5,12 @@
   </div>
 </template>
 
-<script>
-import { defineComponent } from 'vue'
-import Tooltip from '@src/components/Tooltip.vue'
+<script lang="ts" setup>
+import { defineAsyncComponent } from 'vue'
 
-export default defineComponent({
-  components: {
-    Tooltip
-  }
-})
+const Tooltip = defineAsyncComponent(
+  () => import('@src/components/Tooltip.vue')
+) 
 </script>
 
 <style scoped>

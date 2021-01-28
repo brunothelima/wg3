@@ -1,3 +1,4 @@
+
 <i18n>
 {
   "en": {
@@ -42,19 +43,15 @@
   </nav>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
-import Settings from '@src/components/Settings.vue'
+<script lang="ts" setup>
+import { defineAsyncComponent } from 'vue'
 import { useI18n } from '@src/composables'
 
-export default defineComponent({
-  components: {
-    Settings
-  },
-  setup() {
-    return useI18n()
-  }
-})
+const  Settings = defineAsyncComponent(
+  () => import('@src/components/Settings.vue')
+) 
+
+const { t } = useI18n()
 </script>
 
 <style scoped lang="scss">

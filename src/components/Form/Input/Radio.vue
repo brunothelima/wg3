@@ -20,26 +20,19 @@
   </div>
 </template>
 
-<script lang="ts">
-import { ref, inject, defineComponent, PropType } from 'vue'
+<script lang="ts" setup>
+import { inject, defineProps } from 'vue'
 import { useI18n } from '@src/composables'
-  
-export default defineComponent({
-   props: {
-    name: String,
-    value: [String, Number],
-    disabled: Boolean,
-    errors: Array,
-    options: Array as PropType<FormInputOption[]>
-  },
-  setup(props, context) {
-    const { t } = inject('i18n', useI18n()) 
 
-    return {
-      t
-    }
-  }
-})
+const props = defineProps<{
+  name?: string,
+  value?: string | number
+  disabled?: boolean,
+  errors?: string[],
+  options?: FormInputOption[]
+}>()
+  
+const { t } = inject('i18n', useI18n()) 
 </script>
 
 <style lang="scss" scoped>

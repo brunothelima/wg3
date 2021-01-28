@@ -22,26 +22,23 @@
     <h1>{{ t('title') }}</h1>
     <hr />
     <div class="text"></div>
-    <GlassyButtons />
-    <GhostyButtons />
+    <GhostyExample />
+    <GlassyExample />
   </section>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
+import { defineAsyncComponent } from 'vue'
 import { useI18n } from '@src/composables'
-import GhostyButtons from './GhostyButtons.vue'
-import GlassyButtons from './GlassyButtons.vue'
-import { defineComponent } from 'vue'
 
-export default defineComponent({
-  components: {
-    GlassyButtons,
-    GhostyButtons
-  },
-  setup() {
-    return useI18n()
-  }
-})
+const GhostyExample = defineAsyncComponent(
+  () => import('./Examples/Ghosty.vue')
+) 
+const GlassyExample = defineAsyncComponent(
+  () => import('./Examples/Glassy.vue')
+) 
+
+const { t } = useI18n()
 </script>
 
 <style scoped>

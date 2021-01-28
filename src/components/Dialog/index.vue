@@ -9,24 +9,31 @@
   </Teleport>
 </template>
 
-<script lang="ts">
-import { onMounted, onUnmounted } from 'vue'
+<script lang="ts" setup>
+import { onMounted, onUnmounted, defineEmit } from 'vue'
 
-export default {
-  setup(props, context) {
-    const onEsc = (ev: KeyboardEvent) => {
-      if (ev.key === 'Escape') context.emit('cancel', ev)
-    }
-    onMounted(() => {
-      document.body.classList.add('scroll-lock')
-      window.addEventListener('keyup', onEsc)
-    })
-    onUnmounted(() => {
-      document.body.classList.remove('scroll-lock')
-      window.removeEventListener('keyup', onEsc)
-    })
+const emit = defineEmit()
+
+/**
+ * onEsc() will emit a @cancel event to the dialog parent,
+ * if the given KeyboardEvent.key pressed is "Escape"
+ */
+const onEsc = (event: KeyboardEvent) => {
+  if (event.key === 'Escape') {
+    emit('cancel', event)
   }
 }
+
+onMounted(() => {
+  document.body.classList.add('scroll-lock')
+  // Binding onEsc to the DOM 
+  window.addEventListener('keyup', onEsc)
+})
+onUnmounted(() => {
+  document.body.classList.remove('scroll-lock')
+  // Unbinding onEsc from the DOM 
+  window.removeEventListener('keyup', onEsc)
+})
 </script>
 
 <style lang="scss" scoped>

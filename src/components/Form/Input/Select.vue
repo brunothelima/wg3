@@ -20,39 +20,31 @@
   </div>
 </template>
 
-<script lang="ts">
-import { computed, inject, defineComponent, defineProps, PropType } from 'vue'
+<script lang="ts" setup>
+import { computed, inject, defineProps } from 'vue'
 import { useI18n } from '@src/composables'
 
-export default defineComponent({
-  props: {
-    name: String,
-    value: [String, Number],
-    placeholder: String,
-    disabled: Boolean,
-    readonly: Boolean,
-    errors: Array,
-    options: Array as PropType<FormInputOption[]>,
-  },
-  setup(props, context) {
-    const { t } = inject('i18n', useI18n())
+const props = defineProps<{
+  name?: string,
+  value?: string | number
+  placeholder?: string,
+  disabled?: boolean,
+  readonly?: boolean,
+  errors?: string[],
+  options?: FormInputOption[]
+}>()
 
-    // Computes the current select option title for display
-    const selected = computed(() => {
-      if (!props.value) return null
-      // Query for the selected option title
-      let query = (option: FormInputOption) => {
-        return `${option.value}` === `${props.value}`
-      }
-      return props.options?.find(query)?.label
-    })
-
-    return {
-      t,
-      selected 
-    }
+// Returns the current selected option title
+const selected = computed(() => {
+  if (!props.value) return null
+  // Query for the selected option title
+  let query = (option: FormInputOption) => {
+    return `${option.value}` === `${props.value}`
   }
+  return props.options?.find(query)?.label
 })
+
+const { t } = inject('i18n', useI18n())
 </script>
 
 <style lang="scss" scoped>

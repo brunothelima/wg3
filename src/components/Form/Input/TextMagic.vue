@@ -14,27 +14,20 @@
 </template>
 
 
-<script lang="ts">
-import { ref, inject, defineComponent } from 'vue'
+<script lang="ts" setup>
+import { inject, defineProps } from 'vue'
 import { useI18n } from '@src/composables'
 
-export default defineComponent({
-  props: {
-    name: String,
-    value: [String, Number],
-    placeholder: String,
-    disabled: Boolean,
-    readonly: Boolean,
-    errors: Array
-  },
-  setup(props, context) {
-    const { t } = inject('i18n', useI18n()) 
-    
-    return {
-      t
-    }
-  }
-})
+const props = defineProps<{
+  name?: string,
+  value?: string | number
+  placeholder?: string,
+  disabled?: boolean,
+  readonly?: boolean,
+  errors?: string[],
+}>()
+
+const { t } = inject('i18n', useI18n()) 
 </script>
 
 <style lang="scss" scoped>

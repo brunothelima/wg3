@@ -46,25 +46,16 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
+import { defineAsyncComponent } from 'vue'
 import { useI18n, useNotifications } from '@src/composables'
-import Button from '@src/components/Button/index.vue'
 
-export default defineComponent({
-  components: {
-    Button
-  },
-  setup() {
-    const { t } = useI18n()
-    const { notify } = useNotifications()
+const Button = defineAsyncComponent(
+  () => import('@src/components/Button/index.vue')
+) 
 
-    return {
-      t,
-      notify
-    }
-  }
-})
+const { t } = useI18n()
+const { notify } = useNotifications()
 </script>
 
 <style scoped>

@@ -29,17 +29,8 @@
   </section>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
 import tests from '../../../__tests__/results.json'
-
-export default defineComponent({
-  setup() {
-    return {
-      tests
-    }
-  }
-})
 </script>
 
 <style scoped>

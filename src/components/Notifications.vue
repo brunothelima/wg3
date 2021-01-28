@@ -1,26 +1,15 @@
 <template>
   <ul data-test="notifications" class="notifications">
-    <li data-test="message" v-for="(note, index) in list" :key="note" :class="note.status">
+    <li data-test="message" v-for="(note, index) in notifications" :key="note" :class="note.status">
       <i data-test="icon" class="icon-close-small" @click="dismiss(index)" />
       <span data-test="text">{{ note.message }}</span>
     </li>
   </ul>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import { useNotifications } from '@src/composables'
-import { defineComponent } from 'vue'
-
-export default defineComponent({
-  setup() {
-    const { list, dismiss } = useNotifications()
-
-    return {
-      list,
-      dismiss
-    }
-  }
-})
+const { notifications, dismiss } = useNotifications()
 </script>
 
 <style lang="scss" scoped>

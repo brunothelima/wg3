@@ -22,19 +22,17 @@
   </div>
 </template>
 
-<script lang="ts">
-import { onMounted, onUnmounted } from 'vue'
+<script lang="ts" setup>
+import { defineProps } from 'vue'
 
-export default {
-  props: {
-    header: String,
-    icon: String,
-    title: String,
-    text: String,
-    buttonLeft: String,
-    buttonRight: String,
-  }
-}
+const props = defineProps<{
+  header: string,
+  icon: string,
+  title: string,
+  text: string,
+  buttonLeft: string,
+  buttonRight: string,
+}>()
 </script>
 
 <style lang="scss" scoped>

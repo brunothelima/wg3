@@ -3,103 +3,103 @@ import { required } from '@src/utils/validators'
 
 const schema = createForm({
   inputText: {
-    type: 'text',
-    label: 'text.label',
-    placeholder: 'text.placeholder',
+    type: 'Text',
+    label: 'inputText.label',
+    placeholder: 'inputText.placeholder',
     validations: { required },
   },
   inputPassword: {
-    type: 'password',
-    label: 'password.label',
-    placeholder: 'password.placeholder',
+    type: 'Password',
+    label: 'inputPassword.label',
+    placeholder: 'inputPassword.placeholder',
     validations: { required }
   },
   inputSelect: {
-    type: 'select',
-    label: 'select.label',
-    placeholder: 'select.placeholder',
+    type: 'Select',
+    label: 'inputSelect.label',
+    placeholder: 'inputSelect.placeholder',
     options: [
-      { value: 1, label: 'select.options.first' },
-      { value: 2, label: 'select.options.second' },
-      { value: 3, label: 'select.options.third' }
+      { value: 1, label: 'inputSelect.options.first' },
+      { value: 2, label: 'inputSelect.options.second' },
+      { value: 3, label: 'inputSelect.options.third' }
     ],
     validations: { required }
   },
   inputMoney: {
-    type: 'money',
-    label: 'money.label',
-    placeholder: 'money.placeholder',
+    type: 'Money',
+    label: 'inputMoney.label',
+    placeholder: 'inputMoney.placeholder',
     currency: 'R$',
     validations: { required }
   },
   inputFile: {
-    type: 'file',
-    label: 'file.label',
-    placeholder: 'file.placeholder',
+    type: 'File',
+    label: 'inputFile.label',
+    placeholder: 'inputFile.placeholder',
     validations: { required }
   },
   inputDate: {
-    type: 'date',
-    label: 'date.label',
-    placeholder: 'date.placeholder',
+    type: 'Date',
+    label: 'inputDate.label',
+    placeholder: 'inputDate.placeholder',
     mode: 'single',
-    help: 'date.help',
+    help: 'inputDate.help',
     validations: { required }
   },
   inputTextarea: {
-    type: 'textarea',
-    label: 'textarea.label',
-    placeholder: 'textarea.placeholder',
+    type: 'Textarea',
+    label: 'inputTextarea.label',
+    placeholder: 'inputTextarea.placeholder',
     maxlength: 50,
     validations: { required }
   },
   inputTextButton: {
-    type: 'text-button',
-    label: 'text.label',
-    placeholder: 'text.placeholder',
+    type: 'TextButton',
+    label: 'inputTextButton.label',
+    placeholder: 'inputTextButton.placeholder',
     validations: { required },
     button: {
-      text: 'Click',
+      text: 'inputTextButton.text',
       onClick([event, inputName, inputValue]) { 
         schema.inputTextButton.value = 'Click! =)'
       }
     }
   },
   inputTextMagic: {
-    type: 'text-magic',
-    label: 'text.label',
-    placeholder: 'text.placeholder',
+    type: 'TextMagic',
+    label: 'inputTextMagic.label',
+    placeholder: 'inputTextMagic.placeholder',
     validations: { required }
   },
   inputSelectMagic: {
-    type: 'select-magic',
-    label: 'select.label',
-    placeholder: 'select.placeholder',
+    type: 'SelectMagic',
+    label: 'inputSelectMagic.label',
+    placeholder: 'inputSelectMagic.placeholder',
     options: [
-      { value: 1, label: 'select.options.first' },
-      { value: 2, label: 'select.options.second' },
-      { value: 3, label: 'select.options.third' }
+      { value: 1, label: 'inputSelectMagic.options.first' },
+      { value: 2, label: 'inputSelectMagic.options.second' },
+      { value: 3, label: 'inputSelectMagic.options.third' }
     ],
     validations: { required }
   },
   inputCheckbox: {
-    type: 'checkbox',
-    label: 'checkbox.label',
-    title: 'checkbox.title',
+    type: 'Checkbox',
+    label: 'inputCheckbox.label',
+    title: 'inputCheckbox.title',
     validations: { required }
   },
   inputToggle: {
-    type: 'toggle',
-    label: 'toggle.label',
-    title: 'toggle.title',
+    type: 'Toggle',
+    label: 'inputToggle.label',
+    title: 'inputToggle.title',
     validations: { required }
   },
   inputRadio: {
-    type: 'radio',
-    label: 'radio.label',
+    type: 'Radio',
+    label: 'inputRadio.label',
     options: [
-      { value: 1, label: 'radio.options.first' },
-      { value: 2, label: 'radio.options.second' },
+      { value: 1, label: 'inputRadio.options.first' },
+      { value: 2, label: 'inputRadio.options.second' },
     ],
     validations: { required }
   },

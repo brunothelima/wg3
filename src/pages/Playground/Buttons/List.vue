@@ -40,20 +40,21 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
+import { defineAsyncComponent, defineProps } from 'vue'
 import { useI18n } from '@src/composables'
-import Button from '@src/components/Button/index.vue'
+  
+const Button = defineAsyncComponent(
+  () => import('@src/components/Button/index.vue')
+)
 
-export default defineComponent({
-  components: {
-    Button
-  },
-  props: ['size', 'title', 'skin'],
-  setup() {
-    return useI18n()
-  }
-})
+const props = defineProps<{
+  size?: string,
+  skin?: string,
+  title?: string,
+}>()
+
+const { t } = useI18n()
 </script>
 
 <style lang="scss" scoped>

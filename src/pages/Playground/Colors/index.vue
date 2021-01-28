@@ -14,36 +14,26 @@
     <h1>{{ t('title') }}</h1>
     <hr />
     <div class="css-vars">
-      <Primary />
-      <Secondary />
-      <Grayish />
+      <PrimaryExample />
+      <SecondaryExample />
+      <GrayishExample />
     </div>
-    <System />
-    <Gradient />
+    <SystemExample />
+    <GradientExample />
   </section>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
+import { defineAsyncComponent } from 'vue'
 import { useI18n } from '@src/composables'
-import Primary from './Primary.vue'
-import Secondary from './Secondary.vue'
-import Grayish from './Grayish.vue'
-import System from './System.vue'
-import Gradient from './Gradient.vue'
 
-export default defineComponent({
-  components: {
-    Primary,
-    Secondary,
-    Grayish,
-    System,
-    Gradient
-  },
-  setup() {
-    return useI18n()
-  }
-})
+const PrimaryExample = defineAsyncComponent(() => import('./Examples/Primary.vue')) 
+const SecondaryExample = defineAsyncComponent(() => import('./Examples/Secondary.vue')) 
+const GrayishExample = defineAsyncComponent(() => import('./Examples/Grayish.vue')) 
+const SystemExample = defineAsyncComponent(() => import('./Examples/System.vue')) 
+const GradientExample = defineAsyncComponent(() => import('./Examples/Gradient.vue')) 
+
+const { t } = useI18n()
 </script>
 
 <style lang="scss" scoped>
