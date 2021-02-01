@@ -2,8 +2,13 @@
   <form data-test="form" @submit="onSubmitHandler" class="form">
     <!-- <pre>{{data}}</pre><br><br><br> -->
     <div class="form__grid">
-      <Field v-for="[name, input] in Object.entries(form.schema)" :key="name" :input="input" :id="`${name}Id`">
-        <component :is="InputComponents[input.type]" v-bind="input" :name="name" @update="onUpdateHandler"/>
+      <Field v-for="[name, input] in form.entries" :key="name" :input="input" :id="`${name}Id`">
+        <component
+          :is="Input[input.type]"
+          :name="name"
+          v-bind="input"
+          @update="onUpdateHandler"
+        />
       </Field>
     </div>
     <slot />
@@ -16,7 +21,7 @@ import { glob2Components } from '@src/utils/'
 import { useForm, useI18n } from '@src/composables/'
 
 const Field = defineAsyncComponent(() => import('./Field.vue'))
-const InputComponents = glob2Components(import.meta.glob('./Input/**.vue'))
+const Input = glob2Components(import.meta.glob('./Input/**.vue'))
 
 const emit = defineEmit()
 const props = defineProps<{
@@ -32,7 +37,7 @@ const form = useForm(props.schema)
  * 
  * The @update event is emited right after the native @input event is triggered
  */
-function onUpdateHandler([e, inputName, inputValue]: OnUpdateArgs) { 
+function onUpdateHandler([e, inputName, inputValue]: OnUpdateArgs) {
   let input = form.schema[inputName]
   input.value = inputValue
   input.errors = []
@@ -47,7 +52,7 @@ function onUpdateHandler([e, inputName, inputValue]: OnUpdateArgs) {
  * - If the form is valid, the callback emmited is "success"
  * - If the form is invalid, the callback emmited is "error" 
  */
-async function onSubmitHandler(event: Event){
+async function onSubmitHandler(event: Event) {
   event.preventDefault()
   let isFormValid = await form.validate()
 
@@ -56,7 +61,7 @@ async function onSubmitHandler(event: Event){
     return
   }
 
-  emit('error', form.errors)
+  emit('error', form.data)
 }
 
 provide('i18n', useI18n(props.messages))

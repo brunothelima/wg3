@@ -43,7 +43,7 @@ const imageSrc = computed(() => {
   for (const [propName, propValue] of Object.entries(props)) {
     url.searchParams.append(propName, String(propValue))
   } 
-  return url
+  return url.toString()
 })
 </script>
 

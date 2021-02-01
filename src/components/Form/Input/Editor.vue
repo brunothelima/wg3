@@ -1,10 +1,6 @@
 <template>
-  <div data-test="input" :class="['input:editor', { 'input:editor--invalid': errors.length }]">
-    <div
-      ref="inputRef"
-      :name="name"
-      :id="`${name}Id`"
-    ></div>
+  <div data-test="input" :class="['input:editor', { 'input:editor--invalid': errors?.length }]">
+    <div ref="inputRef" :name="name" :id="`${name}Id`"></div>
   </div>
 </template>
 
@@ -23,7 +19,7 @@ const props = defineProps<{
 
 const emit = defineEmit()
 const inputRef = ref()
-const { t, locale } = inject('i18n', useI18n()) 
+const { t, locale } = inject('i18n', useI18n())
 
 const ckOptions = computed(() => ({
   locale: locale.value,
@@ -40,7 +36,7 @@ let ckInstance: typeof CK;
 async function ckBuild() {
   ckInstance?.destroy()
   ckInstance = await CK.create(inputRef.value, ckOptions.value)
-  ckInstance.model.document.on( 'change:data', (event: OnInputEvent) => {
+  ckInstance.model.document.on('change:data', (event: OnInputEvent) => {
     emit('update', [event, props.name, ckInstance?.getData()])
   });
 }

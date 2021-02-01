@@ -15,7 +15,7 @@
     <hr />
     <ul>
       <!-- {{icons}} -->
-      <li v-for="icon of widgricon.icons" :key="icon">
+      <li v-for="icon of widgricon.icons" :key="`icon-${icon}`">
         <i color="a" :class="`icon-${icon.properties?.name}`" />
         <span>{{ `.icon-${icon.properties?.name}` }}</span>
       </li>

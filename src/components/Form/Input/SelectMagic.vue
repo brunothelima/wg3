@@ -1,27 +1,38 @@
 <template>
-  <div data-test="input" :class="['input:select-magic', { 'input:select-magic--invalid': errors?.length }]">
+  <div
+    data-test="input"
+    :class="['input:select-magic', { 'input:select-magic--invalid': errors?.length }]"
+  >
     <select
       data-test="select"
+      ref="InputRef"
       :id="`${name}Id`"
       :name="name"
       :value="value"
       :disabled="disabled"
       :readonly="readonly"
-      @input="$emit('update', [$event, name, $event.target.value])"
+      @input="$emit('update', [$event, name, inputRef.value])"
     >
-      <option v-for="option in options" :key="option" :value="option.value" :selected="option.value === value">
-        {{ t(option.label) }}
-      </option>
+      <option
+        v-for="option in options"
+        :key="option"
+        :value="option.value"
+        :selected="option.value === value"
+      >{{ t(option.label) }}</option>
       <slot />
     </select>
     <div data-test="selected" class="input:select-magic__selected" v-if="selected">{{ t(selected) }}</div>
-    <div data-test="placeholder" class="input:select-magic__placeholder" v-else>{{ t(placeholder || 'Select an option') }}</div>
+    <div
+      data-test="placeholder"
+      class="input:select-magic__placeholder"
+      v-else
+    >{{ t(placeholder || 'Select an option') }}</div>
   </div>
 </template>
 
 
 <script lang="ts" setup>
-import { computed, inject, defineProps } from 'vue'
+import { computed, inject, ref, defineProps } from 'vue'
 import { useI18n } from '@src/composables'
 
 const props = defineProps<{
@@ -33,6 +44,8 @@ const props = defineProps<{
   errors?: string[],
   options?: FormInputOption[]
 }>()
+
+const inputRef = ref()
 
 // Returns the current selected option title
 const selected = computed(() => {
@@ -86,5 +99,4 @@ const { t } = inject('i18n', useI18n())
     border-color: var(--color-error);
   }
 }
-
 </style>

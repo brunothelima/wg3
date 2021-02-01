@@ -3,7 +3,7 @@
     <Select
       name="theme"
       :value="theme"
-      @input="theme = $event.target.value"
+      @input="theme = inputRef?.value"
       :options="[
         { value: 'light', label: 'Light' },
         { value: 'dark', label: 'Dark' }
@@ -12,7 +12,7 @@
     <Select
       name="locale"
       :value="locale"
-      @input="locale = $event.target.value"
+      @input="locale = inputRef?.value"
       :options="[
         { value: 'en', label: 'EN' },
         { value: 'pt', label: 'PT' }
@@ -22,12 +22,14 @@
 </template>
 
 <script lang="ts" setup>
-import { defineAsyncComponent } from 'vue'
+import { ref, defineAsyncComponent } from 'vue'
 import { useI18n, useTheme } from '@src/composables'
 
 const Select = defineAsyncComponent(
   () => import('@src/components/Form/Input/Select.vue')
 )
+
+const inputRef = ref()
 
 const { locale } = useI18n()
 const { theme } = useTheme()

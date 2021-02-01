@@ -22,12 +22,12 @@
 import { defineProps } from "vue"
 
 const props = defineProps<{
+  tag?: CustomButtonTags,
+  size?: CustomButtonSizes,
+  skin?: CustomButtonSkins,
   icon?: string,
   reverse?: boolean,
   disabled?: boolean,
-  skin?: 'glassy' | 'ghosty' | 'default',
-  tag?: 'a' | 'span' | 'button' | 'div',
-  size?: 'small' | 'medium' | 'large'
 }>()
 </script>
 
@@ -74,7 +74,7 @@ const props = defineProps<{
     font-size: var(--font-size-xl);
   }
 }
-
-@import './_glassy.scss';
-@import './_ghosty.scss';
 </style>
+
+<style lang="scss" src="./_glassy.scss"></style>
+<style lang="scss" src="./_ghosty.scss"></style>

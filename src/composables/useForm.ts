@@ -24,8 +24,9 @@ export function createForm(schema: FormSchema) {
  * This composable will export a set of controllers/data for a given schema object
  */
 export function useForm(schema: FormSchema) {
+  const entries = computed(() => Object.entries(schema))
+  
   /**
-   *
    * This computed variable will return a simplified version of the schema object,
    * containing only each input name as a key, and the input.value as their values 
    *
@@ -36,7 +37,6 @@ export function useForm(schema: FormSchema) {
    *   email: "my@email.com",
    *   ...
    * }
-   * 
    */
   const data = computed(() => {
     let data: { [inputName: string]: any } = {}
@@ -47,7 +47,6 @@ export function useForm(schema: FormSchema) {
   })
 
   /**
-   *
    * This computed variable will return a simplified version of the schema object,
    * containing only each input name as a key, and the input.errors array as their values 
    *
@@ -58,7 +57,6 @@ export function useForm(schema: FormSchema) {
    *   email: ["Invalid e-mail", ... ],
    *   ...
    * }
-   * 
    */
   const errors = computed(() => {
     let errors: { [inputName: string]: string[] } = {}
@@ -66,7 +64,7 @@ export function useForm(schema: FormSchema) {
       errors[inputName] = schema[inputName].errors || []
     }
     return errors
-  })
+  }) 
 
   /**
    * This function will validate each schema input value
@@ -108,6 +106,7 @@ export function useForm(schema: FormSchema) {
     data,
     schema,
     errors,
+    entries,
     validate
   }
 }

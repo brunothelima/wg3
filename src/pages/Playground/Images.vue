@@ -23,7 +23,7 @@
   <section class="images-demo">
     <h1>{{ t('title') }}</h1>
     <hr />
-    
+
     <h6>{{ t('smart-off') }}</h6>
     <div>
       <Image src="image1.jpg" :w="182" ratio="9:16">{{ t("portrait") }} 9:16</Image>
@@ -34,21 +34,11 @@
     </div>
     <h6>{{ t('smart-on') }}</h6>
     <div class="reverse">
-      <Image
-        src="image1.jpg"
-        :w="182"
-        ratio="9:16"
-        :smart="true"
-      >{{ t("portrait") }} 9:16</Image>
+      <Image src="image1.jpg" :w="182" ratio="9:16" :smart="true">{{ t("portrait") }} 9:16</Image>
       <Image src="image3.jpg" :w="182" ratio="3:4" :smart="true">{{ t("portrait") }} 3:4</Image>
       <Image src="image5.jpg" :w="182" ratio="1:1" :smart="true">{{ t("square") }} 1:1</Image>
       <Image src="image2.jpg" :w="182" ratio="4:3" :smart="true">{{ t("landscape") }} 4:3</Image>
-      <Image
-        src="image4.jpg"
-        :w="182"
-        ratio="16:9"
-        :smart="true"
-      >{{ t("landscape") }} 16:9</Image>
+      <Image src="image4.jpg" :w="182" ratio="16:9" :smart="true">{{ t("landscape") }} 16:9</Image>
     </div>
   </section>
 </template>
@@ -59,7 +49,7 @@ import { useI18n } from '@src/composables'
 
 const Image = defineAsyncComponent(
   () => import('@src/components/Image.vue')
-) 
+)
 
 const { t } = useI18n()
 </script>
@@ -77,7 +67,7 @@ h1 {
 .images-demo > div {
   overflow: auto;
   white-space: nowrap;
-  margin-bottom:  2em; 
+  margin-bottom: 2em;
 }
 .images-demo > div figure {
   display: inline-flex;

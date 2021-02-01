@@ -15,12 +15,10 @@
   <section class="inputs">
     <h1>{{ t('title') }}</h1>
     <hr />
-    <Form :schema="schema" :messages="messages" @error="onError" @success="onSuccess">
+    <Form :schema="schema" :messages="messages">
       <footer>
-        <br>
-        <Button :reverse="true" icon="icon-arrow-right" model="glassy">
-          {{ t('submit') }}
-        </Button>
+        <br />
+        <Button :reverse="true" icon="icon-arrow-right" model="glassy">{{ t('submit') }}</Button>
       </footer>
     </Form>
   </section>
@@ -41,14 +39,6 @@ const Button = defineAsyncComponent(
 )
 
 const { t } = useI18n()
-
-function onSuccess(data: FormSchema) {
-  console.log('success', data.value)
-}
-
-function onError(data: FormSchema) {
-  console.log('error', data.value)
-}
 </script>
 
 <style lang="scss" scoped>

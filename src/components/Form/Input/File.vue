@@ -1,5 +1,8 @@
 <template>
-  <div :class="['input:file', { 'input:file--invalid': errors?.length }]" @click="inputRef?.click()">
+  <div
+    :class="['input:file', { 'input:file--invalid': errors?.length }]"
+    @click="inputRef?.click()"
+  >
     <input
       ref="inputRef"
       type="file"
@@ -7,7 +10,7 @@
       :id="`${name}Id`"
       :disabled="disabled"
       :readonly="readonly"
-      @input="$emit('update', [ev, name, inputRef?.files?.[0]])"
+      @input="$emit('update', [$event, name, inputRef.files?.[0]])"
     />
     <span class="input:file__selected" v-if="value">{{ value?.name }}</span>
     <span class="input:file__placeholder" v-else>{{ t(placeholder) }}</span>
@@ -29,7 +32,7 @@ const props = defineProps<{
 }>()
 
 const inputRef = ref()
-const { t } = inject('i18n', useI18n()) 
+const { t } = inject('i18n', useI18n())
 </script>
 
 <style lang="scss" scoped>

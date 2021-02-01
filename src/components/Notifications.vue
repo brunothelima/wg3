@@ -1,6 +1,11 @@
 <template>
   <ul data-test="notifications" class="notifications">
-    <li data-test="message" v-for="(note, index) in notifications" :key="note" :class="note.status">
+    <li
+      data-test="message"
+      v-for="(note, index) in notifications"
+      :key="`note${index}`"
+      :class="note.status"
+    >
       <i data-test="icon" class="icon-close-small" @click="dismiss(index)" />
       <span data-test="text">{{ note.message }}</span>
     </li>

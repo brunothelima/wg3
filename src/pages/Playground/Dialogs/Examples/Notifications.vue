@@ -19,30 +19,34 @@
 
 <template>
   <div class="notification-demo">
-    <Button model="glassy" icon="icon-info" :reverse="true" @click="notify({ message: t('message') })">{{
-      t('infoButton')
-    }}</Button>
+    <Button
+      model="glassy"
+      icon="icon-info"
+      :reverse="true"
+      @click="notify({ message: t('message') })"
+    >
+      {{
+        t('infoButton')
+      }}
+    </Button>
     <Button
       model="glassy"
       icon="icon-exclamation-mark"
       :reverse="true"
       @click="notify({ message: t('message'), status: 'warning' })"
-      >{{ t('warningButton') }}</Button
-    >
+    >{{ t('warningButton') }}</Button>
     <Button
       model="glassy"
       icon="icon-close"
       :reverse="true"
       @click="notify({ message: t('message'), status: 'error' })"
-      >{{ t('errorButton') }}</Button
-    >
+    >{{ t('errorButton') }}</Button>
     <Button
       model="glassy"
       icon="icon-thick-2px"
       :reverse="true"
       @click="notify({ message: t('message'), status: 'success' })"
-      >{{ t('successButton') }}</Button
-    >
+    >{{ t('successButton') }}</Button>
   </div>
 </template>
 
@@ -52,7 +56,7 @@ import { useI18n, useNotifications } from '@src/composables'
 
 const Button = defineAsyncComponent(
   () => import('@src/components/Button/index.vue')
-) 
+)
 
 const { t } = useI18n()
 const { notify } = useNotifications()

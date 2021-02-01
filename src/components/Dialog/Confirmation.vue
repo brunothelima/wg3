@@ -12,12 +12,8 @@
       <span v-if="text">{{ text }}</span>
     </div>
     <footer>
-      <button v-if="buttonLeft" @click="$emit('leftButtonClick')">
-        {{ buttonLeft }}
-      </button>
-      <button v-if="buttonRight" @click="$emit('rightButtonClick')">
-        {{ buttonRight }}
-      </button>
+      <button v-if="buttonLeft" @click="$emit('leftButtonClick')">{{ buttonLeft }}</button>
+      <button v-if="buttonRight" @click="$emit('rightButtonClick')">{{ buttonRight }}</button>
     </footer>
   </div>
 </template>
@@ -48,9 +44,7 @@ const props = defineProps<{
   @media screen and (max-width: #{$tablet-brakepoint}) {
     height: 100%;
   }
-}
-
-.dialog\:confirmation__content {
+  &\:confirmation__content {
   display: flex;
   flex-flow: column;
   justify-content: center;
@@ -75,7 +69,8 @@ const props = defineProps<{
     margin-bottom: 1rem;
     font-size: 40px;
   }
-} 
+}
+}
 
 header {
   display: flex;
@@ -110,9 +105,10 @@ footer {
     }
     & + button {
       color: var(--color-error);
-      border-left: var(--card-border-width) var(--card-border-style) var(--color-x-8);
+      border-left: var(--card-border-width) var(--card-border-style)
+        var(--color-x-8);
     }
-    &[style*='color:'] {
+    &[style*="color:"] {
       font-weight: 700;
     }
   }

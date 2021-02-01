@@ -8,13 +8,13 @@
       :disabled="disabled"
       :readonly="readonly"
       :placeholder="t(placeholder)"
-      @input="$emit('update', [$event, name, $event.target.value])"
+      @input="$emit('update', [$event, name, inputRef.value])"
     />
   </div>
 </template>
 
 <script lang="ts" setup>
-import { inject, defineProps } from 'vue'
+import { inject, ref, defineProps } from 'vue'
 import { useI18n } from '@src/composables'
 
 const props = defineProps<{
@@ -26,7 +26,9 @@ const props = defineProps<{
   errors?: string[],
 }>()
 
-const { t } = inject('i18n', useI18n()) 
+const inputRef = ref()
+
+const { t } = inject('i18n', useI18n())
 </script>
 
 <style lang="scss" scoped>
@@ -60,5 +62,4 @@ const { t } = inject('i18n', useI18n())
     }
   }
 }
- 
 </style>

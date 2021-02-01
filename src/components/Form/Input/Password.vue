@@ -1,20 +1,23 @@
 <template>
-  <div data-test="input" :class="['input:password', { 'input:password--invalid': errors?.length }]">
+  <div data-test="input" :class="['input:password', { 
+    'input:password--invalid': errors?.length 
+  }]">
     <input
-      :type="type"
+      ref="inputRef"
       :name="name"
       :id="`${name}Id`"
       :value="value"
+      :type="inputType"
       :disabled="disabled"
       :readonly="readonly"
       :placeholder="t(placeholder)"
-      @input="$emit('update', [$event, name, $event.target.value])"
+      @input="$emit('update', [$event, name, inputRef.value])"
     />
     <i
       data-test="icon"
       color="a"
-      :class="`icon-eye${type === 'text' ? '-closed' : ''}`"
-      @click="type = type === 'text' ? 'password' : 'text'"
+      :class="`icon-eye${inputType === 'text' ? '-closed' : ''}`"
+      @click="inputType = inputType === 'text' ? 'password' : 'text'"
     />
   </div>
 </template>
@@ -32,13 +35,16 @@ const props = defineProps<{
   errors?: string[]
 }>()
 
-const type = ref('password')
-const { t } = inject('i18n', useI18n()) 
+
+const inputRef = ref()
+const inputType = ref('password')
+
+const { t } = inject('i18n', useI18n())
 </script>
 
 <style lang="scss" scoped>
 .input\:password {
-  display: flex; 
+  display: flex;
   flex: 1;
   display: grid;
   grid-template-columns: auto 48px;
@@ -76,6 +82,6 @@ const { t } = inject('i18n', useI18n())
     i {
       border-color: var(--color-error);
     }
-  } 
+  }
 }
 </style>

@@ -49,9 +49,8 @@ const Button = defineAsyncComponent(
 )
 
 const props = defineProps<{
-  size?: string,
-  skin?: string,
-  title?: string,
+  size?: CustomButtonSizes,
+  skin?: CustomButtonSkins,
 }>()
 
 const { t } = useI18n()

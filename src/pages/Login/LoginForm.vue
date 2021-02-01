@@ -19,17 +19,15 @@
     <p>{{ t('intro') }}</p>
     <Form :schema="schema" :messages="messages" @success="login">
       <footer>
-        <a href>{{ t('password-loss') }}</a>
-        <Button :reverse="true" icon="icon-arrow-right" model="glassy">
-          {{ t('submit') }}
-        </Button>
+        <a href="/">{{ t('password-loss') }}</a>
+        <Button :reverse="true" icon="icon-arrow-right" model="glassy">{{ t('submit') }}</Button>
       </footer>
     </Form>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { defineAsyncComponent, defineComponent } from 'vue'
+import { defineAsyncComponent } from 'vue'
 import { useI18n } from '@src/composables'
 import router from '@src/router'
 
@@ -50,15 +48,12 @@ function login() {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .login-form {
   width: 300px;
   padding: 2em;
   box-shadow: var(--box-shadow-light);
-  border: 
-    var(--card-border-width) 
-    var(--card-border-style) 
-    var(--color-x-8);
+  border: var(--card-border-width) var(--card-border-style) var(--color-x-8);
   border-radius: var(--card-border-radius);
   background-color: var(--color-x-10);
 }
@@ -75,8 +70,8 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-footer a {
-  font-size: var(--font-size-xs);
+  a {
+    font-size: var(--font-size-xs);
+  }
 }
 </style>

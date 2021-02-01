@@ -10,7 +10,7 @@
       :readonly="readonly"
       :disabled="disabled"
       :placeholder="t(placeholder)"
-      @input="$emit('update', [$event, name, inputRef?.value])"
+      @input="$emit('update', [$event, name, inputRef.value])"
     />
   </div>
 </template>
@@ -37,7 +37,7 @@ const props = defineProps<{
 }>()
 
 const inputRef = ref()
-const { t, locale } = inject('i18n', useI18n()) 
+const { t, locale } = inject('i18n', useI18n())
 
 const fpOptions = computed(() => ({
   mode: props.mode,
@@ -53,7 +53,7 @@ onMounted(() => {
 })
 
 // On locale change we relocalize the flatpickr instance
-watch(() => locale.value, newLocale => {  
+watch(() => locale.value, newLocale => {
   FP.localize(FP.l10ns[newLocale] as any)
 })
 

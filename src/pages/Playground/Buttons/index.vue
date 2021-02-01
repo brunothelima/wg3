@@ -21,22 +21,18 @@
   <section class="buttons-demo">
     <h1>{{ t('title') }}</h1>
     <hr />
-    <div class="text"></div>
-    <GlassyExample />
-    <GhostyExample />
+    <component :is="Examples.Glassy" />
+    <component :is="Examples.Ghosty" />
   </section>
 </template>
 
 <script lang="ts" setup>
-import { defineAsyncComponent } from 'vue'
+import { glob2Components } from '@src/utils'
 import { useI18n } from '@src/composables'
 
-const GhostyExample = defineAsyncComponent(
-  () => import('./Examples/Ghosty.vue')
-) 
-const GlassyExample = defineAsyncComponent(
-  () => import('./Examples/Glassy.vue')
-) 
+const Examples = glob2Components(
+  import.meta.glob('./Examples/*.vue')
+)
 
 const { t } = useI18n()
 </script>
@@ -49,7 +45,7 @@ h1 {
   margin-bottom: 4em;
 }
 
-.buttons-demo::v-deep([class*='-buttons-list']) {
+.buttons-demo::v-deep([class*="-buttons-list"]) {
   margin-bottom: 2em;
 }
 .buttons-demo::v-deep(pre) {

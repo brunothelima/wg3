@@ -80,26 +80,26 @@ nav {
   &:hover {
     transform: translateX(0);
   }
-}
-nav header {
-  padding: 1em;
-  border-bottom: var(--input-border-width) var(--input-border-style) var(--color-a-6);
-}
-nav header::v-deep(.input\:select__selected) {
-  padding: 0.5em 48px 0.5em 1em;
-}
-nav header::v-deep(.input\:select__wrapper) {
-  border-color: var(--color-a-4);
-}
-nav ul li {
-  padding: 1em 2em;
-  border-bottom: var(--input-border-width) var(--input-border-style) var(--color-a-6);
-}
-nav ul li a {
-  display: inline-block;
-  transition: color var(--transition-duration);
-}
-nav ul li a.router-link-exact-active {
-  color: var(--color-x-1);
+  header {
+    padding: 1em;
+    border-bottom: var(--input-border-width) var(--input-border-style) var(--color-a-6);
+    &::v-deep(.input\:select__selected) {
+      padding: 0.5em 48px 0.5em 1em;
+    }
+    &::v-deep(.input\:select__wrapper) {
+      border-color: var(--color-a-4);
+    }
+  }
+  ul li {
+    padding: 1em 2em;
+    border-bottom: var(--input-border-width) var(--input-border-style) var(--color-a-6);
+  }
+  ul li a {
+    display: inline-block;
+    transition: color var(--transition-duration);
+  }
+  ul li a.router-link-exact-active {
+    color: var(--color-x-1);
+  }
 }
 </style>

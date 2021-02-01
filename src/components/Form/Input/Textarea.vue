@@ -8,20 +8,20 @@
       :readonly="readonly"
       :placeholder="t(placeholder)"
       :maxlength="maxlength"
-      @input="$emit('update', [$event, name, $event.target.value])"
+      @input="$emit('update', [$event, name, inputRef.value])"
     ></textarea>
-    <small>{{ maxlength ? `${value.length}/${maxlength}` : value.length }}</small>
+    <small>{{ maxlength && value ? `${value.length}/${maxlength}` : value?.length }}</small>
   </div>
 </template>
 
 
 <script lang="ts" setup>
-import { inject, defineProps } from 'vue'
+import { inject, ref, defineProps } from 'vue'
 import { useI18n } from '@src/composables'
 
 const props = defineProps<{
   name?: string,
-  value?: string | number
+  value?: string,
   placeholder?: string,
   disabled?: boolean,
   readonly?: boolean,
@@ -29,7 +29,9 @@ const props = defineProps<{
   maxlength?: number
 }>()
 
-const { t } = inject('i18n', useI18n()) 
+const inputRef = ref()
+
+const { t } = inject('i18n', useI18n())
 </script>
 
 <style lang="scss" scoped>

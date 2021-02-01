@@ -10,7 +10,7 @@
       :disabled="disabled"
       :readonly="readonly"
       :placeholder="t(placeholder)"
-      @input="$emit('update', [$event, name, inputRef?.value])"
+      @input="$emit('update', [$event, name, inputRef.value])"
     />
   </div>
 </template>
@@ -32,7 +32,7 @@ const props = defineProps<{
 }>()
 
 const inputRef = ref()
-const { t } = inject('i18n', useI18n()) 
+const { t } = inject('i18n', useI18n())
 
 onMounted(() => {
   VMasker(inputRef.value)

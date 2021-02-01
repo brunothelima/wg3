@@ -14,24 +14,22 @@
     <h1>{{ t('title') }}</h1>
     <hr />
     <div class="css-vars">
-      <PrimaryExample />
-      <SecondaryExample />
-      <GrayishExample />
+      <component :is="Examples.Primary" />
+      <component :is="Examples.Secondary" />
+      <component :is="Examples.Grayish" />
     </div>
-    <SystemExample />
-    <GradientExample />
+    <component :is="Examples.System" />
+    <component :is="Examples.Gradient" />
   </section>
 </template>
 
 <script lang="ts" setup>
-import { defineAsyncComponent } from 'vue'
+import { glob2Components } from '@src/utils'
 import { useI18n } from '@src/composables'
 
-const PrimaryExample = defineAsyncComponent(() => import('./Examples/Primary.vue')) 
-const SecondaryExample = defineAsyncComponent(() => import('./Examples/Secondary.vue')) 
-const GrayishExample = defineAsyncComponent(() => import('./Examples/Grayish.vue')) 
-const SystemExample = defineAsyncComponent(() => import('./Examples/System.vue')) 
-const GradientExample = defineAsyncComponent(() => import('./Examples/Gradient.vue')) 
+const Examples = glob2Components(
+  import.meta.globEager('./Examples/*.vue')
+)
 
 const { t } = useI18n()
 </script>

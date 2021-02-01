@@ -13,27 +13,21 @@
   <section class="text-demo">
     <h1>{{ t('title') }}</h1>
     <hr />
-    <HeadingsExample />
+    <component :is="Examples.Headings" />
     <hr />
-    <ParagraphExample />
+    <component :is="Examples.Paragraph" />
     <hr />
-    <LabelsExample />
+    <component :is="Examples.labels" />
   </section>
 </template>
 
 <script lang="ts" setup>
-import { defineAsyncComponent } from 'vue'
+import { glob2Components } from '@src/utils'
 import { useI18n } from '@src/composables'
 
-const HeadingsExample = defineAsyncComponent(
-  () => import('./Examples/Headings.vue')
+const Examples = glob2Components(
+  import.meta.glob('./Examples/*.vue')
 )
-const ParagraphExample = defineAsyncComponent(
-  () => import('./Examples/Paragraph.vue')
-)
-const LabelsExample = defineAsyncComponent(
-  () => import('./Examples/Labels.vue')
-) 
 
 const { t } = useI18n()
 </script>

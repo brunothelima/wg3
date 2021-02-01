@@ -1,6 +1,9 @@
 <template>
-  <div data-test="input" :class="['input:checkbox', { 'input:checkbox--checked': inputRef?.checked }]">
-    <i data-test="ui" class="input:checkbox__ui" @click="inputRef?.click()"/>
+  <div
+    data-test="input"
+    :class="['input:checkbox', { 'input:checkbox--checked': inputRef?.checked }]"
+  >
+    <i data-test="ui" class="input:checkbox__ui" @click="inputRef.click()" />
     <input
       ref="inputRef"
       type="checkbox"
@@ -9,7 +12,7 @@
       :disabled="disabled"
       @input="$emit('update', [$event, name, inputRef?.checked])"
     />
-    <label :for="`${name}Id`">{{ t(title) }}</label>  
+    <label :for="`${name}Id`">{{ t(title) }}</label>
   </div>
 </template>
 
@@ -24,7 +27,7 @@ const props = defineProps<{
 }>()
 
 const inputRef = ref()
-const { t } = inject('i18n', useI18n()) 
+const { t } = inject('i18n', useI18n())
 </script>
 
 <style lang="scss" scoped>

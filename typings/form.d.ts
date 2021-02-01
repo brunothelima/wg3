@@ -9,10 +9,14 @@ declare interface FormSchema {
   [inputName: string]: FormInputTypes
 }
 
+declare interface FormSchemaData {
+  [inputName: string]: string
+}
+
 // Input base type
 declare interface FormInput {
   // Input native attrs
-  type?: string
+  type: string
   value?: any
   label?: string
   disabled?: boolean
@@ -84,7 +88,9 @@ declare interface OnInputEvent extends InputEvent {
   target: HTMLInputElement
 }
 
-declare type OnUpdateArgs = [OnInputEvent, string, any]
+declare type OnUpdateEvents = OnInputEvent | MouseEvent
+
+declare type OnUpdateArgs = [OnUpdateEvents, string, any]
 
 declare interface FormValidator {
   message: string

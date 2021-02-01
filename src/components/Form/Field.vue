@@ -23,7 +23,7 @@ const props = defineProps<{
   input: FormInputTypes,
 }>()
 
-const { t } = inject('i18n', useI18n()) 
+const { t } = inject('i18n', useI18n())
 </script>
 
 <style lang="scss" scoped>
@@ -55,8 +55,10 @@ const { t } = inject('i18n', useI18n())
     align-items: flex-start;
     padding: 1em 0 0 1em;
     margin: 0.5em 0 0.5em 1em;
-    border-bottom: var(--input-border-width) var(--input-border-style) var(--color-error);
-    border-left: var(--input-border-width) var(--input-border-style) var(--color-error);
+    border-bottom: var(--input-border-width) var(--input-border-style)
+      var(--color-error);
+    border-left: var(--input-border-width) var(--input-border-style)
+      var(--color-error);
     border-bottom-left-radius: var(--input-border-radius);
     padding: 1em 2em;
     li {
