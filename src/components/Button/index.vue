@@ -76,5 +76,5 @@ const props = defineProps<{
 }
 </style>
 
-<style lang="scss" src="./_glassy.scss"></style>
-<style lang="scss" src="./_ghosty.scss"></style>
+<style src="./_glassy.scss" lang="scss" scoped></style>
+<style src="./_ghosty.scss" lang="scss" scoped></style>

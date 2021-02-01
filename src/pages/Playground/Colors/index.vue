@@ -28,7 +28,7 @@ import { glob2Components } from '@src/utils'
 import { useI18n } from '@src/composables'
 
 const Examples = glob2Components(
-  import.meta.globEager('./Examples/*.vue')
+  import.meta.glob('./Examples/*.vue')
 )
 
 const { t } = useI18n()

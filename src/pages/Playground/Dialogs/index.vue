@@ -17,7 +17,7 @@
   <section class="dialogs">
     <h1>{{ t('heading') }}</h1>
     <hr />
-    <component :is="Examples.Notification" />
+    <component :is="Examples.Notifications" />
     <component :is="Examples.Confirmation" />
   </section>
 </template>

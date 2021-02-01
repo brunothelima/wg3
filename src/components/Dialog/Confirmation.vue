@@ -44,7 +44,9 @@ const props = defineProps<{
   @media screen and (max-width: #{$tablet-brakepoint}) {
     height: 100%;
   }
-  &\:confirmation__content {
+}
+
+.dialog\:confirmation__content {
   display: flex;
   flex-flow: column;
   justify-content: center;
@@ -69,7 +71,6 @@ const props = defineProps<{
     margin-bottom: 1rem;
     font-size: 40px;
   }
-}
 }
 
 header {

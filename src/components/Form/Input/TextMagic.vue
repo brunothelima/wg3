@@ -4,6 +4,7 @@
     :class="['input:text-magic', { 'input:text-magic--invalid': errors?.length }]"
   >
     <input
+      ref="InputRef"
       type="text"
       :name="name"
       :id="`${name}Id`"

@@ -2,11 +2,16 @@
   <form data-test="form" @submit="onSubmitHandler" class="form">
     <!-- <pre>{{data}}</pre><br><br><br> -->
     <div class="form__grid">
-      <Field v-for="[name, input] in form.entries" :key="name" :input="input" :id="`${name}Id`">
+      <Field
+        v-for="[name, input] in Object.entries(form.schema)"
+        :key="name"
+        :input="input"
+        :id="`${name}Id`"
+      >
         <component
-          :is="Input[input.type]"
-          :name="name"
           v-bind="input"
+          :name="name"
+          :is="Input[input.type]"
           @update="onUpdateHandler"
         />
       </Field>
@@ -61,7 +66,7 @@ async function onSubmitHandler(event: Event) {
     return
   }
 
-  emit('error', form.data)
+  emit('error', form.errors)
 }
 
 provide('i18n', useI18n(props.messages))

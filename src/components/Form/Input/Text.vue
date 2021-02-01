@@ -1,6 +1,9 @@
 <template>
-  <div data-test="input" :class="['input:text', { 'input:text--invalid': errors?.length }]">
+  <div data-test="input" :class="['input:text', { 
+    'input:text--invalid': errors?.length 
+  }]">
     <input
+      ref="inputRef"
       type="text"
       :name="name"
       :id="`${name}Id`"
@@ -14,7 +17,7 @@
 </template>
 
 <script lang="ts" setup>
-import { inject, ref, defineProps } from 'vue'
+import { inject, ref, defineProps } from "vue"
 import { useI18n } from '@src/composables'
 
 const props = defineProps<{
@@ -23,8 +26,9 @@ const props = defineProps<{
   placeholder?: string,
   disabled?: boolean,
   readonly?: boolean,
-  errors?: string[],
+  errors?: string[]
 }>()
+
 
 const inputRef = ref()
 

@@ -1,6 +1,7 @@
 <template>
   <div :class="['input:textarea', { 'input:textarea--invalid': errors?.length }]">
     <textarea
+      ref="InputRef"
       :name="name"
       :id="`${name}Id`"
       :value="value"

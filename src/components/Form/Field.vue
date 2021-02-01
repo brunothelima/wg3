@@ -16,7 +16,9 @@
 import { inject, defineAsyncComponent, defineProps } from 'vue'
 import { useI18n } from '@src/composables'
 
-const Help = defineAsyncComponent(() => import('./Help.vue'))
+const Help = defineAsyncComponent(
+  () => import('./Help.vue')
+)
 
 const props = defineProps<{
   id: string,

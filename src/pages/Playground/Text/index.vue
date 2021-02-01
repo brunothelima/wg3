@@ -17,7 +17,7 @@
     <hr />
     <component :is="Examples.Paragraph" />
     <hr />
-    <component :is="Examples.labels" />
+    <component :is="Examples.Labels" />
   </section>
 </template>
 
