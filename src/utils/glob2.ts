@@ -77,6 +77,7 @@ export const glob2Components = (...args: any) => {
  *  { path: '/super-discount/pants-b', component: Promise<PantsB> },
  *  ...
  * ]
+ * 
  */
 export const glob2Routes = (routePrefix: string, ...args: any) => {
   const components = glob2Components(...args)
