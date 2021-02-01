@@ -1,6 +1,8 @@
+declare type I18nLocales = 'pt' | 'en'
+
 declare interface I18n {
   t(messages: I18nMessages): string
-  locale: import("vue").Ref<'pt' | 'en'>;
+  locale: I18nLocales;
 }
 
 declare interface I18nMessages {

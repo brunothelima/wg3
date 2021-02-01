@@ -12,29 +12,23 @@
       <span v-if="text">{{ text }}</span>
     </div>
     <footer>
-      <button v-if="buttonLeft" @click="$emit('leftButtonClick')">
-        {{ buttonLeft }}
-      </button>
-      <button v-if="buttonRight" @click="$emit('rightButtonClick')">
-        {{ buttonRight }}
-      </button>
+      <button v-if="buttonLeft" @click="$emit('leftButtonClick')">{{ buttonLeft }}</button>
+      <button v-if="buttonRight" @click="$emit('rightButtonClick')">{{ buttonRight }}</button>
     </footer>
   </div>
 </template>
 
-<script lang="ts">
-import { onMounted, onUnmounted } from 'vue'
+<script lang="ts" setup>
+import { defineProps } from 'vue'
 
-export default {
-  props: {
-    header: String,
-    icon: String,
-    title: String,
-    text: String,
-    buttonLeft: String,
-    buttonRight: String,
-  }
-}
+const props = defineProps<{
+  header: string,
+  icon: string,
+  title: string,
+  text: string,
+  buttonLeft: string,
+  buttonRight: string,
+}>()
 </script>
 
 <style lang="scss" scoped>
@@ -77,7 +71,7 @@ export default {
     margin-bottom: 1rem;
     font-size: 40px;
   }
-} 
+}
 
 header {
   display: flex;
@@ -112,9 +106,10 @@ footer {
     }
     & + button {
       color: var(--color-error);
-      border-left: var(--card-border-width) var(--card-border-style) var(--color-x-8);
+      border-left: var(--card-border-width) var(--card-border-style)
+        var(--color-x-8);
     }
-    &[style*='color:'] {
+    &[style*="color:"] {
       font-weight: 700;
     }
   }

@@ -7,13 +7,10 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
-import ButtonsList from './ButtonsList.vue'
+<script lang="ts" setup>
+import { defineAsyncComponent } from 'vue'
 
-export default defineComponent({
-  components: {
-    ButtonsList
-  }
-})
+const ButtonsList = defineAsyncComponent(
+  () => import('../List.vue')
+)
 </script>

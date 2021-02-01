@@ -1,50 +1,56 @@
 <template>
-  <div data-test="input" :class="['input:text-button', { 'input:text-button--invalid': errors?.length }]">
+  <div
+    data-test="input"
+    :class="['input:text-button', { 'input:text-button--invalid': errors?.length }]"
+  >
     <input
       ref="inputRef"
       type="text"
       :name="name"
       :value="value"
-      :id="`${name}Id`" 
+      :id="`${name}Id`"
       :disabled="disabled"
       :readonly="readonly"
       :placeholder="t(placeholder)"
       @input="$emit('update', [$event, name, inputRef.value])"
     />
-    <Button tag="div" @click="button?.onClick([$event, name, inputRef.value])">
-      {{ t(button.text) }}
-    </Button>
+    <Button tag="div" @click="onButtonClick" v-if="button">{{ t(button.text) }}</Button>
   </div>
 </template>
 
-<script lang="ts">
-import { ref, inject, defineComponent, PropType } from 'vue'
+<script lang="ts" setup>
+import { ref, inject, defineAsyncComponent, defineProps, defineEmit } from 'vue'
 import { useI18n } from '@src/composables'
-import Button from '@src/components/Button/index.vue'
 
-export default defineComponent({
-  components: { 
-    Button 
-  },
-  props: {
-    name: String,
-    value: [String, Number],
-    placeholder: String,
-    disabled: Boolean,
-    readonly: Boolean,
-    errors: Array,
-    button: Object as PropType<FormInputTextButtonProps>
-  },
-  setup(props, context) {
-    const inputRef = ref<HTMLInputElement>()
-    const { t } = inject('i18n', useI18n()) 
-    
-    return {
-      inputRef,
-      t
-    }
+const Button = defineAsyncComponent(
+  () => import('@src/components/Button/index.vue')
+)
+
+const emit = defineEmit()
+const props = defineProps<{
+  name: string,
+  value?: string
+  placeholder?: string,
+  disabled?: boolean,
+  readonly?: boolean,
+  errors?: string[],
+  button?: FormInputTextButtonProps
+}>()
+
+const inputRef = ref()
+
+const { t } = inject('i18n', useI18n())
+
+function onButtonClick(event: MouseEvent) {
+  const updateArgs: OnUpdateArgs = [event, props.name, inputRef?.value]
+
+  if (props.button && props.button.onClick) {
+    props.button.onClick(updateArgs)
+    return
   }
-})
+
+  emit('update', updateArgs)
+}
 </script>
 
 <style lang="scss" scoped>
@@ -77,8 +83,8 @@ export default defineComponent({
     i {
       border-color: var(--color-error);
     }
-  } 
-   &::v-deep(.button) {
+  }
+  &::v-deep(.button) {
     position: absolute;
     right: 6px;
     bottom: 6px;

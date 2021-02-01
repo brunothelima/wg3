@@ -1,57 +1,63 @@
 <template>
-  <div data-test="input" :class="['input:select-magic', { 'input:select-magic--invalid': errors?.length }]">
+  <div
+    data-test="input"
+    :class="['input:select-magic', { 'input:select-magic--invalid': errors?.length }]"
+  >
     <select
       data-test="select"
+      ref="InputRef"
       :id="`${name}Id`"
       :name="name"
       :value="value"
       :disabled="disabled"
       :readonly="readonly"
-      @input="$emit('update', [$event, name, $event.target.value])"
+      @input="$emit('update', [$event, name, inputRef.value])"
     >
-      <option v-for="option in options" :key="option" :value="option.value" :selected="option.value === value">
-        {{ t(option.label) }}
-      </option>
+      <option
+        v-for="option in options"
+        :key="option"
+        :value="option.value"
+        :selected="option.value === value"
+      >{{ t(option.label) }}</option>
       <slot />
     </select>
     <div data-test="selected" class="input:select-magic__selected" v-if="selected">{{ t(selected) }}</div>
-    <div data-test="placeholder" class="input:select-magic__placeholder" v-else>{{ t(placeholder || 'Select an option') }}</div>
+    <div
+      data-test="placeholder"
+      class="input:select-magic__placeholder"
+      v-else
+    >{{ t(placeholder || 'Select an option') }}</div>
   </div>
 </template>
 
-<script lang="ts">
-import { computed, inject, defineComponent, defineProps, PropType } from 'vue'
+
+<script lang="ts" setup>
+import { computed, inject, ref, defineProps } from 'vue'
 import { useI18n } from '@src/composables'
 
-export default defineComponent({
-  props: {
-    name: String,
-    value: [String, Number],
-    placeholder: String,
-    disabled: Boolean,
-    readonly: Boolean,
-    errors: Array,
-    options: Array as PropType<FormInputOption[]>,
-  },
-  setup(props, context) {
-    const { t } = inject('i18n', useI18n())
+const props = defineProps<{
+  name?: string,
+  value?: string | number
+  placeholder?: string,
+  disabled?: boolean,
+  readonly?: boolean,
+  errors?: string[],
+  options?: FormInputOption[]
+}>()
 
-    // Computes the current select option title for display
-    const selected = computed(() => {
-      if (!props.value) return null
-      // Query for the selected option title
-      let query = (option: FormInputOption) => {
-        return `${option.value}` === `${props.value}`
-      }
-      return props.options?.find(query)?.label
-    })
+const inputRef = ref()
 
-    return {
-      t,
-      selected 
-    }
+// Returns the current selected option title
+const selected = computed(() => {
+  if (!props.value) return null
+  // Query for the selected option title
+  let query = (option: FormInputOption) => {
+    return `${option.value}` === `${props.value}`
   }
+  return props.options?.find(query)?.label
 })
+
+const { t } = inject('i18n', useI18n())
 </script>
 
 <style lang="scss" scoped>
@@ -93,5 +99,4 @@ export default defineComponent({
     border-color: var(--color-error);
   }
 }
-
 </style>

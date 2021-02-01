@@ -48,14 +48,9 @@
   </div>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import { useI18n } from '@src/composables'
-
-export default {
-  setup() {
-    return useI18n()
-  }
-}
+const { t } = useI18n()
 </script>
 
 <style lang="scss" scoped>

@@ -15,51 +15,30 @@
   <section class="inputs">
     <h1>{{ t('title') }}</h1>
     <hr />
-    <Form :schema="schema" :messages="messages" @error="onError" @success="onSuccess">
+    <Form :schema="schema" :messages="messages">
       <footer>
-        <br>
-        <Button :reverse="true" icon="icon-arrow-right" model="glassy">
-          {{ t('submit') }}
-        </Button>
+        <br />
+        <Button :reverse="true" icon="icon-arrow-right" model="glassy">{{ t('submit') }}</Button>
       </footer>
     </Form>
   </section>
 </template>
 
-<script lang="ts">
-import { defineComponent, onUnmounted } from 'vue'
+<script lang="ts" setup>
+import { defineAsyncComponent } from 'vue'
 import { useI18n } from '@src/composables'
-import Form from '@src/components/Form/index.vue'
-import Button from '@src/components/Button/index.vue'
 
 import schema from './schema'
 import messages from './messages.json'
 
-export default defineComponent({
-  components: {
-    Form,
-    Button
-  },
-  setup() {
-    const { t } = useI18n()
+const Form = defineAsyncComponent(
+  () => import('@src/components/Form/index.vue')
+)
+const Button = defineAsyncComponent(
+  () => import('@src/components/Button/index.vue')
+)
 
-    function onSuccess(data: FormSchema) {
-      console.log('success', data.value)
-    }
-
-    function onError(data: FormSchema) {
-      console.log('error', data.value)
-    }
-
-    return {
-      t,
-      schema,
-      messages,
-      onSuccess,
-      onError
-    }
-  }
-})
+const { t } = useI18n()
 </script>
 
 <style lang="scss" scoped>

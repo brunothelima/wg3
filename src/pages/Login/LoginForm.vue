@@ -19,49 +19,36 @@
     <p>{{ t('intro') }}</p>
     <Form :schema="schema" :messages="messages" @success="login">
       <footer>
-        <a href>{{ t('password-loss') }}</a>
-        <Button :reverse="true" icon="icon-arrow-right" model="glassy">
-          {{ t('submit') }}
-        </Button>
+        <a href="/">{{ t('password-loss') }}</a>
+        <Button :reverse="true" icon="icon-arrow-right" model="glassy">{{ t('submit') }}</Button>
       </footer>
     </Form>
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
+import { defineAsyncComponent } from 'vue'
 import { useI18n } from '@src/composables'
 import router from '@src/router'
-
-import Form from '@src/components/Form/index.vue'
-import Button from '@src/components/Button/index.vue'
 
 import schema from '@src/pages/Login/schema'
 import messages from '@src/pages/Login/messages.json'
 
-export default defineComponent({
-  components: {
-    Form,
-    Button
-  },
-  setup() {
-    const { t } = useI18n()
+const Form = defineAsyncComponent(
+  () => import('@src/components/Form/index.vue')
+)
+const Button = defineAsyncComponent(
+  () => import('@src/components/Button/index.vue')
+)
 
-    const login = () => {
-      router.push('/playground/colors')
-    }
+const { t } = useI18n()
 
-    return {
-      t,
-      login,
-      messages,
-      schema
-    }
-  }
-})
+function login() {
+  router.push('/playground/colors')
+}
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .login-form {
   width: 300px;
   padding: 2em;
@@ -83,8 +70,8 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-footer a {
-  font-size: var(--font-size-xs);
+  a {
+    font-size: var(--font-size-xs);
+  }
 }
 </style>

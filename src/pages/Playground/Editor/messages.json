@@ -1,12 +1,12 @@
 {
   "en": {
-    "editor": {
+    "inputEditor": {
       "label": "Text Editor",
       "placeholder": "Click here and start typing"
     }
   },
   "pt": {
-    "editor": {
+    "inputEditor": {
       "label": "Editor de texto",
       "placeholder": "Clique aqui e começe a digitar"
     }

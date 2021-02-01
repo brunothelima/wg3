@@ -1,40 +1,38 @@
 <template>
-  <div data-test="input" :class="['input:text-magic', { 'input:text-magic--invalid': errors?.length }]">
+  <div
+    data-test="input"
+    :class="['input:text-magic', { 'input:text-magic--invalid': errors?.length }]"
+  >
     <input
+      ref="InputRef"
       type="text"
       :name="name"
-      :id="`${name}Id`" 
+      :id="`${name}Id`"
       :value="value"
       :disabled="disabled"
       :readonly="readonly"
       :placeholder="t(placeholder)"
-      @input="$emit('update', [$event, name, $event.target.value])"
+      @input="$emit('update', [$event, name, inputRef.value])"
     />
   </div>
 </template>
 
 
-<script lang="ts">
-import { ref, inject, defineComponent } from 'vue'
+<script lang="ts" setup>
+import { inject, ref, defineProps } from 'vue'
 import { useI18n } from '@src/composables'
 
-export default defineComponent({
-  props: {
-    name: String,
-    value: [String, Number],
-    placeholder: String,
-    disabled: Boolean,
-    readonly: Boolean,
-    errors: Array
-  },
-  setup(props, context) {
-    const { t } = inject('i18n', useI18n()) 
-    
-    return {
-      t
-    }
-  }
-})
+const props = defineProps<{
+  name?: string,
+  value?: string | number
+  placeholder?: string,
+  disabled?: boolean,
+  readonly?: boolean,
+  errors?: string[],
+}>()
+
+const inputRef = ref()
+const { t } = inject('i18n', useI18n())
 </script>
 
 <style lang="scss" scoped>
@@ -42,7 +40,7 @@ export default defineComponent({
   display: flex;
   margin-bottom: 0.5rem;
   flex: 1;
-  
+
   input {
     width: 100%;
     box-sizing: border-box;
@@ -72,6 +70,6 @@ export default defineComponent({
     input::placeholder {
       color: var(--color-error);
     }
-  } 
+  }
 }
 </style>

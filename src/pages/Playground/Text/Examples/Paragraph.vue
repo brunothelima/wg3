@@ -14,19 +14,17 @@
     <h6>{{ t('title') }}:</h6>
     <p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit.
-      <a href>Impedit nisi cupiditate sunt</a> fugiat reiciendis dicta consequatur
-      <b>assumenda temporibus enim officia</b>, unde dolorem quibusdam <i>reprehenderit odit voluptas magni</i> corrupti
+      <a
+        href="/"
+      >Impedit nisi cupiditate sunt</a> fugiat reiciendis dicta consequatur
+      <b>assumenda temporibus enim officia</b>, unde dolorem quibusdam
+      <i>reprehenderit odit voluptas magni</i> corrupti
       id nulla? lorem ipsum dolor sit amet consectetur adipisicing elit.
     </p>
   </div>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import { useI18n } from '@src/composables'
-
-export default {
-  setup() {
-    return useI18n()
-  }
-}
+const { t } = useI18n()
 </script>

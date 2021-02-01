@@ -17,26 +17,20 @@
   <section class="dialogs">
     <h1>{{ t('heading') }}</h1>
     <hr />
-    <NotificationsDemo />
-    <ConfirmationDemo />
+    <component :is="Examples.Notifications" />
+    <component :is="Examples.Confirmation" />
   </section>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
+import { glob2Components } from '@src/utils'
 import { useI18n } from '@src/composables'
-import ConfirmationDemo from './ConfirmationDemo.vue'
-import NotificationsDemo from './NotificationsDemo.vue'
 
-export default defineComponent({
-  components: {
-    ConfirmationDemo,
-    NotificationsDemo
-  },
-  setup() {
-    return useI18n()
-  }
-})
+const Examples = glob2Components(
+  import.meta.glob('./Examples/*.vue')
+)
+
+const { t } = useI18n()
 </script>
 
 <style scoped>

@@ -1,8 +1,8 @@
-import v from 'validator'
-
-const validator: FormValidator = {
-  message: 'Invalid email',
-  handler: (value: any) => !v.isEmail(value)
+function isEmail(email: string) {
+  const regex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+  return regex.test(String(email).toLowerCase());
 }
-
-export default validator
+export default {
+  message: `Invalid email format`,
+  handler: (value: any) => !isEmail(value)
+} as FormValidator

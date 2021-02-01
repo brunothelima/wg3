@@ -2,29 +2,24 @@
   <div class="playground">
     <Nav />
     <main>
-      <Suspense>
-        <template #default>
-          <router-view v-slot="{ Component }">
-            <transition name="fade"><component :is="Component" /></transition>
-          </router-view>
-        </template>
-        <template #fallback><Loader /></template>
-      </Suspense>
+      <router-view v-slot="{ Component }">
+        <transition name="fade">
+          <component :is="Component" />
+        </transition>
+      </router-view>
     </main>
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
-import Nav from '@src/pages/Nav.vue'
-import Loader from '@src/components/Loader.vue'
+<script lang="ts" setup>
+import { defineAsyncComponent } from 'vue'
 
-export default defineComponent({
-  components: {
-    Nav,
-    Loader
-  }
-})
+const Nav = defineAsyncComponent(
+  () => import('@src/pages/Nav.vue')
+)
+const Loader = defineAsyncComponent(
+  () => import('@src/components/Loader.vue')
+)
 </script>
 
 <style scoped>
@@ -39,7 +34,7 @@ export default defineComponent({
   position: relative;
   box-sizing: border-box;
   min-height: 100vh;
-  overflow: auto;  
+  overflow: auto;
 }
 .playground main > section {
   max-width: 1200px;

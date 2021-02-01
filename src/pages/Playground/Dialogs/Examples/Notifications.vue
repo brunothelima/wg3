@@ -19,52 +19,47 @@
 
 <template>
   <div class="notification-demo">
-    <Button model="glassy" icon="icon-info" :reverse="true" @click="notify({ message: t('message') })">{{
-      t('infoButton')
-    }}</Button>
+    <Button
+      model="glassy"
+      icon="icon-info"
+      :reverse="true"
+      @click="notify({ message: t('message') })"
+    >
+      {{
+        t('infoButton')
+      }}
+    </Button>
     <Button
       model="glassy"
       icon="icon-exclamation-mark"
       :reverse="true"
       @click="notify({ message: t('message'), status: 'warning' })"
-      >{{ t('warningButton') }}</Button
-    >
+    >{{ t('warningButton') }}</Button>
     <Button
       model="glassy"
       icon="icon-close"
       :reverse="true"
       @click="notify({ message: t('message'), status: 'error' })"
-      >{{ t('errorButton') }}</Button
-    >
+    >{{ t('errorButton') }}</Button>
     <Button
       model="glassy"
       icon="icon-thick-2px"
       :reverse="true"
       @click="notify({ message: t('message'), status: 'success' })"
-      >{{ t('successButton') }}</Button
-    >
+    >{{ t('successButton') }}</Button>
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
+import { defineAsyncComponent } from 'vue'
 import { useI18n, useNotifications } from '@src/composables'
-import Button from '@src/components/Button/index.vue'
 
-export default defineComponent({
-  components: {
-    Button
-  },
-  setup() {
-    const { t } = useI18n()
-    const { notify } = useNotifications()
+const Button = defineAsyncComponent(
+  () => import('@src/components/Button/index.vue')
+)
 
-    return {
-      t,
-      notify
-    }
-  }
-})
+const { t } = useI18n()
+const { notify } = useNotifications()
 </script>
 
 <style scoped>

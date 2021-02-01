@@ -14,36 +14,24 @@
     <h1>{{ t('title') }}</h1>
     <hr />
     <div class="css-vars">
-      <Primary />
-      <Secondary />
-      <Grayish />
+      <component :is="Examples.Primary" />
+      <component :is="Examples.Secondary" />
+      <component :is="Examples.Grayish" />
     </div>
-    <System />
-    <Gradient />
+    <component :is="Examples.System" />
+    <component :is="Examples.Gradient" />
   </section>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
+import { glob2Components } from '@src/utils'
 import { useI18n } from '@src/composables'
-import Primary from './Primary.vue'
-import Secondary from './Secondary.vue'
-import Grayish from './Grayish.vue'
-import System from './System.vue'
-import Gradient from './Gradient.vue'
 
-export default defineComponent({
-  components: {
-    Primary,
-    Secondary,
-    Grayish,
-    System,
-    Gradient
-  },
-  setup() {
-    return useI18n()
-  }
-})
+const Examples = glob2Components(
+  import.meta.glob('./Examples/*.vue')
+)
+
+const { t } = useI18n()
 </script>
 
 <style lang="scss" scoped>

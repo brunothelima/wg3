@@ -1,39 +1,32 @@
 <template>
-  <div data-test="input" :class="['input:toggle', { 'input:toggle--checked': input?.checked }]">
-    <i data-test="ui" class="input:toggle__ui" @click="input.click()" />
+  <div data-test="input" :class="['input:toggle', { 'input:toggle--checked': inputRef?.checked }]">
+    <i data-test="ui" class="input:toggle__ui" @click="inputRef.click()" />
     <input
-      ref="input"
+      ref="inputRef"
       type="checkbox"
       :name="name"
       :id="`${name}Id`"
       :disabled="disabled"
-      @input="$emit('update', [$event, name, input?.checked])"
+      @input="$emit('update', [$event, name, inputRef?.checked])"
     />
     <label :for="`${name}Id`">{{ t(title) }}</label>
   </div>
 </template>
 
-<script lang="ts">
-import { ref, inject, defineComponent } from 'vue'
+<script lang="ts" setup>
+import { ref, inject, defineProps } from 'vue'
 import { useI18n } from '@src/composables'
 
-export default defineComponent({
-   props: {
-    name: String,
-    disabled: Boolean,
-    title: String,
-  },
-  setup(props, context) {
-    const input = ref<HTMLInputElement>()
-    const { t } = inject('i18n', useI18n())
+const props = defineProps<{
+  name?: string,
+  disabled?: boolean,
+  title?: string
+}>()
 
-    return {
-      t,
-      input
-    }
-  }
-})
+const inputRef = ref()
+const { t } = inject('i18n', useI18n()) 
 </script>
+
 <style lang="scss" scoped>
 .input\:toggle {
   display: flex;

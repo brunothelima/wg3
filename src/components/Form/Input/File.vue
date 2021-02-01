@@ -1,5 +1,8 @@
 <template>
-  <div :class="['input:file', { 'input:file--invalid': errors?.length }]" @click="inputRef?.click()">
+  <div
+    :class="['input:file', { 'input:file--invalid': errors?.length }]"
+    @click="inputRef?.click()"
+  >
     <input
       ref="inputRef"
       type="file"
@@ -7,7 +10,7 @@
       :id="`${name}Id`"
       :disabled="disabled"
       :readonly="readonly"
-      @input="$emit('update', [ev, name, inputRef?.files?.[0]])"
+      @input="$emit('update', [$event, name, inputRef.files?.[0]])"
     />
     <span class="input:file__selected" v-if="value">{{ value?.name }}</span>
     <span class="input:file__placeholder" v-else>{{ t(placeholder) }}</span>
@@ -15,29 +18,21 @@
   </div>
 </template>
 
-<script lang="ts">
-import { ref, inject, defineComponent, PropType } from 'vue'
+<script lang="ts" setup>
+import { ref, inject, defineProps } from 'vue'
 import { useI18n } from '@src/composables'
 
-export default defineComponent({
-   props: {
-    name: String,
-    placeholder: String,
-    disabled: Boolean,
-    readonly: Boolean,
-    errors: Array,
-    value: [String, Object] as PropType<File | ''>
-  },
-  setup(props, context) {
-    const inputRef = ref<HTMLInputElement>()
-    const { t } = inject('i18n', useI18n()) 
+const props = defineProps<{
+  name?: string,
+  placeholder?: string,
+  disabled?: boolean,
+  readonly?: boolean,
+  errors?: string[],
+  value?: File
+}>()
 
-    return {
-      t,
-      inputRef
-    }
-  }
-})
+const inputRef = ref()
+const { t } = inject('i18n', useI18n())
 </script>
 
 <style lang="scss" scoped>

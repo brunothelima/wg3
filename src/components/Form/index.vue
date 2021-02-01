@@ -2,62 +2,72 @@
   <form data-test="form" @submit="onSubmitHandler" class="form">
     <!-- <pre>{{data}}</pre><br><br><br> -->
     <div class="form__grid">
-      <Field v-for="[name, input] in entries" :key="name" :input="input" :id="`${name}Id`">
-        <component :is="`${input.type}`" v-bind="input" :name="name" @update="onUpdateHandler"/>
+      <Field
+        v-for="[name, input] in Object.entries(form.schema)"
+        :key="name"
+        :input="input"
+        :id="`${name}Id`"
+      >
+        <component
+          v-bind="input"
+          :name="name"
+          :is="Input[input.type]"
+          @update="onUpdateHandler"
+        />
       </Field>
     </div>
     <slot />
   </form>
 </template>
 
-<script lang="ts">
-import { computed, provide, defineComponent, PropType } from 'vue'
-import { useForm, useI18n } from '@src/composables/'
+<script lang="ts" setup>
+import { provide, defineAsyncComponent, defineProps, defineEmit } from 'vue'
 import { glob2Components } from '@src/utils/'
+import { useForm, useI18n } from '@src/composables/'
 
-import Field from './Field.vue'
+const Field = defineAsyncComponent(() => import('./Field.vue'))
+const Input = glob2Components(import.meta.glob('./Input/**.vue'))
 
-export default defineComponent({
-  props: {
-    schema: Object as PropType<FormSchema>,
-    messages: Object as PropType<I18nMessages>,
-  },
-  components: {
-    Field,
-    ...glob2Components(
-      import.meta.glob('./Input/**.vue')
-    )
-  },
-  setup(props, context) {
-    provide('i18n', useI18n(props.messages))
-    const { schema, data, validate } = useForm(props.schema || {})
-    const entries = computed(() => Object.entries(schema))
+const emit = defineEmit()
+const props = defineProps<{
+  schema: FormSchema,
+  messages?: I18nMessages,
+}>()
 
-    const onUpdateHandler: OnUpdateHandler = ([event, inputName, inputValue]) => { 
-      let input = schema[inputName]
-      input.value = inputValue
-      input.errors = []
-    }
+const form = useForm(props.schema)
 
-    const onSubmitHandler = async (event: Event) => {
-      event.preventDefault()
-      
-      let isFormValid = await validate()
+/**
+ * This function handles the custom @update event, which is 
+ * emmited by any input from the given form.schema
+ * 
+ * The @update event is emited right after the native @input event is triggered
+ */
+function onUpdateHandler([e, inputName, inputValue]: OnUpdateArgs) {
+  let input = form.schema[inputName]
+  input.value = inputValue
+  input.errors = []
+}
 
-      if (isFormValid) {
-        context.emit('success', data)
-        return
-      }
+/**
+ * This function handles the native <form> @submit event
+ * 
+ * First it awaits the form validation, then emmits the
+ * proper callback event abiding by the following rule:
+ * 
+ * - If the form is valid, the callback emmited is "success"
+ * - If the form is invalid, the callback emmited is "error" 
+ */
+async function onSubmitHandler(event: Event) {
+  event.preventDefault()
+  let isFormValid = await form.validate()
 
-      context.emit('error', data)
-    }
-
-    return {
-      data,
-      entries,
-      onUpdateHandler,
-      onSubmitHandler
-    }
+  if (isFormValid) {
+    emit('success', form.data)
+    return
   }
-})
+
+  emit('error', form.errors)
+}
+
+provide('i18n', useI18n(props.messages))
 </script>

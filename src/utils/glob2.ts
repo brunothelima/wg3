@@ -7,15 +7,22 @@ export const glob2Components = (...args: any) => {
 
   for (let componentPath in globs) {
     let componentName = componentPath.split('/').pop()?.replace('.vue', '') 
+
+    console.log()
     
     if (Object.keys(components).includes('index')) {
       componentName = componentPath.split('/')[componentPath.split('/').length - 2]
     }
     
     componentName = componentName?.replace('.vue', '')
-    components[`${componentName}`] = defineAsyncComponent(
-      () => globs[componentPath]()
-    )
+    if (typeof globs[componentPath] === 'function') {
+      components[`${componentName}`] = defineAsyncComponent(
+        () => globs[componentPath]()
+      )
+      continue
+    }
+    
+    components[`${componentName}`] = globs[componentPath].default
   }
 
   return components

@@ -55,24 +55,23 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
+import { defineAsyncComponent, ref } from 'vue'
 import { useI18n } from '@src/composables'
-import Button from '@src/components/Button/index.vue'
-import Dialog from '@src/components/Dialog/index.vue'
-import Confirmation from '@src/components/Dialog/Confirmation.vue'
 
-export default defineComponent({
-  data: () => ({ showDialog: false }),
-  components: {
-    Dialog,
-    Button,
-    Confirmation
-  },
-  setup() {
-    return useI18n()
-  }
-})
+const Button = defineAsyncComponent(
+  () => import('@src/components/Button/index.vue')
+) 
+const Dialog = defineAsyncComponent(
+  () => import('@src/components/Dialog/index.vue')
+) 
+const Confirmation = defineAsyncComponent(
+  () => import('@src/components/Dialog/Confirmation.vue')
+) 
+
+const { t } = useI18n()
+
+const showDialog = ref(false)
 </script>
 
 <style scoped>

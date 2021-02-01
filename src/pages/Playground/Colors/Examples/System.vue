@@ -20,16 +20,11 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
 import { useI18n } from '@src/composables'
-
-export default defineComponent({
-  setup() {
-    return useI18n()
-  }
-})
+const { t } = useI18n()
 </script>
+
 <style lang="scss" scoped>
 .system-colors ul {
   display: flex;

@@ -3,7 +3,7 @@ import { required, email } from '@src/utils/validators/index'
 
 const schema = createForm({
   email: {
-    type: 'text',
+    type: 'Text',
     label: 'Email',
     placeholder: 'email.placeholder',
     validations: {
@@ -12,7 +12,7 @@ const schema = createForm({
     }
   },
   password: {
-    type: 'password',
+    type: 'Password',
     label: 'password.label',
     placeholder: 'password.placeholder',
     validations: {

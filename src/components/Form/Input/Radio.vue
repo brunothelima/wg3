@@ -5,8 +5,9 @@
       :key="`option-${index}`"
       :class="{ 'input:radio__option--checked': option.value == value }"
     >
-      <i class="input:radio__ui" @click="$event.target.nextElementSibling.click()" />
+      <i class="input:radio__ui" @click="inputRef.nextElementSibling.click()" />
       <input
+        ref="inputRef"
         type="radio"
         :name="name"
         :id="`${name}${index}Id`"
@@ -16,30 +17,24 @@
         @input="$emit('update', [$event, name, option.value])"
       />
       <label :for="`${name}${index}Id`">{{ t(option.label) }}</label>
-    </div>    
+    </div>
   </div>
 </template>
 
-<script lang="ts">
-import { ref, inject, defineComponent, PropType } from 'vue'
+<script lang="ts" setup>
+import { inject, ref, defineProps } from 'vue'
 import { useI18n } from '@src/composables'
-  
-export default defineComponent({
-   props: {
-    name: String,
-    value: [String, Number],
-    disabled: Boolean,
-    errors: Array,
-    options: Array as PropType<FormInputOption[]>
-  },
-  setup(props, context) {
-    const { t } = inject('i18n', useI18n()) 
 
-    return {
-      t
-    }
-  }
-})
+const props = defineProps<{
+  name?: string,
+  value?: string | number
+  disabled?: boolean,
+  errors?: string[],
+  options?: FormInputOption[]
+}>()
+
+const inputRef = ref()
+const { t } = inject('i18n', useI18n())
 </script>
 
 <style lang="scss" scoped>

@@ -12,27 +12,20 @@
   </div>
 </template>
 
-<script lang="ts">
-import { inject, defineComponent, PropType } from 'vue'
+<script lang="ts" setup>
+import { inject, defineAsyncComponent, defineProps } from 'vue'
 import { useI18n } from '@src/composables'
-import Help from './Help.vue'
 
-export default defineComponent({
-  components: {
-    Help
-  },
-  props: {
-    id: String,
-    input: Object as PropType<FormInputTypes>,
-  },
-  setup(props) {
-    const { t } = inject('i18n', useI18n()) 
-    
-    return {
-      t
-    }
-  }
-})
+const Help = defineAsyncComponent(
+  () => import('./Help.vue')
+)
+
+const props = defineProps<{
+  id: string,
+  input: FormInputTypes,
+}>()
+
+const { t } = inject('i18n', useI18n())
 </script>
 
 <style lang="scss" scoped>
@@ -64,8 +57,10 @@ export default defineComponent({
     align-items: flex-start;
     padding: 1em 0 0 1em;
     margin: 0.5em 0 0.5em 1em;
-    border-bottom: var(--input-border-width) var(--input-border-style) var(--color-error);
-    border-left: var(--input-border-width) var(--input-border-style) var(--color-error);
+    border-bottom: var(--input-border-width) var(--input-border-style)
+      var(--color-error);
+    border-left: var(--input-border-width) var(--input-border-style)
+      var(--color-error);
     border-bottom-left-radius: var(--input-border-radius);
     padding: 1em 2em;
     li {

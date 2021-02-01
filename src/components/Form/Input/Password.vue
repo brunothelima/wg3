@@ -1,52 +1,50 @@
 <template>
-  <div data-test="input" :class="['input:text', { 'input:password--invalid': errors?.length }]">
+  <div data-test="input" :class="['input:password', { 
+    'input:password--invalid': errors?.length 
+  }]">
     <input
-      :type="type"
+      ref="inputRef"
       :name="name"
       :id="`${name}Id`"
       :value="value"
+      :type="inputType"
       :disabled="disabled"
       :readonly="readonly"
       :placeholder="t(placeholder)"
-      @input="$emit('update', [$event, name, $event.target.value])"
+      @input="$emit('update', [$event, name, inputRef.value])"
     />
     <i
       data-test="icon"
       color="a"
-      :class="`icon-eye${type === 'text' ? '-closed' : ''}`"
-      @click="type = type === 'text' ? 'password' : 'text'"
+      :class="`icon-eye${inputType === 'text' ? '-closed' : ''}`"
+      @click="inputType = inputType === 'text' ? 'password' : 'text'"
     />
   </div>
 </template>
 
-<script lang="ts">
-import { inject, ref, defineComponent } from "vue"
+<script lang="ts" setup>
+import { inject, ref, defineProps } from "vue"
 import { useI18n } from '@src/composables'
 
-export default defineComponent({
-  props: {
-    name: String,
-    value: [String, Number],
-    placeholder: String,
-    disabled: Boolean,
-    readonly: Boolean,
-    errors: Array
-  },  
-  setup(props, context) {
-    const type = ref('password')
-    const { t } = inject('i18n', useI18n()) 
-    
-    return {
-      t,
-      type
-    }
-  }
-})
+const props = defineProps<{
+  name?: string,
+  value?: string | number
+  placeholder?: string,
+  disabled?: boolean,
+  readonly?: boolean,
+  errors?: string[]
+}>()
+
+
+const inputRef = ref()
+const inputType = ref('password')
+
+const { t } = inject('i18n', useI18n())
 </script>
 
 <style lang="scss" scoped>
-.input\:text {
-  display: flex; 
+.input\:password {
+  display: flex;
   flex: 1;
   display: grid;
   grid-template-columns: auto 48px;
@@ -84,6 +82,6 @@ export default defineComponent({
     i {
       border-color: var(--color-error);
     }
-  } 
+  }
 }
 </style>

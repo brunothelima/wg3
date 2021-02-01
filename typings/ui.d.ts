@@ -6,3 +6,7 @@ declare interface CustomButton {
   reverse?: boolean,
   disabled?: boolean,
 }
+
+declare type CustomButtonTags = 'a' | 'span' | 'button' | 'div'
+declare type CustomButtonSizes = 'small' | 'medium' | 'large'
+declare type CustomButtonSkins = 'glassy' | 'ghosty' | 'default'

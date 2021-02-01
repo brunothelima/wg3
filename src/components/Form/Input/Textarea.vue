@@ -1,42 +1,38 @@
 <template>
   <div :class="['input:textarea', { 'input:textarea--invalid': errors?.length }]">
     <textarea
-      ref="inputRef"
-      :value="value"
+      ref="InputRef"
       :name="name"
-      :placeholder="t(placeholder)"
+      :id="`${name}Id`"
+      :value="value"
       :disabled="disabled"
+      :readonly="readonly"
+      :placeholder="t(placeholder)"
       :maxlength="maxlength"
-      @input="$emit('update', [$event, name, $event.target.value])"
+      @input="$emit('update', [$event, name, inputRef.value])"
     ></textarea>
-    <small>{{ maxlength ? `${value.length}/${maxlength}` : value.length }}</small>
+    <small>{{ maxlength && value ? `${value.length}/${maxlength}` : value?.length }}</small>
   </div>
 </template>
 
-<script lang="ts">
-import { ref, inject, defineComponent, computed } from 'vue'
+
+<script lang="ts" setup>
+import { inject, ref, defineProps } from 'vue'
 import { useI18n } from '@src/composables'
 
-export default defineComponent({
-  props: {
-    name: String,
-    value: String,
-    placeholder: String,
-    disabled: Boolean,
-    readonly: Boolean,
-    errors: Array,
-    maxlength: Number
-  },
-  setup(props, context) {
-    const inputRef = ref<HTMLInputElement>()
-    const { t } = inject('i18n', useI18n()) 
-    
-    return {
-      t,
-      inputRef
-    }
-  }
-})
+const props = defineProps<{
+  name?: string,
+  value?: string,
+  placeholder?: string,
+  disabled?: boolean,
+  readonly?: boolean,
+  errors?: string[],
+  maxlength?: number
+}>()
+
+const inputRef = ref()
+
+const { t } = inject('i18n', useI18n())
 </script>
 
 <style lang="scss" scoped>
