@@ -55,7 +55,6 @@ export const glob2Components = (...args: any) => {
   return collection
 }
 
-// Creates a route list based on file structure from glob arguments
 /**
  * This function will return a route array based on the given
  * glob lists components paths, prefixed by its first argument.
